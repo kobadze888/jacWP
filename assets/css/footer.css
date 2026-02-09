@@ -1,0 +1,73 @@
+/* --- FOOTER SECTION --- --- */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 5% 40px;
+    font-size: 14px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+.footer-col h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+.footer-links { display: flex; flex-direction: column; gap: 15px; }
+.footer-links a { color: #999; transition: color 0.3s; font-size: 14px; }
+.footer-links a:hover { color: #fff; }
+.footer-socials { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
+.social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: transparent;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    border: 2px solid #444;
+    transition: all 0.3s;
+}
+.social-btn:hover { border-color: #fff; }
+.social-inner { display: block; height: 100%; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.social-inner i { display: block; height: 40px; line-height: 40px; font-size: 20px; color: #fff; }
+.social-btn:hover .social-inner { transform: translateY(-100%); }
+.footer-bottom {
+    text-align: left;
+    border-top: 1px solid #222;
+    padding-top: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 13px;
+}
+
+@media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .footer-grid { display: block; text-align: left; gap: 0; }
+    .footer-col { border-bottom: 1px solid #222; }
+    .footer-col:last-child { border-bottom: none; }
+    .footer-col h3 {
+        margin: 0;
+        padding: 20px 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+    }
+    .footer-col h3::after { content: '+'; font-size: 24px; font-weight: 300; transition: transform 0.3s; }
+    .footer-col.active h3::after { transform: rotate(45deg); }
+    .footer-links { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding-bottom: 0; }
+    .footer-col.active .footer-links { max-height: 500px; padding-bottom: 20px; }
+    .footer-bottom { text-align: center; margin-top: 20px; }
+}
