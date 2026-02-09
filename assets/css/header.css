@@ -1,36 +1,31 @@
-/* --- HEADER / NAVBAR --- --- */
+/* --- HEADER / NAVBAR --- */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 25px 50px;
+    padding: 25px 10%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    transition: padding 0.4s ease, box-shadow 0.4s ease; 
+    /* მომენტალური ფონის ცვლილებისთვის ტრანზიცია აქ არ გვაქვს */
     color: #fff;
 }
 
 .header.scrolled {
     background-color: #fff;
     color: #000;
-    padding: 15px 50px;
+    padding: 15px 10%;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo-group { display: flex; flex-direction: column; line-height: 1; z-index: 1001; }
-
-#logoImg {
-    height: 32px;
-    width: auto;
-    display: block;
-    transition: opacity 0.3s;
-}
+#logoImg { height: 32px; width: auto; display: block; transition: opacity 0.3s ease; }
 
 /* Desktop Nav */
 .nav-list { display: flex; gap: 40px; margin: 0; padding: 0; }
+.nav-list > li { position: relative; } 
 .nav-list > li > a { 
     font-size: 15px; 
     font-weight: 600; 
@@ -38,75 +33,125 @@
     position: relative;
     cursor: pointer;
     padding: 15px 0;
-    transition: opacity 0.3s;
-    display: block;
+    /* აღდგენილი ანიმაცია ლინკებისთვის */
+    transition: opacity 0.3s ease, color 0.3s ease;
+    display: flex; 
+    align-items: center;
+    gap: 6px;
 }
 .nav-list > li > a:hover { opacity: 0.7; }
 
-/* Submenu Logic */
+/* სუბ-მენიუს ისარი */
+.nav-list .menu-item-has-children > a::after {
+    content: '\f107'; 
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 900;
+    font-size: 11px;
+    transition: transform 0.3s ease;
+}
+.nav-list li:hover > a::after { transform: rotate(180deg); }
+
+/* --- Submenu Logic --- */
 .nav-list .sub-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 15px); 
     left: 50%;
     transform: translateX(-50%);
-    padding: 20px 0;
+    padding: 15px 0;
     background: #000;
     min-width: 240px;
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     text-align: left;
+    z-index: 100;
+    /* ანიმაცია გამოჩენისას */
     opacity: 0;
-    transition: opacity 0.3s ease;
+}
+
+.nav-list .sub-menu::before {
+    content: '';
+    position: absolute;
+    top: -25px; 
+    left: 0;
+    width: 100%;
+    height: 25px;
 }
 
 .nav-list li:hover .sub-menu {
     display: block;
-    animation: fadeIn 0.3s forwards;
-    opacity: 1;
+    animation: fadeInSub 0.3s forwards;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInSub {
     from { opacity: 0; transform: translateX(-50%) translateY(10px); }
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 .sub-menu li a {
     display: block;
-    color: #fff;
+    color: #fff !important;
     padding: 12px 30px;
     font-size: 14px;
     white-space: nowrap;
-    transition: 0.2s;
+    transition: background 0.3s ease, padding-left 0.3s ease;
 }
-.sub-menu li a:hover { background: #111; }
+.sub-menu li a:hover { background: #1a1a1a; padding-left: 38px; }
 
 .header-icons { display: flex; align-items: center; gap: 25px; z-index: 1001; }
 
-/* --- Language Selector --- --- */
+/* --- Language Selector (Centered & Animated) --- */
 .lang-selector-wrapper { position: relative; padding: 10px 0; z-index: 1002; }
-.lang-current { display: flex; align-items: center; gap: 8px; cursor: pointer; color: inherit; padding: 5px 10px; }
-.lang-arrow { font-size: 10px; transition: transform 0.3s; }
+.lang-current { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    cursor: pointer; 
+    color: inherit; 
+    padding: 5px 10px;
+    transition: opacity 0.3s ease;
+}
+.lang-current:hover { opacity: 0.7; }
+.lang-arrow { font-size: 10px; transition: transform 0.3s ease; }
+
 .lang-dropdown {
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: calc(100% + 15px);
+    /* ზუსტი ცენტრირება გლობუსის ქვეშ */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
     background: #000;
-    min-width: 150px;
+    min-width: 160px;
     list-style: none;
     padding: 10px 0;
-    border-radius: 4px;
+    border-radius: 6px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    /* რბილი ანიმაცია დროპდაუნისთვის */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
     border: 1px solid #333;
 }
-.lang-selector-wrapper:hover .lang-dropdown,
-.lang-selector-wrapper.active .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* "უხილავი ხიდი" ენებისთვის */
+.lang-selector-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+.lang-selector-wrapper:hover .lang-dropdown { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateX(-50%) translateY(0); 
+}
+
 .lang-selector-wrapper:hover .lang-arrow { transform: rotate(180deg); }
 
+/* --- განახლებული ენის ლინკები (ანიმაციის გარეშე) --- */
 .lang-link {
     display: flex;
     align-items: center;
@@ -114,14 +159,39 @@
     padding: 10px 20px;
     color: #fff !important;
     font-size: 14px;
-    transition: background 0.2s;
+    font-weight: 500;
+    /* ტრანზიცია მხოლოდ ფონზე */
+    transition: background 0.3s ease;
 }
-.lang-link:hover { background: #1a1a1a; }
+.lang-link:hover { 
+    background: #1a1a1a; 
+    /* padding-left ამოღებულია, რომ აღარ გაიწიოს */
+}
 
-.flag-icon-container { width: 21px; height: 16px; display: flex; align-items: center; overflow: hidden; border-radius: 2px; }
+.flag-icon-container { 
+    width: 21px; 
+    height: 16px; 
+    display: flex; 
+    align-items: center; 
+    overflow: hidden; 
+    border-radius: 2px;
+}
+
 .flag-svg { width: 100%; height: 100%; display: block; }
 
-/* Mobile Hamburger */
+/* --- Mobile Styles --- */
+.mobile-lang-section {
+    width: 100%;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #222;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.mobile-lang-item { font-size: 16px; font-weight: 700; text-transform: uppercase; color: #666; transition: 0.3s; }
+.mobile-lang-item.active { color: #fff; border-bottom: 2px solid #fff; }
+
 .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1002; position: relative; }
 .bar { width: 25px; height: 2px; background-color: currentColor; transition: 0.3s; }
 
@@ -136,26 +206,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; 
     transition: 0.4s ease-in-out;
     z-index: 999;
     overflow-y: auto;
-    padding-top: 80px;
+    padding-top: 100px;
 }
 .mobile-menu.active { right: 0; }
 
 .mobile-nav-list { list-style: none; width: 100%; text-align: center; }
-.mobile-nav-list li a { display: block; padding: 15px; font-size: 20px; text-transform: uppercase; color: #fff; }
-.mobile-nav-list .sub-menu { display: none; background: #111; }
-.mobile-nav-list li.menu-item-has-children > a::after { content: ' ▼'; font-size: 12px; }
+.mobile-nav-list li a { display: block; padding: 18px; font-size: 19px; text-transform: uppercase; color: #fff; }
 
-.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburger.active .bar:nth-child(2) { opacity: 0; }
-.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.mobile-nav-list .sub-menu { display: none; background: #111; padding: 10px 0; }
+.mobile-nav-list li.open > .sub-menu { display: block; }
+.mobile-nav-list li.menu-item-has-children > a::after { 
+    content: ' \f107'; 
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 900; 
+    font-size: 14px; 
+}
+.mobile-nav-list li.open > a::after { transform: rotate(180deg); display: inline-block; }
 
 @media (max-width: 1024px) {
-    .header { padding: 20px 30px; }
-    .header.scrolled { padding: 20px 30px; }
+    .header, .header.scrolled { padding: 20px 5%; }
     .nav-list { display: none; } 
     .hamburger { display: flex; } 
+    .desktop-only-lang { display: none; }
 }

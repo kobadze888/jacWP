@@ -47,17 +47,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Language Selector
-    const langSelector = document.querySelector('.lang-selector-wrapper');
-    if (langSelector) {
-        langSelector.addEventListener('click', function(e) {
-            if (window.innerWidth <= 1024) {
-                this.classList.toggle('active');
-                e.stopPropagation();
+    // მობილური სუბ-მენიუს აკორდეონი
+    const mobileParentLinks = document.querySelectorAll('.mobile-nav-list .menu-item-has-children > a');
+    mobileParentLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            parentLi.classList.toggle('open');
+            
+            // სუბ-მენიუს გახსნა/დახურვა
+            const submenu = parentLi.querySelector('.sub-menu');
+            if (submenu) {
+                if (parentLi.classList.contains('open')) {
+                    submenu.style.display = 'block';
+                } else {
+                    submenu.style.display = 'none';
+                }
             }
         });
-    }
-    document.addEventListener('click', () => {
-        if (langSelector) langSelector.classList.remove('active');
     });
 });
