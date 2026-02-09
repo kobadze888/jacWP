@@ -103,24 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
         slideInterval = setInterval(nextSlide, slideIntervalTime);
     }
 
-    /* --- Explore Section Logic (Fixed Arrows & Animation) --- */
-    const vehicles = {
-        'sedan': {
-            image: 'https://jacen.jac.com.cn/_nuxt/img/E30X.1d6d4d6.png',
-            models: ['E30X', 'JS6 PHEV', 'JS8 PRO', 'JS6 2026', 'JS4', 'RF8']
-        },
-        'truck': {
-            image: 'https://jacen.jac.com.cn/_nuxt/img/N-Series.908eec9.png',
-            models: ['N-Series', 'N-Series EV', 'Sunray', 'Gallop', 'X-Series']
-        },
-        'pickup': {
-            image: 'https://images.unsplash.com/photo-1551830663-8f553073740e?auto=format&fit=crop&q=80&w=1000',
-            models: ['T8 PRO', 'T9', 'T6']
-        }
-    };
-
-    let currentType = 'sedan';
-    let currentModelIndex = 0;
+    /* --- Explore Section Logic (Dynamic WP Data) --- */
+    
+    // PHP-დან გადმოცემული დინამიური მონაცემების შემოწმება
+    let vehicles = (typeof dynamicVehicles !== 'undefined') ? dynamicVehicles : {};
 
     const tabs = document.querySelectorAll('.type-tab');
     const carImg = document.getElementById('carImage');
@@ -128,71 +114,86 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    if(modelNav && carImg) {
-        function switchModelAnimation(callback) {
-            carImg.style.transition = 'all 0.4s ease-in';
-            carImg.style.opacity = '0';
-            carImg.style.transform = 'translateX(-100px)';
+    // ავიღოთ პირველი ხელმისაწვდომი კატეგორია დეფოლტად
+    let currentType = Object.keys(vehicles).length > 0 ? Object.keys(vehicles)[0] : null;
+    let currentModelIndex = 0;
 
-            setTimeout(() => {
-                if (callback) callback();
-                carImg.style.transition = 'none';
-                carImg.style.transform = 'translateX(100px)';
-                
+    function switchModelAnimation(callback) {
+        if (!carImg) return;
+        carImg.style.transition = 'all 0.4s ease-in';
+        carImg.style.opacity = '0';
+        carImg.style.transform = 'translateX(-100px)';
+
+        setTimeout(() => {
+            if (callback) callback();
+            carImg.style.transition = 'none';
+            carImg.style.transform = 'translateX(100px)';
+            
+            requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        carImg.style.transition = 'all 0.4s ease-out';
-                        carImg.style.opacity = '1';
-                        carImg.style.transform = 'translateX(0)';
-                    });
+                    carImg.style.transition = 'all 0.4s ease-out';
+                    carImg.style.opacity = '1';
+                    carImg.style.transform = 'translateX(0)';
                 });
-            }, 400);
-        }
-
-        function updateModelDisplay() {
-            const items = modelNav.querySelectorAll('.model-item');
-            items.forEach((item, idx) => {
-                if(idx === currentModelIndex) item.classList.add('active');
-                else item.classList.remove('active');
             });
-        }
+        }, 400);
+    }
 
+    function updateModelDisplay() {
+        if (!modelNav || !vehicles[currentType]) return;
+        
+        const items = modelNav.querySelectorAll('.model-item');
+        items.forEach((item, idx) => {
+            if(idx === currentModelIndex) item.classList.add('active');
+            else item.classList.remove('active');
+        });
+
+        // სურათის შეცვლა არჩეული მოდელის ACF სურათით
+        const currentModelObj = vehicles[currentType].models[currentModelIndex];
+        if (currentModelObj && currentModelObj.image) {
+            carImg.src = currentModelObj.image;
+        }
+    }
+
+    function renderModelList() {
+        if (!modelNav || !currentType || !vehicles[currentType]) return;
+        
+        modelNav.innerHTML = '';
+        vehicles[currentType].models.forEach((modelObj, index) => {
+            const div = document.createElement('div');
+            div.className = `model-item ${index === currentModelIndex ? 'active' : ''}`;
+            div.textContent = modelObj.name;
+            div.onclick = function() {
+                if (currentModelIndex !== index) {
+                    currentModelIndex = index;
+                    switchModelAnimation(() => {
+                        updateModelDisplay();
+                    });
+                }
+            };
+            modelNav.appendChild(div);
+        });
+        
+        updateModelDisplay();
+    }
+
+    // ინიციალიზაცია და ივენთები
+    if (currentType && modelNav && carImg) {
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
                 const type = tab.getAttribute('data-type');
-                
-                if (type !== currentType) {
+                if (type !== currentType && vehicles[type]) {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
                     currentType = type;
                     currentModelIndex = 0;
                     
                     switchModelAnimation(() => {
-                        carImg.src = vehicles[currentType].image;
                         renderModelList();
                     });
                 }
             });
         });
-
-        function renderModelList() {
-            modelNav.innerHTML = '';
-            vehicles[currentType].models.forEach((model, index) => {
-                const div = document.createElement('div');
-                div.className = `model-item ${index === currentModelIndex ? 'active' : ''}`;
-                div.textContent = model;
-                div.onclick = function() {
-                    if (currentModelIndex !== index) {
-                        currentModelIndex = index;
-                        switchModelAnimation(() => {
-                            updateModelDisplay();
-                        });
-                    }
-                };
-                modelNav.appendChild(div);
-            });
-        }
 
         if(nextBtn) nextBtn.addEventListener('click', () => {
             const total = vehicles[currentType].models.length;
@@ -209,6 +210,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateModelDisplay();
             });
         });
+
+        // პირველი ჩატვირთვა
+        renderModelList();
     }
 
     /* --- Footer Mobile Accordion --- */
@@ -232,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentNewsIndex = 0;
 
     if(newsCards.length > 0 && newsDotsContainer) {
+        newsDotsContainer.innerHTML = ''; // გასუფთავება
         newsCards.forEach((_, idx) => {
             const dot = document.createElement('div');
             dot.className = `news-dot ${idx === 0 ? 'active' : ''}`;
@@ -242,12 +247,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function updateNewsSlider() {
             newsCards.forEach((card, idx) => {
-                if(idx === currentNewsIndex) card.classList.add('active');
-                else card.classList.remove('active');
+                card.classList.toggle('active', idx === currentNewsIndex);
             });
             newsDots.forEach((dot, idx) => {
-                if(idx === currentNewsIndex) dot.classList.add('active');
-                else dot.classList.remove('active');
+                dot.classList.toggle('active', idx === currentNewsIndex);
             });
         }
 

@@ -1,135 +1,205 @@
+/**
+ * Template Name: Front Page
+ */
+
 <?php get_header(); ?>
 
     <section class="hero-slider">
-        <!-- Slide 1 -->
-        <div class="slide active">
-            <video class="bg-video" autoplay muted loop playsinline>
-                <source src="https://jacen.jac.com.cn/_nuxt/videos/e30x.b0f0a4d.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <h1 class="hero-title">მუდამ სახალისო.<br>მუდამ ფერადი.</h1>
-                <p class="hero-subtitle">ახალი ჭკვიანი ქალაქის ავტომობილი, ისეთივე მოქნილი, როგორიც თქვენ ხართ.</p>
-                <a href="#" class="btn-white-pill">გაიგეთ მეტი</a>
+        <?php 
+        if( have_rows('hero_slider') ): 
+            $slide_index = 0;
+            while( have_rows('hero_slider') ): the_row(); 
+                $bg_type = get_sub_field('bg_type'); // 'video' or 'image'
+                $video = get_sub_field('video_url');
+                $image = get_sub_field('image_url');
+                $title = get_sub_field('title');
+                $subtitle = get_sub_field('subtitle');
+                $btn_text = get_sub_field('btn_text');
+                $btn_link = get_sub_field('btn_link');
+                $active_class = ($slide_index === 0) ? 'active' : '';
+        ?>
+            <div class="slide <?php echo $active_class; ?>" <?php if($bg_type == 'image') echo 'style="background-image: url('.$image.');"'; ?>>
+                <?php if($bg_type == 'video' && $video): ?>
+                    <video class="bg-video" autoplay muted loop playsinline>
+                        <source src="<?php echo $video; ?>" type="video/mp4">
+                    </video>
+                <?php endif; ?>
+                
+                <div class="hero-content">
+                    <h1 class="hero-title"><?php echo $title; ?></h1>
+                    <p class="hero-subtitle"><?php echo $subtitle; ?></p>
+                    <?php if($btn_text): ?>
+                        <a href="<?php echo $btn_link; ?>" class="btn-white-pill"><?php echo $btn_text; ?></a>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2000');">
-            <div class="hero-content">
-                <h1 class="hero-title">სუფთა ხედვა.<br>სუფთა მომავალი.</h1>
-                <p class="hero-subtitle">გამოსცადეთ ელექტრო მობილობის ახალი ერა.</p>
-                <a href="#" class="btn-white-pill">აღმოაჩინე EV</a>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1542362567-b05503f3f5f4?auto=format&fit=crop&q=80&w=2000');">
-            <div class="hero-content">
-                <h1 class="hero-title">ძალა.<br>შესრულება.</h1>
-                <p class="hero-subtitle">შექმნილია ნებისმიერი გზის დასაპყრობად.</p>
-                <a href="#" class="btn-white-pill">ნახეთ სატვირთოები</a>
-            </div>
-        </div>
+        <?php 
+            $slide_index++;
+            endwhile; 
+        endif; 
+        ?>
 
         <div class="slider-indicators">
-            <div class="indicator-line active" onclick="manualSlide(0)">
-                <div class="indicator-progress"></div>
-            </div>
-            <div class="indicator-line" onclick="manualSlide(1)">
-                <div class="indicator-progress"></div>
-            </div>
-            <div class="indicator-line" onclick="manualSlide(2)">
-                <div class="indicator-progress"></div>
-            </div>
+            <?php 
+            if( have_rows('hero_slider') ):
+                $count = count(get_field('hero_slider'));
+                for($i = 0; $i < $count; $i++):
+            ?>
+                <div class="indicator-line <?php echo ($i === 0) ? 'active' : ''; ?>" onclick="manualSlide(<?php echo $i; ?>)">
+                    <div class="indicator-progress"></div>
+                </div>
+            <?php endfor; endif; ?>
         </div>
     </section>
 
     <section class="explore-section">
-        <h2 class="section-title">აღმოაჩინე JAC-ის მოდელები</h2>
+        <h2 class="section-title"><?php pll_e('Discover JAC Models'); // პოლილანგის სტრინგი ?></h2>
+
+        <?php
+        // 1. ტაქსონომიების (ტიპების) წამოღება
+        $terms = get_terms(array(
+            'taxonomy' => 'vehicle_type',
+            'hide_empty' => true,
+        ));
+
+        // JS-ისთვის მონაცემების მოსამზადებელი მასივი
+        $js_vehicles_data = array();
+        ?>
 
         <div class="type-tabs">
-            <div class="type-tab active" data-type="sedan">
-                <i class="fa-solid fa-car tab-icon"></i>
-                <span>სედანი და SUV</span>
-            </div>
-            <div class="type-tab" data-type="truck">
-                <i class="fa-solid fa-truck tab-icon"></i>
-                <span style="font-family: 'Times New Roman', serif;">სატვირთო და ვენი</span>
-            </div>
-            <div class="type-tab" data-type="pickup">
-                <i class="fa-solid fa-truck-pickup tab-icon"></i>
-                <span style="font-family: 'Times New Roman', serif;">პიკაპი</span>
-            </div>
+            <?php 
+            if(!empty($terms)):
+                foreach($terms as $index => $term): 
+                    $active_tab = ($index === 0) ? 'active' : '';
+                    $icon_class = 'fa-car'; // დეფოლტ აიკონი
+                    
+                    // აიკონების ლოგიკა (შეგიძლია ACF-ითაც გააკეთო ტაქსონომიაზე)
+                    if($term->slug == 'truck') $icon_class = 'fa-truck';
+                    if($term->slug == 'pickup') $icon_class = 'fa-truck-pickup';
+            ?>
+                <div class="type-tab <?php echo $active_tab; ?>" data-type="<?php echo $term->slug; ?>">
+                    <i class="fa-solid <?php echo $icon_class; ?> tab-icon"></i>
+                    <span><?php echo $term->name; ?></span>
+                </div>
+            <?php endforeach; endif; ?>
         </div>
 
         <div class="model-nav">
-            <div class="model-item active">E30X</div>
-            <div class="model-item">JS6 PHEV</div>
-            <div class="model-item">JS8 PRO</div>
-            <div class="model-item">JS6 2026</div>
-            <div class="model-item">JS4</div>
-            <div class="model-item">RF8</div>
-        </div>
+            </div>
 
         <div class="slider-wrapper">
-            <button class="arrow-btn arrow-prev" id="prevBtn">
-                <i data-lucide="chevron-left"></i>
-            </button>
-            <img src="https://jacen.jac.com.cn/_nuxt/img/E30X.1d6d4d6.png" alt="Vehicle" class="car-img" id="carImage">
-            <button class="arrow-btn arrow-next" id="nextBtn">
-                <i data-lucide="chevron-right"></i>
-            </button>
+            <button class="arrow-btn arrow-prev" id="prevBtn"><i data-lucide="chevron-left"></i></button>
+            <img src="" alt="Vehicle" class="car-img" id="carImage">
+            <button class="arrow-btn arrow-next" id="nextBtn"><i data-lucide="chevron-right"></i></button>
         </div>
 
-        <button class="btn-black-pill">ყველა მოდელი</button>
+        <button class="btn-black-pill"><?php pll_e('All Models'); ?></button>
+
+        <?php
+        // 2. მონაცემების მომზადება JS-ისთვის
+        if(!empty($terms)):
+            foreach($terms as $term):
+                // თითოეული კატეგორიისთვის მანქანების წამოღება
+                $args = array(
+                    'post_type' => 'vehicles',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'vehicle_type',
+                            'field' => 'slug',
+                            'terms' => $term->slug,
+                        ),
+                    ),
+                    'posts_per_page' => -1, // ყველა
+                );
+                $query = new WP_Query($args);
+                
+                $models_list = array();
+                $first_image = '';
+
+                if($query->have_posts()):
+                    while($query->have_posts()): $query->the_post();
+                        $img_url = get_field('vehicle_image'); // ACF ველი
+                        // თუ მანქანას სურათი არ აქვს, Placeholder
+                        if(!$img_url) $img_url = 'https://via.placeholder.com/800x400';
+                        
+                        // პირველი მანქანის სურათი კატეგორიისთვის
+                        if(empty($first_image)) $first_image = $img_url;
+
+                        $models_list[] = array(
+                            'name' => get_the_title(),
+                            'image' => $img_url,
+                            'link' => get_permalink()
+                        );
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+
+                // JS ობიექტის შევსება
+                $js_vehicles_data[$term->slug] = array(
+                    'image' => $first_image, // დეფოლტ სურათი კატეგორიისთვის (პირველი მანქანა)
+                    'models' => $models_list
+                );
+
+            endforeach;
+        endif;
+        ?>
+
+        <script>
+            // ეს ცვლადი ჩაანაცვლებს შენს main.js-ში არსებულ vehicle ობიექტს
+            const dynamicVehicles = <?php echo json_encode($js_vehicles_data); ?>;
+        </script>
 
     </section>
 
-    <!-- NEWS SECTION -->
     <section class="news-section">
         <div class="news-header">
-            <h2 class="news-title">აღმოაჩინე JAC</h2>
+            <h2 class="news-title"><?php pll_e('Discover JAC'); ?></h2>
         </div>
 
         <div class="news-grid" id="newsGrid">
-            <!-- Card 1 -->
-            <div class="news-card active">
-                <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800" alt="News 1" class="news-img">
-                </div>
-                <div class="news-date">2026/01/18</div>
-                <div class="news-item-title">JAC Motors-მა დუბაიში პროდუქტის წარდგენის ღონისძიება გამართა</div>
-            </div>
+            <?php 
+            // ბოლო 3 სიახლე (სტანდარტული პოსტები)
+            $news_args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3
+            );
+            $news_query = new WP_Query($news_args);
 
-            <!-- Card 2 -->
-            <div class="news-card">
-                <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800" alt="News 2" class="news-img">
+            if($news_query->have_posts()):
+                $n = 0;
+                while($news_query->have_posts()): $news_query->the_post();
+                $active_class = ($n === 0) ? 'active' : '';
+            ?>
+                <div class="news-card <?php echo $active_class; ?>">
+                    <div class="news-img-container">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php if(has_post_thumbnail()): ?>
+                                <img src="<?php the_post_thumbnail_url('medium_large'); ?>" alt="<?php the_title(); ?>" class="news-img">
+                            <?php else: ?>
+                                <img src="https://via.placeholder.com/800x600" alt="News" class="news-img">
+                            <?php endif; ?>
+                        </a>
+                    </div>
+                    <div class="news-date"><?php echo get_the_date('Y/m/d'); ?></div>
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="news-item-title"><?php the_title(); ?></div>
+                    </a>
                 </div>
-                <div class="news-date">2026/01/14</div>
-                <div class="news-item-title">JAC Motors-მა 2025 წლის ჩინეთის ტოპ 100 ბრენდში აღიარება მოიპოვა</div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="news-card">
-                <div class="news-img-container">
-                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="News 3" class="news-img">
-                </div>
-                <div class="news-date">2025/12/22</div>
-                <div class="news-item-title">JAC Motors-მა ბრაზილიაში უახლესი სატვირთო მოდელები წარადგინა</div>
-            </div>
+            <?php 
+                $n++;
+                endwhile; 
+                wp_reset_postdata();
+            endif; 
+            ?>
         </div>
 
-        <!-- Mobile Controls for News -->
         <div class="news-mobile-controls">
             <div class="news-nav-btn" id="newsPrev"><i data-lucide="chevron-left"></i></div>
-            <div class="news-dots" id="newsDots">
-                <!-- JS Will Populate -->
-            </div>
+            <div class="news-dots" id="newsDots"></div>
             <div class="news-nav-btn" id="newsNext"><i data-lucide="chevron-right"></i></div>
         </div>
 
-        <button class="btn-black-pill">ყველა სიახლე</button>
+        <button class="btn-black-pill"><?php pll_e('All News'); ?></button>
     </section>
 
     <div style="height: 100px; background: #fff;"></div>

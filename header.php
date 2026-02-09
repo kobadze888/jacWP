@@ -3,43 +3,41 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAC MOTORS</title>
+    <title><?php wp_title('|', true, 'right'); ?></title>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 
     <header class="header" id="navbar">
         <div class="logo-group">
-            <img id="logoImg" src="https://jacen.jac.com.cn/_nuxt/img/logo-nav-pc.fb0453d.png" alt="JAC MOTORS">
+            <?php 
+                // დინამიური ლოგიკა: თუ ACF Options-ში გექნება ლოგოები, აქ ჩასვამ.
+                // ამ ეტაპზე ვტოვებ ისე, როგორც არის, მაგრამ ლინკი მთავარ გვერდზე გადადის
+            ?>
+            <a href="<?php echo home_url(); ?>">
+                <img id="logoImg" src="https://jacen.jac.com.cn/_nuxt/img/logo-nav-pc.fb0453d.png" alt="JAC MOTORS">
+            </a>
         </div>
 
         <nav>
-            <ul class="nav-list">
-                <li class="nav-item">მოდელები</li>
-                <li class="nav-item">
-                    კომპანია
-                    <div class="submenu-container">
-                        <div class="submenu">
-                            <a href="#"><span>JAC-ის შესახებ</span></a>
-                            <a href="#"><span>ისტორია</span></a>
-                            <a href="#"><span>ფილოსოფია</span></a>
-                            <a href="#"><span>კვლევა და განვითარება</span></a>
-                            <a href="#"><span>სოციალური პასუხისმგებლობა</span></a>
-                            <a href="#"><span>სერვისი</span></a>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">სიახლეები</li>
-                <li class="nav-item">ცხოვრების სტილი</li>
-                <li class="nav-item">მფლობელებისთვის</li>
-            </ul>
+            <?php 
+            wp_nav_menu(array(
+                'theme_location' => 'primary_menu',
+                'container' => false,
+                'menu_class' => 'nav-list',
+                'walker' => new Walker_Nav_Menu() // საჭიროების შემთხვევაში სტილიზაციისთვის
+            )); 
+            ?>
         </nav>
 
         <div class="header-icons">
-            <i data-lucide="globe" width="20"></i>
+            <ul class="lang-switcher">
+                <?php if(function_exists('pll_the_languages')){
+                    pll_the_languages(array('show_flags'=>1, 'show_names'=>0));
+                } ?>
+            </ul>
         </div>
 
-        <!-- მობილური მენიუს ენის ღილაკი -->
         <div class="mobile-lang" id="mobileLang">
             <i data-lucide="globe" width="24"></i>
         </div>
@@ -52,23 +50,12 @@
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#" class="mobile-nav-item">მოდელები</a>
-        
-        <div class="mobile-submenu-wrapper">
-            <div class="mobile-nav-item" id="mobileCompanyBtn">
-                კომპანია <i class="fa-solid fa-chevron-down" style="font-size: 16px; vertical-align: middle; margin-left: 5px;"></i>
-            </div>
-            <div class="mobile-submenu" id="mobileCompanySubmenu">
-                <a href="#">JAC-ის შესახებ</a>
-                <a href="#">ისტორია</a>
-                <a href="#">ფილოსოფია</a>
-                <a href="#">კვლევა და განვითარება</a>
-                <a href="#">სოციალური პასუხისმგებლობა</a>
-                <a href="#">სერვისი</a>
-            </div>
-        </div>
-
-        <a href="#" class="mobile-nav-item">სიახლეები</a>
-        <a href="#" class="mobile-nav-item">ცხოვრების სტილი</a>
-        <a href="#" class="mobile-nav-item">მფლობელებისთვის</a>
+        <?php 
+        // მობილური მენიუსთვისაც იგივე მენიუ გამოვიყენოთ ან ცალკე დარეგისტრირებული
+        wp_nav_menu(array(
+            'theme_location' => 'primary_menu',
+            'container' => false,
+            'menu_class' => 'mobile-nav-list', // CSS-ში გასასწორებელი იქნება ოდნავ
+        )); 
+        ?>
     </div>
