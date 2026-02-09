@@ -1,53 +1,46 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Lucide Icons Initialization
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 
-    /* --- Navbar Scroll Effect --- */
+    /* --- Header & Logo Logic --- */
     const navbar = document.getElementById('navbar');
     const logoImg = document.getElementById('logoImg');
-    const whiteLogo = "https://jacen.jac.com.cn/_nuxt/img/logo-nav-pc.fb0453d.png";
-    const darkLogo = "https://jacmotors.ge/wp-content/uploads/2026/02/jac-georgia-logo.png";
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // ACF-დან წამოსული ლოგოების URL-ები
+    const whiteLogo = logoImg.getAttribute('data-white');
+    const darkLogo = logoImg.getAttribute('data-dark');
 
     window.addEventListener('scroll', () => {
-        if(document.getElementById('mobileMenu').classList.contains('active')) return;
+        if(mobileMenu.classList.contains('active')) return;
 
         if(window.scrollY > 50) {
             navbar.classList.add('scrolled');
             logoImg.src = darkLogo; 
-            document.querySelector('.hamburger').style.color = '#000';
+            hamburger.style.color = '#000';
         } else {
             navbar.classList.remove('scrolled');
             logoImg.src = whiteLogo; 
-            document.querySelector('.hamburger').style.color = '#fff';
+            hamburger.style.color = '#fff';
         }
     });
-
-    /* --- Mobile Menu Logic --- */
-    const hamburger = document.getElementById('hamburgerBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLang = document.getElementById('mobileLang');
 
     if(hamburger) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-            if(mobileLang) mobileLang.classList.toggle('active'); 
             
             if(mobileMenu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden'; 
-                navbar.classList.remove('scrolled');
-                logoImg.src = whiteLogo;
+                logoImg.src = whiteLogo; // მობილურ მენიუში ყოველთვის თეთრი ლოგო
                 hamburger.style.color = '#fff';
             } else {
                 document.body.style.overflow = ''; 
+                // მენიუს დახურვისას ვამოწმებთ სქროლს
                 if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
                     logoImg.src = darkLogo;
                     hamburger.style.color = '#000';
                 } else {
-                    navbar.classList.remove('scrolled');
                     logoImg.src = whiteLogo;
                     hamburger.style.color = '#fff';
                 }
@@ -55,22 +48,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* --- Mobile Submenu Toggle --- */
-    const mobileCompanyBtn = document.getElementById('mobileCompanyBtn');
-    const mobileCompanySubmenu = document.getElementById('mobileCompanySubmenu');
-    
-    if(mobileCompanyBtn) {
-        mobileCompanyBtn.addEventListener('click', () => {
-            mobileCompanySubmenu.classList.toggle('open');
-            const icon = mobileCompanyBtn.querySelector('i');
-            if(mobileCompanySubmenu.classList.contains('open')){
-                icon.style.transform = 'rotate(180deg)';
-                icon.style.transition = 'transform 0.3s';
-            } else {
-                icon.style.transform = 'rotate(0deg)';
+    /* --- Mobile Language Switcher Click --- */
+    const langSelector = document.querySelector('.lang-selector-wrapper');
+    if (langSelector) {
+        langSelector.addEventListener('click', function(e) {
+            // მხოლოდ მობილურ/პლანშეტურ ზომებზე
+            if (window.innerWidth <= 1024) {
+                this.classList.toggle('active');
+                e.stopPropagation();
             }
         });
     }
+
+    document.addEventListener('click', () => {
+        if (langSelector) langSelector.classList.remove('active');
+    });
 
     /* --- Hero Slider Logic --- */
     const slides = document.querySelectorAll('.slide');
@@ -90,9 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             indicators[currentSlide].classList.add('active');
         }
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+        function nextSlide() { showSlide(currentSlide + 1); }
 
         window.manualSlide = function(index) {
             clearInterval(slideInterval);
@@ -104,17 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /* --- Explore Section Logic (Dynamic WP Data) --- */
-    
-    // PHP-დან გადმოცემული დინამიური მონაცემების შემოწმება
     let vehicles = (typeof dynamicVehicles !== 'undefined') ? dynamicVehicles : {};
-
     const tabs = document.querySelectorAll('.type-tab');
     const carImg = document.getElementById('carImage');
     const modelNav = document.querySelector('.model-nav');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    // ავიღოთ პირველი ხელმისაწვდომი კატეგორია დეფოლტად
     let currentType = Object.keys(vehicles).length > 0 ? Object.keys(vehicles)[0] : null;
     let currentModelIndex = 0;
 
@@ -141,14 +127,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateModelDisplay() {
         if (!modelNav || !vehicles[currentType]) return;
-        
         const items = modelNav.querySelectorAll('.model-item');
         items.forEach((item, idx) => {
             if(idx === currentModelIndex) item.classList.add('active');
             else item.classList.remove('active');
         });
-
-        // სურათის შეცვლა არჩეული მოდელის ACF სურათით
         const currentModelObj = vehicles[currentType].models[currentModelIndex];
         if (currentModelObj && currentModelObj.image) {
             carImg.src = currentModelObj.image;
@@ -157,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderModelList() {
         if (!modelNav || !currentType || !vehicles[currentType]) return;
-        
         modelNav.innerHTML = '';
         vehicles[currentType].models.forEach((modelObj, index) => {
             const div = document.createElement('div');
@@ -173,11 +155,9 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             modelNav.appendChild(div);
         });
-        
         updateModelDisplay();
     }
 
-    // ინიციალიზაცია და ივენთები
     if (currentType && modelNav && carImg) {
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
@@ -187,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     tab.classList.add('active');
                     currentType = type;
                     currentModelIndex = 0;
-                    
                     switchModelAnimation(() => {
                         renderModelList();
                     });
@@ -198,20 +177,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if(nextBtn) nextBtn.addEventListener('click', () => {
             const total = vehicles[currentType].models.length;
             currentModelIndex = (currentModelIndex + 1) % total;
-            switchModelAnimation(() => {
-                updateModelDisplay();
-            });
+            switchModelAnimation(() => { updateModelDisplay(); });
         });
 
         if(prevBtn) prevBtn.addEventListener('click', () => {
             const total = vehicles[currentType].models.length;
             currentModelIndex = (currentModelIndex - 1 + total) % total;
-            switchModelAnimation(() => {
-                updateModelDisplay();
-            });
+            switchModelAnimation(() => { updateModelDisplay(); });
         });
 
-        // პირველი ჩატვირთვა
         renderModelList();
     }
 
@@ -236,13 +210,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentNewsIndex = 0;
 
     if(newsCards.length > 0 && newsDotsContainer) {
-        newsDotsContainer.innerHTML = ''; // გასუფთავება
+        newsDotsContainer.innerHTML = ''; 
         newsCards.forEach((_, idx) => {
             const dot = document.createElement('div');
             dot.className = `news-dot ${idx === 0 ? 'active' : ''}`;
             newsDotsContainer.appendChild(dot);
         });
-
         const newsDots = document.querySelectorAll('.news-dot');
 
         function updateNewsSlider() {

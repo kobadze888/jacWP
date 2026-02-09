@@ -40,7 +40,7 @@ function jac_enqueue_scripts() {
     // Custom JS
     wp_enqueue_script('jac-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0', true);
 
-    // მონაცემების გადაწოდება JS-ისთვის (AJAX-ისთვის ან დინამიური ცვლადებისთვის)
+    // მონაცემების გადაწოდება JS-ისთვის
     wp_localize_script('jac-main-js', 'jacData', array(
         'siteUrl' => get_site_url(),
         'themeUrl' => get_template_directory_uri()
@@ -48,7 +48,7 @@ function jac_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'jac_enqueue_scripts');
 
-// ACF Options Page (გლობალური პარამეტრებისთვის, მაგ: ფუტერი, სოციალური ქსელები)
+// ACF Options Page (გლობალური პარამეტრები: ლოგოები, ფუტერი)
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
         'page_title'    => 'Theme General Settings',
@@ -59,11 +59,13 @@ if( function_exists('acf_add_options_page') ) {
     ));
 }
 
-// Polylang String Translation (რეგისტრაცია)
+// Polylang String Translation
 if (function_exists('pll_register_string')) {
     pll_register_string('jac_theme', 'See More', 'JAC Buttons');
     pll_register_string('jac_theme', 'All Models', 'JAC Buttons');
     pll_register_string('jac_theme', 'All News', 'JAC Buttons');
+    pll_register_string('jac_theme', 'Discover JAC Models', 'JAC Headings');
+    pll_register_string('jac_theme', 'Discover JAC', 'JAC Headings');
 }
 
 ?>
