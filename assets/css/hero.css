@@ -5,70 +5,94 @@
     width: 100%;
     overflow: hidden;
     background: #000;
+    touch-action: pan-y;
 }
+
 .slide {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    z-index: 1;
+    /* წარმადობის ოპტიმიზაცია "გაჭედვის" ასაცილებლად */
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     background-size: cover;
     background-position: center;
+    transform: scale(1.08);
 }
-.slide.active { opacity: 1; z-index: 1; }
-.bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+
+.slide.active {
+    opacity: 1;
+    z-index: 2; /* აქტიური სლაიდი ზემოდან გადაეფარება წინა სლაიდს */
+    transform: scale(1);
 }
-.slide::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+
+/* წინა სლაიდი რჩება ქვედა ფენაზე, სანამ ახალი ბოლომდე არ გამოჩნდება */
+.slide:not(.active) {
     z-index: 1;
 }
+
+.bg-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.slide::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    z-index: 3;
+}
+
 .hero-content {
     position: absolute;
+    z-index: 10;
+    color: #fff;
+    width: 90%;
+    max-width: 900px;
+}
+
+/* ვიდეოზე ტექსტი ქვემოთ, ფოტოზე - მარჯვნივ */
+.slide-video .hero-content {
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide-image .hero-content {
     top: 50%;
     right: 8%;
     transform: translateY(-50%);
     text-align: right;
-    color: #fff;
-    z-index: 10;
-    max-width: 700px;
+    display: block;
 }
-.slide:first-child .hero-content {
-    top: auto;
-    bottom: 120px;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 1000px;
-}
+
+/* ტექსტის დახვეწილი ანიმაცია */
 .hero-content h1, .hero-content p, .hero-content a {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.slide.active .hero-content h1 { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
-.slide.active .hero-content p { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
-.slide.active .hero-content a { opacity: 1; transform: translateY(0); transition-delay: 0.7s; }
 
-.hero-title {
-    font-size: 70px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 15px;
+.slide.active .hero-content h1 { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+.slide.active .hero-content p { opacity: 1; transform: translateY(0); transition-delay: 0.7s; }
+.slide.active .hero-content a { opacity: 1; transform: translateY(0); transition-delay: 0.9s; }
+
+/* სათაურის ზომა (54px) და line-height (1.2) */
+.hero-title { 
+    font-size: clamp(32px, 5vw, 54px); 
+    font-weight: 700; 
+    line-height: 1.2; 
+    margin-bottom: 25px;
     letter-spacing: -1px;
 }
-.slide:first-child .hero-title { font-size: 60px; }
+
 .hero-subtitle {
     font-size: 18px;
     font-weight: 400;
@@ -76,6 +100,7 @@
     margin-bottom: 40px;
     opacity: 0.9;
 }
+
 .btn-white-pill {
     background: #fff;
     color: #000;
@@ -86,19 +111,19 @@
     display: inline-block;
     transition: transform 0.2s;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
-.btn-white-pill:hover { transform: scale(1.05); }
 
+/* ინდიკატორები */
 .slider-indicators {
     position: absolute;
-    bottom: 40px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 15px;
     z-index: 20;
 }
+
 .indicator-line {
     width: 60px;
     height: 3px;
@@ -108,20 +133,35 @@
     overflow: hidden;
     border-radius: 2px;
 }
+
 .indicator-progress {
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0%;
+    left: 0; top: 0; height: 100%; width: 0%;
     background: #fff;
 }
-.indicator-line.active .indicator-progress { width: 100%; transition: width 5s linear; }
-.indicator-line:not(.active) .indicator-progress { width: 0%; transition: none; }
 
+.indicator-line.active .indicator-progress { 
+    width: 100%; 
+    transition: width 5s linear; 
+}
+
+/* მობილური ადაპტაცია */
 @media (max-width: 1024px) {
-    .hero-title { font-size: 42px; }
-    .slide:first-child .hero-title { font-size: 36px; }
-    .hero-content { right: 50%; transform: translate(50%, -50%); text-align: center; width: 90%; }
-    .slide:first-child .hero-content { bottom: 20%; transform: translateX(-50%); }
+    .slide-video .hero-content,
+    .slide-image .hero-content {
+        top: auto;
+        bottom: 180px; 
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 85%;
+    }
+
+    .slider-indicators {
+        bottom: 80px;
+    }
+
+    .hero-title { font-size: 30px; line-height: 1.2; margin-bottom: 15px; }
+    .hero-subtitle { font-size: 14px; margin-bottom: 30px; }
 }

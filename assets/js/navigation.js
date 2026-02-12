@@ -4,65 +4,70 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
-    if (!logoImg) return;
+    if (!logoImg || !navbar) return;
 
     const whiteLogo = logoImg.getAttribute('data-white');
     const darkLogo = logoImg.getAttribute('data-dark');
 
-    // Scroll Logic
-    window.addEventListener('scroll', () => {
-        if(mobileMenu && mobileMenu.classList.contains('active')) return;
+    /**
+     * ჰედერის ვიზუალის მართვა
+     */
+    function handleHeaderAppearance() {
+        const isMenuOpen = mobileMenu && mobileMenu.classList.contains('active');
+        const isScrolled = window.scrollY > 50;
 
-        if(window.scrollY > 50) {
-            if(navbar) navbar.classList.add('scrolled');
-            logoImg.src = darkLogo; 
-            if(hamburger) hamburger.style.color = '#000';
+        if (isMenuOpen) {
+            // მენიუს გახსნისას: ყოველთვის შავი ფონი და თეთრი ელემენტები
+            navbar.classList.add('menu-open');
+            navbar.classList.remove('scrolled');
+            logoImg.src = whiteLogo;
+            if (hamburger) hamburger.style.color = '#fff';
         } else {
-            if(navbar) navbar.classList.remove('scrolled');
-            logoImg.src = whiteLogo; 
-            if(hamburger) hamburger.style.color = '#fff';
+            // მენიუს დაკეტვისას: დამოკიდებულია სქროლის პოზიციაზე
+            navbar.classList.remove('menu-open');
+            if (isScrolled) {
+                navbar.classList.add('scrolled');
+                logoImg.src = darkLogo;
+                if (hamburger) hamburger.style.color = '#000';
+            } else {
+                navbar.classList.remove('scrolled');
+                logoImg.src = whiteLogo;
+                if (hamburger) hamburger.style.color = '#fff';
+            }
         }
-    });
+    }
 
-    // Mobile Toggle
-    if(hamburger && mobileMenu) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
+    // სქროლის მოვლენა
+    window.addEventListener('scroll', handleHeaderAppearance);
+
+    // ჰამბურგერის კლიკი
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             
-            if(mobileMenu.classList.contains('active')) {
+            if (mobileMenu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden'; 
-                logoImg.src = whiteLogo;
-                hamburger.style.color = '#fff';
             } else {
                 document.body.style.overflow = ''; 
-                if (window.scrollY > 50) {
-                    logoImg.src = darkLogo;
-                    hamburger.style.color = '#000';
-                } else {
-                    logoImg.src = whiteLogo;
-                    hamburger.style.color = '#fff';
-                }
             }
+            
+            // მყისიერი განახლება
+            handleHeaderAppearance();
         });
     }
 
-    // მობილური სუბ-მენიუს აკორდეონი
+    // მობილური სუბ-მენიუების მართვა
     const mobileParentLinks = document.querySelectorAll('.mobile-nav-list .menu-item-has-children > a');
     mobileParentLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const parentLi = this.parentElement;
-            parentLi.classList.toggle('open');
-            
-            // სუბ-მენიუს გახსნა/დახურვა
             const submenu = parentLi.querySelector('.sub-menu');
+            
             if (submenu) {
-                if (parentLi.classList.contains('open')) {
-                    submenu.style.display = 'block';
-                } else {
-                    submenu.style.display = 'none';
-                }
+                e.preventDefault();
+                parentLi.classList.toggle('open');
+                submenu.style.display = parentLi.classList.contains('open') ? 'block' : 'none';
             }
         });
     });

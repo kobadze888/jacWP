@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let vehicles = (typeof dynamicVehicles !== 'undefined') ? dynamicVehicles : {};
     const tabs = document.querySelectorAll('.type-tab');
     const carImg = document.getElementById('carImage');
+    const carLink = document.getElementById('carLink'); // ლინკის ელემენტი
     const modelNav = document.querySelector('.model-nav');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -16,8 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
         items.forEach((item, idx) => {
             item.classList.toggle('active', idx === currentModelIndex);
         });
+        
         const currentModelObj = vehicles[currentType].models[currentModelIndex];
-        if (currentModelObj) carImg.src = currentModelObj.image;
+        if (currentModelObj) {
+            carImg.src = currentModelObj.image;
+            // ანახლებს ლინკს ფოტოზე
+            if(carLink) carLink.href = currentModelObj.link; 
+        }
     }
 
     function renderModelList() {
@@ -25,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modelNav.innerHTML = '';
         vehicles[currentType].models.forEach((modelObj, index) => {
             const div = document.createElement('div');
+            // ორიგინალი კლასი და სტრუქტურა
             div.className = `model-item ${index === currentModelIndex ? 'active' : ''}`;
             div.textContent = modelObj.name;
             div.onclick = () => {

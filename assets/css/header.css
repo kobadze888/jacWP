@@ -9,15 +9,30 @@
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    /* მომენტალური ფონის ცვლილებისთვის ტრანზიცია აქ არ გვაქვს */
     color: #fff;
+    
+    /* წამიერი ცვლილებისთვის ტრანზიციები გათიშულია */
+    transition: none; 
+
+    /* რბილი ჩრდილი გამჭვირვალე ფონზე (ზედა გრადიენტი) */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
+/* მენიუს გახსნისას */
+.header.menu-open {
+    background: #000 !important;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+/* სქროლისას: წამიერი გადასვლა თეთრზე */
 .header.scrolled {
-    background-color: #fff;
+    background: #fff; /* გრადიენტი იცვლება სუფთა თეთრით */
     color: #000;
     padding: 15px 10%;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-shadow: none;
 }
 
 .logo-group { display: flex; flex-direction: column; line-height: 1; z-index: 1001; }
@@ -33,8 +48,8 @@
     position: relative;
     cursor: pointer;
     padding: 15px 0;
-    /* აღდგენილი ანიმაცია ლინკებისთვის */
-    transition: opacity 0.3s ease, color 0.3s ease;
+    /* მხოლოდ ოპასითი რჩება რბილი, ფერი იცვლება წამიერად */
+    transition: opacity 0.3s ease; 
     display: flex; 
     align-items: center;
     gap: 6px;
@@ -65,7 +80,6 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     text-align: left;
     z-index: 100;
-    /* ანიმაცია გამოჩენისას */
     opacity: 0;
 }
 
@@ -100,7 +114,7 @@
 
 .header-icons { display: flex; align-items: center; gap: 25px; z-index: 1001; }
 
-/* --- Language Selector (Centered & Animated) --- */
+/* --- Language Selector --- */
 .lang-selector-wrapper { position: relative; padding: 10px 0; z-index: 1002; }
 .lang-current { 
     display: flex; 
@@ -117,7 +131,6 @@
 .lang-dropdown {
     position: absolute;
     top: calc(100% + 15px);
-    /* ზუსტი ცენტრირება გლობუსის ქვეშ */
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: #000;
@@ -128,12 +141,10 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     opacity: 0;
     visibility: hidden;
-    /* რბილი ანიმაცია დროპდაუნისთვის */
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
     border: 1px solid #333;
 }
 
-/* "უხილავი ხიდი" ენებისთვის */
 .lang-selector-wrapper::before {
     content: '';
     position: absolute;
@@ -151,7 +162,6 @@
 
 .lang-selector-wrapper:hover .lang-arrow { transform: rotate(180deg); }
 
-/* --- განახლებული ენის ლინკები (ანიმაციის გარეშე) --- */
 .lang-link {
     display: flex;
     align-items: center;
@@ -160,13 +170,9 @@
     color: #fff !important;
     font-size: 14px;
     font-weight: 500;
-    /* ტრანზიცია მხოლოდ ფონზე */
     transition: background 0.3s ease;
 }
-.lang-link:hover { 
-    background: #1a1a1a; 
-    /* padding-left ამოღებულია, რომ აღარ გაიწიოს */
-}
+.lang-link:hover { background: #1a1a1a; }
 
 .flag-icon-container { 
     width: 21px; 
@@ -176,10 +182,9 @@
     overflow: hidden; 
     border-radius: 2px;
 }
-
 .flag-svg { width: 100%; height: 100%; display: block; }
 
-/* --- Mobile Styles --- */
+/* --- Mobile Styles & Hamburger Animation --- */
 .mobile-lang-section {
     width: 100%;
     padding: 0 20px 20px;
@@ -193,7 +198,18 @@
 .mobile-lang-item.active { color: #fff; border-bottom: 2px solid #fff; }
 
 .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1002; position: relative; }
-.bar { width: 25px; height: 2px; background-color: currentColor; transition: 0.3s; }
+.bar { 
+    width: 25px; 
+    height: 2px; 
+    background-color: currentColor; 
+    /* მხოლოდ ტრანსფორმაციაზეა ტრანზიცია */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s; 
+}
+
+/* ანიმაცია X-ად გადასაქცევად */
+.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active .bar:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 .mobile-menu {
     position: fixed;
@@ -215,21 +231,35 @@
 .mobile-menu.active { right: 0; }
 
 .mobile-nav-list { list-style: none; width: 100%; text-align: center; }
-.mobile-nav-list li a { display: block; padding: 18px; font-size: 19px; text-transform: uppercase; color: #fff; }
+.mobile-nav-list li a { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 18px; 
+    font-size: 19px; 
+    text-transform: uppercase; 
+    color: #fff; 
+}
 
 .mobile-nav-list .sub-menu { display: none; background: #111; padding: 10px 0; }
 .mobile-nav-list li.open > .sub-menu { display: block; }
+
 .mobile-nav-list li.menu-item-has-children > a::after { 
-    content: ' \f107'; 
+    content: '\f107'; 
     font-family: 'Font Awesome 6 Free'; 
     font-weight: 900; 
     font-size: 14px; 
+    transition: transform 0.3s ease;
 }
-.mobile-nav-list li.open > a::after { transform: rotate(180deg); display: inline-block; }
+
+.mobile-nav-list li.open > a::after { 
+    transform: rotate(180deg); 
+    display: inline-block; 
+}
 
 @media (max-width: 1024px) {
     .header, .header.scrolled { padding: 20px 5%; }
-    .nav-list { display: none; } 
+    .nav-list, .desktop-only-lang { display: none; }
     .hamburger { display: flex; } 
-    .desktop-only-lang { display: none; }
 }

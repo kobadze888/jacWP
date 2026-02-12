@@ -3,7 +3,7 @@
     if( have_rows('hero_slider') ): 
         $slide_index = 0;
         while( have_rows('hero_slider') ): the_row(); 
-            $bg_type = get_sub_field('bg_type');
+            $bg_type = get_sub_field('bg_type'); // 'image' ან 'video'
             $video_link = get_sub_field('video_url');
             $uploaded_image = get_sub_field('image_url');
             $external_image_link = get_sub_field('image_url_source');
@@ -16,7 +16,7 @@
             $final_image_url = !empty($external_image_link) ? $external_image_link : (is_array($uploaded_image) ? $uploaded_image['url'] : $uploaded_image);
             $bg_style = ($bg_type == 'image') ? 'style="background-image: url(' . esc_url($final_image_url) . ');"' : '';
     ?>
-        <div class="slide <?php echo $active_class; ?>" <?php echo $bg_style; ?>>
+        <div class="slide <?php echo $active_class; ?> slide-<?php echo $bg_type; ?>" <?php echo $bg_style; ?>>
             <?php if($bg_type == 'video' && !empty($video_link)): ?>
                 <video class="bg-video" autoplay muted loop playsinline>
                     <source src="<?php echo esc_url($video_link); ?>" type="video/mp4">
@@ -34,7 +34,8 @@
 
     <div class="slider-indicators">
         <?php if( have_rows('hero_slider') ):
-            $count = count(get_field('hero_slider'));
+            $slider_rows = get_field('hero_slider');
+            $count = is_array($slider_rows) ? count($slider_rows) : 0;
             for($i = 0; $i < $count; $i++): ?>
                 <div class="indicator-line <?php echo ($i === 0) ? 'active' : ''; ?>" onclick="manualSlide(<?php echo $i; ?>)">
                     <div class="indicator-progress"></div>
