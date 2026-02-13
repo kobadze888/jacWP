@@ -11,12 +11,17 @@
     <?php 
         $white_logo = get_field('white_logo', 'option') ?: "https://jacen.jac.com.cn/_nuxt/img/logo-nav-pc.fb0453d.png";
         $dark_logo = get_field('dark_logo', 'option') ?: "https://jacmotors.ge/wp-content/uploads/2026/02/jac-georgia-logo.png";
+        
+        // ლოგიკა: მთავარ გვერდზე გამჭვირვალეა, შიდა გვერდებზე - მყარი ფერით (scrolled)
+        $is_front = is_front_page();
+        $header_classes = $is_front ? 'header' : 'header scrolled always-scrolled';
+        $initial_logo = $is_front ? $white_logo : $dark_logo;
     ?>
 
-    <header class="header" id="navbar">
+    <header class="<?php echo $header_classes; ?>" id="navbar">
         <div class="logo-group">
             <a href="<?php echo home_url(); ?>">
-                <img id="logoImg" src="<?php echo $white_logo; ?>" 
+                <img id="logoImg" src="<?php echo $initial_logo; ?>" 
                      data-white="<?php echo $white_logo; ?>" 
                      data-dark="<?php echo $dark_logo; ?>" 
                      alt="JAC MOTORS">

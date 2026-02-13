@@ -8,13 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const whiteLogo = logoImg.getAttribute('data-white');
     const darkLogo = logoImg.getAttribute('data-dark');
+    
+    // ვამოწმებთ, არის თუ არა შიდა გვერდი (რომელსაც მუდმივად scrolled სჭირდება)
+    const isAlwaysScrolled = navbar.classList.contains('always-scrolled');
 
     /**
      * ჰედერის ვიზუალის მართვა
      */
     function handleHeaderAppearance() {
         const isMenuOpen = mobileMenu && mobileMenu.classList.contains('active');
-        const isScrolled = window.scrollY > 50;
+        
+        // თუ შიდა გვერდია (isAlwaysScrolled), მაშინ ყოველთვის ჩათვლის რომ დასქროლილია
+        const isScrolled = window.scrollY > 50 || isAlwaysScrolled;
 
         if (isMenuOpen) {
             // მენიუს გახსნისას: ყოველთვის შავი ფონი და თეთრი ელემენტები
@@ -23,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             logoImg.src = whiteLogo;
             if (hamburger) hamburger.style.color = '#fff';
         } else {
-            // მენიუს დაკეტვისას: დამოკიდებულია სქროლის პოზიციაზე
+            // მენიუს დაკეტვისას
             navbar.classList.remove('menu-open');
             if (isScrolled) {
                 navbar.classList.add('scrolled');
@@ -37,7 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // სქროლის მოვლენა
+    // 1. თავდაპირველი გამოძახება, რომ ჩატვირთვისთანავე სწორი ფერები დაჯდეს (მნიშვნელოვანია შიდა გვერდებისთვის)
+    handleHeaderAppearance();
+
+    // 2. სქროლის მოვლენა
     window.addEventListener('scroll', handleHeaderAppearance);
 
     // ჰამბურგერის კლიკი
@@ -52,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = ''; 
             }
             
-            // მყისიერი განახლება
+            // მყისიერი განახლება მენიუს ანიმაციისას
             handleHeaderAppearance();
         });
     }
