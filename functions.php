@@ -40,6 +40,7 @@ function jac_enqueue_scripts() {
     if (is_front_page()) {
         wp_enqueue_script('jac-hero-slider', get_template_directory_uri() . '/assets/js/hero-slider.js', array(), '1.2', true);
         wp_enqueue_script('jac-explore-slider', get_template_directory_uri() . '/assets/js/explore-slider.js', array(), '1.2', true);
+        wp_enqueue_script('jac-news-slider', get_template_directory_uri() . '/assets/js/news-slider.js', array('lucide'), '1.0', true);
     }
 
     // Lucide-ს აიქონების (გლობუსის) გააქტიურება
