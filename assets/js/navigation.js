@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const whiteLogo = logoImg.getAttribute('data-white');
     const darkLogo = logoImg.getAttribute('data-dark');
-    
-    // ვამოწმებთ, არის თუ არა შიდა გვერდი (რომელსაც მუდმივად scrolled სჭირდება)
     const isAlwaysScrolled = navbar.classList.contains('always-scrolled');
 
     /**
@@ -17,18 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function handleHeaderAppearance() {
         const isMenuOpen = mobileMenu && mobileMenu.classList.contains('active');
-        
-        // თუ შიდა გვერდია (isAlwaysScrolled), მაშინ ყოველთვის ჩათვლის რომ დასქროლილია
         const isScrolled = window.scrollY > 50 || isAlwaysScrolled;
 
         if (isMenuOpen) {
-            // მენიუს გახსნისას: ყოველთვის შავი ფონი და თეთრი ელემენტები
             navbar.classList.add('menu-open');
             navbar.classList.remove('scrolled');
             logoImg.src = whiteLogo;
             if (hamburger) hamburger.style.color = '#fff';
         } else {
-            // მენიუს დაკეტვისას
             navbar.classList.remove('menu-open');
             if (isScrolled) {
                 navbar.classList.add('scrolled');
@@ -42,10 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 1. თავდაპირველი გამოძახება, რომ ჩატვირთვისთანავე სწორი ფერები დაჯდეს (მნიშვნელოვანია შიდა გვერდებისთვის)
     handleHeaderAppearance();
-
-    // 2. სქროლის მოვლენა
     window.addEventListener('scroll', handleHeaderAppearance);
 
     // ჰამბურგერის კლიკი
@@ -59,8 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 document.body.style.overflow = ''; 
             }
-            
-            // მყისიერი განახლება მენიუს ანიმაციისას
             handleHeaderAppearance();
         });
     }
@@ -78,5 +67,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 submenu.style.display = parentLi.classList.contains('open') ? 'block' : 'none';
             }
         });
+    });
+
+    // ==========================================
+    // ფუტერის აკორდეონი მობილურისთვის
+    // ==========================================
+    const footerCols = document.querySelectorAll('.footer-col');
+    footerCols.forEach(col => {
+        const title = col.querySelector('h3');
+        if(title) {
+            title.addEventListener('click', () => {
+                if(window.innerWidth <= 768) {
+                    // ხურავს სხვა ღია ტაბებს (სურვილისამებრ)
+                    // footerCols.forEach(c => { if(c !== col) c.classList.remove('active'); });
+                    col.classList.toggle('active');
+                }
+            });
+        }
     });
 });
