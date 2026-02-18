@@ -8,6 +8,10 @@ $t_col4 = ($current_lang == 'en') ? 'News' : 'სიახლეები';
 $t_col5 = ($current_lang == 'en') ? 'Contact' : 'კონტაქტი';
 $t_copy = ($current_lang == 'en') ? '© 2026 JAC All Rights Reserved' : '© 2026 JAC ყველა უფლება დაცულია';
 
+// ბმულები სათაურებისთვის (ენების მიხედვით)
+$news_url    = ($current_lang == 'en') ? home_url('/en/news/') : home_url('/news-ka/');
+$contact_url = ($current_lang == 'en') ? home_url('/en/contact-us/') : home_url('/contact/');
+
 // საკონტაქტო მონაცემები ACF Options-დან ენის მიხედვით
 $phone1  = get_field('contact_phone_1', $opt_id);
 $phone2  = get_field('contact_phone_2', $opt_id);
@@ -24,6 +28,7 @@ $soc_tk = get_field('social_tiktok', $opt_id);
 
 <footer class="footer">
     <div class="footer-grid">
+        
         <div class="footer-col">
             <h3><?php echo esc_html($t_col1); ?></h3>
             <div class="footer-links">
@@ -39,14 +44,14 @@ $soc_tk = get_field('social_tiktok', $opt_id);
         </div>
         
         <div class="footer-col">
-            <h3><?php echo esc_html($t_col4); ?></h3>
+            <h3><a href="<?php echo esc_url($news_url); ?>"><?php echo esc_html($t_col4); ?></a></h3>
             <div class="footer-links">
                 <?php if (has_nav_menu('footer_col_4')) { wp_nav_menu(array('theme_location' => 'footer_col_4', 'container' => false, 'depth' => 1)); } ?>
             </div>
         </div>
 
         <div class="footer-col">
-            <h3><?php echo esc_html($t_col5); ?></h3>
+            <h3><a href="<?php echo esc_url($contact_url); ?>"><?php echo esc_html($t_col5); ?></a></h3>
             <div class="footer-links contact-acf-links">
                 <?php if($phone1): ?><a href="tel:<?php echo esc_attr(str_replace(' ','',$phone1)); ?>"><i class="fa-solid fa-phone"></i> <?php echo esc_html($phone1); ?></a><?php endif; ?>
                 <?php if($phone2): ?><a href="tel:<?php echo esc_attr(str_replace(' ','',$phone2)); ?>"><i class="fa-solid fa-mobile-screen"></i> <?php echo esc_html($phone2); ?></a><?php endif; ?>

@@ -1,0 +1,302 @@
+/* --- COMPANY PAGE EXACT STYLES --- */
+.company-page {
+    background-color: #fff;
+    color: #000;
+}
+
+.company-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.relative-z { position: relative; z-index: 10; width: 100%; }
+
+/* --- ANIMATIONS (Texts & Car) --- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-15%); 
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+
+/* 1. Hero (Video) */
+.company-hero {
+    position: relative;
+    height: 85vh; 
+    min-height: 500px;
+    display: flex;
+    align-items: flex-end; 
+    padding-bottom: 80px;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+.company-hero-bg { position: absolute; inset: 0; z-index: 1; }
+.hero-video { width: 100%; height: 100%; object-fit: cover; }
+.company-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6)); }
+.company-hero-content { position: relative; z-index: 2; width: 100%; }
+.company-hero-content h1 { font-size: clamp(38px, 5vw, 64px); font-weight: 800; margin-bottom: 10px;}
+.company-hero-content p { font-size: clamp(16px, 2vw, 20px); opacity: 0.9; }
+
+/* 2. Factory Image */
+.company-factory-img { width: 100%; line-height: 0; }
+.company-factory-img img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 80vh; }
+
+/* 3. Red Section */
+.company-red-section {
+    background-color: #d11f26; 
+    color: #fff;
+    padding: 80px 0;
+}
+.red-content { max-width: 1400px; margin: 0 auto; text-align: left; }
+.red-content h2 { font-size: 38px; font-weight: 900; margin-bottom: 10px; text-transform: none; }
+.red-content h3 { font-size: 16px; font-weight: 400; margin-bottom: 30px; opacity: 0.9; }
+.red-content p { font-size: 14px; line-height: 1.8; max-width: 1200px; font-weight: 300; }
+
+/* 4. STABLE MOSAIC GRID */
+.company-metrics-section { width: 100%; background: #fff; }
+
+.bg-light { background-color: #e8e8e8; color: #111; }
+.bg-dark { background-color: #2b2b2b; color: #fff; }
+.bg-red { background-color: #d11f26; color: #fff; }
+.bg-white { background-color: #ffffff; color: #111; }
+
+.mosaic-upper-wrap {
+    display: flex;
+    width: 100%;
+}
+
+/* --- მანქანის ბლოკი (ზომა შემცირებულია, კიდეზე ზის) --- */
+.mosaic-car-block {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* მარცხნივ მიბჯენა */
+    padding: 0;
+}
+.mosaic-car-block img {
+    width: 60%; 
+    height: auto;
+    max-height: 100%;
+    object-fit: contain; 
+    object-position: left center; /* აფიქსირებს მარცხენა კიდეზე */
+    transform-origin: left center;
+}
+
+.mosaic-four-grid {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr; 
+}
+
+.mosaic-lower-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.m-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 30px;
+    border-right: 1px solid rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.m-val { display: block; font-size: clamp(36px, 3vw, 54px); font-weight: 900; line-height: 1; margin-bottom: 10px; }
+.m-val sup { font-size: 16px; font-weight: 700; top: -1em; position: relative;}
+.m-val sup.sup-right { top: -0.2em; margin-left: 5px; } 
+.m-label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.4; opacity: 0.9;}
+
+
+/* 5. Brand Honors */
+.company-honors { padding: 100px 0; text-align: center; background: #f9f9f9; }
+.honors-header h2 { font-size: 36px; font-weight: 900; margin-bottom: 10px; color: #000; }
+.honors-header p { font-size: 16px; color: #666; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 1px;}
+
+.honors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 20px;
+}
+.honor-card { display: flex; flex-direction: column; align-items: center; }
+.honor-card i { font-size: 40px; color: #111; margin-bottom: 20px; transition: transform 0.3s; }
+.honor-card:hover i { transform: scale(1.1); color: #d11f26; }
+.honor-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; color: #111; max-width: 250px;}
+.honor-card .honor-year { font-size: 13px; color: #888; font-weight: 600; }
+
+/* 6. Global Resources */
+.company-global { 
+    position: relative; 
+    height: 500px; 
+    display: flex; 
+    align-items: center; 
+    overflow: hidden; 
+}
+.global-img-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; z-index: 1; }
+
+.company-global::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 30%, rgba(255,255,255,0) 60%);
+    z-index: 2;
+}
+
+.content-align-left {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.global-content { 
+    position: relative; 
+    z-index: 3; 
+    max-width: 500px; 
+    text-align: left; 
+}
+.global-content h2 { font-size: clamp(32px, 3.5vw, 44px); font-weight: 900; color: #000; line-height: 1.2; margin-bottom: 20px; }
+.global-content p { font-size: 15px; color: #333; line-height: 1.6; font-weight: 600; }
+
+/* 7. Global Metrics Box */
+.company-global-metrics { padding: 60px 0 80px; background: #fff; }
+.g-metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+.g-metric-box {
+    border: 2px solid #d11f26; 
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    background: #fff;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.g-metric-box:hover { box-shadow: 0 10px 30px rgba(209, 31, 38, 0.15); }
+.g-val { display: block; font-size: clamp(32px, 3vw, 42px); font-weight: 900; margin-bottom: 10px; color: #000; }
+.g-lbl { display: block; font-size: 14px; font-weight: 500; color: #000; line-height: 1.4; }
+
+/* 8. Future Section */
+.company-future { text-align: center; background: #fff;}
+.future-header { padding: 40px 0; }
+.future-header h2 { font-size: 36px; font-weight: 900; margin-bottom: 10px; color: #000;}
+.future-header p { color: #666; font-size: 16px; }
+
+.future-banner { position: relative; height: 500px; display: flex; align-items: center; text-align: left; }
+.future-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.future-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 2; }
+.future-content { position: relative; z-index: 3; max-width: 700px; color: #fff; }
+.future-content h2 { font-size: 38px; font-weight: 900; line-height: 1.3; margin-bottom: 30px; }
+.future-content p { font-size: 14px; line-height: 1.8; opacity: 0.9; font-weight: 300;}
+
+/* 9. Contact Header */
+.contact-section-header {
+    background-color: #fff;
+    padding: 80px 0 30px;
+    text-align: center;
+}
+.contact-section-header h2 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* 10. Contact Banner */
+.company-contact-banner { 
+    position: relative; 
+    height: 400px; 
+}
+.company-contact-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.company-contact-banner::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 2; }
+
+.full-height-container {
+    height: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+/* ლოკალური ინფორმაცია */
+.sena-contact-block { 
+    max-width: 500px; 
+    color: #fff; 
+    background: rgba(0,0,0,0.4); 
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid #d11f26;
+    backdrop-filter: blur(5px);
+}
+.sena-title { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 5px; letter-spacing: 1px;}
+.red-s { color: #d11f26; } 
+.sena-subtitle { font-size: 12px; color: #ccc; font-weight: 600; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px;}
+
+.sena-details { display: flex; flex-direction: column; gap: 15px; }
+.contact-line { display: flex; align-items: flex-start; gap: 15px; font-size: 14px; line-height: 1.6; color: #ddd; }
+.contact-icon { color: #d11f26; font-size: 18px; margin-top: 2px; }
+.contact-line strong { color: #fff; margin-right: 5px; text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px;}
+.contact-line a { color: #fff; transition: color 0.3s; }
+.contact-line a:hover { color: #d11f26; }
+
+
+/* === RESPONSIVE (Mobiles) === */
+@media (max-width: 1024px) {
+    .mosaic-upper-wrap { flex-direction: column; }
+    .mosaic-car-block { width: 100%; height: 400px; padding: 0; }
+    .mosaic-car-block img { width: 80%; object-position: center; } /* პლანშეტზე ცენტრში */
+    .mosaic-four-grid { width: 100%; }
+    .mosaic-lower-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    .honors-grid { grid-template-columns: repeat(2, 1fr); }
+    .g-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .company-hero { height: 60vh; min-height: 400px; padding-bottom: 40px; }
+    .company-red-section { padding: 50px 0; text-align: left; }
+    .red-content h2 { font-size: 28px; }
+    
+    .mosaic-four-grid, .mosaic-lower-grid { grid-template-columns: 1fr; }
+    .mosaic-car-block { height: 250px; padding: 0; }
+    .mosaic-car-block img { width: 95%; object-position: center; } 
+    .m-box { padding: 50px 20px; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+    
+    .company-honors { padding: 60px 0; }
+    .honors-grid { grid-template-columns: 1fr; gap: 40px; }
+    
+    .company-global { height: 400px; text-align: left;}
+    .company-global::before { background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 100%); }
+    .global-content h2 { font-size: 28px; }
+    
+    .g-metrics-grid { grid-template-columns: 1fr; }
+    
+    .future-content h2 { font-size: 28px; }
+    .future-banner { height: 450px; }
+    
+    .contact-section-header { padding: 60px 0 20px; }
+    .contact-section-header h2 { font-size: 28px; }
+    
+    .company-contact-banner { height: auto; }
+    .full-height-container { padding-top: 40px; padding-bottom: 40px; justify-content: center; }
+    .sena-contact-block { margin: 0 auto; border-left: none; border-top: 4px solid #d11f26; }
+}

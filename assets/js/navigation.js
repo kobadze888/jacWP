@@ -70,16 +70,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================
-    // ფუტერის აკორდეონი მობილურისთვის
+    // ფუტერის აკორდეონი მობილურისთვის (განახლებული)
     // ==========================================
     const footerCols = document.querySelectorAll('.footer-col');
     footerCols.forEach(col => {
         const title = col.querySelector('h3');
         if(title) {
-            title.addEventListener('click', () => {
+            title.addEventListener('click', (e) => {
                 if(window.innerWidth <= 768) {
-                    // ხურავს სხვა ღია ტაბებს (სურვილისამებრ)
-                    // footerCols.forEach(c => { if(c !== col) c.classList.remove('active'); });
+                    // თუ დააკლიკეს უშუალოდ ლინკის ტექსტზე, ვატარებთ სხვა გვერდზე 
+                    // და აკორდეონს არ ვხსნით
+                    if (e.target.closest('a')) {
+                        return; 
+                    }
                     col.classList.toggle('active');
                 }
             });

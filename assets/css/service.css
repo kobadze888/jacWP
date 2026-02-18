@@ -1,0 +1,329 @@
+/* --- SERVICE PAGE STYLES --- */
+.service-page-wrapper {
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+
+/* 1. Hero Header */
+.service-hero {
+    background: #000;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 150px; 
+    text-align: center;
+    color: #fff;
+}
+
+.service-hero-inner {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.service-hero-inner h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.service-hero-inner p {
+    font-size: clamp(16px, 2vw, 20px);
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.service-container {
+    max-width: 1300px;
+    margin: -120px auto 0; 
+    padding: 0 5%;
+    position: relative;
+    z-index: 10;
+}
+
+/* 2. მთავარი ფოტო */
+.service-featured-image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    margin-bottom: 50px;
+    background: #fff;
+}
+
+.service-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 600px; 
+}
+
+/* 3. Intro & Warranty */
+.service-intro-section {
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.intro-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro-content h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.intro-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.warranty-badge {
+    background: #fdf2f2;
+    border-left: 4px solid #d11f26;
+    padding: 25px 30px;
+    border-radius: 0 16px 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+}
+
+.warranty-icon i {
+    font-size: 32px;
+    color: #d11f26;
+}
+
+.warranty-text {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.warranty-text strong {
+    color: #000;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* 4. Services Grid */
+.services-grid-section {
+    margin-bottom: 60px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-color: #eee;
+}
+
+.service-icon {
+    width: 54px;
+    height: 54px;
+    background: #f4f6f9;
+    color: #000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.service-card:hover .service-icon {
+    background: #d11f26;
+    color: #fff;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* 5. Contact Block & Map */
+.service-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.service-contact-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.service-contact-card h2 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.service-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.s-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
+}
+
+.s-icon-wrap {
+    width: 50px;
+    height: 50px;
+    background: #f4f6f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d11f26;
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.s-contact-row:hover .s-icon-wrap {
+    background: #d11f26;
+    color: #fff;
+}
+
+.s-contact-row a { transition: color 0.3s; }
+.s-contact-row a:hover { color: #d11f26; }
+
+/* გამორჩეული მენეჯერის ბლოკი და გასწორებული ანიმაცია */
+.highlight-phone {
+    background: #fcfcfc;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+}
+
+.pulse-icon {
+    background: #d11f26;
+    color: #fff;
+    /* Scale ამოღებულია. ვიყენებთ მხოლოდ ჩრდილს რათა აიქონმა არ იმოძრაოს უშნოდ */
+    animation: pulseShadow 2s infinite ease-out;
+}
+
+@keyframes pulseShadow {
+    0% { box-shadow: 0 0 0 0 rgba(209, 31, 38, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(209, 31, 38, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(209, 31, 38, 0); }
+}
+
+.manager-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.m-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 700;
+}
+
+.manager-info a {
+    font-size: 22px;
+    font-weight: 800;
+    color: #000;
+}
+.manager-info a:hover { color: #d11f26; }
+
+/* რუკის ბარათი */
+.service-map-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    min-height: 400px; /* აიძულებს რუკას იყოს სიმაღლეში კონტაქტების ტოლი */
+}
+
+.service-map-card iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .service-bottom-grid { grid-template-columns: 1fr; }
+    .service-map-card { min-height: 350px; }
+}
+
+@media (max-width: 768px) {
+    .service-hero { min-height: 350px; padding-top: 130px; padding-bottom: 120px; }
+    .service-container { margin-top: -80px; }
+    .service-featured-image { border-radius: 12px; margin-bottom: 30px; }
+    
+    .service-intro-section { padding: 30px 25px; flex-direction: column; gap: 30px; }
+    .intro-content h2 { font-size: 22px; }
+    
+    .warranty-badge { 
+        padding: 20px; 
+        border-radius: 12px; 
+        border-left: none; 
+        border-top: 4px solid #d11f26; 
+        flex-direction: column; 
+        text-align: center; 
+    }
+    
+    .services-grid { grid-template-columns: 1fr; gap: 15px; }
+    .service-card { padding: 20px; border-radius: 12px; }
+    
+    .service-contact-card { padding: 40px 25px; }
+    .s-contact-row { font-size: 15px; align-items: flex-start; }
+    .highlight-phone { padding: 20px; flex-direction: column; align-items: flex-start; }
+    .service-map-card { height: 350px; }
+}
