@@ -44,6 +44,10 @@ function jac_enqueue_scripts()
     if (is_page_template('page-company.php')) {
         wp_enqueue_style('jac-company', get_template_directory_uri() . '/assets/css/company.css', array(), '1.0');
     }
+    // ისტორიის გვერდის სტილი
+    if (is_page_template('page-history.php')) {
+        wp_enqueue_style('jac-history', get_template_directory_uri() . '/assets/css/history.css', array(), '1.0');
+    }
     if (is_single()) {
         wp_enqueue_style('jac-single', get_template_directory_uri() . '/assets/css/single.css', array(), '1.2');
         wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css', array(), '5.0');
@@ -122,3 +126,43 @@ function jac_load_more_news()
 }
 add_action('wp_ajax_load_more_news', 'jac_load_more_news');
 add_action('wp_ajax_nopriv_load_more_news', 'jac_load_more_news');
+
+/**
+ * JAC Motors - Models Slider-ის ავტომატური სინქრონიზაცია (KA -> EN)
+ */
+add_action('acf/save_post', 'sync_jac_models_repeater', 20);
+
+function sync_jac_models_repeater($post_id) {
+    // არაფერი გავაკეთოთ, თუ პოსტი ავტომატურად ინახება
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+    // შემოწმება არის თუ არა Polylang აქტიური
+    if (!function_exists('pll_get_post_language') || !function_exists('pll_get_post')) return;
+
+    $current_lang = pll_get_post_language($post_id);
+    
+    // სინქრონიზაცია მოხდეს მხოლოდ მაშინ, როცა ინგლისურ გვერდს ვინახავთ
+    if ($current_lang == 'en') {
+        
+        // ვიპოვოთ შესაბამისი ქართული გვერდი
+        $georgian_post_id = pll_get_post($post_id, 'ka');
+
+        if ($georgian_post_id && $georgian_post_id != $post_id) {
+            
+            $repeater_slug = 'models_slider';
+
+            // ავიღოთ მონაცემები ქართულიდან
+            $georgian_values = get_field($repeater_slug, $georgian_post_id);
+            
+            // ავიღოთ მიმდინარე ინგლისური მონაცემები
+            $english_values = get_field($repeater_slug, $post_id);
+
+            // თუ ინგლისური ვერსია ცარიელია, გადავაკოპიროთ ქართულიდან
+            if (empty($english_values) && !empty($georgian_values)) {
+                
+                // ACF-ს სჭირდება სუფთა მასივი update_field-ისთვის
+                update_field($repeater_slug, $georgian_values, $post_id);
+            }
+        }
+    }
+}
