@@ -14,6 +14,9 @@ get_header(); ?>
 
     // News სექცია
     get_template_part('template-parts/content', 'news');
+    
+    // ახალი: History Teaser (Wonderful JAC სტილში)
+    get_template_part('template-parts/content', 'service-teaser');
     ?>
 </main>
 

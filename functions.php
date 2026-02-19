@@ -58,6 +58,7 @@ function jac_enqueue_scripts()
     if (is_front_page()) {
         wp_enqueue_style('jac-hero', get_template_directory_uri() . '/assets/css/hero.css', array(), '1.2');
         wp_enqueue_style('jac-explore', get_template_directory_uri() . '/assets/css/explore.css', array(), '1.2');
+        wp_enqueue_style('jac-history-teaser', get_template_directory_uri() . '/assets/css/service-teaser.css', array(), '1.0');
     }
 
     // Scripts
@@ -127,42 +128,3 @@ function jac_load_more_news()
 add_action('wp_ajax_load_more_news', 'jac_load_more_news');
 add_action('wp_ajax_nopriv_load_more_news', 'jac_load_more_news');
 
-/**
- * JAC Motors - Models Slider-ის ავტომატური სინქრონიზაცია (KA -> EN)
- */
-add_action('acf/save_post', 'sync_jac_models_repeater', 20);
-
-function sync_jac_models_repeater($post_id) {
-    // არაფერი გავაკეთოთ, თუ პოსტი ავტომატურად ინახება
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-
-    // შემოწმება არის თუ არა Polylang აქტიური
-    if (!function_exists('pll_get_post_language') || !function_exists('pll_get_post')) return;
-
-    $current_lang = pll_get_post_language($post_id);
-    
-    // სინქრონიზაცია მოხდეს მხოლოდ მაშინ, როცა ინგლისურ გვერდს ვინახავთ
-    if ($current_lang == 'en') {
-        
-        // ვიპოვოთ შესაბამისი ქართული გვერდი
-        $georgian_post_id = pll_get_post($post_id, 'ka');
-
-        if ($georgian_post_id && $georgian_post_id != $post_id) {
-            
-            $repeater_slug = 'models_slider';
-
-            // ავიღოთ მონაცემები ქართულიდან
-            $georgian_values = get_field($repeater_slug, $georgian_post_id);
-            
-            // ავიღოთ მიმდინარე ინგლისური მონაცემები
-            $english_values = get_field($repeater_slug, $post_id);
-
-            // თუ ინგლისური ვერსია ცარიელია, გადავაკოპიროთ ქართულიდან
-            if (empty($english_values) && !empty($georgian_values)) {
-                
-                // ACF-ს სჭირდება სუფთა მასივი update_field-ისთვის
-                update_field($repeater_slug, $georgian_values, $post_id);
-            }
-        }
-    }
-}

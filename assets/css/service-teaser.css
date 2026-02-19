@@ -1,0 +1,125 @@
+/* --- SERVICE TEASER SECTION (FRONT PAGE) --- */
+.service-teaser-section {
+    width: 100%;
+    padding: 60px 5% 100px; /* დაშორებები ზემოთ-ქვემოთ და გვერდებზე */
+    background-color: #ececec; /* ერწყმის წინა (სიახლეების) სექციის ფონს */
+}
+
+/* ვიდეოს კონტეინერი - მომრგვალებული კუთხეებით და შეზღუდული სიგანით */
+.st-inner-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 550px; /* სქრინის პროპორცია */
+    border-radius: 20px; /* მომრგვალებული კუთხეები */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.st-video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* გრადიენტული დამუქება მარცხნივ, რომ თეთრი ტექსტი იკითხებოდეს */
+.st-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 100%);
+    z-index: 2;
+}
+
+.st-container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 0 8%; /* ტექსტის შეწევა მარცხნიდან */
+}
+
+.st-content {
+    max-width: 550px; 
+    color: #fff;
+}
+
+.st-title {
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.st-desc {
+    font-size: clamp(15px, 1.5vw, 18px);
+    line-height: 1.6;
+    color: #f4f4f4;
+    margin-bottom: 40px;
+    font-weight: 400;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.st-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.st-btn:hover {
+    background-color: #d11f26; 
+    transform: translateY(-3px);
+}
+
+/* ანიმაცია შემოსვლისას */
+.st-container.fade-up {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.st-container.fade-up.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .service-teaser-section {
+        padding: 40px 5% 60px; 
+    }
+
+    .st-inner-wrapper {
+        height: 450px;
+        border-radius: 16px; /* მობილურზე კუთხე ოდნავ ნაკლებია */
+        align-items: flex-end; /* ტექსტი ჩამოდის ქვემოთ */
+    }
+    
+    .st-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+    }
+
+    .st-container {
+        padding: 0 20px 40px 20px; 
+    }
+
+    .st-content {
+        max-width: 100%;
+    }
+    
+    .st-title { font-size: 28px; }
+    .st-desc { font-size: 15px; margin-bottom: 25px; }
+}
