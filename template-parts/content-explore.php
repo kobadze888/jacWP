@@ -1,7 +1,13 @@
 <?php
 /**
- * Explore Section (Strict Original Structure with ACF Mapping)
+ * Explore Section (Strict Original Structure with ACF Mapping & Translations)
  */
+$current_lang = function_exists('pll_current_language') ? pll_current_language() : 'ka';
+
+// სტატიკური ტექსტების თარგმანები
+$explore_title = ($current_lang == 'en') ? 'Discover JAC Models' : 'აღმოაჩინე JAC მოდელები';
+$explore_btn   = ($current_lang == 'en') ? 'All Models' : 'ყველა მოდელი';
+
 $repeater = get_field('models_slider');
 $all_models_url = get_field('all_models_link');
 $js_vehicles_data = array();
@@ -11,7 +17,11 @@ $unique_types = array();
 if( is_array($repeater) ) {
     foreach($repeater as $row) {
         $type_slug = $row['model_type']; // sedan-suv, truck-van, pickup
-        $type_label = ($type_slug == 'sedan-suv') ? 'SEDAN & SUV' : (($type_slug == 'truck-van') ? 'TRUCK & VAN' : 'PICKUP');
+        
+        // კატეგორიების თარგმანი
+        $type_label_en = ($type_slug == 'sedan-suv') ? 'SEDAN & SUV' : (($type_slug == 'truck-van') ? 'TRUCK & VAN' : 'PICKUP');
+        $type_label_ka = ($type_slug == 'sedan-suv') ? 'სედანი & SUV' : (($type_slug == 'truck-van') ? 'სატვირთო & ვენი' : 'პიკაპი');
+        $type_label = ($current_lang == 'en') ? $type_label_en : $type_label_ka;
         
         // ვინახავთ უნიკალურ ტიპებს ტაბებისთვის
         if(!isset($unique_types[$type_slug])) {
@@ -36,7 +46,7 @@ if( is_array($repeater) ) {
 
 <section class="explore-section">
     <h2 class="section-title">
-        <?php if(function_exists('pll_e')) { pll_e('Discover JAC Models'); } else { echo 'Discover JAC Models'; } ?>
+        <?php echo esc_html($explore_title); ?>
     </h2>
 
     <div class="type-tabs">
@@ -49,7 +59,7 @@ if( is_array($repeater) ) {
         ?>
             <div class="type-tab <?php echo $active_tab; ?>" data-type="<?php echo $slug; ?>">
                 <i class="fa-solid <?php echo $icon_class; ?> tab-icon"></i>
-                <span><?php echo $label; ?></span>
+                <span><?php echo esc_html($label); ?></span>
             </div>
         <?php $idx++; endforeach; ?>
     </div>
@@ -69,7 +79,7 @@ if( is_array($repeater) ) {
     <?php if($all_models_url): ?>
         <a href="<?php echo esc_url($all_models_url); ?>">
             <button class="btn-black-pill">
-                <?php if(function_exists('pll_e')) { pll_e('All Models'); } else { echo 'All Models'; } ?>
+                <?php echo esc_html($explore_btn); ?>
             </button>
         </a>
     <?php endif; ?>
