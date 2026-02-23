@@ -135,3 +135,29 @@ add_action('wp_ajax_nopriv_load_more_news', 'jac_load_more_news');
 add_filter('pll_sync_post_metas', '__return_empty_array');
 add_filter('pll_copy_post_metas', '__return_empty_array');
 
+
+/**
+ * ავტომატური სინქრონიზაცია ქართული მოდელებიდან ინგლისურზე
+ */
+add_action('acf/save_post', 'sync_jac_models_ka_to_en', 20);
+
+function sync_jac_models_ka_to_en($post_id) {
+    // ვამოწმებთ, რომ ვინახავთ ზუსტად ქართულ "Models" გვერდს
+    if ($post_id != 260) {
+        return;
+    }
+
+    // ვიღებთ ახალ მონაცემებს (გამოვიყენოთ $post_id ჰარდკოდის ნაცვლად)
+    $models = get_field('showroom_models', $post_id);
+
+    if ($models) {
+        // დროებით ვთიშავთ ამავე ფუნქციას, რომ update_field-მა ხელახლა არ გამოიძახოს ის
+        remove_action('acf/save_post', 'sync_jac_models_ka_to_en', 20);
+        
+        // ვაახლებთ ინგლისურ გვერდს
+        update_field('showroom_models', $models, 334);
+        
+        // ისევ ვაბრუნებთ ფუნქციას მოქმედებაში
+        add_action('acf/save_post', 'sync_jac_models_ka_to_en', 20);
+    }
+}

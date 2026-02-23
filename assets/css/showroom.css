@@ -1,47 +1,121 @@
-/* Showroom V3 Styles */
-.jac-showroom-v3 { background: #fff; padding-bottom: 100px; color: #000; }
-.jac-showroom-v3 .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
+/* Cinematic Showroom Core */
+.cinematic-showroom { background: #ffffff; padding-bottom: 120px; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+.cinematic-showroom .container { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
 
-/* Header */
-.showroom-header-minimal { padding: 80px 0 30px; }
-.page-main-title { font-size: 50px; font-weight: 900; letter-spacing: -2px; text-transform: uppercase; }
+/* Intro Hero */
+.showroom-intro-hero { padding: 120px 0 40px; text-align: left; }
+.hero-title { font-size: clamp(32px, 5vw, 64px); font-weight: 900; letter-spacing: -3px; color: #000; text-transform: uppercase; line-height: 0.9; }
+.line-decorator { width: 80px; height: 6px; background: #d11f26; margin-top: 30px; }
 
-/* Filter Nav - ზუსტად ისეთი, როგორიც ითხოვე */
-.showroom-filter-nav { position: sticky; top: 70px; z-index: 1000; background: #fff; border-bottom: 1px solid #eee; margin-bottom: 50px; }
-.filter-flex { display: flex; justify-content: center; gap: 5px; padding: 15px 0; overflow-x: auto; white-space: nowrap; }
-.showroom-filter-btn { background: none; border: none; padding: 10px 20px; font-size: 13px; font-weight: 800; color: #888; cursor: pointer; text-transform: uppercase; transition: 0.3s; position: relative; }
-.showroom-filter-btn:after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: #d71920; transition: 0.3s; transform: translateX(-50%); }
-.showroom-filter-btn.active, .showroom-filter-btn:hover { color: #000; }
-.showroom-filter-btn.active:after { width: 50%; }
+/* STICKY FILTER - Glassmorphism UI */
+.sticky-filter-bar { 
+    position: sticky; 
+    top: 70px; /* ჰედერის სიმაღლე */
+    z-index: 1000; 
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(20px); 
+    border-bottom: 1px solid #f0f0f0; 
+}
 
-/* Sections */
-.showroom-cat-section { margin-bottom: 80px; scroll-margin-top: 160px; }
-.cat-header { border-bottom: 1px solid #eee; margin-bottom: 35px; padding-bottom: 10px; }
-.cat-label { font-size: 16px; font-weight: 900; letter-spacing: 2px; color: #d71920; text-transform: uppercase; }
+.filter-flex { 
+    display: flex; 
+    justify-content: center; 
+    gap: 12px; 
+    padding: 20px 0; 
+    overflow-x: auto; 
+    scrollbar-width: none; 
+}
 
-/* Grid System - ფოტოების ზომაზე მორგებული */
-.showroom-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-.model-card { background: #fbfbfb; border: 1px solid #f0f0f0; border-radius: 4px; transition: 0.4s; position: relative; }
-.model-card:hover { background: #fff; border-color: #000; box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+.f-pill { 
+    padding: 10px 24px; 
+    border-radius: 50px; 
+    border: 1px solid #e0e0e0; 
+    background: #fff; 
+    font-size: 13px; 
+    font-weight: 700; 
+    color: #666; 
+    cursor: pointer; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    white-space: nowrap; 
+    text-transform: uppercase;
+}
 
-.model-img-box { height: 180px; display: flex; align-items: center; justify-content: center; padding: 20px; }
-.model-img-box img { max-width: 170px; max-height: 120px; width: auto; height: auto; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05)); transition: 0.4s; }
-.model-card:hover img { transform: scale(1.1); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1)); }
+.f-pill.active, .f-pill:hover { 
+    background: #000; 
+    color: #fff; 
+    border-color: #000; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 
-.model-details { padding: 25px; text-align: center; }
-.model-title { font-size: 20px; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; letter-spacing: -0.5px; }
+/* Category Sections */
+.model-group-section { margin-bottom: 100px; scroll-margin-top: 150px; }
+.group-label { display: flex; align-items: center; gap: 15px; margin-bottom: 40px; border-bottom: 2px solid #000; padding-bottom: 10px; width: fit-content; }
+.group-label h2 { font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+.count-tag { background: #f0f0f0; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 800; color: #d11f26; }
 
-.model-link-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 900; color: #000; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; padding-bottom: 3px; }
-.model-link-btn:hover { color: #d71920; border-color: #d71920; }
-.model-link-btn svg { transition: 0.3s; }
-.model-link-btn:hover svg { transform: translateX(4px); }
+/* The Studio Card - მორგებული 170x120 ფოტოებზე */
+.studio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; }
+.car-studio-card { background: #fff; transition: all 0.5s ease; border-radius: 8px; }
 
-/* Responsive */
+.car-platform { 
+    height: 220px; 
+    background: #f8f8f8; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.car-platform img { 
+    max-width: 170px; 
+    max-height: 120px; 
+    z-index: 2; 
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+}
+
+.platform-reflection {
+    position: absolute;
+    bottom: 30px;
+    width: 150px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0) 70%);
+    z-index: 1;
+}
+
+.car-studio-card:hover .car-platform img { transform: translateY(-15px) scale(1.1); }
+.car-studio-card:hover .car-platform { background: #f0f0f0; }
+
+.car-info-box { padding: 25px 5px; }
+.car-model-title { font-size: 24px; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+
+.car-details-btn { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 12px; 
+    font-size: 12px; 
+    font-weight: 900; 
+    color: #000; 
+    text-decoration: none; 
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.car-details-btn svg { transition: 0.3s; color: #d11f26; }
+.car-details-btn:hover { color: #d11f26; }
+.car-details-btn:hover svg { transform: translateX(6px); }
+
+/* Reveal Animation */
+.reveal-item { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
+.reveal-item.active { opacity: 1; transform: translateY(0); }
+
+/* Mobile Adaptations */
 @media (max-width: 768px) {
-    .page-main-title { font-size: 34px; }
-    .filter-flex { justify-content: flex-start; padding-left: 20px; }
-    .showroom-grid { grid-template-columns: 1fr; }
-    .model-card { display: flex; align-items: center; text-align: left; padding: 10px; }
-    .model-img-box { height: 120px; width: 150px; flex-shrink: 0; }
-    .model-details { text-align: left; padding: 10px 20px; }
+    .cinematic-showroom .container { padding: 0 20px; }
+    .hero-title { font-size: 36px; }
+    .sticky-filter-bar { top: 55px; } /* მობილური ჰედერის სიმაღლე */
+    .filter-flex { justify-content: flex-start; padding-left: 10px; }
+    .studio-grid { grid-template-columns: 1fr; }
 }
