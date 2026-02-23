@@ -1,0 +1,47 @@
+/* Showroom V3 Styles */
+.jac-showroom-v3 { background: #fff; padding-bottom: 100px; color: #000; }
+.jac-showroom-v3 .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.showroom-header-minimal { padding: 80px 0 30px; }
+.page-main-title { font-size: 50px; font-weight: 900; letter-spacing: -2px; text-transform: uppercase; }
+
+/* Filter Nav - ზუსტად ისეთი, როგორიც ითხოვე */
+.showroom-filter-nav { position: sticky; top: 70px; z-index: 1000; background: #fff; border-bottom: 1px solid #eee; margin-bottom: 50px; }
+.filter-flex { display: flex; justify-content: center; gap: 5px; padding: 15px 0; overflow-x: auto; white-space: nowrap; }
+.showroom-filter-btn { background: none; border: none; padding: 10px 20px; font-size: 13px; font-weight: 800; color: #888; cursor: pointer; text-transform: uppercase; transition: 0.3s; position: relative; }
+.showroom-filter-btn:after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: #d71920; transition: 0.3s; transform: translateX(-50%); }
+.showroom-filter-btn.active, .showroom-filter-btn:hover { color: #000; }
+.showroom-filter-btn.active:after { width: 50%; }
+
+/* Sections */
+.showroom-cat-section { margin-bottom: 80px; scroll-margin-top: 160px; }
+.cat-header { border-bottom: 1px solid #eee; margin-bottom: 35px; padding-bottom: 10px; }
+.cat-label { font-size: 16px; font-weight: 900; letter-spacing: 2px; color: #d71920; text-transform: uppercase; }
+
+/* Grid System - ფოტოების ზომაზე მორგებული */
+.showroom-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.model-card { background: #fbfbfb; border: 1px solid #f0f0f0; border-radius: 4px; transition: 0.4s; position: relative; }
+.model-card:hover { background: #fff; border-color: #000; box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+
+.model-img-box { height: 180px; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.model-img-box img { max-width: 170px; max-height: 120px; width: auto; height: auto; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05)); transition: 0.4s; }
+.model-card:hover img { transform: scale(1.1); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1)); }
+
+.model-details { padding: 25px; text-align: center; }
+.model-title { font-size: 20px; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; letter-spacing: -0.5px; }
+
+.model-link-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 900; color: #000; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; padding-bottom: 3px; }
+.model-link-btn:hover { color: #d71920; border-color: #d71920; }
+.model-link-btn svg { transition: 0.3s; }
+.model-link-btn:hover svg { transform: translateX(4px); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-main-title { font-size: 34px; }
+    .filter-flex { justify-content: flex-start; padding-left: 20px; }
+    .showroom-grid { grid-template-columns: 1fr; }
+    .model-card { display: flex; align-items: center; text-align: left; padding: 10px; }
+    .model-img-box { height: 120px; width: 150px; flex-shrink: 0; }
+    .model-details { text-align: left; padding: 10px 20px; }
+}

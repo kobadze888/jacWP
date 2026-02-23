@@ -48,6 +48,9 @@ function jac_enqueue_scripts()
     if (is_page_template('page-history.php')) {
         wp_enqueue_style('jac-history', get_template_directory_uri() . '/assets/css/history.css', array(), '1.0');
     }
+    if (is_page_template('page-models.php')) {
+        wp_enqueue_style('jac-showroom', get_template_directory_uri() . '/assets/css/showroom.css', array(), '1.1');
+    }
     if (is_single()) {
         wp_enqueue_style('jac-single', get_template_directory_uri() . '/assets/css/single.css', array(), '1.2');
         wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css', array(), '5.0');
@@ -127,4 +130,8 @@ function jac_load_more_news()
 }
 add_action('wp_ajax_load_more_news', 'jac_load_more_news');
 add_action('wp_ajax_nopriv_load_more_news', 'jac_load_more_news');
+
+// Disable Polylang ACF Sync
+add_filter('pll_sync_post_metas', '__return_empty_array');
+add_filter('pll_copy_post_metas', '__return_empty_array');
 
