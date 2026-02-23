@@ -147,7 +147,7 @@ function sync_jac_models_ka_to_en($post_id) {
         return;
     }
 
-    // ვიღებთ ახალ მონაცემებს (გამოვიყენოთ $post_id ჰარდკოდის ნაცვლად)
+    // ვიღებთ ახალ მონაცემებს
     $models = get_field('showroom_models', $post_id);
 
     if ($models) {
@@ -161,3 +161,37 @@ function sync_jac_models_ka_to_en($post_id) {
         add_action('acf/save_post', 'sync_jac_models_ka_to_en', 20);
     }
 }
+
+
+/* ========================================================
+   კომენტარების ძირფესვიანად გათიშვა (DISABLE ALL COMMENTS)
+======================================================== */
+
+// 1. ვთიშავთ კომენტარების მხარდაჭერას ყველა პოსტ-ტიპისთვის (Post, Page, ა.შ.)
+add_action('admin_init', function () {
+    $post_types = get_post_types();
+    foreach ($post_types as $post_type) {
+        if (post_type_supports($post_type, 'comments')) {
+            remove_post_type_support($post_type, 'comments');
+            remove_post_type_support($post_type, 'trackbacks');
+        }
+    }
+});
+
+// 2. ვხურავთ კომენტარებს და პინგებს ფრონტზე (Frontend)
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// 3. ვმალავთ უკვე არსებულ (ძველ) კომენტარებს ფრონტზე, თუკი სადმე შემორჩა
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// 4. ვშლით "Comments" მენიუს ადმინ პანელიდან (Dashboard მარცხენა მენიუ)
+add_action('admin_menu', function () {
+    remove_menu_page('edit-comments.php');
+});
+
+// 5. ვშლით კომენტარების აიქონს ზედა შავი ადმინ ბარიდან (Admin Bar)
+add_action('wp_before_admin_bar_render', function () {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+});
