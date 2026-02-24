@@ -40,15 +40,15 @@ $t = [
     'int_title' => ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.',
 ];
 
-// 7 ფერის მასივი
+// 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
 $colors = [
-    ['name' => 'Polar Night Black', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/PolarNightBlack.114aa8a.png', 'hex' => '#1B1C1D'],
-    ['name' => 'Forest Green',      'img' => 'https://jacen.jac.com.cn/_nuxt/img/ForestGreen.780b437.png', 'hex' => '#2A3A32'],
-    ['name' => 'Pearl White',       'img' => 'https://jacen.jac.com.cn/_nuxt/img/PearlWhite.22cd990.png', 'hex' => '#E8E9EB'],
-    ['name' => 'Space Gray',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/SpaceGray.8bbd75f.png', 'hex' => '#5A5A5C'],
-    ['name' => 'Azure Blue',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/AzureBlue.b5b9b3f.png', 'hex' => '#445D73'],
-    ['name' => 'Crystal Purple',    'img' => 'https://jacen.jac.com.cn/_nuxt/img/CrystalPurple.b87b711.png', 'hex' => '#63556A'],
-    ['name' => 'Cream Yellow',      'img' => 'https://jacen.jac.com.cn/_nuxt/img/CreamYellow.614f0d0.png', 'hex' => '#D3C7B5'],
+    ['name' => 'Forest Green',      'img' => 'https://jacen.jac.com.cn/_nuxt/img/ForestGreen.780b437.png', 'hex' => '#25796a'],
+    ['name' => 'Pearl White',       'img' => 'https://jacen.jac.com.cn/_nuxt/img/PearlWhite.22cd990.png', 'hex' => '#e8e9ec'],
+    ['name' => 'Space Gray',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/SpaceGray.8bbd75f.png', 'hex' => '#4f5459'],
+    ['name' => 'Azure Blue',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/AzureBlue.b5b9b3f.png', 'hex' => '#c5ccd1'],
+    ['name' => 'Crystal Purple',    'img' => 'https://jacen.jac.com.cn/_nuxt/img/CrystalPurple.b87b711.png', 'hex' => '#a59bb0'],
+    ['name' => 'Cream Yellow',      'img' => 'https://jacen.jac.com.cn/_nuxt/img/CreamYellow.614f0d0.png', 'hex' => '#dcd3c6'],
+    ['name' => 'Polar Night Black', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/PolarNightBlack.114aa8a.png', 'hex' => '#181818'],
 ];
 ?>
 
@@ -90,17 +90,21 @@ $colors = [
             </div>
 
             <div class="color-picker-wrap fade-up delay-2">
-                <p class="color-hint"><?php echo esc_html($t['col_hint']); ?></p>
+                <div class="color-divider">
+                    <span class="color-hint"><?php echo esc_html($t['col_hint']); ?></span>
+                </div>
                 <div class="color-dots">
                     <?php foreach($colors as $index => $c): ?>
-                        <span class="color-dot <?php echo ($index == 0) ? 'active' : ''; ?>" 
+                        <button class="color-dot <?php echo ($index == 0) ? 'active' : ''; ?>" 
                               data-name="<?php echo esc_attr($c['name']); ?>" 
                               data-img="<?php echo esc_url($c['img']); ?>" 
                               style="background-color: <?php echo esc_attr($c['hex']); ?>;">
-                        </span>
+                              <i class="fa-solid fa-check check-icon"></i>
+                        </button>
                     <?php endforeach; ?>
                 </div>
                 <h3 class="color-name-display" id="colorNameDisplay"><?php echo esc_html($colors[0]['name']); ?></h3>
+                <p class="color-disclaimer"><?php echo ($lang == 'en') ? 'Models and colors may vary by regions' : 'მოდელები და ფერები შესაძლოა განსხვავდებოდეს რეგიონების მიხედვით'; ?></p>
             </div>
         </div>
     </section>
