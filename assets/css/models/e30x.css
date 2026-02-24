@@ -1,0 +1,163 @@
+/* =========================================
+   E30X MODEL PAGE STYLES
+========================================= */
+
+.e30x-page {
+    background-color: #f4f6f9;
+    color: #000;
+    font-family: 'Noto Sans Georgian', 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.e30x-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-50 { margin-top: 50px; }
+
+/* 1. HERO */
+.e30x-hero {
+    height: 100vh;
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    color: #fff;
+}
+.e30x-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);
+    z-index: 1;
+}
+.e30x-hero-content { position: relative; z-index: 2; }
+.e30x-hero-content h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; margin-bottom: 10px; letter-spacing: 1px;}
+.e30x-hero-content p { font-size: clamp(20px, 3vw, 36px); font-weight: 300; }
+
+/* 2. SUB-NAV */
+.e30x-subnav {
+    position: sticky;
+    top: 75px; 
+    background: #000;
+    color: #fff;
+    z-index: 990; 
+    border-bottom: 1px solid #222;
+}
+.subnav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+.subnav-brand { font-weight: 900; font-size: 18px; letter-spacing: 1px;}
+.subnav-links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+.subnav-links a {
+    color: #999;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+    padding: 20px 0;
+}
+.subnav-links a:hover, .subnav-links a.active { color: #fff; }
+.subnav-links a.active::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: #fff;
+}
+
+/* 3. COMMON */
+.e30x-section { padding: 100px 0; }
+.section-title { font-size: clamp(32px, 4vw, 44px); font-weight: 900; margin-bottom: 15px; }
+.section-subtitle { font-size: 16px; color: #555; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+.section-label { display: block; font-size: 12px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+
+/* 4. COLORS */
+.e30x-colors { background: linear-gradient(180deg, #d8e0e6 0%, #f4f6f9 100%); }
+.color-display-wrap { max-width: 800px; margin: 0 auto; height: 350px; display: flex; align-items: center; justify-content: center; }
+.color-display-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; transition: opacity 0.4s ease; }
+.color-hint { font-size: 13px; color: #888; margin-bottom: 15px; }
+.color-dots { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+.color-dot { width: 28px; height: 28px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; transition: all 0.3s; box-shadow: 0 3px 6px rgba(0,0,0,0.15); }
+.color-dot.active { outline: 2px solid #000; transform: scale(1.15); }
+.color-name-display { font-size: 18px; font-weight: 700; color: #333; }
+
+/* 5. HIGHLIGHTS */
+.e30x-highlights { background: #e3cabc; padding: 80px 0; }
+.h-flex { display: flex; align-items: stretch; gap: 50px; }
+.h-left { width: 30%; }
+.h-left h2 { font-size: 32px; font-weight: 900; margin-bottom: 5px; }
+.h-left p { font-size: 18px; color: #555; }
+.h-right { width: 70%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.spec-box { border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 15px; display: flex; flex-direction: column; gap: 8px;}
+.spec-label { font-size: 12px; font-weight: 700; color: #444; }
+.spec-val { font-size: 16px; font-weight: 800; color: #000; }
+
+/* 6. NEW: GALLERY SLIDER */
+.e30x-gallery {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+.gal-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+.gal-img.active { opacity: 1; z-index: 2; }
+.gal-dots { display: flex; justify-content: center; gap: 10px; margin-top: 25px; }
+.gal-dot { width: 35px; height: 4px; background: #ccc; cursor: pointer; transition: 0.3s; border-radius: 4px; }
+.gal-dot.active { background: #000; width: 45px; }
+
+/* 7. NEW: VIDEO WRAPPER */
+.e30x-video-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    background: #000;
+}
+.e30x-video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 8. LARGE CARD (Interior) */
+.large-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.large-card img { width: 100%; display: block; }
+
+/* ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .subnav-links { display: none; }
+    .h-flex { flex-direction: column; gap: 30px; }
+    .h-left { width: 100%; text-align: center; }
+    .h-right { width: 100%; grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .e30x-hero { padding-left: 5%; justify-content: center; text-align: center; }
+    .h-right { grid-template-columns: 1fr; }
+    .color-display-wrap { height: 250px; }
+    .e30x-gallery { aspect-ratio: 4/3; }
+}

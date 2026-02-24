@@ -1,0 +1,197 @@
+<?php
+/**
+ * Template Name: Model - E30X
+ */
+get_header();
+
+$lang = function_exists('pll_current_language') ? pll_current_language() : 'ka';
+
+// ==========================================
+// ენების სტატიკური ლექსიკონი
+// ==========================================
+$t = [
+    'hero_title' => 'JAC E30X',
+    'hero_sub'   => ($lang == 'en') ? 'Ever so fun.' : 'მუდამ სახალისო.',
+    
+    'nav_overview' => ($lang == 'en') ? 'Overview' : 'მიმოხილვა',
+    'nav_specs'    => ($lang == 'en') ? 'Specs' : 'მახასიათებლები',
+    'nav_gallery'  => ($lang == 'en') ? 'Gallery' : 'გალერეა',
+    'nav_exterior' => ($lang == 'en') ? 'Exterior' : 'ექსტერიერი',
+    'nav_interior' => ($lang == 'en') ? 'Interior' : 'ინტერიერი',
+    'nav_features' => ($lang == 'en') ? 'Features' : 'ფუნქციები',
+
+    'col_title' => ($lang == 'en') ? 'Ever so colorful.' : 'მუდამ ფერადი.',
+    'col_desc'  => ($lang == 'en') ? 'An elegant boutique city hatchback. It offers various colors to suit your special tastes.' : 'ელეგანტური საქალაქო ჰეჩბექი. გთავაზობთ მრავალფეროვან ფერებს თქვენი გემოვნებისთვის.',
+    'col_hint'  => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
+
+    'hl_title'  => 'JAC E30X',
+    'hl_sub'    => ($lang == 'en') ? 'Highlights' : 'მთავარი მახასიათებლები',
+    'hl_btn'    => ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები',
+    
+    'fun_title'  => ($lang == 'en') ? 'Ever so fun.' : 'მუდამ სახალისო.',
+    'free_title' => ($lang == 'en') ? 'Ever so free.' : 'მუდამ თავისუფალი.',
+    'free_desc'  => ($lang == 'en') ? 'Discover how E30X can provide extraordinary freedom to your life.' : 'აღმოაჩინეთ, როგორ ანიჭებს E30X თქვენს ცხოვრებას არაჩვეულებრივ თავისუფლებას.',
+
+    'ext_lbl'   => ($lang == 'en') ? 'EXTERIOR' : 'ექსტერიერი',
+    'ext_title' => ($lang == 'en') ? 'Born to be different.' : 'დაბადებული გამორჩეულად.',
+    
+    'int_lbl'   => ($lang == 'en') ? 'INTERIOR' : 'ინტერიერი',
+    'int_title' => ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.',
+];
+
+// 7 ფერის მასივი
+$colors = [
+    ['name' => 'Polar Night Black', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/PolarNightBlack.114aa8a.png', 'hex' => '#1B1C1D'],
+    ['name' => 'Forest Green',      'img' => 'https://jacen.jac.com.cn/_nuxt/img/ForestGreen.780b437.png', 'hex' => '#2A3A32'],
+    ['name' => 'Pearl White',       'img' => 'https://jacen.jac.com.cn/_nuxt/img/PearlWhite.22cd990.png', 'hex' => '#E8E9EB'],
+    ['name' => 'Space Gray',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/SpaceGray.8bbd75f.png', 'hex' => '#5A5A5C'],
+    ['name' => 'Azure Blue',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/AzureBlue.b5b9b3f.png', 'hex' => '#445D73'],
+    ['name' => 'Crystal Purple',    'img' => 'https://jacen.jac.com.cn/_nuxt/img/CrystalPurple.b87b711.png', 'hex' => '#63556A'],
+    ['name' => 'Cream Yellow',      'img' => 'https://jacen.jac.com.cn/_nuxt/img/CreamYellow.614f0d0.png', 'hex' => '#D3C7B5'],
+];
+?>
+
+<main class="e30x-page">
+
+    <section class="e30x-hero" style="background-image: url('https://jacen.jac.com.cn/_nuxt/img/e30x-webbanner.93445d7.png');">
+        <div class="e30x-hero-overlay"></div>
+        <div class="e30x-hero-content fade-up">
+            <h1><?php echo esc_html($t['hero_title']); ?></h1>
+            <p><?php echo esc_html($t['hero_sub']); ?></p>
+        </div>
+    </section>
+
+    <nav class="e30x-subnav" id="carSubNav">
+        <div class="e30x-container subnav-flex">
+            <div class="subnav-brand"><?php echo esc_html($t['hero_title']); ?></div>
+            <ul class="subnav-links">
+                <li><a href="#overview" class="active"><?php echo esc_html($t['nav_overview']); ?></a></li>
+                <li><a href="#specs"><?php echo esc_html($t['nav_specs']); ?></a></li>
+                <li><a href="#gallery"><?php echo esc_html($t['nav_gallery']); ?></a></li>
+                <li><a href="#exterior"><?php echo esc_html($t['nav_exterior']); ?></a></li>
+                <li><a href="#interior"><?php echo esc_html($t['nav_interior']); ?></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="overview" class="e30x-section e30x-colors text-center">
+        <div class="e30x-container">
+            <h2 class="section-title fade-up"><?php echo esc_html($t['col_title']); ?></h2>
+            <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['col_desc']); ?></p>
+            
+            <div class="color-display-wrap fade-up delay-2">
+                <img src="<?php echo $colors[0]['img']; ?>" id="mainCarColorImg" alt="JAC E30X Color">
+            </div>
+
+            <div class="color-picker-wrap fade-up delay-2">
+                <p class="color-hint"><?php echo esc_html($t['col_hint']); ?></p>
+                <div class="color-dots">
+                    <?php foreach($colors as $index => $c): ?>
+                        <span class="color-dot <?php echo ($index == 0) ? 'active' : ''; ?>" 
+                              data-name="<?php echo esc_attr($c['name']); ?>" 
+                              data-img="<?php echo esc_url($c['img']); ?>" 
+                              style="background-color: <?php echo esc_attr($c['hex']); ?>;">
+                        </span>
+                    <?php endforeach; ?>
+                </div>
+                <h3 class="color-name-display" id="colorNameDisplay"><?php echo esc_html($colors[0]['name']); ?></h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="specs" class="e30x-section e30x-highlights">
+        <div class="e30x-container h-flex">
+            <div class="h-left fade-up">
+                <h2><?php echo esc_html($t['hl_title']); ?></h2>
+                <p><?php echo esc_html($t['hl_sub']); ?></p>
+                <button class="btn-black-pill mt-20"><?php echo esc_html($t['hl_btn']); ?></button>
+            </div>
+            <div class="h-right">
+                <div class="spec-box fade-up delay-1">
+                    <span class="spec-label">Range</span>
+                    <span class="spec-val">405km/505km</span>
+                </div>
+                <div class="spec-box fade-up delay-1">
+                    <span class="spec-label">Battery Capacity (kWh)</span>
+                    <span class="spec-val">51.5</span>
+                </div>
+                <div class="spec-box fade-up delay-1">
+                    <span class="spec-label">AC Charging Time</span>
+                    <span class="spec-val">7.5h</span>
+                </div>
+                <div class="spec-box fade-up delay-2">
+                    <span class="spec-label">DC Charging Time (30%-80%)</span>
+                    <span class="spec-val">0.5h</span>
+                </div>
+                <div class="spec-box fade-up delay-2">
+                    <span class="spec-label">Turning Radius</span>
+                    <span class="spec-val">4.95m</span>
+                </div>
+                <div class="spec-box fade-up delay-2">
+                    <span class="spec-label">Acceleration to 100km/h</span>
+                    <span class="spec-val">7.8s</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="e30x-section text-center">
+        <div class="e30x-container">
+            <h2 class="section-title fade-up"><?php echo esc_html($t['fun_title']); ?></h2>
+            
+            <div class="e30x-gallery fade-up delay-1 mt-30">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/in13.baa7527.png" alt="Gallery 1" class="gal-img active">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-011.62b26f6.png" alt="Gallery 2" class="gal-img">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-012.3f764ee.png" alt="Gallery 3" class="gal-img">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-013.43334a9.png" alt="Gallery 4" class="gal-img">
+            </div>
+            
+            <div class="gal-dots fade-up delay-2 mt-20">
+                <span class="gal-dot active" data-idx="0"></span>
+                <span class="gal-dot" data-idx="1"></span>
+                <span class="gal-dot" data-idx="2"></span>
+                <span class="gal-dot" data-idx="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="e30x-section e30x-colors text-center">
+        <div class="e30x-container">
+             <h2 class="section-title fade-up"><?php echo esc_html($t['free_title']); ?></h2>
+             <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['free_desc']); ?></p>
+             
+             <div class="e30x-video-wrapper fade-up delay-2 mt-30">
+                 <video controls poster="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png">
+                     <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
+                 </video>
+             </div>
+        </div>
+    </section>
+
+    <section id="exterior" class="e30x-section text-center">
+        <div class="e30x-container">
+            <span class="section-label fade-up"><?php echo esc_html($t['ext_lbl']); ?></span>
+            <h2 class="section-title fade-up"><?php echo esc_html($t['ext_title']); ?></h2>
+            
+            <div class="e30x-video-wrapper fade-up delay-1 mt-50">
+                 <video controls poster="https://jacen.jac.com.cn/_nuxt/img/ca2.2f9c262.png">
+                     <source src="https://jacen.jac.com.cn/_nuxt/videos/E30X_tvc_1008_output_x264.9953b0e.mp4" type="video/mp4">
+                 </video>
+            </div>
+        </div>
+    </section>
+
+    <section id="interior" class="e30x-section e30x-interior text-center" style="background: #ebebeb;">
+        <div class="e30x-container">
+            <span class="section-label fade-up"><?php echo esc_html($t['int_lbl']); ?></span>
+            <h2 class="section-title fade-up"><?php echo esc_html($t['int_title']); ?></h2>
+            
+            <div class="large-card fade-up mt-50">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/pc-img4.6ebbd67.jpg" alt="Interior">
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<?php get_footer(); ?>
