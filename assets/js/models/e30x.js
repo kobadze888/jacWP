@@ -36,27 +36,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 3. Sub Nav Scroll Spy (ჰედერის ლინკების გააქტიურება სქროლისას)
+    // 3. Sub Nav Scroll Spy (გასწორებული ლოგიკით)
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.subnav-links a');
 
-    window.addEventListener('scroll', () => {
+    function updateNavOnScroll() {
         let current = '';
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 150;
-            if (scrollY >= sectionTop) {
+            if (window.scrollY >= sectionTop) {
                 current = section.getAttribute('id');
             }
         });
 
+        // თუ სულ ზევით ვართ (არ დაგვისქროლავს), პირველი ('overview') ავანთოთ ნაგულისხმევად
+        if (current === '') {
+            current = 'overview';
+        }
+
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
+            if (current !== '' && link.getAttribute('href').includes(current)) {
                 link.classList.add('active');
             }
         });
-    });
+    }
+
+    window.addEventListener('scroll', updateNavOnScroll);
+    
+    // გამოვიძახოთ ეგრევე, გვერდის ჩატვირთვისთანავე, რომ ყველა ხაზი არ აინთოს!
+    updateNavOnScroll();
 
     // 4. NEW: Interior Gallery Slider
     const galDots = document.querySelectorAll('.gal-dot');

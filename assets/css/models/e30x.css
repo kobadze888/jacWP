@@ -6,7 +6,7 @@
     background-color: #f4f6f9;
     color: #000;
     font-family: 'Noto Sans Georgian', 'Inter', sans-serif;
-    overflow-x: hidden;
+    /* overflow-x: hidden; ამოღებულია Sticky-ს სამუშაოდ */
 }
 
 .e30x-container {
@@ -22,8 +22,8 @@
 
 /* 1. HERO */
 .e30x-hero {
-    height: 100vh;
-    min-height: 600px;
+    height: 75vh; /* 100vh-ის ნაცვლად შემცირდა */
+    min-height: 450px; /* მინიმალური სიმაღლეც შემცირდა */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -42,8 +42,11 @@
 .e30x-hero-content h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; margin-bottom: 10px; letter-spacing: 1px;}
 .e30x-hero-content p { font-size: clamp(20px, 3vw, 36px); font-weight: 300; }
 
-/* 2. SUB-NAV */
+ /* =========================================
+   2. SUB-NAV (Perfect Alignment)
+========================================= */
 .e30x-subnav {
+    position: -webkit-sticky;
     position: sticky;
     top: 75px; 
     background: #000;
@@ -51,15 +54,32 @@
     z-index: 990; 
     border-bottom: 1px solid #222;
 }
+
 .subnav-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 65px;
 }
-.subnav-brand { font-weight: 900; font-size: 18px; letter-spacing: 1px;}
-.subnav-links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-.subnav-links a {
+
+.subnav-brand { 
+    font-weight: 900; 
+    font-size: 18px; 
+    letter-spacing: 1px;
+}
+
+/* Flexbox-ის იდეალური ცენტრირება */
+.subnav-links { 
+    display: flex; 
+    align-items: center; /* <--- ეს ასწორებს ვერტიკალურ აცდენას */
+    gap: 30px; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* ჩვეულებრივი ლინკები (ბროშურის ღილაკის გარდა) */
+.subnav-links a:not(.subnav-btn-brochure) {
     color: #999;
     font-size: 13px;
     font-weight: 600;
@@ -67,11 +87,66 @@
     text-decoration: none;
     transition: color 0.3s;
     position: relative;
-    padding: 20px 0;
+    padding: 23px 0; 
+    display: block;
 }
-.subnav-links a:hover, .subnav-links a.active { color: #fff; }
-.subnav-links a.active::after {
-    content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: #fff;
+
+.subnav-links a:not(.subnav-btn-brochure):hover, 
+.subnav-links a.active:not(.subnav-btn-brochure) { 
+    color: #fff; 
+}
+
+/* ქვედა ხაზის ანიმაცია (მხოლოდ ჩვეულებრივ ლინკებზე) */
+.subnav-links a:not(.subnav-btn-brochure)::after {
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 0; 
+    height: 3px; 
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.subnav-links a:not(.subnav-btn-brochure):hover::after, 
+.subnav-links a.active:not(.subnav-btn-brochure)::after { 
+    width: 100%; 
+}
+
+/* ბროშურის ღილაკის ზუსტი პოზიციონირება */
+.subnav-btn-brochure {
+    background-color: #fff;
+    color: #000 !important;
+    padding: 10px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    line-height: 1; /* იცავს ტექსტის გაწელვისგან */
+}
+
+.subnav-btn-brochure i {
+    font-size: 16px;
+    color: #d11f26; 
+}
+
+.subnav-btn-brochure:hover {
+    background-color: #d11f26;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(209, 31, 38, 0.3);
+}
+
+.subnav-btn-brochure:hover i {
+    color: #fff;
 }
 
 /* 3. COMMON */
@@ -149,7 +224,34 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-    .subnav-links { display: none; }
+    /* მობილურის Sticky მენიუს ადაპტაცია (ჰორიზონტალური სქროლი) */
+    .subnav-brand { display: none; } /* ვმალავთ მანქანის სახელს მეტი სივრცისთვის */
+    
+    .subnav-links { 
+        display: flex !important; 
+        width: 100%; 
+        overflow-x: auto; 
+        scrollbar-width: none; 
+        -webkit-overflow-scrolling: touch; 
+        gap: 20px; 
+        padding: 0 5px;
+    }
+    
+    .subnav-links::-webkit-scrollbar { display: none; } /* ვმალავთ სქროლის ხაზს */
+    
+    .subnav-links a:not(.subnav-btn-brochure) { 
+        white-space: nowrap; /* იცავს სიტყვების ორ ხაზზე ჩამოსვლისგან */
+        font-size: 13px;
+    }
+    
+    .subnav-btn-brochure {
+        white-space: nowrap;
+        padding: 8px 16px !important;
+        font-size: 12px !important;
+        margin-right: 15px; /* მარჯვენა კიდესთან რომ არ მიეწებოს ბოლომდე გასქროლვისას */
+    }
+
+    /* ქვედა სექციების ძველი სტილები */
     .h-flex { flex-direction: column; gap: 30px; }
     .h-left { width: 100%; text-align: center; }
     .h-right { width: 100%; grid-template-columns: repeat(2, 1fr); }

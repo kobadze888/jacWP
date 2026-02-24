@@ -19,6 +19,7 @@ $t = [
     'nav_exterior' => ($lang == 'en') ? 'Exterior' : 'ექსტერიერი',
     'nav_interior' => ($lang == 'en') ? 'Interior' : 'ინტერიერი',
     'nav_features' => ($lang == 'en') ? 'Features' : 'ფუნქციები',
+    'nav_brochure' => ($lang == 'en') ? 'Brochure' : 'ბროშურა',
 
     'col_title' => ($lang == 'en') ? 'Ever so colorful.' : 'მუდამ ფერადი.',
     'col_desc'  => ($lang == 'en') ? 'An elegant boutique city hatchback. It offers various colors to suit your special tastes.' : 'ელეგანტური საქალაქო ჰეჩბექი. გთავაზობთ მრავალფეროვან ფერებს თქვენი გემოვნებისთვის.',
@@ -70,6 +71,11 @@ $colors = [
                 <li><a href="#gallery"><?php echo esc_html($t['nav_gallery']); ?></a></li>
                 <li><a href="#exterior"><?php echo esc_html($t['nav_exterior']); ?></a></li>
                 <li><a href="#interior"><?php echo esc_html($t['nav_interior']); ?></a></li>
+                <li>
+                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="subnav-btn-brochure">
+                        <i class="fa-regular fa-file-pdf"></i> <?php echo esc_html($t['nav_brochure']); ?>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
