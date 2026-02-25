@@ -161,8 +161,14 @@ $colors = [
             </div>
 
             <div class="e30x-gallery fade-up delay-1">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/in13.baa7527.png" class="gal-img active" data-cat="exterior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-011.62b26f6.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/e1.e647311.png" class="gal-img active" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/e3.6a4346a.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/e8.e0ca92a.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/e9.9e2eafa.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/e11.5a5302a.png" class="gal-img" data-cat="exterior">
+
+                <img src="https://jacen.jac.com.cn/_nuxt/img/in13.baa7527.png" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/in13.baa7527.png" class="gal-img" data-cat="interior">
                 <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-012.3f764ee.png" class="gal-img" data-cat="interior">
                 <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-013.43334a9.png" class="gal-img" data-cat="interior">
             </div>
@@ -173,7 +179,7 @@ $colors = [
                 <button class="gal-arrow next active"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
 
-            <a href="#" class="btn-black-pill gal-full-btn fade-up delay-2"><?php echo ($lang == 'en') ? 'Full Gallery' : 'სრული გალერეა'; ?></a>
+           
         </div>
     </section>
 
