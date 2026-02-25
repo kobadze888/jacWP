@@ -114,69 +114,95 @@ $colors = [
             <div class="h-left fade-up">
                 <h2><?php echo esc_html($t['hl_title']); ?></h2>
                 <p><?php echo esc_html($t['hl_sub']); ?></p>
-                <button class="btn-black-pill mt-20"><?php echo esc_html($t['hl_btn']); ?></button>
+                <?php 
+                // აქ ჩასვი შენი რეალური PDF ფაილის ლინკი
+                $pdf_link = "https://jacen.jac.com.cn/pdf/E30X.pdf"; 
+                ?>
+                <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" class="btn-black-pill mt-20" style="text-decoration: none;">
+                    <?php echo esc_html($t['hl_btn']); ?>
+                </a>
             </div>
             <div class="h-right">
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label">Range</span>
+                    <span class="spec-label"><?php echo ($lang == 'en') ? 'Range' : 'სვლის მარაგი'; ?></span>
                     <span class="spec-val">405km/505km</span>
                 </div>
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label">Battery Capacity (kWh)</span>
+                    <span class="spec-label"><?php echo ($lang == 'en') ? 'Battery Capacity (kWh)' : 'ელემენტის მოცულობა (კვტ.სთ)'; ?></span>
                     <span class="spec-val">51.5</span>
                 </div>
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label">AC Charging Time</span>
+                    <span class="spec-label"><?php echo ($lang == 'en') ? 'AC Charging Time' : 'AC დატენვის დრო'; ?></span>
                     <span class="spec-val">7.5h</span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label">DC Charging Time (30%-80%)</span>
+                    <span class="spec-label"><?php echo ($lang == 'en') ? 'DC Charging Time (30%-80%)' : 'DC დატენვის დრო (30%-80%)'; ?></span>
                     <span class="spec-val">0.5h</span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label">Turning Radius</span>
+                    <span class="spec-label"><?php echo ($lang == 'en') ? 'Turning Radius' : 'მოხვევის რადიუსი'; ?></span>
                     <span class="spec-val">4.95m</span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label">Acceleration to 100km/h</span>
+                    <span class="spec-label"><?php echo ($lang == 'en') ? 'Acceleration to 100km/h' : 'აჩქარება 100 კმ/სთ-მდე'; ?></span>
                     <span class="spec-val">7.8s</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="e30x-section text-center">
+    <section id="gallery" class="e30x-section text-center gallery-main-wrapper">
         <div class="e30x-container">
             <h2 class="section-title fade-up"><?php echo esc_html($t['fun_title']); ?></h2>
             
-            <div class="e30x-gallery fade-up delay-1 mt-30">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/in13.baa7527.png" alt="Gallery 1" class="gal-img active">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-011.62b26f6.png" alt="Gallery 2" class="gal-img">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-012.3f764ee.png" alt="Gallery 3" class="gal-img">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-013.43334a9.png" alt="Gallery 4" class="gal-img">
+            <div class="gallery-tabs fade-up delay-1">
+                <button class="gal-tab active" data-cat="exterior"><?php echo esc_html($t['nav_exterior']); ?></button>
+                <button class="gal-tab" data-cat="interior"><?php echo esc_html($t['nav_interior']); ?></button>
+            </div>
+
+            <div class="e30x-gallery fade-up delay-1">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/in13.baa7527.png" class="gal-img active" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-011.62b26f6.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-012.3f764ee.png" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-013.43334a9.png" class="gal-img" data-cat="interior">
             </div>
             
-            <div class="gal-dots fade-up delay-2 mt-20">
-                <span class="gal-dot active" data-idx="0"></span>
-                <span class="gal-dot" data-idx="1"></span>
-                <span class="gal-dot" data-idx="2"></span>
-                <span class="gal-dot" data-idx="3"></span>
+            <div class="gal-nav-wrapper fade-up delay-2">
+                <button class="gal-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="gal-indicators">
+                    </div>
+                <button class="gal-arrow next active"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
+
+            <a href="#" class="btn-black-pill gal-full-btn fade-up delay-2"><?php echo ($lang == 'en') ? 'Full Gallery' : 'სრული გალერეა'; ?></a>
         </div>
     </section>
 
-    <section class="e30x-section e30x-colors text-center">
+   <section class="e30x-section e30x-free-section text-center">
         <div class="e30x-container">
              <h2 class="section-title fade-up"><?php echo esc_html($t['free_title']); ?></h2>
              <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['free_desc']); ?></p>
              
-             <div class="e30x-video-wrapper fade-up delay-2 mt-30">
-                 <video controls poster="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png">
-                     <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
-                 </video>
+             <div class="e30x-video-wrapper fade-up delay-2" id="openFreeVideo" style="cursor: pointer;">
+                 <img src="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png" alt="Video Poster" class="video-poster-img">
+                 <div class="play-btn-central">
+                     <i class="fa-solid fa-play"></i>
+                 </div>
+                 <div class="play-indicator-overlay"><i class="fa-solid fa-play"></i></div>
              </div>
         </div>
     </section>
+
+    <div class="history-video-modal" id="e30xVideoModal">
+        <div class="modal-content">
+            <div class="modal-close-trigger" id="closeE30xModal">
+                 <i class="fa-solid fa-xmark"></i>
+            </div>
+            <video controls id="e30xModalVideo">
+                <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
 
     <section id="exterior" class="e30x-section text-center">
         <div class="e30x-container">

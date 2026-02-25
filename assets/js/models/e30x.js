@@ -68,25 +68,56 @@ document.addEventListener('DOMContentLoaded', function() {
     // გამოვიძახოთ ეგრევე, გვერდის ჩატვირთვისთანავე, რომ ყველა ხაზი არ აინთოს!
     updateNavOnScroll();
 
-    // 4. NEW: Interior Gallery Slider
-    const galDots = document.querySelectorAll('.gal-dot');
-    const galImgs = document.querySelectorAll('.gal-img');
-    
-    if(galDots.length > 0 && galImgs.length > 0) {
-        galDots.forEach(dot => {
-            dot.addEventListener('click', function() {
-                const idx = this.getAttribute('data-idx');
-                
-                // წავშალოთ აქტიური კლასები
-                galDots.forEach(d => d.classList.remove('active'));
-                galImgs.forEach(img => img.classList.remove('active'));
-                
-                // მივანიჭოთ ახალს
-                this.classList.add('active');
-                if(galImgs[idx]) {
-                    galImgs[idx].classList.add('active');
-                }
+    /* 4. REFINED GALLERY SLIDER (Tabs & Categorized Navigation) */
+    const galTabs = document.querySelectorAll('.gal-tab');
+    const galArrows = document.querySelectorAll('.gal-arrow');
+    const galIndsContainer = document.querySelector('.gal-indicators');
+
+    let currentCat = 'exterior';
+    let catIndex = 0;
+
+    function updateGallery() {
+        const activeImgs = document.querySelectorAll(`.gal-img[data-cat="${currentCat}"]`);
+        
+        // სურათების გადართვა
+        document.querySelectorAll('.gal-img').forEach(img => img.classList.remove('active'));
+        if(activeImgs[catIndex]) activeImgs[catIndex].classList.add('active');
+
+        // ინდიკატორების რენდერი
+        if(galIndsContainer) {
+            galIndsContainer.innerHTML = '';
+            activeImgs.forEach((_, i) => {
+                const span = document.createElement('span');
+                span.className = `gal-ind ${i === catIndex ? 'active' : ''}`;
+                galIndsContainer.appendChild(span);
             });
+        }
+
+        // ისრების აქტივაცია
+        galArrows.forEach(arr => {
+            if(arr.classList.contains('next')) arr.classList.toggle('active', catIndex < activeImgs.length - 1);
+            else arr.classList.toggle('active', catIndex > 0);
         });
     }
+
+    galTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            galTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            currentCat = this.getAttribute('data-cat');
+            catIndex = 0;
+            updateGallery();
+        });
+    });
+
+    galArrows.forEach(arrow => {
+        arrow.addEventListener('click', function() {
+            const activeImgs = document.querySelectorAll(`.gal-img[data-cat="${currentCat}"]`);
+            if(this.classList.contains('next') && catIndex < activeImgs.length - 1) catIndex++;
+            else if(this.classList.contains('prev') && catIndex > 0) catIndex--;
+            updateGallery();
+        });
+    });
+
+    updateGallery();
 });

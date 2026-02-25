@@ -252,27 +252,44 @@
 .spec-label { font-size: 12px; font-weight: 700; color: #444; }
 .spec-val { font-size: 16px; font-weight: 800; color: #000; }
 
-/* 6. NEW: GALLERY SLIDER */
-.e30x-gallery {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+/* 6. GALLERY & FREE SECTIONS REFINEMENT */
+
+/* Ever so fun - მწვანე ვერტიკალური გრადიენტი */
+#gallery.gallery-main-wrapper {
+    background: linear-gradient(180deg, #d3e0db 0%, #ffffff 45%, #ffffff 100%);
+    padding-top: 100px;
+    padding-bottom: 80px;
 }
-.gal-img {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.6s ease-in-out;
+
+.gallery-tabs { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; border-bottom: 1px solid #ddd; width: fit-content; margin-left: auto; margin-right: auto; }
+.gal-tab { padding: 12px 25px; font-weight: 700; font-size: 14px; text-transform: uppercase; color: #888; position: relative; transition: color 0.3s; cursor: pointer; border: none; background: none; }
+.gal-tab.active { color: #000; }
+.gal-tab.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background: #000; }
+
+.e30x-gallery { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 40px; }
+.gal-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s ease; visibility: hidden; }
+.gal-img.active { opacity: 1; visibility: visible; z-index: 2; }
+
+.gal-nav-wrapper { display: flex; align-items: center; justify-content: center; gap: 25px; margin-bottom: 35px; }
+.gal-arrow { width: 45px; height: 45px; border-radius: 50%; background: #ccc; color: #fff; display: flex; align-items: center; justify-content: center; transition: all 0.3s; cursor: pointer; border: none; }
+.gal-arrow.active { background: #000; }
+.gal-indicators { display: flex; gap: 10px; }
+.gal-ind { width: 30px; height: 3px; background: #ddd; border-radius: 2px; transition: all 0.3s; }
+.gal-ind.active { background: #000; width: 45px; }
+
+.gal-full-btn { padding: 14px 50px !important; font-size: 13px !important; }
+
+/* Ever so free - გაყოფილი ჰორიზონტალური ფონი */
+.e30x-free-section { 
+    background: linear-gradient(90deg, #f2f2f2 50%, #e2e4e7 50%); 
+    padding: 100px 0; 
 }
-.gal-img.active { opacity: 1; z-index: 2; }
-.gal-dots { display: flex; justify-content: center; gap: 10px; margin-top: 25px; }
-.gal-dot { width: 35px; height: 4px; background: #ccc; cursor: pointer; transition: 0.3s; border-radius: 4px; }
-.gal-dot.active { background: #000; width: 45px; }
+.play-indicator-overlay { 
+    position: absolute; bottom: 25px; right: 25px; color: #fff; 
+    background: rgba(255,255,255,0.2); width: 45px; height: 28px; 
+    border-radius: 15px; display: flex; align-items: center; justify-content: center; 
+    font-size: 12px; backdrop-filter: blur(4px); pointer-events: none; 
+}
 
 /* 7. NEW: VIDEO WRAPPER */
 .e30x-video-wrapper {
