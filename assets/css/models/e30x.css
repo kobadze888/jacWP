@@ -352,9 +352,45 @@
 .modal-content video { width: 100%; height: 100%; display: block; border-radius: 8px; }
 .modal-close-trigger { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; background: rgba(0,0,0,0.6); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-/* 8. LARGE CARD (Interior) */
-.large-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.large-card img { width: 100%; display: block; }
+/* 8. FEATURES GRID SYSTEM */
+.e30x-features-wrapper {
+    background: #ffffff;
+    padding-bottom: 80px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover { transform: translateY(-8px); }
+
+.feature-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #eee;
+}
+
+.feature-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.feature-info { padding: 30px; }
+.feature-info h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+.feature-info p { font-size: 14px; color: #666; line-height: 1.5; }
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .feature-info { padding: 20px; }
+}
 
 /* ANIMATIONS */
 .fade-up { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }

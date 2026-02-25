@@ -209,29 +209,57 @@ $colors = [
         </div>
     </div>
 
-    <section id="exterior" class="e30x-section text-center">
-        <div class="e30x-container">
-            <span class="section-label fade-up"><?php echo esc_html($t['ext_lbl']); ?></span>
-            <h2 class="section-title fade-up"><?php echo esc_html($t['ext_title']); ?></h2>
-            
-            <div class="e30x-video-wrapper fade-up delay-1 mt-50">
-                 <video controls poster="https://jacen.jac.com.cn/_nuxt/img/ca2.2f9c262.png">
-                     <source src="https://jacen.jac.com.cn/_nuxt/videos/E30X_tvc_1008_output_x264.9953b0e.mp4" type="video/mp4">
-                 </video>
+    <div class="e30x-features-wrapper">
+        
+        <section id="exterior" class="e30x-section text-center">
+            <div class="e30x-container">
+                <span class="section-label fade-up"><?php echo esc_html($t['ext_lbl']); ?></span>
+                <h2 class="section-title fade-up"><?php echo esc_html($t['ext_title']); ?></h2>
+                
+                <div class="features-grid mt-50">
+                    <div class="feature-card fade-up">
+                        <div class="feature-img"><img src="PLACEHOLDER_EXT_1" alt="Feature"></div>
+                        <div class="feature-info">
+                            <h3>Born to be different</h3>
+                            <p>Elegant design elements for city hatchback.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card fade-up delay-1">
+                        <div class="feature-img"><img src="PLACEHOLDER_EXT_2" alt="Feature"></div>
+                        <div class="feature-info">
+                            <h3>Boutique Style</h3>
+                            <p>Modern exterior with premium finish.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="interior" class="e30x-section e30x-interior text-center" style="background: #ebebeb;">
-        <div class="e30x-container">
-            <span class="section-label fade-up"><?php echo esc_html($t['int_lbl']); ?></span>
-            <h2 class="section-title fade-up"><?php echo esc_html($t['int_title']); ?></h2>
-            
-            <div class="large-card fade-up mt-50">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/pc-img4.6ebbd67.jpg" alt="Interior">
+        <section id="interior" class="e30x-section text-center">
+            <div class="e30x-container">
+                <span class="section-label fade-up"><?php echo esc_html($t['int_lbl']); ?></span>
+                <h2 class="section-title fade-up"><?php echo esc_html($t['int_title']); ?></h2>
+                
+                <div class="features-grid mt-50">
+                    <div class="feature-card fade-up">
+                        <div class="feature-img"><img src="PLACEHOLDER_INT_1" alt="Feature"></div>
+                        <div class="feature-info">
+                            <h3>Pleasant Cabin</h3>
+                            <p>Designed for comfort and long journeys.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card fade-up delay-1">
+                        <div class="feature-img"><img src="PLACEHOLDER_INT_2" alt="Feature"></div>
+                        <div class="feature-info">
+                            <h3>Premium Materials</h3>
+                            <p>Touch of elegance in every detail.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </div>
 
 </main>
 
