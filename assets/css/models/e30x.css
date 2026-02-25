@@ -352,44 +352,113 @@
 .modal-content video { width: 100%; height: 100%; display: block; border-radius: 8px; }
 .modal-close-trigger { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; background: rgba(0,0,0,0.6); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-/* 8. FEATURES GRID SYSTEM */
+/* 8. FEATURES SLIDER SYSTEM */
 .e30x-features-wrapper {
-    background: #ffffff;
+    background: #e5e4dd; /* ძირითადი ფონი */
     padding-bottom: 80px;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.features-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* ვმალავთ იმას, რაც არ ჩანს */
+}
+
+.features-slider-track {
+    display: flex;
     gap: 30px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 10px 0 40px;
 }
 
 .feature-card {
-    background: #f8f9fa;
-    border-radius: 12px;
+    flex: 0 0 calc(50% - 15px); /* ჩანს 2 ქარდი */
+    background: #fff;
+    border-radius: 15px;
     overflow: hidden;
     text-align: left;
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
 }
 
-.feature-card:hover { transform: translateY(-8px); }
+.feature-img { position: relative; width: 100%; aspect-ratio: 16 / 9; cursor: pointer; }
+.feature-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Play Button */
+.feature-play-btn {
+    position: absolute; bottom: 20px; right: 20px;
+    width: 45px; height: 30px; background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px); border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 12px;
+}
+
+.features-nav {
+    display: flex; justify-content: center; gap: 20px; margin-top: 20px;
+}
+
+.feat-arrow {
+    width: 45px; height: 45px; border-radius: 50%;
+    background: #fff; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s;
+}
+
+.feat-arrow:hover { background: #000; color: #fff; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .feature-card { flex: 0 0 100%; } /* მობილურზე ჩანს 1 ქარდი */
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+.feature-card:hover { transform: translateY(-10px); }
 
 .feature-img {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #eee;
+    overflow: hidden;
 }
 
 .feature-img img { width: 100%; height: 100%; object-fit: cover; }
 
-.feature-info { padding: 30px; }
-.feature-info h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
-.feature-info p { font-size: 14px; color: #666; line-height: 1.5; }
+/* Play Button on Card */
+.feature-play-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
 
-/* Responsive adjustments */
+.feature-card:hover .feature-play-btn { background: #d11f26; }
+
+.feature-info { padding: 35px; }
+.feature-info h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; color: #000; }
+.feature-info p { font-size: 15px; color: #666; line-height: 1.6; }
+
+/* რესპონსივი მობილურისთვის */
 @media (max-width: 991px) {
-    .features-grid { grid-template-columns: 1fr; }
-    .feature-info { padding: 20px; }
+    .features-grid { grid-template-columns: 1fr; gap: 20px; }
+    .feature-info { padding: 25px; }
+    .e30x-features-wrapper { padding-bottom: 40px; }
 }
 
 /* ANIMATIONS */

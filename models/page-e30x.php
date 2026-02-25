@@ -210,55 +210,55 @@ $colors = [
     </div>
 
     <div class="e30x-features-wrapper">
-        
         <section id="exterior" class="e30x-section text-center">
             <div class="e30x-container">
                 <span class="section-label fade-up"><?php echo esc_html($t['ext_lbl']); ?></span>
                 <h2 class="section-title fade-up"><?php echo esc_html($t['ext_title']); ?></h2>
                 
                 <div class="features-grid mt-50">
-                    <div class="feature-card fade-up">
-                        <div class="feature-img"><img src="PLACEHOLDER_EXT_1" alt="Feature"></div>
+                    <div class="feature-card video-card fade-up" id="triggerFeatureVideo" style="cursor: pointer;">
+                        <div class="feature-img">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png" alt="Video Cover">
+                            <div class="feature-play-btn">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
                         <div class="feature-info">
                             <h3>Born to be different</h3>
-                            <p>Elegant design elements for city hatchback.</p>
+                            <p>Discover the unique design language of E30X.</p>
                         </div>
                     </div>
+
                     <div class="feature-card fade-up delay-1">
-                        <div class="feature-img"><img src="PLACEHOLDER_EXT_2" alt="Feature"></div>
+                        <div class="feature-img">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/ca2.2f9c262.png" alt="Exterior Feature">
+                        </div>
                         <div class="feature-info">
-                            <h3>Boutique Style</h3>
-                            <p>Modern exterior with premium finish.</p>
+                            <h3>Elegant city hatchback</h3>
+                            <p>A boutique city car that redefines style and comfort.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="interior" class="e30x-section text-center">
+        <section id="interior" class="e30x-section text-center pt-0">
             <div class="e30x-container">
                 <span class="section-label fade-up"><?php echo esc_html($t['int_lbl']); ?></span>
                 <h2 class="section-title fade-up"><?php echo esc_html($t['int_title']); ?></h2>
-                
-                <div class="features-grid mt-50">
-                    <div class="feature-card fade-up">
-                        <div class="feature-img"><img src="PLACEHOLDER_INT_1" alt="Feature"></div>
-                        <div class="feature-info">
-                            <h3>Pleasant Cabin</h3>
-                            <p>Designed for comfort and long journeys.</p>
-                        </div>
+                <div class="features-grid mt-50" id="interiorGrid">
                     </div>
-                    <div class="feature-card fade-up delay-1">
-                        <div class="feature-img"><img src="PLACEHOLDER_INT_2" alt="Feature"></div>
-                        <div class="feature-info">
-                            <h3>Premium Materials</h3>
-                            <p>Touch of elegance in every detail.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
+    </div>
 
+    <div class="history-video-modal" id="featureVideoModal">
+        <div class="modal-content">
+            <div class="modal-close-trigger" id="closeFeatureModal"><i class="fa-solid fa-xmark"></i></div>
+            <video controls id="featureModalVideo">
+                <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 
 </main>

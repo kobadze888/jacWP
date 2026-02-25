@@ -117,27 +117,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateGallery();
 
-    /* 5. VIDEO MODAL LOGIC */
-    const openFreeBtn = document.getElementById('openFreeVideo');
-    const freeModal = document.getElementById('e30xVideoModal');
-    const freeClose = document.getElementById('closeE30xModal');
-    const freeVideo = document.getElementById('e30xModalVideo');
+/* 6. FEATURE VIDEO MODAL LOGIC */
+    const triggerFeatureVideo = document.getElementById('triggerFeatureVideo');
+    const featureModal = document.getElementById('featureVideoModal');
+    const featureClose = document.getElementById('closeFeatureModal');
+    const featureVideo = document.getElementById('featureModalVideo');
 
-    if(openFreeBtn && freeModal && freeVideo) {
-        openFreeBtn.addEventListener('click', () => {
-            freeModal.style.display = 'flex';
-            setTimeout(() => freeModal.classList.add('active'), 10);
-            freeVideo.muted = false; // ჩართვა ხმით
-            freeVideo.play();
+    if(triggerFeatureVideo && featureModal && featureVideo) {
+        triggerFeatureVideo.addEventListener('click', () => {
+            featureModal.style.display = 'flex';
+            setTimeout(() => featureModal.classList.add('active'), 10);
+            featureVideo.currentTime = 0;
+            featureVideo.play();
         });
 
-        const closeFreeModal = () => {
-            freeModal.classList.remove('active');
-            setTimeout(() => freeModal.style.display = 'none', 400);
-            freeVideo.pause();
+        const closeFeatureModal = () => {
+            featureModal.classList.remove('active');
+            setTimeout(() => featureModal.style.display = 'none', 400);
+            featureVideo.pause();
         };
 
-        if(freeClose) freeClose.addEventListener('click', closeFreeModal);
-        freeModal.addEventListener('click', (e) => { if(e.target === freeModal) closeFreeModal(); });
+        if(featureClose) featureClose.addEventListener('click', closeFeatureModal);
+        featureModal.addEventListener('click', (e) => { if(e.target === featureModal) closeFeatureModal(); });
     }
+
+
+    /* 7. FEATURES SLIDER LOGIC */
+    const featArrows = document.querySelectorAll('.feat-arrow');
+
+    featArrows.forEach(arrow => {
+        arrow.addEventListener('click', function() {
+            const trackId = this.getAttribute('data-slider');
+            const track = document.getElementById(trackId);
+            const cards = track.querySelectorAll('.feature-card');
+            const cardWidth = cards[0].offsetWidth + 30; // სიგანე + gap
+            
+            let currentOffset = parseInt(track.getAttribute('data-offset') || 0);
+            const maxOffset = (cards.length - (window.innerWidth > 768 ? 2 : 1)) * cardWidth;
+
+            if (this.classList.contains('next')) {
+                currentOffset = Math.min(currentOffset + cardWidth, maxOffset);
+            } else {
+                currentOffset = Math.max(currentOffset - cardWidth, 0);
+            }
+
+            track.style.transform = `translateX(-${currentOffset}px)`;
+            track.setAttribute('data-offset', currentOffset);
+        });
+    });
 });
