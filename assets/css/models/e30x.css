@@ -279,19 +279,71 @@
 
 .gal-full-btn { padding: 14px 50px !important; font-size: 13px !important; }
 
-/* Ever so free - სუფთა თეთრი ფონი */
-.e30x-free-section { background: #ffffff; padding: 100px 0; }
-.e30x-video-wrapper { position: relative; max-width: 1100px; margin: 50px auto 0; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
-.video-poster-img { width: 100%; height: auto; display: block; }
-
-.play-btn-central {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 80px; height: 80px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    color: #fff; font-size: 30px; z-index: 5; transition: all 0.3s ease;
+/* 7. FREE SECTION REFINED (Cinematic Loop & Trigger) */
+.e30x-free-section { 
+    background: #ffffff; 
+    padding: 100px 0; 
 }
-.e30x-video-wrapper:hover .play-btn-central { background: #d11f26; transform: translate(-50%, -50%) scale(1.1); }
-.play-indicator-overlay { position: absolute; bottom: 25px; right: 25px; color: #fff; background: rgba(0,0,0,0.3); width: 45px; height: 28px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 12px; backdrop-filter: blur(4px); z-index: 4; }
+
+.e30x-video-wrapper { 
+    position: relative; 
+    width: 100%; 
+    max-width: 1400px; /* Cinematic Width */
+    margin: 50px auto 0; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    aspect-ratio: 16 / 9; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+}
+
+.free-bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Modal Trigger Icon (Bottom Right) */
+.video-modal-trigger {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.video-modal-trigger:hover {
+    background: #d11f26;
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .e30x-free-section { padding: 60px 0; }
+    .e30x-video-wrapper { 
+        border-radius: 8px; 
+        margin-top: 30px;
+        width: 100%; 
+        aspect-ratio: 4 / 3; /* Better fit for mobile view */
+    }
+    .video-modal-trigger {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 25px;
+    }
+}
 
 /* Video Modal Styles */
 .history-video-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; }

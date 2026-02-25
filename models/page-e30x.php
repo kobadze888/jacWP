@@ -182,10 +182,14 @@ $colors = [
              <h2 class="section-title fade-up"><?php echo esc_html($t['free_title']); ?></h2>
              <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['free_desc']); ?></p>
              
-             <div class="e30x-video-wrapper fade-up delay-2 mt-30" id="openFreeVideo" style="cursor: pointer;">
-                 <img src="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png" alt="Video Poster" class="video-poster-img">
-                 <div class="play-btn-central"><i class="fa-solid fa-play"></i></div>
-                 <div class="play-indicator-overlay"><i class="fa-solid fa-play"></i></div>
+             <div class="e30x-video-wrapper fade-up delay-2 mt-30">
+                 <video class="free-bg-video" autoplay muted loop playsinline>
+                     <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
+                 </video>
+                 
+                 <div class="video-modal-trigger" id="openFreeVideo">
+                     <i class="fa-solid fa-play"></i>
+                 </div>
              </div>
         </div>
     </section>
