@@ -116,7 +116,7 @@ $colors = [
                 <p><?php echo esc_html($t['hl_sub']); ?></p>
                 <?php 
                 // აქ ჩასვი შენი რეალური PDF ფაილის ლინკი
-                $pdf_link = "https://jacen.jac.com.cn/pdf/E30X.pdf"; 
+                $pdf_link = "https://jacmotors.ge/wp-content/uploads/2026/02/E30X-Specifications.pdf"; 
                 ?>
                 <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" class="btn-black-pill mt-20" style="text-decoration: none;">
                     <?php echo esc_html($t['hl_btn']); ?>
@@ -169,8 +169,7 @@ $colors = [
             
             <div class="gal-nav-wrapper fade-up delay-2">
                 <button class="gal-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
-                <div class="gal-indicators">
-                    </div>
+                <div class="gal-indicators"></div>
                 <button class="gal-arrow next active"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
 
@@ -178,16 +177,14 @@ $colors = [
         </div>
     </section>
 
-   <section class="e30x-section e30x-free-section text-center">
+    <section class="e30x-section e30x-free-section text-center">
         <div class="e30x-container">
              <h2 class="section-title fade-up"><?php echo esc_html($t['free_title']); ?></h2>
              <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['free_desc']); ?></p>
              
-             <div class="e30x-video-wrapper fade-up delay-2" id="openFreeVideo" style="cursor: pointer;">
+             <div class="e30x-video-wrapper fade-up delay-2 mt-30" id="openFreeVideo" style="cursor: pointer;">
                  <img src="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png" alt="Video Poster" class="video-poster-img">
-                 <div class="play-btn-central">
-                     <i class="fa-solid fa-play"></i>
-                 </div>
+                 <div class="play-btn-central"><i class="fa-solid fa-play"></i></div>
                  <div class="play-indicator-overlay"><i class="fa-solid fa-play"></i></div>
              </div>
         </div>
@@ -195,9 +192,7 @@ $colors = [
 
     <div class="history-video-modal" id="e30xVideoModal">
         <div class="modal-content">
-            <div class="modal-close-trigger" id="closeE30xModal">
-                 <i class="fa-solid fa-xmark"></i>
-            </div>
+            <div class="modal-close-trigger" id="closeE30xModal"><i class="fa-solid fa-xmark"></i></div>
             <video controls id="e30xModalVideo">
                 <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
             </video>

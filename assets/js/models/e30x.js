@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // გამოვიძახოთ ეგრევე, გვერდის ჩატვირთვისთანავე, რომ ყველა ხაზი არ აინთოს!
     updateNavOnScroll();
 
-    /* 4. REFINED GALLERY SLIDER (Tabs & Categorized Navigation) */
+    /* 4. REFINED GALLERY LOGIC (Tabs & Categorized Slider) */
     const galTabs = document.querySelectorAll('.gal-tab');
     const galArrows = document.querySelectorAll('.gal-arrow');
     const galIndsContainer = document.querySelector('.gal-indicators');
@@ -78,12 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateGallery() {
         const activeImgs = document.querySelectorAll(`.gal-img[data-cat="${currentCat}"]`);
-        
-        // სურათების გადართვა
         document.querySelectorAll('.gal-img').forEach(img => img.classList.remove('active'));
         if(activeImgs[catIndex]) activeImgs[catIndex].classList.add('active');
 
-        // ინდიკატორების რენდერი
         if(galIndsContainer) {
             galIndsContainer.innerHTML = '';
             activeImgs.forEach((_, i) => {
@@ -93,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // ისრების აქტივაცია
         galArrows.forEach(arr => {
             if(arr.classList.contains('next')) arr.classList.toggle('active', catIndex < activeImgs.length - 1);
             else arr.classList.toggle('active', catIndex > 0);
@@ -120,4 +116,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     updateGallery();
+
+    /* 5. VIDEO MODAL LOGIC */
+    const openFreeBtn = document.getElementById('openFreeVideo');
+    const freeModal = document.getElementById('e30xVideoModal');
+    const freeClose = document.getElementById('closeE30xModal');
+    const freeVideo = document.getElementById('e30xModalVideo');
+
+    if(openFreeBtn && freeModal && freeVideo) {
+        openFreeBtn.addEventListener('click', () => {
+            freeModal.style.display = 'flex';
+            setTimeout(() => freeModal.classList.add('active'), 10);
+            freeVideo.muted = false; // ჩართვა ხმით
+            freeVideo.play();
+        });
+
+        const closeFreeModal = () => {
+            freeModal.classList.remove('active');
+            setTimeout(() => freeModal.style.display = 'none', 400);
+            freeVideo.pause();
+        };
+
+        if(freeClose) freeClose.addEventListener('click', closeFreeModal);
+        freeModal.addEventListener('click', (e) => { if(e.target === freeModal) closeFreeModal(); });
+    }
 });
