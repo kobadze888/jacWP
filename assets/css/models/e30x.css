@@ -153,7 +153,23 @@
 .e30x-section { padding: 100px 0; }
 .section-title { font-size: clamp(32px, 4vw, 44px); font-weight: 900; margin-bottom: 15px; }
 .section-subtitle { font-size: 16px; color: #555; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
-.section-label { display: block; font-size: 12px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+/* SECTION LABEL & DECORATIVE LINE */
+.section-label { 
+    display: block; 
+    font-size: 14px; 
+    font-weight: 800; 
+    color: #111; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin-bottom: 12px; 
+}
+
+.label-line {
+    width: 40px;
+    height: 2px;
+    background-color: #ccc;
+    margin: 0 auto 25px;
+}
 
 /* 4. COLORS SECTION REWORK */
 .e30x-colors { 
@@ -350,9 +366,52 @@
 .history-video-modal.active { display: flex; opacity: 1; }
 .modal-content { width: 90%; max-width: 1200px; aspect-ratio: 16 / 9; position: relative; }
 .modal-content video { width: 100%; height: 100%; display: block; border-radius: 8px; }
-.modal-close-trigger { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; background: rgba(0,0,0,0.6); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+/* MODAL CLOSE TRIGGER FIX */
+.modal-close-trigger { 
+    position: absolute; 
+    top: -45px; /* ვიდეოს ჩარჩოს ზემოთ გამოტანა */
+    right: 0; 
+    width: 36px; 
+    height: 36px; 
+    background: rgba(255,255,255,0.2); 
+    color: #fff; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    z-index: 10005; /* უმაღლესი პრიორიტეტი, რომ სხვა რამემ არ გადაფაროს */
+    transition: all 0.3s ease;
+}
 
-/* 8. FEATURE SLIDER NEW LAYOUT */
+.modal-close-trigger:hover { 
+    background: #d11f26; 
+}
+
+@media (max-width: 768px) {
+    .modal-close-trigger {
+        top: -40px; 
+        right: 0;
+    }
+}
+
+
+/* FEATURE SLIDER TRACK SETTINGS */
+.feature-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.feature-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.feature-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
 .e30x-features-wrapper {
     background: #e5e4dd;
 }

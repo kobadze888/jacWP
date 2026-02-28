@@ -124,16 +124,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const featureVideo = document.getElementById('featureModalVideo');
 
     if(triggerFeatureVideo && featureModal && featureVideo) {
+        /* სქროლის დაბლოკვა მოდალის გახსნისას */
         triggerFeatureVideo.addEventListener('click', () => {
             featureModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; /* ბლოკავს ფონის სქროლს */
             setTimeout(() => featureModal.classList.add('active'), 10);
             featureVideo.currentTime = 0;
             featureVideo.play();
         });
 
+        /* სქროლის აღდგენა მოდალის დახურვისას */
         const closeFeatureModal = () => {
             featureModal.classList.remove('active');
-            setTimeout(() => featureModal.style.display = 'none', 400);
+            setTimeout(() => {
+                featureModal.style.display = 'none';
+                document.body.style.overflow = ''; /* აღადგენს სქროლს */
+            }, 400);
             featureVideo.pause();
         };
 
@@ -155,6 +161,15 @@ document.addEventListener('DOMContentLoaded', function() {
             dots.forEach(d => d.classList.remove('active'));
             if (dots[index]) {
                 dots[index].classList.add('active');
+            }
+            
+            // სლაიდერის ტრეკის გადაადგილების ლოგიკა
+            const trackId = prevBtn ? prevBtn.getAttribute('data-slider') : null;
+            if (trackId) {
+                const track = document.getElementById(trackId);
+                if (track) {
+                    track.style.transform = `translateX(-${index * 100}%)`;
+                }
             }
         }
 
