@@ -210,7 +210,7 @@ $colors = [
     </div>
 
     <div class="e30x-features-wrapper">
-         <section id="exterior" class="e30x-section text-center feature-slider-section">
+        <section id="exterior" class="e30x-section text-center feature-slider-section">
             <div class="e30x-container">
 
                 <span class="section-label fade-up"><?php echo esc_html($t['ext_lbl']); ?></span>
@@ -295,31 +295,84 @@ $colors = [
                     <div class="feat-dots">
                         <span class="f-dot active"></span>
                         <span class="f-dot"></span>
-                        <span class="f-dot"></span> </div>
+                        <span class="f-dot"></span>
+                    </div>
                     <button class="feat-arrow next" data-slider="exteriorTrack"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
+        /* 2. INTERIOR SECTION (BILINGUAL & SLIDER) */
         <section id="interior" class="e30x-section text-center feature-slider-section" style="padding-top: 20px;">
             <div class="e30x-container">
-                <h2 class="section-title fade-up"><?php echo esc_html($t['int_title']); ?></h2>
 
-                <div class="feature-media-row mt-50 fade-up">
-                    <div class="feature-media-item">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-012.3f764ee.png" alt="E30X Interior Smart Cabin">
-                    </div>
-                    <div class="feature-media-item">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-013.43334a9.png" alt="E30X Interior Seating">
-                    </div>
-                </div>
+                <span class="section-label fade-up"><?php echo esc_html($t['int_lbl']); ?></span>
+                <div class="label-line fade-up"></div>
+                <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['int_title']); ?></h2>
 
-                <div class="feature-content-row fade-up delay-1">
-                    <div class="feature-text-left">
-                        <h3>Spacious & Smart cabin.</h3>
-                    </div>
-                    <div class="feature-text-right">
-                        <p>Experience the ultimate comfort with E30X's premium interior materials, ergonomic seating, and intuitive smart displays. The cabin is designed to make every journey as relaxing and enjoyable as your destination.</p>
+                <div class="feature-track-wrapper mt-50">
+                    <div class="feature-track" id="interiorTrack">
+
+                        <div class="feature-slide">
+                            <div class="feature-media-row fade-up">
+                                <div class="feature-media-item video-trigger" id="triggerInteriorVideo" style="flex: 100%; border-radius: 12px; overflow: hidden; position: relative; max-height: 500px;">
+                                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                        <source src="https://jacen.jac.com.cn/_nuxt/videos/in-E30X_PLEASANT_1008_output.88cb4ef.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="play-icon-small"><i class="fa-solid fa-play"></i></div>
+                                </div>
+                            </div>
+                            <div class="feature-content-row fade-up delay-1">
+                                <div class="feature-text-left">
+                                    <h3><?php echo ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.'; ?></h3>
+                                </div>
+                                <div class="feature-text-right">
+                                    <p><?php echo ($lang == 'en') ? 'The E30X stands out for its elegance and luxury. Its leather seats and refined interior combine style and comfort, while the 100% glass roof with a panoramic opening elevates the driving experience to the next level.' : 'E30X გამოირჩევა თავისი ელეგანტურობითა და ფუფუნებით. მისი ტყავის სავარძლები და დახვეწილი ინტერიერი აერთიანებს სტილსა და კომფორტს, ხოლო 100%-იანი მინის პანორამული ჭერი მართვის გამოცდილებას ახალ საფეხურზე აიყვანს.'; ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
+                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-slide">
+                            <div class="feature-media-row fade-up">
+                                <div class="feature-media-item" style="flex: 100%;">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/int-13.b1775b2.png" alt="Comfortable Interior" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                            </div>
+                            <div class="feature-content-row fade-up delay-1">
+                                <div class="feature-text-left">
+                                    <h3><?php echo ($lang == 'en') ? 'Ever so comfortable.' : 'მუდამ კომფორტული.'; ?></h3>
+                                </div>
+                                <div class="feature-text-right">
+                                    <p><?php echo ($lang == 'en') ? 'The E30X is equipped with a huge 12.8-inch touchscreen that is compatible with Apple CarPlay and Android Auto. It also comes with a wireless charger for your phone. This JAC vehicle will amaze you with its extraordinary details.' : 'E30X აღჭურვილია უზარმაზარი 12.8-დუიმიანი სენსორული ეკრანით, რომელიც თავსებადია Apple CarPlay და Android Auto-სთან. მას ასევე მოყვება უსადენო დამტენი თქვენი ტელეფონისთვის. JAC-ის ეს ავტომობილი გაგაოცებთ თავისი არაჩვეულებრივი დეტალებით.'; ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
+                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-slide">
+                            <div class="feature-media-row fade-up">
+                                <div class="feature-media-item" style="flex: 100%;">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/info1-2.ed13100.png" alt="Panoramic Roof" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px;">
+                                </div>
+                            </div>
+                            <div class="feature-content-row fade-up delay-1">
+                                <div class="feature-text-left">
+                                    <h3><?php echo ($lang == 'en') ? 'Panoramic roof.' : 'პანორამული ჭერი.'; ?></h3>
+                                </div>
+                                <div class="feature-text-right">
+                                    <p><?php echo ($lang == 'en') ? 'Double-layer laminated glass + “Low E” glass for thermal insulation, blocks UV rays and improves vision and lighting, providing a pleasant driving experience.' : 'ორშრიანი ლამინირებული მინა + „Low E“ მინა თბოიზოლაციისთვის, ბლოკავს ულტრაიისფერ სხივებს და აუმჯობესებს ხილვადობასა და განათებას, რაც უზრუნველყოფს სასიამოვნო მგზავრობას.'; ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
+                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -335,12 +388,11 @@ $colors = [
             </div>
         </section>
     </div>
-
-    <div class="history-video-modal" id="featureVideoModal">
+    <div class="history-video-modal" id="interiorVideoModal">
         <div class="modal-content">
-            <div class="modal-close-trigger" id="closeFeatureModal"><i class="fa-solid fa-xmark"></i></div>
-            <video controls id="featureModalVideo">
-                <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
+            <div class="modal-close-trigger" id="closeInteriorModal"><i class="fa-solid fa-xmark"></i></div>
+            <video controls id="interiorModalVideo">
+                <source src="https://jacen.jac.com.cn/_nuxt/videos/in-E30X_PLEASANT_1008_output.88cb4ef.mp4" type="video/mp4">
             </video>
         </div>
     </div>

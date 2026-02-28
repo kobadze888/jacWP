@@ -147,6 +147,30 @@ document.addEventListener('DOMContentLoaded', function() {
         featureModal.addEventListener('click', (e) => { if(e.target === featureModal) closeFeatureModal(); });
     }
 
+    /* INTERIOR VIDEO MODAL LOGIC */
+        const triggerInteriorVideo = document.getElementById('triggerInteriorVideo');
+        const interiorVideoModal = document.getElementById('interiorVideoModal');
+        const closeInteriorModal = document.getElementById('closeInteriorModal');
+        const interiorModalVideo = document.getElementById('interiorModalVideo');
+
+        if(triggerInteriorVideo && interiorVideoModal) {
+            triggerInteriorVideo.addEventListener('click', () => {
+                interiorVideoModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; /* ბლოკავს სქროლს */
+                setTimeout(() => interiorVideoModal.classList.add('active'), 10);
+                interiorModalVideo.currentTime = 0;
+                interiorModalVideo.play();
+            });
+
+            closeInteriorModal.addEventListener('click', () => {
+                interiorVideoModal.classList.remove('active');
+                setTimeout(() => {
+                    interiorVideoModal.style.display = 'none';
+                    document.body.style.overflow = ''; /* აღადგენს სქროლს */
+                }, 400);
+                interiorModalVideo.pause();
+            });
+        }
 
     /* 7. FEATURES SLIDER LOGIC (NEW LAYOUT) */
     const featureSliders = document.querySelectorAll('.feature-slider-section');
@@ -194,4 +218,5 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+    
 });
