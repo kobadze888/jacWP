@@ -20,7 +20,6 @@ $t = [
     'nav_exterior' => ($lang == 'en') ? 'Exterior' : 'ექსტერიერი',
     'nav_interior' => ($lang == 'en') ? 'Interior' : 'ინტერიერი',
     'nav_battery'  => ($lang == 'en') ? 'Battery' : 'ელემენტი',
-    
     /* BATTERY SECTION TEXTS */
     'bat_lbl'      => ($lang == 'en') ? 'BATTERY' : 'ელემენტი',
     'bat_title'    => ($lang == 'en') ? '0 Thermal Runaway Honeycomb Battery' : '0 Thermal Runaway Honeycomb ელემენტი',
@@ -48,7 +47,7 @@ $t = [
 
     'int_lbl'   => ($lang == 'en') ? 'INTERIOR' : 'ინტერიერი',
     'int_title' => ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.',
-
+ 
 
     /* 8. SAFETY SECTION TRANSLATIONS */
     'saf_lbl'       => ($lang == 'en') ? 'SAFETY' : 'უსაფრთხოება',
