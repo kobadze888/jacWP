@@ -397,6 +397,25 @@
 
 
 /* FEATURE SLIDER TRACK SETTINGS */
+.interior-media-item {
+    flex: 100%;
+    aspect-ratio: 21 / 9; /* იდეალური სინემატიკური პროპორცია ფართო ეკრანებისთვის */
+    max-height: 550px;
+}
+
+.interior-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .interior-media-item {
+        aspect-ratio: 16 / 10; /* მობილურზე რომ ძალიან არ დავიწროვდეს */
+        max-height: 350px;
+    }
+}
 .feature-track-wrapper {
     width: 100%;
     overflow: hidden;

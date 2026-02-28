@@ -217,7 +217,7 @@ $colors = [
                 <div class="label-line fade-up"></div>
                 <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['ext_title']); ?></h2>
 
-                <div class="feature-track-wrapper mt-50">
+                <div class="feature-track-wrapper mt-20">
                     <div class="feature-track" id="exteriorTrack">
 
                         <div class="feature-slide">
@@ -302,7 +302,7 @@ $colors = [
             </div>
         </section>
 
-        /* 2. INTERIOR SECTION (BILINGUAL & SLIDER) */
+       <!-- INTERIOR SECTION (BILINGUAL & SLIDER)  -->
         <section id="interior" class="e30x-section text-center feature-slider-section" style="padding-top: 20px;">
             <div class="e30x-container">
 
@@ -311,12 +311,12 @@ $colors = [
                 <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['int_title']); ?></h2>
 
                 <div class="feature-track-wrapper mt-50">
-                    <div class="feature-track" id="interiorTrack">
+               <div class="feature-track" id="interiorTrack">
 
                         <div class="feature-slide">
                             <div class="feature-media-row fade-up">
-                                <div class="feature-media-item video-trigger" id="triggerInteriorVideo" style="flex: 100%; border-radius: 12px; overflow: hidden; position: relative; max-height: 500px;">
-                                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                <div class="feature-media-item interior-media-item video-trigger" id="triggerInteriorVideo">
+                                    <video autoplay muted loop playsinline class="interior-video">
                                         <source src="https://jacen.jac.com.cn/_nuxt/videos/in-E30X_PLEASANT_1008_output.88cb4ef.mp4" type="video/mp4">
                                     </video>
                                     <div class="play-icon-small"><i class="fa-solid fa-play"></i></div>
@@ -337,8 +337,8 @@ $colors = [
 
                         <div class="feature-slide">
                             <div class="feature-media-row fade-up">
-                                <div class="feature-media-item" style="flex: 100%;">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/int-13.b1775b2.png" alt="Comfortable Interior" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px;">
+                                <div class="feature-media-item interior-media-item">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/int-13.b1775b2.png" alt="Comfortable Interior">
                                 </div>
                             </div>
                             <div class="feature-content-row fade-up delay-1">
@@ -356,8 +356,8 @@ $colors = [
 
                         <div class="feature-slide">
                             <div class="feature-media-row fade-up">
-                                <div class="feature-media-item" style="flex: 100%;">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/info1-2.ed13100.png" alt="Panoramic Roof" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px;">
+                                <div class="feature-media-item interior-media-item">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/info1-2.ed13100.png" alt="Panoramic Roof">
                                 </div>
                             </div>
                             <div class="feature-content-row fade-up delay-1">
