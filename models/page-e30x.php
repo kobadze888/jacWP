@@ -39,6 +39,14 @@ $t = [
 
     'int_lbl'   => ($lang == 'en') ? 'INTERIOR' : 'ინტერიერი',
     'int_title' => ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.',
+
+    /* 8. SAFETY SECTION TRANSLATIONS */
+    'saf_lbl'       => ($lang == 'en') ? 'SAFETY' : 'უსაფრთხოება',
+    'saf_title'     => ($lang == 'en') ? 'Ever so relaxed.' : 'მუდამ მშვიდი.',
+    'saf_sub'       => ($lang == 'en') ? 'For JAC, safety is a top priority.' : 'JAC-ისთვის უსაფრთხოება მთავარი პრიორიტეტია.',
+    'saf_vid_txt'   => ($lang == 'en') ? 'Five-Star Crash Safety' : 'ხუთვარსკვლავიანი უსაფრთხოება',
+    'saf_bot_title' => ($lang == 'en') ? 'JAC E30X offers total safety for every passenger thanks to its advanced active and passive safety systems.' : 'JAC E30X გთავაზობთ სრულ უსაფრთხოებას თითოეული მგზავრისთვის, მისი მოწინავე აქტიური და პასიური სისტემების წყალობით.',
+    'saf_bot_desc'  => ($lang == 'en') ? 'Prioritizing occupant protection, the E30X far exceeds safety standards with its 6 airbags and a series of top-quality braking systems. In addition, it has a 360° panoramic camera, parking sensors, Autohold, etc.' : 'მგზავრთა დაცვის პრიორიტეტიზაციით, E30X ბევრად აღემატება უსაფრთხოების სტანდარტებს 6 უსაფრთხოების ბალიშით და უმაღლესი ხარისხის სამუხრუჭე სისტემების სერიით. დამატებით, მას აქვს 360° პანორამული კამერა, პარკინგის სენსორები, Autohold და ა.შ.'
 ];
 
 // 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
@@ -393,6 +401,36 @@ $colors = [
             <div class="modal-close-trigger" id="closeInteriorModal"><i class="fa-solid fa-xmark"></i></div>
             <video controls id="interiorModalVideo">
                 <source src="https://jacen.jac.com.cn/_nuxt/videos/in-E30X_PLEASANT_1008_output.88cb4ef.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <section id="safety" class="e30x-section text-center safety-section" style="background: #fff; padding-bottom: 120px;">
+        <div class="e30x-container">
+            <span class="section-label fade-up"><?php echo esc_html($t['saf_lbl']); ?></span>
+            <div class="label-line fade-up"></div>
+            <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['saf_title']); ?></h2>
+            <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['saf_sub']); ?></p>
+
+            <div class="safety-video-wrapper fade-up delay-2 video-trigger" id="triggerSafetyVideo">
+                <video autoplay muted loop playsinline class="safety-video">
+                    <source src="https://jacen.jac.com.cn/_nuxt/videos/safety-E30X_RELAXED_1008_output.9013afa.mp4" type="video/mp4">
+                </video>
+                <div class="safety-play-btn"><i class="fa-solid fa-play"></i></div>
+            </div>
+
+            <div class="safety-bottom-content fade-up delay-2">
+                <h3><?php echo esc_html($t['saf_bot_title']); ?></h3>
+                <p><?php echo esc_html($t['saf_bot_desc']); ?></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="history-video-modal" id="safetyVideoModal">
+        <div class="modal-content">
+            <div class="modal-close-trigger" id="closeSafetyModal"><i class="fa-solid fa-xmark"></i></div>
+            <video controls id="safetyModalVideo">
+                <source src="https://jacen.jac.com.cn/_nuxt/videos/safety-E30X_RELAXED_1008_output.9013afa.mp4" type="video/mp4">
             </video>
         </div>
     </div>

@@ -218,5 +218,30 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    /* 8. SAFETY VIDEO MODAL LOGIC */
+    const triggerSafetyVideo = document.getElementById('triggerSafetyVideo');
+    const safetyVideoModal = document.getElementById('safetyVideoModal');
+    const closeSafetyModal = document.getElementById('closeSafetyModal');
+    const safetyModalVideo = document.getElementById('safetyModalVideo');
+
+    if(triggerSafetyVideo && safetyVideoModal) {
+        triggerSafetyVideo.addEventListener('click', () => {
+            safetyVideoModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => safetyVideoModal.classList.add('active'), 10);
+            safetyModalVideo.currentTime = 0;
+            safetyModalVideo.play();
+        });
+
+        closeSafetyModal.addEventListener('click', () => {
+            safetyVideoModal.classList.remove('active');
+            setTimeout(() => {
+                safetyVideoModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 400);
+            safetyModalVideo.pause();
+        });
+    }
     
 });
