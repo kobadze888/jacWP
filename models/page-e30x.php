@@ -405,34 +405,7 @@ $colors = [
                 </div>
             </div>
         </section>
-    </div>
-
-    <section id="battery" class="e30x-section e30x-battery">
-        <div class="e30x-container">
-            <span class="section-label fade-up text-center"><?php echo esc_html($t['bat_lbl']); ?></span>
-            <div class="label-line fade-up"></div>
-
-            <div class="battery-content-wrapper fade-up delay-1">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/111.3bd97a1.jpg" alt="E30X Battery Background" class="battery-main-bg">
-                
-                <div class="battery-info-card">
-                    <h2 class="battery-info-title"><?php echo esc_html($t['bat_title']); ?></h2>
-                    <p class="battery-info-desc"><?php echo esc_html($t['bat_desc']); ?></p>
-                    
-                    <ul class="battery-specs-grid">
-                        <li><strong><?php echo esc_html($t['bat_spec1']); ?>:</strong> 405/505km</li>
-                        <li><strong><?php echo esc_html($t['bat_spec2']); ?>:</strong> 41kWh/54.5kWh</li>
-                        <li><strong><?php echo esc_html($t['bat_spec3']); ?>:</strong> 10kWh/100km</li>
-                        <li><strong><?php echo esc_html($t['bat_spec4']); ?>:</strong> 0.5h</li>
-                    </ul>
-
-                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="btn-white-pill">
-                        <?php echo esc_html($t['hl_btn']); ?>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div> 
 
     <div class="history-video-modal" id="interiorVideoModal">
         <div class="modal-content">
@@ -463,23 +436,24 @@ $colors = [
             </div>
         </div>
     </section>
-    <section id="battery" class="e30x-section e30x-battery text-center">
+   
+    <section id="battery" class="e30x-section e30x-battery">
         <div class="e30x-container">
-            <span class="section-label fade-up"><?php echo esc_html($t['bat_lbl']); ?></span>
+            <span class="section-label fade-up text-center"><?php echo esc_html($t['bat_lbl']); ?></span>
             <div class="label-line fade-up"></div>
 
-            <div class="battery-banner fade-up delay-1">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/battery-bg.6908906.jpg" alt="Battery charging" class="battery-bg-img">
-
-                <div class="battery-card">
-                    <h2 class="battery-card-title"><?php echo esc_html($t['bat_title']); ?></h2>
-                    <p class="battery-card-desc"><?php echo esc_html($t['bat_desc']); ?></p>
-
-                    <ul class="battery-specs-list">
-                        <li><span><?php echo esc_html($t['bat_range']); ?>:</span> 405/505km</li>
-                        <li><span><?php echo esc_html($t['bat_capacity']); ?>:</span> 41kWh/54.5kWh</li>
-                        <li><span><?php echo esc_html($t['bat_cons']); ?>:</span> 10kWh/100km</li>
-                        <li><span><?php echo esc_html($t['bat_time']); ?>:</span> 0.5h</li>
+            <div class="battery-content-wrapper fade-up delay-1">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/111.3bd97a1.jpg" alt="E30X Battery Background" class="battery-main-bg">
+                
+                <div class="battery-info-card">
+                    <h2 class="battery-info-title"><?php echo esc_html($t['bat_title']); ?></h2>
+                    <p class="battery-info-desc"><?php echo esc_html($t['bat_desc']); ?></p>
+                    
+                    <ul class="battery-specs-grid">
+                        <li><strong><?php echo esc_html($t['bat_spec1']); ?>:</strong> 405/505km</li>
+                        <li><strong><?php echo esc_html($t['bat_spec2']); ?>:</strong> 41kWh/54.5kWh</li>
+                        <li><strong><?php echo esc_html($t['bat_spec3']); ?>:</strong> 10kWh/100km</li>
+                        <li><strong><?php echo esc_html($t['bat_spec4']); ?>:</strong> 0.5h</li>
                     </ul>
 
                     <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="btn-white-pill">
@@ -489,6 +463,7 @@ $colors = [
             </div>
         </div>
     </section>
+    
     <div class="history-video-modal" id="safetyVideoModal">
         <div class="modal-content">
             <div class="modal-close-trigger" id="closeSafetyModal"><i class="fa-solid fa-xmark"></i></div>
