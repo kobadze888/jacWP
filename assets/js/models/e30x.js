@@ -142,27 +142,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    /* 7. FEATURES SLIDER LOGIC */
-    const featArrows = document.querySelectorAll('.feat-arrow');
+    /* 7. FEATURES SLIDER LOGIC (NEW LAYOUT) */
+    const featureSliders = document.querySelectorAll('.feature-slider-section');
 
-    featArrows.forEach(arrow => {
-        arrow.addEventListener('click', function() {
-            const trackId = this.getAttribute('data-slider');
-            const track = document.getElementById(trackId);
-            const cards = track.querySelectorAll('.feature-card');
-            const cardWidth = cards[0].offsetWidth + 30; // სიგანე + gap
-            
-            let currentOffset = parseInt(track.getAttribute('data-offset') || 0);
-            const maxOffset = (cards.length - (window.innerWidth > 768 ? 2 : 1)) * cardWidth;
+    featureSliders.forEach(slider => {
+        const prevBtn = slider.querySelector('.feat-arrow.prev');
+        const nextBtn = slider.querySelector('.feat-arrow.next');
+        const dots = slider.querySelectorAll('.f-dot');
+        let currentIndex = 0;
 
-            if (this.classList.contains('next')) {
-                currentOffset = Math.min(currentOffset + cardWidth, maxOffset);
-            } else {
-                currentOffset = Math.max(currentOffset - cardWidth, 0);
+        function updateSliderIndicators(index) {
+            dots.forEach(d => d.classList.remove('active'));
+            if (dots[index]) {
+                dots[index].classList.add('active');
             }
+        }
 
-            track.style.transform = `translateX(-${currentOffset}px)`;
-            track.setAttribute('data-offset', currentOffset);
+        if (prevBtn && dots.length > 0) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : dots.length - 1;
+                updateSliderIndicators(currentIndex);
+            });
+        }
+
+        if (nextBtn && dots.length > 0) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex < dots.length - 1) ? currentIndex + 1 : 0;
+                updateSliderIndicators(currentIndex);
+            });
+        }
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                currentIndex = idx;
+                updateSliderIndicators(currentIndex);
+            });
         });
     });
 });

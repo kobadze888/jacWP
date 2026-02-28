@@ -210,44 +210,75 @@ $colors = [
     </div>
 
     <div class="e30x-features-wrapper">
-        <section id="exterior" class="e30x-section text-center">
+        <section id="exterior" class="e30x-section text-center feature-slider-section">
             <div class="e30x-container">
-                <span class="section-label fade-up"><?php echo esc_html($t['ext_lbl']); ?></span>
                 <h2 class="section-title fade-up"><?php echo esc_html($t['ext_title']); ?></h2>
                 
-                <div class="features-grid mt-50">
-                    <div class="feature-card video-card fade-up" id="triggerFeatureVideo" style="cursor: pointer;">
-                        <div class="feature-img">
-                            <img src="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png" alt="Video Cover">
-                            <div class="feature-play-btn">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="feature-info">
-                            <h3>Born to be different</h3>
-                            <p>Discover the unique design language of E30X.</p>
-                        </div>
+                <div class="feature-media-row mt-50 fade-up">
+                    <div class="feature-media-item video-trigger" id="triggerFeatureVideo">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png" alt="E30X Video Cover">
+                        <div class="play-icon-small"><i class="fa-solid fa-play"></i></div>
                     </div>
+                    <div class="feature-media-item">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/ca2.2f9c262.png" alt="E30X Design">
+                    </div>
+                </div>
 
-                    <div class="feature-card fade-up delay-1">
-                        <div class="feature-img">
-                            <img src="https://jacen.jac.com.cn/_nuxt/img/ca2.2f9c262.png" alt="Exterior Feature">
-                        </div>
-                        <div class="feature-info">
-                            <h3>Elegant city hatchback</h3>
-                            <p>A boutique city car that redefines style and comfort.</p>
-                        </div>
+                <div class="feature-content-row fade-up delay-1">
+                    <div class="feature-text-left">
+                        <h3>Eye-catching design.</h3>
                     </div>
+                    <div class="feature-text-right">
+                        <p>E30X features sleek body lines and bubble aesthetic designs that stand you out on every street corners, complemented by its LED crystal headlights and dual-color rim designs.</p>
+                        <a href="https://jacmotors.ge/wp-content/uploads/2026/02/E30X-Specifications.pdf" target="_blank" class="spec-link">
+                            Full Specifications <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="feature-slider-controls fade-up delay-2">
+                    <button class="feat-arrow prev" data-slider="exteriorTrack"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="feat-dots">
+                        <span class="f-dot active"></span>
+                        <span class="f-dot"></span>
+                        <span class="f-dot"></span>
+                    </div>
+                    <button class="feat-arrow next" data-slider="exteriorTrack"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <section id="interior" class="e30x-section text-center pt-0">
+        <section id="interior" class="e30x-section text-center feature-slider-section" style="padding-top: 20px;">
             <div class="e30x-container">
-                <span class="section-label fade-up"><?php echo esc_html($t['int_lbl']); ?></span>
                 <h2 class="section-title fade-up"><?php echo esc_html($t['int_title']); ?></h2>
-                <div class="features-grid mt-50" id="interiorGrid">
+                
+                <div class="feature-media-row mt-50 fade-up">
+                    <div class="feature-media-item">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-012.3f764ee.png" alt="E30X Interior Smart Cabin">
                     </div>
+                    <div class="feature-media-item">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-013.43334a9.png" alt="E30X Interior Seating">
+                    </div>
+                </div>
+
+                <div class="feature-content-row fade-up delay-1">
+                    <div class="feature-text-left">
+                        <h3>Spacious & Smart cabin.</h3>
+                    </div>
+                    <div class="feature-text-right">
+                        <p>Experience the ultimate comfort with E30X's premium interior materials, ergonomic seating, and intuitive smart displays. The cabin is designed to make every journey as relaxing and enjoyable as your destination.</p>
+                    </div>
+                </div>
+
+                <div class="feature-slider-controls fade-up delay-2">
+                    <button class="feat-arrow prev" data-slider="interiorTrack"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="feat-dots">
+                        <span class="f-dot active"></span>
+                        <span class="f-dot"></span>
+                        <span class="f-dot"></span>
+                    </div>
+                    <button class="feat-arrow next" data-slider="interiorTrack"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
             </div>
         </section>
     </div>
