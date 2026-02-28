@@ -116,8 +116,7 @@ $colors = [
                 <h2><?php echo esc_html($t['hl_title']); ?></h2>
                 <p><?php echo esc_html($t['hl_sub']); ?></p>
                 <?php
-                // აქ ჩასვი შენი რეალური PDF ფაილის ლინკი
-                $pdf_link = "https://jacmotors.ge/wp-content/uploads/2026/02/E30X-Specifications.pdf";
+                $pdf_link = "https://jacen.jac.com.cn/pdf/E30X.pdf";
                 ?>
                 <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" class="btn-black-pill mt-20" style="text-decoration: none;">
                     <?php echo esc_html($t['hl_btn']); ?>
@@ -237,7 +236,7 @@ $colors = [
                                 </div>
                                 <div class="feature-text-right">
                                     <p><?php echo ($lang == 'en') ? 'E30X features sleek body lines and bubble aesthetic designs that stand you out on every street corners, complemented by its LED crystal headlights and dual-color rim designs.' : 'E30X გამოირჩევა დახვეწილი ხაზებით და ესთეტიკური დიზაინით, რომელიც გამოგარჩევთ ნებისმიერ ქუჩაში. ამ ყველაფერს ემატება LED ფარები და ორფერიანი დისკები.'; ?></p>
-                                    <a href="https://jacmotors.ge/wp-content/uploads/2026/02/E30X-Specifications.pdf" target="_blank" class="spec-link">
+                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
                                         <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
                                     </a>
                                 </div>
@@ -259,7 +258,29 @@ $colors = [
                                 </div>
                                 <div class="feature-text-right">
                                     <p><?php echo ($lang == 'en') ? 'A spacious hatchback with car length up to 4025mm, offering a trunk space up to 300L and maximum 1150L with seat folded.' : 'ტევადი ჰეჩბექი 4025მმ-მდე სიგრძით, რომელიც გთავაზობთ 300ლ-მდე საბარგულის მოცულობას, ხოლო სავარძლების დაკეცვისას მოცულობა 1150ლ-მდე იზრდება.'; ?></p>
-                                    <a href="https://jacmotors.ge/wp-content/uploads/2026/02/E30X-Specifications.pdf" target="_blank" class="spec-link">
+                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
+                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-slide">
+                            <div class="feature-media-row fade-up">
+                                <div class="feature-media-item">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ca5.5ed5020.png" alt="Hidden Door Handles">
+                                </div>
+                                <div class="feature-media-item">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ca6.bae0803.png" alt="Automatic Unlocking Function">
+                                </div>
+                            </div>
+                            <div class="feature-content-row fade-up delay-1">
+                                <div class="feature-text-left">
+                                    <h3 style="font-size: 26px; line-height: 1.2;"><?php echo ($lang == 'en') ? 'Hidden door handles with automatic unlocking function.' : 'დამალული კარის სახელურები ავტომატური განბლოკვის ფუნქციით.'; ?></h3>
+                                </div>
+                                <div class="feature-text-right">
+                                    <p><?php echo ($lang == 'en') ? 'Simple and elegant hidden door handle design with automatic unlocking function when you approach the car.' : 'კარის დამალული სახელურის მარტივი და ელეგანტური დიზაინი, რომელიც ავტომატურად განიბლოკება მანქანასთან მიახლოებისას.'; ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
                                         <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
                                     </a>
                                 </div>
@@ -274,7 +295,7 @@ $colors = [
                     <div class="feat-dots">
                         <span class="f-dot active"></span>
                         <span class="f-dot"></span>
-                    </div>
+                        <span class="f-dot"></span> </div>
                     <button class="feat-arrow next" data-slider="exteriorTrack"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
