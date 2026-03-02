@@ -30,6 +30,26 @@ $t = [
     'bat_spec4'    => ($lang == 'en') ? 'Estimated DC charging time (SOC30%-80%)' : 'DC დატენვის დრო (30%-80%)',
     'nav_brochure' => ($lang == 'en') ? 'Brochure' : 'ბროშურა',
 
+    /* 8.5 MORE FEATURES TRANSLATIONS (BILINGUAL TITLES) */
+    'feat_lbl'      => ($lang == 'en') ? 'MORE FEATURES' : 'მეტი შესაძლებლობა',
+    'feat_title'    => ($lang == 'en') ? 'Ever so easy.' : 'მუდამ მარტივი.',
+
+    // ბარათი 1
+    'f_c1_t' => ($lang == 'en') ? '9-In-1 Power-train' : '9-ერთში ძალოვანი აგრეგატი',
+    'f_c1_d' => ($lang == 'en') ? 'Make full use of the vehicle space to provide a larger interior and trunk capacity than other models in the same segment.' : 'ავტომობილის სივრცის მაქსიმალური ათვისება უზრუნველყოფს უფრო დიდ ინტერიერსა და საბარგულის მოცულობას, ვიდრე იმავე სეგმენტის სხვა მოდელებში.',
+
+    // ბარათი 2
+    'f_c2_t' => ($lang == 'en') ? '3-In-1 Intelligent Braking System' : '3-ერთში ინტელექტუალური სამუხრუჭე სისტემა',
+    'f_c2_d' => ($lang == 'en') ? 'Through the three-in-one braking system, it can brake in time and comfortably, ensure the safety of the user.' : 'სამი-ერთში სამუხრუჭე სისტემის მეშვეობით, ავტომობილი მუხრუჭებს დროულად და კომფორტულად, რაც უზრუნველყოფს მძღოლის უსაფრთხოებას.',
+
+    // ბარათი 3
+    'f_c3_t' => ($lang == 'en') ? '4.95m Turning Radius' : '4.95მ მოხვევის რადიუსი',
+    'f_c3_d' => ($lang == 'en') ? 'The turning radius is small, and it can easily make a U-turn on narrow roads, making it more convenient for users to drive.' : 'მოხვევის რადიუსი მცირეა, რაც აადვილებს მანევრირებას ვიწრო გზებზე და მართვას უფრო მოსახერხებელს ხდის.',
+
+    // ბარათი 4
+    'f_c4_t' => ($lang == 'en') ? 'Efficient Super-Fast Charging' : 'ეფექტური სუპერ-სწრაფი დატენვა',
+    'f_c4_d' => ($lang == 'en') ? 'The ultra-high charging power reduces the charging time from 30% to 80% to as little as 0.5 hours, significantly enhancing the user experience.' : 'ულტრა-მაღალი დატენვის სიმძლავრე ამცირებს დატენვის დროს 30%-დან 80%-მდე სულ რაღაც 0.5 საათამდე.',
+
     'col_title' => ($lang == 'en') ? 'Ever so colorful.' : 'მუდამ ფერადი.',
     'col_desc'  => ($lang == 'en') ? 'An elegant boutique city hatchback. It offers various colors to suit your special tastes.' : 'ელეგანტური საქალაქო ჰეჩბექი. გთავაზობთ მრავალფეროვან ფერებს თქვენი გემოვნებისთვის.',
     'col_hint'  => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
@@ -464,6 +484,55 @@ $colors = [
                 </a>
             </div>
         </div>
+        </div>
+    </section>
+    <section id="more-features" class="e30x-section more-features-section">
+        <div class="e30x-container">
+            <div class="text-center">
+                <span class="section-label fade-up"><?php echo esc_html($t['feat_lbl']); ?></span>
+                <div class="label-line fade-up"></div>
+                <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['feat_title']); ?></h2>
+            </div>
+
+            <div class="mf-banner fade-up delay-1">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/tech.5c7d60f.png" alt="E30X Technology">
+            </div>
+
+            <div class="mf-bento-grid mt-40">
+                <div class="bento-card bento-vertical fade-up">
+                    <div class="bento-text">
+                        <h3 class="bento-title"><?php echo esc_html($t['f_c1_t']); ?></h3>
+                        <p class="bento-desc"><?php echo esc_html($t['f_c1_d']); ?></p>
+                    </div>
+                    <div class="bento-img">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_054.4fb9117.png" alt="9-In-1 Power-train">
+                    </div>
+                </div>
+
+                <div class="bento-card bento-horizontal fade-up delay-1">
+                    <div class="bento-text">
+                        <h3 class="bento-title"><?php echo esc_html($t['f_c2_t']); ?></h3>
+                        <p class="bento-desc"><?php echo esc_html($t['f_c2_d']); ?></p>
+                    </div>
+                    <div class="bento-img">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_066.d17f68d.png" alt="Intelligent Braking">
+                    </div>
+                </div>
+
+                <div class="bento-card bento-text-only fade-up delay-2">
+                    <div class="bento-text">
+                        <h3 class="bento-title"><?php echo esc_html($t['f_c3_t']); ?></h3>
+                        <p class="bento-desc"><?php echo esc_html($t['f_c3_d']); ?></p>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-text-only fade-up delay-2">
+                    <div class="bento-text">
+                        <h3 class="bento-title"><?php echo esc_html($t['f_c4_t']); ?></h3>
+                        <p class="bento-desc"><?php echo esc_html($t['f_c4_d']); ?></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
