@@ -11,8 +11,8 @@ $lang = function_exists('pll_current_language') ? pll_current_language() : 'ka';
 // ენების სტატიკური ლექსიკონი
 // ==========================================
 $t = [
-    'hero_title' => 'JAC E30X',
-    'hero_sub'   => ($lang == 'en') ? 'Ever so fun.' : 'მუდამ სახალისო.',
+    'hero_title' => 'JAC T9 Pickup',
+    'hero_sub'   => ($lang == 'en') ? 'Born to Explore' : 'დაბადებული აღმოსაჩენად',
 
     'nav_overview' => ($lang == 'en') ? 'Overview' : 'მიმოხილვა',
     'nav_specs'    => ($lang == 'en') ? 'Specs' : 'მახასიათებლები',
@@ -50,8 +50,8 @@ $t = [
     'f_c4_t' => ($lang == 'en') ? 'Efficient Super-Fast Charging' : 'ეფექტური სუპერ-სწრაფი დატენვა',
     'f_c4_d' => ($lang == 'en') ? 'The ultra-high charging power reduces the charging time from 30% to 80% to as little as 0.5 hours, significantly enhancing the user experience.' : 'ულტრა-მაღალი დატენვის სიმძლავრე ამცირებს დატენვის დროს 30%-დან 80%-მდე სულ რაღაც 0.5 საათამდე.',
 
-    'col_title' => ($lang == 'en') ? 'Ever so colorful.' : 'მუდამ ფერადი.',
-    'col_desc'  => ($lang == 'en') ? 'An elegant boutique city hatchback. It offers various colors to suit your special tastes.' : 'ელეგანტური საქალაქო ჰეჩბექი. გთავაზობთ მრავალფეროვან ფერებს თქვენი გემოვნებისთვის.',
+    'col_title' => ($lang == 'en') ? 'Born to Explore!' : 'დაბადებული აღმოსაჩენად!',
+    'col_desc'  => ($lang == 'en') ? 'JAC T9 pickup, combines remarkable rugged capability with premium comfort and advanced technology to fuel your wildest adventures.' : 'JAC T9 პიკაპი აერთიანებს გამორჩეულ გამავლობას, პრემიუმ კომფორტს და მოწინავე ტექნოლოგიებს თქვენი ყველაზე თამამი თავგადასავლებისთვის.',
     'col_hint'  => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
 
     'hl_title'  => 'JAC E30X',
@@ -86,19 +86,20 @@ $t = [
 
 // 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
 $colors = [
-    ['name' => 'Forest Green',      'img' => 'https://jacen.jac.com.cn/_nuxt/img/ForestGreen.780b437.png', 'hex' => '#25796a'],
-    ['name' => 'Pearl White',       'img' => 'https://jacen.jac.com.cn/_nuxt/img/PearlWhite.22cd990.png', 'hex' => '#e8e9ec'],
-    ['name' => 'Space Gray',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/SpaceGray.8bbd75f.png', 'hex' => '#4f5459'],
-    ['name' => 'Azure Blue',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/AzureBlue.b5b9b3f.png', 'hex' => '#c5ccd1'],
-    ['name' => 'Crystal Purple',    'img' => 'https://jacen.jac.com.cn/_nuxt/img/CrystalPurple.b87b711.png', 'hex' => '#a59bb0'],
-    ['name' => 'Cream Yellow',      'img' => 'https://jacen.jac.com.cn/_nuxt/img/CreamYellow.614f0d0.png', 'hex' => '#dcd3c6'],
-    ['name' => 'Polar Night Black', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/PolarNightBlack.114aa8a.png', 'hex' => '#181818'],
+    ['name' => 'Red',          'img' => 'https://jacen.jac.com.cn/_nuxt/img/Red.3d0e45b.png', 'hex' => '#b71c1c'],
+    ['name' => 'Black',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/Black.334efe7.png', 'hex' => '#181818'],
+    ['name' => 'White',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/White.92b5ea5.png', 'hex' => '#f5f5f5'],
+    ['name' => 'Gray',         'img' => 'https://jacen.jac.com.cn/_nuxt/img/Gray.37045a4.png', 'hex' => '#545454'],
+    ['name' => 'Yellow',       'img' => 'https://jacen.jac.com.cn/_nuxt/img/Yellow.90501b4.png', 'hex' => '#fbc02d'],
+    ['name' => 'Silver',       'img' => 'https://jacen.jac.com.cn/_nuxt/img/Silver.a65ef69.png', 'hex' => '#c0c0c0'],
+    ['name' => 'Blue',         'img' => 'https://jacen.jac.com.cn/_nuxt/img/Blue.6952985.png', 'hex' => '#0d47a1'],
+    ['name' => 'Silvery-Gray', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/Silvery-Gray.c7542f6.png', 'hex' => '#8e8e8e'],
 ];
 ?>
 
 <main class="e30x-page">
 
-    <section class="e30x-hero" style="background-image: url('https://jacen.jac.com.cn/_nuxt/img/e30x-webbanner.93445d7.png');">
+    <section class="e30x-hero" style="background-image: url('https://jacen.jac.com.cn/_nuxt/img/banner-web.36f6ba7.jpg');">
         <div class="e30x-hero-overlay"></div>
         <div class="e30x-hero-content fade-up">
             <h1><?php echo esc_html($t['hero_title']); ?></h1>
@@ -108,7 +109,9 @@ $colors = [
 
     <nav class="e30x-subnav" id="carSubNav">
         <div class="e30x-container subnav-flex">
-            <div class="subnav-brand"><?php echo esc_html($t['hero_title']); ?></div>
+            <div class="subnav-brand">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAUBAMAAADbzbjtAAAAMFBMVEVHcEz///////////////////////////////////////////////////////////9EPuwCAAAAD3RSTlMAIBBjlsczfvRLrAbo2LfaqNM6AAABA0lEQVQoz2PY9R8J/GLgvA9j/1jIwFCPLPmZwR7B+SPA8B5Z8htTPxJvAcN5ZMkCTmReA4MgCABZP4GUEAM7kHUMJJILZHxgAAE2sDIQ4ANpBzGYgYwLDDBWAJjFA2RNADHYwXaCAAuQ5QBm6QNZTkpAoAczgoEVyDIAs/YjO2gCXCgBrgwOFMBC+cDwYIA4DcmffyBCwGD5CmExpCKHJRj4////BSrJsEkJDIAB9x0iEA8KVRBgNDY2hjgDGP4/IZJAi74xoPiOCcj4BA+g33APB4JCTwTIOIAWQCzIPnkAF4KEBkqkGMBC+y/EwwzrEXJfN4BFOP7/cIJ6ZDs8ev8AhQBd6zNv/lZ5DgAAAABJRU5ErkJggg==" alt="JAC T9">
+</div>
             <ul class="subnav-links">
                 <li><a href="#overview" class="active"><?php echo esc_html($t['nav_overview']); ?></a></li>
                 <li><a href="#specs"><?php echo esc_html($t['nav_specs']); ?></a></li>
@@ -125,13 +128,13 @@ $colors = [
         </div>
     </nav>
 
-    <section id="overview" class="e30x-section e30x-colors text-center">
-        <div class="e30x-container">
+    <section id="overview" class="t9-section t9-colors text-center">
+        <div class="t9-container">
             <h2 class="section-title fade-up"><?php echo esc_html($t['col_title']); ?></h2>
             <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['col_desc']); ?></p>
 
             <div class="color-display-wrap fade-up delay-2">
-                <img src="<?php echo $colors[0]['img']; ?>" id="mainCarColorImg" alt="JAC E30X Color">
+                <img src="<?php echo $colors[0]['img']; ?>" id="mainCarColorImg" alt="JAC T9 Color">
             </div>
 
             <div class="color-picker-wrap fade-up delay-2">
