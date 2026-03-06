@@ -68,6 +68,12 @@ $t = [
     'int_lbl'   => ($lang == 'en') ? 'INTERIOR' : 'ინტერიერი',
     'int_title' => ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.',
 
+    /* SMART TECHNOLOGY SECTION */
+    'tech_lbl'   => ($lang == 'en') ? 'TECHNOLOGY' : 'ტექნოლოგია',
+    'tech_title' => ($lang == 'en') ? 'Ever so smart.' : 'მუდამ გონიერი.',
+    'tech_c1_t'  => ($lang == 'en') ? '12.8-inch Touchscreen & 6.2-inch Digital Instrument Cluster' : '12.8-დუიმიანი სენსორული ეკრანი და 6.2-დუიმიანი ციფრული მაჩვენებელთა დაფა',
+    'tech_c2_t'  => ($lang == 'en') ? 'Mobile Smart Power Station' : 'მობილური ჭკვიანი ენერგო სადგური',
+    'tech_c3_t'  => ($lang == 'en') ? 'Wireless Charging' : 'უსადენო დატენვა',
 
     /* 8. SAFETY SECTION TRANSLATIONS */
     'saf_lbl'       => ($lang == 'en') ? 'SAFETY' : 'უსაფრთხოება',
@@ -536,6 +542,35 @@ $colors = [
         </div>
     </section>
 
+    <section id="technology" class="e30x-section smart-tech-section text-center">
+        <div class="e30x-container">
+            <span class="section-label fade-up"><?php echo esc_html($t['tech_lbl']); ?></span>
+            <div class="label-line fade-up"></div>
+            <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['tech_title']); ?></h2>
+
+            <div class="tech-grid mt-50">
+                <div class="tech-card fade-up">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/sm1.840af6d.png" alt="Touchscreen">
+                    <div class="tech-card-overlay">
+                        <h3><?php echo esc_html($t['tech_c1_t']); ?></h3>
+                    </div>
+                </div>
+                <div class="tech-card fade-up delay-1">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/sm2.8052874.png" alt="Power Station">
+                    <div class="tech-card-overlay">
+                        <h3><?php echo esc_html($t['tech_c2_t']); ?></h3>
+                    </div>
+                </div>
+                <div class="tech-card fade-up delay-2">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/sm3.2c507a8.png" alt="Wireless Charging">
+                    <div class="tech-card-overlay">
+                        <h3><?php echo esc_html($t['tech_c3_t']); ?></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <div class="history-video-modal" id="safetyVideoModal">
         <div class="modal-content">
             <div class="modal-close-trigger" id="closeSafetyModal"><i class="fa-solid fa-xmark"></i></div>
