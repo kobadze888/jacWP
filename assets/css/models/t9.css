@@ -179,47 +179,36 @@
     color: #fff;
 }
 
-/* 3. COMMON */
-.e30x-section {
-    padding: 100px 0;
+.t9-section {
+    padding: 120px 0;
 }
 
 .section-title {
-    font-size: clamp(32px, 4vw, 44px);
+    font-size: clamp(36px, 5vw, 52px);
     font-weight: 900;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    color: #000;
 }
 
 .section-subtitle {
-    font-size: 16px;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    max-width: 750px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
 }
 
-/* SECTION LABEL & DECORATIVE LINE */
-.section-label {
-    display: block;
-    font-size: 14px;
-    font-weight: 800;
-    color: #111;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
+.t9-colors {
+    /* ზუსტი გრადიენტი: თეთრიდან სუფთა ღია ნაცრისფერში (#f7f7f7) */
+    background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+    padding-bottom: 100px;
 }
 
-.label-line {
-    width: 40px;
-    height: 2px;
-    background-color: #ccc;
-    margin: 0 auto 25px;
-}
-
-/* 4. COLORS SECTION REWORK */
-.e30x-colors {
-    background: linear-gradient(180deg, #d3e0db 0%, #ffffff 35%, #ffffff 100%);
-    padding-bottom: 80px;
+.t9-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
 }
 
 .color-display-wrap {
@@ -943,10 +932,26 @@
 }
 
 @media (max-width: 768px) {
-    .e30x-hero {
-        padding-left: 5%;
-        justify-content: center;
+    .t9-hero {
+        height: auto;
+        min-height: auto;
+        aspect-ratio: 4 / 3; /* მობილურისთვის სურათის პროპორცია */
+        background-size: cover;
+        background-position: center center;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* ტექსტი ჩამოვიდეს ქვემოთ, რომ მანქანა არ დაფაროს */
         text-align: center;
+    }
+
+    .t9-hero-content h1 {
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+
+    .t9-hero-content p {
+        font-size: 18px;
     }
 
     .h-right {

@@ -110,8 +110,8 @@ $colors = [
     <nav class="e30x-subnav" id="carSubNav">
         <div class="e30x-container subnav-flex">
             <div class="subnav-brand">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAUBAMAAADbzbjtAAAAMFBMVEVHcEz///////////////////////////////////////////////////////////9EPuwCAAAAD3RSTlMAIBBjlsczfvRLrAbo2LfaqNM6AAABA0lEQVQoz2PY9R8J/GLgvA9j/1jIwFCPLPmZwR7B+SPA8B5Z8htTPxJvAcN5ZMkCTmReA4MgCABZP4GUEAM7kHUMJJILZHxgAAE2sDIQ4ANpBzGYgYwLDDBWAJjFA2RNADHYwXaCAAuQ5QBm6QNZTkpAoAczgoEVyDIAs/YjO2gCXCgBrgwOFMBC+cDwYIA4DcmffyBCwGD5CmExpCKHJRj4////BSrJsEkJDIAB9x0iEA8KVRBgNDY2hjgDGP4/IZJAi74xoPiOCcj4BA+g33APB4JCTwTIOIAWQCzIPnkAF4KEBkqkGMBC+y/EwwzrEXJfN4BFOP7/cIJ6ZDs8ev8AhQBd6zNv/lZ5DgAAAABJRU5ErkJggg==" alt="JAC T9">
-</div>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAUBAMAAADbzbjtAAAAMFBMVEVHcEz///////////////////////////////////////////////////////////9EPuwCAAAAD3RSTlMAIBBjlsczfvRLrAbo2LfaqNM6AAABA0lEQVQoz2PY9R8J/GLgvA9j/1jIwFCPLPmZwR7B+SPA8B5Z8htTPxJvAcN5ZMkCTmReA4MgCABZP4GUEAM7kHUMJJILZHxgAAE2sDIQ4ANpBzGYgYwLDDBWAJjFA2RNADHYwXaCAAuQ5QBm6QNZTkpAoAczgoEVyDIAs/YjO2gCXCgBrgwOFMBC+cDwYIA4DcmffyBCwGD5CmExpCKHJRj4////BSrJsEkJDIAB9x0iEA8KVRBgNDY2hjgDGP4/IZJAi74xoPiOCcj4BA+g33APB4JCTwTIOIAWQCzIPnkAF4KEBkqkGMBC+y/EwwzrEXJfN4BFOP7/cIJ6ZDs8ev8AhQBd6zNv/lZ5DgAAAABJRU5ErkJggg==" alt="JAC T9">
+            </div>
             <ul class="subnav-links">
                 <li><a href="#overview" class="active"><?php echo esc_html($t['nav_overview']); ?></a></li>
                 <li><a href="#specs"><?php echo esc_html($t['nav_specs']); ?></a></li>
@@ -573,7 +573,7 @@ $colors = [
             </div>
         </div>
     </section>
-    
+
     <div class="history-video-modal" id="safetyVideoModal">
         <div class="modal-content">
             <div class="modal-close-trigger" id="closeSafetyModal"><i class="fa-solid fa-xmark"></i></div>
