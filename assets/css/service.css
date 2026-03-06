@@ -79,7 +79,7 @@
 
 .intro-content {
     flex: 1;
-    min-width: 300px;
+    min-width: 0; 
 }
 
 .intro-content h2 {
@@ -180,12 +180,13 @@
     margin: 0;
 }
 
-/* 5. Contact Block & Map */
+/* 5. CONTACT BLOCK & MAP - FIXED GRID OVERFLOW */
 .service-bottom-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-bottom: 20px;
+    width: 100%;  
 }
 
 .service-contact-card {
@@ -304,7 +305,11 @@
 
 @media (max-width: 768px) {
     .service-hero { min-height: 350px; padding-top: 130px; padding-bottom: 120px; }
-    .service-container { margin-top: -80px; }
+    .service-container { 
+        margin-top: -80px; 
+        padding: 0 20px; 
+        overflow-x: hidden; 
+    }
     .service-featured-image { border-radius: 12px; margin-bottom: 30px; }
     
     .service-intro-section { padding: 30px 25px; flex-direction: column; gap: 30px; }
@@ -322,8 +327,31 @@
     .services-grid { grid-template-columns: 1fr; gap: 15px; }
     .service-card { padding: 20px; border-radius: 12px; }
     
-    .service-contact-card { padding: 40px 25px; }
-    .s-contact-row { font-size: 15px; align-items: flex-start; }
-    .highlight-phone { padding: 20px; flex-direction: column; align-items: flex-start; }
-    .service-map-card { height: 350px; }
+    /* RESPONSIVE - CONTACT & MAP OPTIMIZATION */
+    .service-bottom-grid { gap: 20px; } 
+
+    .service-contact-card { 
+        padding: 30px 20px;
+    }
+
+    .s-contact-row { 
+        font-size: 14px; 
+        align-items: flex-start; 
+        word-break: break-word;
+    }
+
+    .highlight-phone { 
+        padding: 15px; 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .manager-info a {
+        font-size: 18px; 
+    }
+
+    .service-map-card { 
+        height: 350px; 
+        width: 100%;
+    }
 }

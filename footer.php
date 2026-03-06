@@ -70,6 +70,11 @@ $soc_tk = get_field('social_tiktok', $opt_id);
     </div>
 
     <div class="footer-bottom"><?php echo esc_html($t_copy); ?></div>
+                <!-- TOP.GE ASYNC COUNTER CODE -->
+            <div id="top-ge-counter-container" data-site-id="118576"></div>
+            <script async src="//counter.top.ge/counter.js"></script>
+            <!-- / END OF TOP.GE COUNTER CODE -->
+        
 </footer>
 
 <?php wp_footer(); ?>

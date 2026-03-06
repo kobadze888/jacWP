@@ -33,6 +33,7 @@
     padding: 15px 30px;
     transition: all 0.3s;
     border: 1px solid transparent;
+    touch-action: manipulation; 
 }
 .type-tab span {
     font-size: 15px;
@@ -68,6 +69,7 @@
     padding-bottom: 12px;
     position: relative;
     font-weight: 600;
+    touch-action: manipulation; 
 }
 .model-item.active { color: #000; font-weight: 700; }
 .model-item.active::after {
@@ -109,6 +111,7 @@
     position: absolute;
     z-index: 10;
     cursor: pointer;
+    touch-action: manipulation; 
 }
 .arrow-btn:hover { border-color: #000; background-color: rgba(0,0,0,0.02); }
 .arrow-btn svg { width: 24px; height: 24px; stroke-width: 1.5; color: #000; }
