@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Model - E30X
+ * Template Name: Model - T9
  */
 get_header();
 

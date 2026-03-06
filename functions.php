@@ -89,6 +89,16 @@ function jac_enqueue_scripts()
         wp_enqueue_script('jac-e30x-js', get_template_directory_uri() . '/assets/js/models/e30x.js', array(), '1.0', true);
     }
     
+    /* 2. T9 MODEL SECTION */
+    // T9 Model გვერდის სტილები
+    if (is_page_template('models/page-t9.php')) {
+        // CSS გზის განახლება
+        wp_enqueue_style('jac-t9', get_template_directory_uri() . '/assets/css/models/t9.css', array(), '1.0');
+        
+        // JS გზის განახლება
+        wp_enqueue_script('jac-t9-js', get_template_directory_uri() . '/assets/js/models/t9.js', array(), '1.0', true);
+    }
+    
     wp_add_inline_script('lucide', 'lucide.createIcons();');
 }
 add_action('wp_enqueue_scripts', 'jac_enqueue_scripts');
