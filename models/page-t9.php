@@ -54,9 +54,16 @@ $t = [
     'col_desc'  => ($lang == 'en') ? 'JAC T9 pickup, combines remarkable rugged capability with premium comfort and advanced technology to fuel your wildest adventures.' : 'JAC T9 პიკაპი აერთიანებს გამორჩეულ გამავლობას, პრემიუმ კომფორტს და მოწინავე ტექნოლოგიებს თქვენი ყველაზე თამამი თავგადასავლებისთვის.',
     'col_hint'  => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
 
-    'hl_title'  => 'JAC E30X',
+    'hl_title'  => 'JAC T9 Pickup',
     'hl_sub'    => ($lang == 'en') ? 'Highlights' : 'მთავარი მახასიათებლები',
     'hl_btn'    => ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები',
+    /* T9 SPEC LABELS */
+    's_safe'    => ($lang == 'en') ? 'Super Safe' : 'სუპერ უსაფრთხო',
+    's_chassis' => ($lang == 'en') ? 'Super Chassis' : 'სუპერ შასი',
+    's_power'   => ($lang == 'en') ? 'Super Power' : 'სუპერ სიმძლავრე',
+    's_intel'   => ($lang == 'en') ? 'Super Intelligent' : 'სუპერ ინტელექტუალური',
+    's_comf'    => ($lang == 'en') ? 'Super Comfortable' : 'სუპერ კომფორტული',
+    's_lux'     => ($lang == 'en') ? 'Super Luxury' : 'სუპერ ლუქსი',
 
     'fun_title'  => ($lang == 'en') ? 'Ever so fun.' : 'მუდამ სახალისო.',
     'free_title' => ($lang == 'en') ? 'Ever so free.' : 'მუდამ თავისუფალი.',
@@ -157,42 +164,40 @@ $colors = [
         </div>
     </section>
 
-    <section id="specs" class="e30x-section e30x-highlights">
-        <div class="e30x-container h-flex">
+ <section id="specs" class="t9-section t9-highlights">
+        <div class="t9-container h-flex">
             <div class="h-left fade-up">
                 <h2><?php echo esc_html($t['hl_title']); ?></h2>
                 <p><?php echo esc_html($t['hl_sub']); ?></p>
-                <?php
-                $pdf_link = "https://jacen.jac.com.cn/pdf/E30X.pdf";
-                ?>
+                <?php $pdf_link = "https://jacen.jac.com.cn/pdf/T9Brochure.pdf"; ?>
                 <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" class="btn-black-pill mt-20" style="text-decoration: none;">
                     <?php echo esc_html($t['hl_btn']); ?>
                 </a>
             </div>
             <div class="h-right">
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label"><?php echo ($lang == 'en') ? 'Range' : 'სვლის მარაგი'; ?></span>
-                    <span class="spec-val">405km/505km</span>
+                    <span class="spec-label"><?php echo esc_html($t['s_safe']); ?></span>
+                    <span class="spec-val">ANCAP 5-star safety rating</span>
                 </div>
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label"><?php echo ($lang == 'en') ? 'Battery Capacity (kWh)' : 'ელემენტის მოცულობა (კვტ.სთ)'; ?></span>
-                    <span class="spec-val">51.5</span>
+                    <span class="spec-label"><?php echo esc_html($t['s_chassis']); ?></span>
+                    <span class="spec-val">Electronic part-time 4WD</span>
                 </div>
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label"><?php echo ($lang == 'en') ? 'AC Charging Time' : 'AC დატენვის დრო'; ?></span>
-                    <span class="spec-val">7.5h</span>
+                    <span class="spec-label"><?php echo esc_html($t['s_power']); ?></span>
+                    <span class="spec-val">JAC 2.0CTI Diesel / 2.0TGDI Gasoline</span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label"><?php echo ($lang == 'en') ? 'DC Charging Time (30%-80%)' : 'DC დატენვის დრო (30%-80%)'; ?></span>
-                    <span class="spec-val">0.5h</span>
+                    <span class="spec-label"><?php echo esc_html($t['s_intel']); ?></span>
+                    <span class="spec-val">Level 2 ADAS System</span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label"><?php echo ($lang == 'en') ? 'Turning Radius' : 'მოხვევის რადიუსი'; ?></span>
-                    <span class="spec-val">4.95m</span>
+                    <span class="spec-label"><?php echo esc_html($t['s_comf']); ?></span>
+                    <span class="spec-val">Silent cabin & Excellent NVH</span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label"><?php echo ($lang == 'en') ? 'Acceleration to 100km/h' : 'აჩქარება 100 კმ/სთ-მდე'; ?></span>
-                    <span class="spec-val">7.8s</span>
+                    <span class="spec-label"><?php echo esc_html($t['s_lux']); ?></span>
+                    <span class="spec-val">Diamond-stitched premium leather</span>
                 </div>
             </div>
         </div>

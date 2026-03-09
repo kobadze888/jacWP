@@ -331,10 +331,9 @@
     font-weight: 500;
 }
 
-/* 5. HIGHLIGHTS */
-.e30x-highlights {
-    background: #e3cabc;
-    padding: 80px 0;
+.t9-highlights {
+    background: #f4f4f2; 
+    padding: 100px 0;
 }
 
 .h-flex {
