@@ -389,9 +389,10 @@
 
 /* Ever so fun - იწყება მწვანე ვერტიკალური გრადიენტით */
 #gallery.gallery-main-wrapper {
-    background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+    /* იწყება თეთრით და მთავრდება ღია ვერცხლისფერით */
+    background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 100%);
     padding-top: 120px;
-    padding-bottom: 100px;
+    padding-bottom: 40px; /* შევამცირეთ, რომ შემდეგ სექციას რბილად შეერწყას */
 }
 
 .gallery-tabs {
@@ -507,8 +508,10 @@
 
 /* 7. FREE SECTION REFINED (Cinematic Loop & Trigger) */
 .t9-free-section {
-    background: #ffffff;
-    padding: 120px 0;
+    /* აგრძელებს წინა ფერს და ჩადის უფრო მუქ ვერცხლისფერში */
+    background: linear-gradient(180deg, #e6e6e6 0%, #cccccc 100%);
+    padding-top: 40px; /* შევამცირეთ დაშორება შეერთების ადგილას */
+    padding-bottom: 120px;
 }
 
 .t9-video-wrapper {
