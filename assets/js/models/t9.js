@@ -117,34 +117,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateGallery();
 
-/* 6. FEATURE VIDEO MODAL LOGIC */
-    const triggerFeatureVideo = document.getElementById('triggerFeatureVideo');
-    const featureModal = document.getElementById('featureVideoModal');
-    const featureClose = document.getElementById('closeFeatureModal');
-    const featureVideo = document.getElementById('featureModalVideo');
+/* 6. T9 VIDEO MODAL LOGIC */
+    const triggerFreeVideo = document.getElementById('openFreeVideo');
+    const freeModal = document.getElementById('t9VideoModal');
+    const freeClose = document.getElementById('closeT9Modal');
+    const freeVideo = document.getElementById('t9ModalVideo');
 
-    if(triggerFeatureVideo && featureModal && featureVideo) {
-        /* სქროლის დაბლოკვა მოდალის გახსნისას */
-        triggerFeatureVideo.addEventListener('click', () => {
-            featureModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; /* ბლოკავს ფონის სქროლს */
-            setTimeout(() => featureModal.classList.add('active'), 10);
-            featureVideo.currentTime = 0;
-            featureVideo.play();
+    if(triggerFreeVideo && freeModal && freeVideo) {
+        triggerFreeVideo.addEventListener('click', () => {
+            freeModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; 
+            setTimeout(() => freeModal.classList.add('active'), 10);
+            freeVideo.currentTime = 0;
+            freeVideo.play();
         });
 
-        /* სქროლის აღდგენა მოდალის დახურვისას */
-        const closeFeatureModal = () => {
-            featureModal.classList.remove('active');
+        const closeFreeModal = () => {
+            freeModal.classList.remove('active');
             setTimeout(() => {
-                featureModal.style.display = 'none';
-                document.body.style.overflow = ''; /* აღადგენს სქროლს */
+                freeModal.style.display = 'none';
+                document.body.style.overflow = ''; 
             }, 400);
-            featureVideo.pause();
+            freeVideo.pause();
         };
 
-        if(featureClose) featureClose.addEventListener('click', closeFeatureModal);
-        featureModal.addEventListener('click', (e) => { if(e.target === featureModal) closeFeatureModal(); });
+        if(freeClose) freeClose.addEventListener('click', closeFreeModal);
+        freeModal.addEventListener('click', (e) => { if(e.target === freeModal) closeFreeModal(); });
     }
 
     /* INTERIOR VIDEO MODAL LOGIC */

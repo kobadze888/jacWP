@@ -331,9 +331,10 @@
     font-weight: 500;
 }
 
-.t9-highlights {
-    background: #f4f4f2; 
-    padding: 100px 0;
+/* 5. HIGHLIGHTS */
+.e30x-highlights {
+    background: #e3cabc;
+    padding: 80px 0;
 }
 
 .h-flex {
@@ -388,9 +389,9 @@
 
 /* Ever so fun - იწყება მწვანე ვერტიკალური გრადიენტით */
 #gallery.gallery-main-wrapper {
-    background: linear-gradient(180deg, #d3e0db 0%, #ffffff 45%, #ffffff 100%);
-    padding-top: 100px;
-    padding-bottom: 80px;
+    background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+    padding-top: 120px;
+    padding-bottom: 100px;
 }
 
 .gallery-tabs {
@@ -430,7 +431,7 @@
     background: #000;
 }
 
-.e30x-gallery {
+.t9-gallery {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -504,6 +505,7 @@
     font-size: 13px !important;
 }
 
+/* 7. FREE SECTION REFINED (Cinematic Loop & Trigger) */
 .t9-free-section {
     background: #ffffff;
     padding: 120px 0;
@@ -513,6 +515,7 @@
     position: relative;
     width: 100%;
     max-width: 1400px;
+    /* Cinematic Width */
     margin: 60px auto 0;
     border-radius: 12px;
     overflow: hidden;
@@ -955,19 +958,8 @@
         grid-template-columns: 1fr;
     }
 
-    /* GALLERY & VIDEO MOBILE ADAPTATION */
     .t9-gallery {
         aspect-ratio: 4/3;
-        border-radius: 0; /* მობილურზე სრულ სიგანეზე უკეთ ჩანს */
-    }
-
-    .t9-free-section {
-        padding: 80px 0;
-    }
-
-    .t9-video-wrapper {
-        margin-top: 30px;
-        border-radius: 8px;
     }
 
     /* 4. COLORS - მობილურის ადაპტაცია */
