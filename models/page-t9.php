@@ -252,10 +252,10 @@ $colors = [
         </div>
     </section>
 
-    <div class="history-video-modal" id="e30xVideoModal">
+    <div class="history-video-modal" id="t9VideoModal">
         <div class="modal-content">
-            <div class="modal-close-trigger" id="closeE30xModal"><i class="fa-solid fa-xmark"></i></div>
-            <video controls id="e30xModalVideo">
+            <div class="modal-close-trigger" id="closeT9Modal"><i class="fa-solid fa-xmark"></i></div>
+            <video controls id="t9ModalVideo">
                 <source src="https://jacen.jac.com.cn/_nuxt/videos/v-s.98aaa73.mp4" type="video/mp4">
             </video>
         </div>

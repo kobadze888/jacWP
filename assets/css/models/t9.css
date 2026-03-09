@@ -504,22 +504,20 @@
     font-size: 13px !important;
 }
 
-/* 7. FREE SECTION REFINED (Cinematic Loop & Trigger) */
-.e30x-free-section {
+.t9-free-section {
     background: #ffffff;
-    padding: 100px 0;
+    padding: 120px 0;
 }
 
-.e30x-video-wrapper {
+.t9-video-wrapper {
     position: relative;
     width: 100%;
     max-width: 1400px;
-    /* Cinematic Width */
-    margin: 50px auto 0;
+    margin: 60px auto 0;
     border-radius: 12px;
     overflow: hidden;
     aspect-ratio: 16 / 9;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
 .free-bg-video {
@@ -957,8 +955,19 @@
         grid-template-columns: 1fr;
     }
 
-    .e30x-gallery {
+    /* GALLERY & VIDEO MOBILE ADAPTATION */
+    .t9-gallery {
         aspect-ratio: 4/3;
+        border-radius: 0; /* მობილურზე სრულ სიგანეზე უკეთ ჩანს */
+    }
+
+    .t9-free-section {
+        padding: 80px 0;
+    }
+
+    .t9-video-wrapper {
+        margin-top: 30px;
+        border-radius: 8px;
     }
 
     /* 4. COLORS - მობილურის ადაპტაცია */
