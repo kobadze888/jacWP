@@ -65,9 +65,9 @@ $t = [
     's_comf'    => ($lang == 'en') ? 'Super Comfortable' : 'სუპერ კომფორტული',
     's_lux'     => ($lang == 'en') ? 'Super Luxury' : 'სუპერ ლუქსი',
 
-    'fun_title'  => ($lang == 'en') ? 'Ever so fun.' : 'მუდამ სახალისო.',
-    'free_title' => ($lang == 'en') ? 'Ever so free.' : 'მუდამ თავისუფალი.',
-    'free_desc'  => ($lang == 'en') ? 'Discover how E30X can provide extraordinary freedom to your life.' : 'აღმოაჩინეთ, როგორ ანიჭებს E30X თქვენს ცხოვრებას არაჩვეულებრივ თავისუფლებას.',
+    'fun_title'  => ($lang == 'en') ? 'Go Wild, if You Want.' : 'იყავი თავისუფალი, თუ გსურს.',
+    'free_title' => ($lang == 'en') ? 'Work hard. Play harder.' : 'იმუშავე ბევრი. დაისვენე უკეთ.',
+    'free_desc'  => ($lang == 'en') ? 'Worksite one day, campsite the next. Built for the heavy lifting up back with all the creature comforts inside, you’re buckled up and ready to rumble no matter what you throw at the JAC T9 Pickup.' : 'სამუშაო ადგილი დღეს, დასასვენებელი ბანაკი ხვალ. შექმნილია მძიმე ტვირთისთვის და მაქსიმალური კომფორტისთვის — JAC T9 პიკაპი მზად არის ნებისმიერი გამოწვევისთვის.',
 
     'ext_lbl'   => ($lang == 'en') ? 'EXTERIOR' : 'ექსტერიერი',
     'ext_title' => ($lang == 'en') ? 'Born to be different.' : 'დაბადებული გამორჩეულად.',
@@ -212,17 +212,17 @@ $colors = [
                 <button class="gal-tab" data-cat="interior"><?php echo esc_html($t['nav_interior']); ?></button>
             </div>
 
-            <div class="e30x-gallery fade-up delay-1">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/e1.e647311.png" class="gal-img active" data-cat="exterior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/e3.6a4346a.png" class="gal-img" data-cat="exterior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/e8.e0ca92a.png" class="gal-img" data-cat="exterior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/e9.9e2eafa.png" class="gal-img" data-cat="exterior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/e11.5a5302a.png" class="gal-img" data-cat="exterior">
+            <div class="t9-gallery fade-up delay-1">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/1.1f06f0b.png" class="gal-img active" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/3.9c5a384.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/8.fc879fe.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/11.32692c6.png" class="gal-img" data-cat="exterior">
 
-                <img src="https://jacen.jac.com.cn/_nuxt/img/in13.baa7527.png" class="gal-img" data-cat="interior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/in13.baa7527.png" class="gal-img" data-cat="interior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-012.3f764ee.png" class="gal-img" data-cat="interior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/E30X-IN-013.43334a9.png" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/n1.ffd735b.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/n1.ffd735b.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/n3.a397167.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/n4.7987884.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/n5.b9f9318.jpg" class="gal-img" data-cat="interior">
             </div>
 
             <div class="gal-nav-wrapper fade-up delay-2">
@@ -235,14 +235,14 @@ $colors = [
         </div>
     </section>
 
-    <section class="e30x-section e30x-free-section text-center">
-        <div class="e30x-container">
+   <section class="t9-section t9-free-section text-center">
+        <div class="t9-container">
             <h2 class="section-title fade-up"><?php echo esc_html($t['free_title']); ?></h2>
             <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['free_desc']); ?></p>
 
-            <div class="e30x-video-wrapper fade-up delay-2 mt-30">
+            <div class="t9-video-wrapper fade-up delay-2 mt-30">
                 <video class="free-bg-video" autoplay muted loop playsinline>
-                    <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
+                    <source src="https://jacen.jac.com.cn/_nuxt/videos/v-s.98aaa73.mp4" type="video/mp4">
                 </video>
 
                 <div class="video-modal-trigger" id="openFreeVideo">
@@ -256,11 +256,10 @@ $colors = [
         <div class="modal-content">
             <div class="modal-close-trigger" id="closeE30xModal"><i class="fa-solid fa-xmark"></i></div>
             <video controls id="e30xModalVideo">
-                <source src="https://jacen.jac.com.cn/_nuxt/videos/ex-E30X_FREE_1008_x264.b4b8463.mp4" type="video/mp4">
+                <source src="https://jacen.jac.com.cn/_nuxt/videos/v-s.98aaa73.mp4" type="video/mp4">
             </video>
         </div>
     </div>
-
     <div class="e30x-features-wrapper">
         <section id="exterior" class="e30x-section text-center feature-slider-section">
             <div class="e30x-container">
