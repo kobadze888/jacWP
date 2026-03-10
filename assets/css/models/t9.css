@@ -861,6 +861,14 @@
     }
 }
 
+.gal-arrow, .gal-tab, .gal-ind, 
+.feat-arrow, .f-dot, 
+.color-dot, .video-modal-trigger, .safety-play-btn, .modal-close-trigger, .play-icon-small {
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 /* ANIMATIONS */
 .fade-up {
     opacity: 0;
@@ -883,6 +891,10 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
+
+    .e30x-subnav {
+        top: 60px; /* თუ შენი მობილურის ჰედერი სხვა სიმაღლისაა, მაგალითად 65px, შესაბამისად შეცვალე აქ */
+    }
 
     .subnav-flex {
         height: 60px;
@@ -944,6 +956,18 @@
 @media (max-width: 768px) {
     #t9-main-hero {
         background-image: url('https://jacen.jac.com.cn/_nuxt/img/T9_phone_01_02.4a89859.jpg');
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+        line-height: 1.5;
+        padding: 0 10px;
     }
 
     .e30x-hero {

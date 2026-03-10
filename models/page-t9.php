@@ -65,6 +65,14 @@ $t = [
     's_comf'    => ($lang == 'en') ? 'Super Comfortable' : 'სუპერ კომფორტული',
     's_lux'     => ($lang == 'en') ? 'Super Luxury' : 'სუპერ ლუქსი',
 
+    /* T9 SPEC VALUES */
+    's_safe_v'    => ($lang == 'en') ? 'ANCAP 5-star safety rating' : 'ANCAP 5-ვარსკვლავიანი უსაფრთხოების რეიტინგი',
+    's_chassis_v' => ($lang == 'en') ? 'Electronic part-time 4WD' : 'ელექტრონული Part-Time 4WD',
+    's_power_v'   => ($lang == 'en') ? 'JAC 2.0CTI Diesel / 2.0TGDI Gasoline' : 'JAC 2.0CTI დიზელი / 2.0TGDI ბენზინი',
+    's_intel_v'   => ($lang == 'en') ? 'Level 2 ADAS System' : 'მე-2 დონის ADAS სისტემა',
+    's_comf_v'    => ($lang == 'en') ? 'Silent cabin & Excellent NVH' : 'ჩუმი სალონი და შესანიშნავი ხმაურის იზოლაცია (NVH)',
+    's_lux_v'     => ($lang == 'en') ? 'Diamond-stitched premium leather' : 'ალმასისებრი ნაკერების მქონე პრემიუმ ტყავი',
+
     'fun_title'  => ($lang == 'en') ? 'Go Wild, if You Want.' : 'იყავი თავისუფალი, თუ გსურს.',
     'free_title' => ($lang == 'en') ? 'Work hard. Play harder.' : 'იმუშავე ბევრი. დაისვენე უკეთ.',
     'free_desc'  => ($lang == 'en') ? 'Worksite one day, campsite the next. Built for the heavy lifting up back with all the creature comforts inside, you’re buckled up and ready to rumble no matter what you throw at the JAC T9 Pickup.' : 'სამუშაო ადგილი დღეს, დასასვენებელი ბანაკი ხვალ. შექმნილია მძიმე ტვირთისთვის და მაქსიმალური კომფორტისთვის — JAC T9 პიკაპი მზად არის ნებისმიერი გამოწვევისთვის.',
@@ -93,14 +101,14 @@ $t = [
 
 // 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
 $colors = [
-    ['name' => 'Red',          'img' => 'https://jacen.jac.com.cn/_nuxt/img/Red.3d0e45b.png', 'hex' => '#b71c1c'],
-    ['name' => 'Black',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/Black.334efe7.png', 'hex' => '#181818'],
-    ['name' => 'White',        'img' => 'https://jacen.jac.com.cn/_nuxt/img/White.92b5ea5.png', 'hex' => '#f5f5f5'],
-    ['name' => 'Gray',         'img' => 'https://jacen.jac.com.cn/_nuxt/img/Gray.37045a4.png', 'hex' => '#545454'],
-    ['name' => 'Yellow',       'img' => 'https://jacen.jac.com.cn/_nuxt/img/Yellow.90501b4.png', 'hex' => '#fbc02d'],
-    ['name' => 'Silver',       'img' => 'https://jacen.jac.com.cn/_nuxt/img/Silver.a65ef69.png', 'hex' => '#c0c0c0'],
-    ['name' => 'Blue',         'img' => 'https://jacen.jac.com.cn/_nuxt/img/Blue.6952985.png', 'hex' => '#0d47a1'],
-    ['name' => 'Silvery-Gray', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/Silvery-Gray.c7542f6.png', 'hex' => '#8e8e8e'],
+    ['name' => 'Red',          'name_ka' => 'წითელი',                   'img' => 'https://jacen.jac.com.cn/_nuxt/img/Red.3d0e45b.png', 'hex' => '#b71c1c'],
+    ['name' => 'Black',        'name_ka' => 'შავი',                     'img' => 'https://jacen.jac.com.cn/_nuxt/img/Black.334efe7.png', 'hex' => '#181818'],
+    ['name' => 'White',        'name_ka' => 'თეთრი',                    'img' => 'https://jacen.jac.com.cn/_nuxt/img/White.92b5ea5.png', 'hex' => '#f5f5f5'],
+    ['name' => 'Gray',         'name_ka' => 'ნაცრისფერი',               'img' => 'https://jacen.jac.com.cn/_nuxt/img/Gray.37045a4.png', 'hex' => '#545454'],
+    ['name' => 'Yellow',       'name_ka' => 'ყვითელი',                  'img' => 'https://jacen.jac.com.cn/_nuxt/img/Yellow.90501b4.png', 'hex' => '#fbc02d'],
+    ['name' => 'Silver',       'name_ka' => 'ვერცხლისფერი',             'img' => 'https://jacen.jac.com.cn/_nuxt/img/Silver.a65ef69.png', 'hex' => '#c0c0c0'],
+    ['name' => 'Blue',         'name_ka' => 'ლურჯი',                    'img' => 'https://jacen.jac.com.cn/_nuxt/img/Blue.6952985.png', 'hex' => '#0d47a1'],
+    ['name' => 'Silvery-Gray', 'name_ka' => 'მოვერცხლისფრო-ნაცრისფერი', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/Silvery-Gray.c7542f6.png', 'hex' => '#8e8e8e'],
 ];
 ?>
 
@@ -150,15 +158,16 @@ $colors = [
                 </div>
                 <div class="color-dots">
                     <?php foreach ($colors as $index => $c): ?>
+                        <?php $color_display_name = ($lang == 'en') ? $c['name'] : $c['name_ka']; ?>
                         <button class="color-dot <?php echo ($index == 0) ? 'active' : ''; ?>"
-                            data-name="<?php echo esc_attr($c['name']); ?>"
+                            data-name="<?php echo esc_attr($color_display_name); ?>"
                             data-img="<?php echo esc_url($c['img']); ?>"
                             style="background-color: <?php echo esc_attr($c['hex']); ?>;">
                             <i class="fa-solid fa-check check-icon"></i>
                         </button>
                     <?php endforeach; ?>
                 </div>
-                <h3 class="color-name-display" id="colorNameDisplay"><?php echo esc_html($colors[0]['name']); ?></h3>
+                <h3 class="color-name-display" id="colorNameDisplay"><?php echo esc_html(($lang == 'en') ? $colors[0]['name'] : $colors[0]['name_ka']); ?></h3>
                 <p class="color-disclaimer"><?php echo ($lang == 'en') ? 'Models and colors may vary by regions' : 'მოდელები და ფერები შესაძლოა განსხვავდებოდეს რეგიონების მიხედვით'; ?></p>
             </div>
         </div>
@@ -177,27 +186,27 @@ $colors = [
             <div class="h-right">
                 <div class="spec-box fade-up delay-1">
                     <span class="spec-label"><?php echo esc_html($t['s_safe']); ?></span>
-                    <span class="spec-val">ANCAP 5-star safety rating</span>
+                    <span class="spec-val"><?php echo esc_html($t['s_safe_v']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-1">
                     <span class="spec-label"><?php echo esc_html($t['s_chassis']); ?></span>
-                    <span class="spec-val">Electronic part-time 4WD</span>
+                    <span class="spec-val"><?php echo esc_html($t['s_chassis_v']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-1">
                     <span class="spec-label"><?php echo esc_html($t['s_power']); ?></span>
-                    <span class="spec-val">JAC 2.0CTI Diesel / 2.0TGDI Gasoline</span>
+                    <span class="spec-val"><?php echo esc_html($t['s_power_v']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-2">
                     <span class="spec-label"><?php echo esc_html($t['s_intel']); ?></span>
-                    <span class="spec-val">Level 2 ADAS System</span>
+                    <span class="spec-val"><?php echo esc_html($t['s_intel_v']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-2">
                     <span class="spec-label"><?php echo esc_html($t['s_comf']); ?></span>
-                    <span class="spec-val">Silent cabin & Excellent NVH</span>
+                    <span class="spec-val"><?php echo esc_html($t['s_comf_v']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-2">
                     <span class="spec-label"><?php echo esc_html($t['s_lux']); ?></span>
-                    <span class="spec-val">Diamond-stitched premium leather</span>
+                    <span class="spec-val"><?php echo esc_html($t['s_lux_v']); ?></span>
                 </div>
             </div>
         </div>
