@@ -106,7 +106,7 @@ $colors = [
 
 <main class="e30x-page">
 
-    <section class="e30x-hero" style="background-image: url('https://jacen.jac.com.cn/_nuxt/img/banner-web.36f6ba7.jpg');">
+    <section class="e30x-hero" id="t9-main-hero">
         <div class="e30x-hero-overlay"></div>
         <div class="e30x-hero-content fade-up">
             <h1><?php echo esc_html($t['hero_title']); ?></h1>

@@ -32,6 +32,10 @@
 }
 
 /* 1. HERO */
+#t9-main-hero {
+    background-image: url('https://jacen.jac.com.cn/_nuxt/img/banner-web.36f6ba7.jpg');
+}
+
 .e30x-hero {
     height: 75vh;
     /* 100vh-ის ნაცვლად შემცირდა */
@@ -880,41 +884,44 @@
 /* RESPONSIVE */
 @media (max-width: 1024px) {
 
-    /* მობილურის Sticky მენიუს ადაპტაცია (ჰორიზონტალური სქროლი) */
+    .subnav-flex {
+        height: 60px;
+        min-height: auto;
+        padding: 0;
+    }
+
     .subnav-brand {
         display: none;
     }
 
-    /* ვმალავთ მანქანის სახელს მეტი სივრცისთვის */
-
     .subnav-links {
         display: flex !important;
         width: 100%;
+        flex-wrap: nowrap;
         overflow-x: auto;
-        scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
         gap: 20px;
-        padding: 0 5px;
+        padding: 0 15px;
+        align-items: center;
     }
 
     .subnav-links::-webkit-scrollbar {
         display: none;
     }
 
-    /* ვმალავთ სქროლის ხაზს */
-
     .subnav-links a:not(.subnav-btn-brochure) {
         white-space: nowrap;
-        /* იცავს სიტყვების ორ ხაზზე ჩამოსვლისგან */
-        font-size: 13px;
+        font-size: 14px;
+        padding: 20px 0;
     }
 
     .subnav-btn-brochure {
         white-space: nowrap;
         padding: 8px 16px !important;
-        font-size: 12px !important;
-        margin-right: 15px;
-        /* მარჯვენა კიდესთან რომ არ მიეწებოს ბოლომდე გასქროლვისას */
+        font-size: 11px !important;
+        margin: 0;
+        flex-shrink: 0;
     }
 
     /* ქვედა სექციების ძველი სტილები */
@@ -935,25 +942,28 @@
 }
 
 @media (max-width: 768px) {
-    .t9-hero {
-        height: auto;
-        min-height: auto;
-        aspect-ratio: 4 / 3; /* მობილურისთვის სურათის პროპორცია */
+    #t9-main-hero {
+        background-image: url('https://jacen.jac.com.cn/_nuxt/img/T9_phone_01_02.4a89859.jpg');
+    }
+
+    .e30x-hero {
+        height: 55vh;
+        min-height: 500px; /* რათა ძალიან პატარა ეკრანებზეც არ დაპატარავდეს ზედმეტად */
         background-size: cover;
         background-position: center center;
-        padding: 40px 20px;
+        padding: 40px 20px 60px; /* ქვემოდან დაშორება ოდნავ გავზარდეთ ტექსტისთვის */
         display: flex;
         flex-direction: column;
         justify-content: flex-end; /* ტექსტი ჩამოვიდეს ქვემოთ, რომ მანქანა არ დაფაროს */
         text-align: center;
     }
 
-    .t9-hero-content h1 {
+    .e30x-hero-content h1 {
         font-size: 32px;
         margin-bottom: 5px;
     }
 
-    .t9-hero-content p {
+    .e30x-hero-content p {
         font-size: 18px;
     }
 
