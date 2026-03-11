@@ -242,4 +242,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+
+const subNavLinksContainer = document.querySelector('.subnav-links');
+    if (subNavLinksContainer) {
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class' && mutation.target.classList.contains('active')) {
+                    const activeLink = mutation.target;
+                    const containerWidth = subNavLinksContainer.clientWidth;
+                    const linkLeft = activeLink.offsetLeft;
+                    const linkWidth = activeLink.offsetWidth;
+                    const scrollPos = linkLeft - (containerWidth / 2) + (linkWidth / 2);
+
+                    subNavLinksContainer.scrollTo({
+                        left: scrollPos,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const links = subNavLinksContainer.querySelectorAll('a:not(.subnav-btn-brochure)');
+        links.forEach(link => {
+            observer.observe(link, { attributes: true });
+        });
+    }
 });

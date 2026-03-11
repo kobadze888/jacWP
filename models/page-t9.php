@@ -80,6 +80,12 @@ $t = [
     'ext_lbl'   => ($lang == 'en') ? 'EXTERIOR' : 'ექსტერიერი',
     'ext_title' => ($lang == 'en') ? 'Born to be different.' : 'დაბადებული გამორჩეულად.',
 
+    'ext_s1_t'  => ($lang == 'en') ? 'Unconventional design.' : 'არასტანდარტული დიზაინი.',
+    'ext_s1_d'  => ($lang == 'en') ? 'Built tough, made durable and created with a captivating, JAC T9 Pickup cuts a bold and rugged figure wherever it goes.' : 'მტკიცე, გამძლე და მიმზიდველი — JAC T9 პიკაპი ყველგან თამამ და მძლავრ შთაბეჭდილებას ტოვებს.',
+
+    'ext_s2_t'  => ($lang == 'en') ? 'Light your way.' : 'გაინათეთ გზა.',
+    'ext_s2_d'  => ($lang == 'en') ? 'Integrated LED Daytime Running Lights, LED Headlamps, and Fog Lamps seamlessly blend into the front bumper design, creating a fierce and fearless look like no other.' : 'ინტეგრირებული LED დღის განათება, მთავარი LED ფარები და ნისლსაწინააღმდეგო ფარები იდეალურად ერწყმის წინა ბამპერის დიზაინს და ქმნის განსაკუთრებულ, მრისხანე და უშიშარ იერს.',
+
     'int_lbl'   => ($lang == 'en') ? 'INTERIOR' : 'ინტერიერი',
     'int_title' => ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.',
 
@@ -281,22 +287,22 @@ $colors = [
                     <div class="feature-track" id="exteriorTrack">
 
                         <div class="feature-slide">
-                            <div class="feature-media-row fade-up">
-                                <div class="feature-media-item video-trigger" id="triggerFeatureVideo">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ca1.137bf2b.png" alt="E30X Video Cover">
-                                    <div class="play-icon-small"><i class="fa-solid fa-play"></i></div>
+                            <div class="feature-media-grid-3 fade-up">
+                                <div class="media-main">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex1slide1.585d08e.png" alt="T9 Exterior Main">
                                 </div>
-                                <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ca2.2f9c262.png" alt="E30X Design">
+                                <div class="media-side">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex1slide2.c8685c1.png" alt="T9 Exterior Detail">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex1slide3.3340839.png" alt="T9 Exterior Detail">
                                 </div>
                             </div>
                             <div class="feature-content-row fade-up delay-1">
                                 <div class="feature-text-left">
-                                    <h3><?php echo ($lang == 'en') ? 'Eye-catching design.' : 'თვალისმომჭრელი დიზაინი.'; ?></h3>
+                                    <h3><?php echo esc_html($t['ext_s1_t']); ?></h3>
                                 </div>
                                 <div class="feature-text-right">
-                                    <p><?php echo ($lang == 'en') ? 'E30X features sleek body lines and bubble aesthetic designs that stand you out on every street corners, complemented by its LED crystal headlights and dual-color rim designs.' : 'E30X გამოირჩევა დახვეწილი ხაზებით და ესთეტიკური დიზაინით, რომელიც გამოგარჩევთ ნებისმიერ ქუჩაში. ამ ყველაფერს ემატება LED ფარები და ორფერიანი დისკები.'; ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
+                                    <p><?php echo esc_html($t['ext_s1_d']); ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
                                         <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
                                     </a>
                                 </div>
@@ -305,20 +311,17 @@ $colors = [
 
                         <div class="feature-slide">
                             <div class="feature-media-row fade-up">
-                                <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ca3.152c7bf.png" alt="Smart exterior">
-                                </div>
-                                <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ca4.2e26d82.png" alt="Spacious hatchback">
+                                <div class="feature-media-item interior-media-item">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex2slide1.cf7530e.png" alt="T9 Light your way">
                                 </div>
                             </div>
                             <div class="feature-content-row fade-up delay-1">
                                 <div class="feature-text-left">
-                                    <h3><?php echo ($lang == 'en') ? 'Smart and spacious.' : 'ჭკვიანი და ტევადი.'; ?></h3>
+                                    <h3><?php echo esc_html($t['ext_s2_t']); ?></h3>
                                 </div>
                                 <div class="feature-text-right">
-                                    <p><?php echo ($lang == 'en') ? 'A spacious hatchback with car length up to 4025mm, offering a trunk space up to 300L and maximum 1150L with seat folded.' : 'ტევადი ჰეჩბექი 4025მმ-მდე სიგრძით, რომელიც გთავაზობთ 300ლ-მდე საბარგულის მოცულობას, ხოლო სავარძლების დაკეცვისას მოცულობა 1150ლ-მდე იზრდება.'; ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
+                                    <p><?php echo esc_html($t['ext_s2_d']); ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
                                         <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
                                     </a>
                                 </div>
