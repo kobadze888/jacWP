@@ -942,8 +942,8 @@ section[id] {
 
     .feature-content-row {
         flex-direction: column;
-        gap: 10px;
-        padding: 15px 0 0 0;
+        gap: 15px;
+        padding: 20px 0;
     }
 
     .feature-text-left,
@@ -958,22 +958,11 @@ section[id] {
 
     .feature-text-right p {
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .spec-link {
         justify-content: center;
-        margin-bottom: 5px;
-    }
-
-    .feature-slider-controls {
-        margin-top: 5px;
-        gap: 20px;
-    }
-
-    .feat-arrow {
-        width: 38px;
-        height: 38px;
     }
 }
 
