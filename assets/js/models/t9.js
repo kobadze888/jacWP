@@ -292,4 +292,35 @@ const subNavLinksContainer = document.querySelector('.subnav-links');
             });
         });
     }
+
+    // =========================================
+    // T9 VERSIONS TABS LOGIC
+    // =========================================
+    const vTabs = document.querySelectorAll('.v-tab');
+    const vContents = document.querySelectorAll('.v-content');
+    const vImages = document.querySelectorAll('.v-car-img');
+
+    if (vTabs.length > 0) {
+        vTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                vTabs.forEach(t => t.classList.remove('active'));
+                vContents.forEach(c => c.classList.remove('active'));
+                vImages.forEach(img => img.classList.remove('active'));
+
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('data-target');
+                
+                const targetContent = document.getElementById('desc-' + targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+
+                const targetImg = document.getElementById('img-' + targetId);
+                if (targetImg) {
+                    targetImg.classList.add('active');
+                }
+            });
+        });
+    }
 });

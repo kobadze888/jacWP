@@ -1910,3 +1910,129 @@ section[id] {
         border: none;
     }
 }
+
+
+.t9-versions-section {
+    background-color: #fff;
+    padding: 100px 0;
+}
+
+.versions-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 60px;
+}
+
+.v-main-flex {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.v-left-img {
+    flex: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.v-car-img {
+    width: 100%;
+    height: auto;
+    display: none;
+    animation: vFadeIn 0.5s ease forwards;
+}
+
+.v-car-img.active {
+    display: block;
+}
+
+@keyframes vFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.v-right-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.versions-tabs {
+    background-color: #f4f4f4;
+    display: inline-flex;
+    border-radius: 50px;
+    padding: 0;
+    margin-bottom: 50px;
+}
+
+.v-tab {
+    padding: 12px 40px;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.v-tab.active {
+    background-color: #a88874;
+    color: #fff;
+}
+
+.v-details-container {
+    border-left: 1px solid #000;
+    padding-left: 30px;
+    min-height: 180px;
+}
+
+.v-content {
+    display: none;
+    animation: vFadeIn 0.5s ease forwards;
+}
+
+.v-content.active {
+    display: block;
+}
+
+.v-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.v-content ul li {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .v-main-flex {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .versions-title {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+    .v-right-info {
+        align-items: center;
+    }
+    .v-details-container {
+        border-left: none;
+        border-top: 1px solid #000;
+        padding-left: 0;
+        padding-top: 30px;
+        text-align: center;
+    }
+}

@@ -567,6 +567,50 @@ $colors = [
         </div>
     </div>
 
+ </div>
+    </div>
+
+     <section id="versions" class="e30x-section t9-versions-section">
+        <div class="e30x-container">
+            <h2 class="versions-title text-center fade-up"><?php echo ($lang == 'en') ? 'Discover Your JAC T9 Pickup' : 'აღმოაჩინე შენი JAC T9 Pickup'; ?></h2>
+
+            <div class="v-main-flex fade-up delay-1">
+                <div class="v-left-img">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/fourtwo.10b2859.png" class="v-car-img active" id="img-v-4x2" alt="T9 Pickup 4x2">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/fourfour.24711b5.png" class="v-car-img" id="img-v-4x4" alt="T9 Pickup 4x4">
+                </div>
+
+                <div class="v-right-info">
+                    <div class="versions-tabs">
+                        <button class="v-tab active" data-target="v-4x2">T9 Pickup 4x2</button>
+                        <button class="v-tab" data-target="v-4x4">T9 Pickup 4x4</button>
+                    </div>
+
+                    <div class="v-details-container">
+                        <div class="v-content active" id="desc-v-4x2">
+                            <ul>
+                                <li><?php echo ($lang == 'en') ? 'Driving modes Standard/Eco/Sport/Snow' : 'მართვის რეჟიმები Standard/Eco/Sport/Snow'; ?></li>
+                                <li><?php echo ($lang == 'en') ? '18" aluminum wheels' : '18" ალუმინის დისკები'; ?></li>
+                                <li><?php echo ($lang == 'en') ? 'Interior and exterior hooks in the cargo area' : 'შიდა და გარე კავები საბარგულში'; ?></li>
+                                <li><?php echo ($lang == 'en') ? 'Steering wheel and seats covered in synthetic leather' : 'სინთეტიკური ტყავით გადაკრული საჭე და სავარძლები'; ?></li>
+                                <li><?php echo ($lang == 'en') ? 'Roll-bar in cargo box' : 'Roll-bar საბარგულში'; ?></li>
+                            </ul>
+                        </div>
+
+                        <div class="v-content" id="desc-v-4x4">
+                            <ul>
+                                <li><?php echo ($lang == 'en') ? 'Electric sunroof' : 'ელექტრო ლუქი'; ?></li>
+                                <li><?php echo ($lang == 'en') ? '360° camera' : '360° კამერა'; ?></li>
+                                <li><?php echo ($lang == 'en') ? 'Traction modes 2H, 4H, 4L' : 'წევის რეჟიმები 2H, 4H, 4L'; ?></li>
+                                <li><?php echo ($lang == 'en') ? 'Roof rails' : 'სახურავის რელსები'; ?></li>
+                                <li><?php echo ($lang == 'en') ? 'Front parking sensors' : 'წინა პარკინგის სენსორები'; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>
