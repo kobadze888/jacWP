@@ -99,6 +99,16 @@ function jac_enqueue_scripts()
         wp_enqueue_script('jac-t9-js', get_template_directory_uri() . '/assets/js/models/t9.js', array(), '1.0', true);
     }
     
+    /* 3. N-series MODEL SECTION */
+    // N-series Model გვერდის სტილები
+    if (is_page_template('models/page-N-series.php')) {
+        // CSS გზის განახლება
+        wp_enqueue_style('jac-N-series.css', get_template_directory_uri() . '/assets/css/models/N-series.css', array(), '1.0');
+        
+        // JS გზის განახლება
+        wp_enqueue_script('jac-N-series-js', get_template_directory_uri() . '/assets/js/models/N-series.js', array(), '1.0', true);
+    }
+    
     wp_add_inline_script('lucide', 'lucide.createIcons();');
 }
 add_action('wp_enqueue_scripts', 'jac_enqueue_scripts');
