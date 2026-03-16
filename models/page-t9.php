@@ -27,25 +27,15 @@ $t = [
     'cc_sp2'       => ($lang == 'en') ? 'The 4L mode delivers low-range four-wheel drive' : '4L რეჟიმი უზრუნველყოფს დაბალი დიაპაზონის ოთხივე წამყვან თვალს',
     'nav_brochure' => ($lang == 'en') ? 'Brochure' : 'ბროშურა',
 
-    /* 8.5 MORE FEATURES TRANSLATIONS (BILINGUAL TITLES) */
-    'feat_lbl'      => ($lang == 'en') ? 'MORE FEATURES' : 'მეტი შესაძლებლობა',
-    'feat_title'    => ($lang == 'en') ? 'Ever so easy.' : 'მუდამ მარტივი.',
-
-    // ბარათი 1
-    'f_c1_t' => ($lang == 'en') ? '9-In-1 Power-train' : '9-ერთში ძალოვანი აგრეგატი',
-    'f_c1_d' => ($lang == 'en') ? 'Make full use of the vehicle space to provide a larger interior and trunk capacity than other models in the same segment.' : 'ავტომობილის სივრცის მაქსიმალური ათვისება უზრუნველყოფს უფრო დიდ ინტერიერსა და საბარგულის მოცულობას, ვიდრე იმავე სეგმენტის სხვა მოდელებში.',
-
-    // ბარათი 2
-    'f_c2_t' => ($lang == 'en') ? '3-In-1 Intelligent Braking System' : '3-ერთში ინტელექტუალური სამუხრუჭე სისტემა',
-    'f_c2_d' => ($lang == 'en') ? 'Through the three-in-one braking system, it can brake in time and comfortably, ensure the safety of the user.' : 'სამი-ერთში სამუხრუჭე სისტემის მეშვეობით, ავტომობილი მუხრუჭებს დროულად და კომფორტულად, რაც უზრუნველყოფს მძღოლის უსაფრთხოებას.',
-
-    // ბარათი 3
-    'f_c3_t' => ($lang == 'en') ? '4.95m Turning Radius' : '4.95მ მოხვევის რადიუსი',
-    'f_c3_d' => ($lang == 'en') ? 'The turning radius is small, and it can easily make a U-turn on narrow roads, making it more convenient for users to drive.' : 'მოხვევის რადიუსი მცირეა, რაც აადვილებს მანევრირებას ვიწრო გზებზე და მართვას უფრო მოსახერხებელს ხდის.',
-
-    // ბარათი 4
-    'f_c4_t' => ($lang == 'en') ? 'Efficient Super-Fast Charging' : 'ეფექტური სუპერ-სწრაფი დატენვა',
-    'f_c4_d' => ($lang == 'en') ? 'The ultra-high charging power reduces the charging time from 30% to 80% to as little as 0.5 hours, significantly enhancing the user experience.' : 'ულტრა-მაღალი დატენვის სიმძლავრე ამცირებს დატენვის დროს 30%-დან 80%-მდე სულ რაღაც 0.5 საათამდე.',
+    'feat_lbl' => ($lang == 'en') ? 'POWER' : 'სიმძლავრე',
+    'f_c1_t' => ($lang == 'en') ? 'Above and beyond.' : 'უფრო მეტი, ვიდრე მოელი.',
+    'f_c1_d' => ($lang == 'en') ? 'The JAC T9 Pickup literally lifts the driving experience. The ride height is higher, so you not only get better road visibility but also plenty of headroom and space for everyone in the cabin.' : 'JAC T9 პიკაპი პირდაპირი გაგებით ამაღლებს მართვის გამოცდილებას. კლირენსი უფრო მაღალია, ამიტომ თქვენ იღებთ არა მხოლოდ უკეთეს ხილვადობას, არამედ საკმარის სივრცეს ყველასთვის სალონში.',
+    'f_c2_t' => ($lang == 'en') ? 'Get a grip.' : 'მყარი მოჭიდება.',
+    'f_c2_d' => ($lang == 'en') ? 'When the going gets tough JAC T9 Pickup gets going. The rear differential lock lets you take on the most challenging conditions.' : 'როდესაც გზა რთულდება, JAC T9 პიკაპი აგრძელებს მოძრაობას. უკანა დიფერენციალის ბლოკირება საშუალებას გაძლევთ გაუმკლავდეთ ყველაზე რთულ პირობებს.',
+    'f_c3_t' => ($lang == 'en') ? 'Strong power.' : 'მძლავრი ენერგია.',
+    'f_c3_d' => ($lang == 'en') ? 'When you\'re faced with slippery surfaces or tough trails, the rear diff lock kicks in. Both rear wheels receive equal torque, giving you the traction you need to power through.' : 'როდესაც აწყდებით სრიალა ზედაპირებს ან რთულ ბილიკებს, უკანა დიფერენციალის ბლოკირება ერთვება საქმეში. ორივე უკანა თვალი იღებს თანაბარ მბრუნავ მომენტს, რაც გაძლევთ საჭირო მოჭიდებას წინსვლისთვის.',
+    'f_c4_t' => ($lang == 'en') ? 'Versatility driving modes.' : 'მართვის მრავალფეროვანი რეჟიმები.',
+    'f_c4_d' => ($lang == 'en') ? 'You have the versatility across all driving modes; 2H, 4H, or 2L, operational up to speeds of 40km/h.' : 'თქვენ გაქვთ მრავალფეროვნება მართვის ყველა რეჟიმში; 2H, 4H, ან 2L, რომლებიც მუშაობს 40 კმ/სთ-მდე სიჩქარეზე.',
 
     'col_title' => ($lang == 'en') ? 'Born to Explore!' : 'დაბადებული აღმოსაჩენად!',
     'col_desc'  => ($lang == 'en') ? 'JAC T9 pickup, combines remarkable rugged capability with premium comfort and advanced technology to fuel your wildest adventures.' : 'JAC T9 პიკაპი აერთიანებს გამორჩეულ გამავლობას, პრემიუმ კომფორტს და მოწინავე ტექნოლოგიებს თქვენი ყველაზე თამამი თავგადასავლებისთვის.',
@@ -507,16 +497,11 @@ $colors = [
             </div>
         </div>
     </section>
-    <section id="more-features" class="e30x-section more-features-section">
+    <section id="power" class="e30x-section more-features-section">
         <div class="e30x-container">
             <div class="text-center">
                 <span class="section-label fade-up"><?php echo esc_html($t['feat_lbl']); ?></span>
                 <div class="label-line fade-up"></div>
-                <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['feat_title']); ?></h2>
-            </div>
-
-            <div class="mf-banner fade-up delay-1">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/tech.5c7d60f.png" alt="E30X Technology">
             </div>
 
             <div class="mf-bento-grid mt-40">
@@ -526,7 +511,7 @@ $colors = [
                         <p class="bento-desc"><?php echo esc_html($t['f_c1_d']); ?></p>
                     </div>
                     <div class="bento-img">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_054.4fb9117.png" alt="9-In-1 Power-train">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_066.d50b556.png" alt="Above and beyond">
                     </div>
                 </div>
 
@@ -536,7 +521,7 @@ $colors = [
                         <p class="bento-desc"><?php echo esc_html($t['f_c2_d']); ?></p>
                     </div>
                     <div class="bento-img">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_066.d17f68d.png" alt="Intelligent Braking">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_054.31b6a38.png" alt="Get a grip">
                     </div>
                 </div>
 
