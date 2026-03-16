@@ -86,8 +86,18 @@ $t = [
     'ext_s2_t'  => ($lang == 'en') ? 'Light your way.' : 'გაინათეთ გზა.',
     'ext_s2_d'  => ($lang == 'en') ? 'Integrated LED Daytime Running Lights, LED Headlamps, and Fog Lamps seamlessly blend into the front bumper design, creating a fierce and fearless look like no other.' : 'ინტეგრირებული LED დღის განათება, მთავარი LED ფარები და ნისლსაწინააღმდეგო ფარები იდეალურად ერწყმის წინა ბამპერის დიზაინს და ქმნის განსაკუთრებულ, მრისხანე და უშიშარ იერს.',
 
+    'ext_s3_t'  => ($lang == 'en') ? 'Go adventure.' : 'წინ თავგადასავლებისკენ.',
+    'ext_s3_d'  => ($lang == 'en') ? 'Ready to roll and looking the goods up back with the JAC Black Sports Bar. Teamed up with the factory iron rock sliders and you\'re ready to step it up.' : 'გამოიყურება იდეალურად JAC-ის შავი სპორტული საბარგულის რკალებით (Sports Bar). ქარხნულ რკინის საფეხურებთან (Rock Sliders) ერთად, თქვენ მზად ხართ ახალი გამოწვევებისთვის.',
+
+    'ext_s4_t'  => ($lang == 'en') ? 'Easy across.' : 'მარტივად ყველგან.',
+    'ext_s4_d'  => ($lang == 'en') ? 'Eye-catching two-tone 18-inch alloy wheels with a floral-inspired design and 265/60 R18 tyres' : 'თვალისმომჭრელი ორფერიანი 18-დუიმიანი ალუმინის დისკები ყვავილისებური დიზაინით და 265/60 R18 ზომის საბურავებით.',
+
+    'ext_s5_t'  => ($lang == 'en') ? 'Load capacity 1000kg.' : 'ტვირთამწეობა 1000კგ.',
+    'ext_s5_d'  => ($lang == 'en') ? 'Tackle heavy duty tasks and bulky loads, this vehicle gives you the strength and space you need.' : 'გაუმკლავდით მძიმე სამუშაოებს და მოცულობით ტვირთებს, ეს ავტომობილი გაძლევთ საჭირო სივრცესა და ძალას.',
+
     'int_lbl'   => ($lang == 'en') ? 'INTERIOR' : 'ინტერიერი',
-    'int_title' => ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.',
+    'int_title' => ($lang == 'en') ? 'Easy get what you want.' : 'მარტივად მიიღე ის, რაც გსურს.',
+    'int_desc'  => ($lang == 'en') ? 'Beauty is inside the beast. A bold and futuristic look with tomorrow\'s tech all at your fingertips.' : 'სილამაზე მხეცის შიგნით. თამამი და ფუტურისტული იერსახე ხვალინდელი ტექნოლოგიებით შენს ხელთაა.',
 
     /* SMART TECHNOLOGY SECTION */
     'tech_lbl'   => ($lang == 'en') ? 'TECHNOLOGY' : 'ტექნოლოგია',
@@ -275,8 +285,8 @@ $colors = [
             </video>
         </div>
     </div>
-    <div class="e30x-features-wrapper">
-        <section id="exterior" class="e30x-section text-center feature-slider-section">
+ <div class="e30x-features-wrapper">
+     <section id="exterior" class="e30x-section text-center feature-slider-section">
             <div class="e30x-container">
 
                 <span class="section-label fade-up"><?php echo esc_html($t['ext_lbl']); ?></span>
@@ -329,21 +339,66 @@ $colors = [
                         </div>
 
                         <div class="feature-slide">
-                            <div class="feature-media-row fade-up">
+                            <div class="feature-media-row half-grid fade-up">
                                 <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ca5.5ed5020.png" alt="Hidden Door Handles">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex2slide2.b8f2606.png" alt="T9 Sports Bar">
                                 </div>
                                 <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ca6.bae0803.png" alt="Automatic Unlocking Function">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex2slide3.b442ef1.png" alt="T9 Rock Sliders">
                                 </div>
                             </div>
                             <div class="feature-content-row fade-up delay-1">
                                 <div class="feature-text-left">
-                                    <h3 style="font-size: 26px; line-height: 1.2;"><?php echo ($lang == 'en') ? 'Hidden door handles with automatic unlocking function.' : 'დამალული კარის სახელურები ავტომატური განბლოკვის ფუნქციით.'; ?></h3>
+                                    <h3><?php echo esc_html($t['ext_s3_t']); ?></h3>
                                 </div>
                                 <div class="feature-text-right">
-                                    <p><?php echo ($lang == 'en') ? 'Simple and elegant hidden door handle design with automatic unlocking function when you approach the car.' : 'კარის დამალული სახელურის მარტივი და ელეგანტური დიზაინი, რომელიც ავტომატურად განიბლოკება მანქანასთან მიახლოებისას.'; ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
+                                    <p><?php echo esc_html($t['ext_s3_d']); ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
+                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-slide">
+                            <div class="feature-media-row half-grid fade-up">
+                                <div class="feature-media-item">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex3slide2.4d9d0e8.png" alt="T9 Alloy Wheels">
+                                </div>
+                                <div class="feature-media-item">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_070.7de1545.png" alt="T9 Tyres">
+                                </div>
+                            </div>
+                            <div class="feature-content-row fade-up delay-1">
+                                <div class="feature-text-left">
+                                    <h3><?php echo esc_html($t['ext_s4_t']); ?></h3>
+                                </div>
+                                <div class="feature-text-right">
+                                    <p><?php echo esc_html($t['ext_s4_d']); ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
+                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feature-slide">
+                            <div class="feature-media-grid-3 fade-up">
+                                <div class="media-main">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex3slide1.81f6d27.png" alt="T9 Load Capacity">
+                                </div>
+                                <div class="media-side">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex3slide3.4f5f547.png" alt="T9 Bed Detail">
+                                    <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_103.8474843.jpg" alt="T9 Bed Detail">
+                                </div>
+                            </div>
+                            <div class="feature-content-row fade-up delay-1">
+                                <div class="feature-text-left">
+                                    <h3><?php echo esc_html($t['ext_s5_t']); ?></h3>
+                                </div>
+                                <div class="feature-text-right">
+                                    <p><?php echo esc_html($t['ext_s5_d']); ?></p>
+                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
                                         <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
                                     </a>
                                 </div>
@@ -352,11 +407,13 @@ $colors = [
 
                     </div>
                 </div>
-
+                
                 <div class="feature-slider-controls fade-up delay-2">
                     <button class="feat-arrow prev" data-slider="exteriorTrack"><i class="fa-solid fa-chevron-left"></i></button>
                     <div class="feat-dots">
                         <span class="f-dot active"></span>
+                        <span class="f-dot"></span>
+                        <span class="f-dot"></span>
                         <span class="f-dot"></span>
                         <span class="f-dot"></span>
                     </div>
@@ -366,88 +423,26 @@ $colors = [
         </section>
 
         <!-- INTERIOR SECTION (BILINGUAL & SLIDER)  -->
-        <section id="interior" class="e30x-section text-center feature-slider-section" style="padding-top: 20px;">
+        <section id="interior" class="e30x-section text-center" style="padding-top: 40px; padding-bottom: 80px;">
             <div class="e30x-container">
 
                 <span class="section-label fade-up"><?php echo esc_html($t['int_lbl']); ?></span>
                 <div class="label-line fade-up"></div>
                 <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['int_title']); ?></h2>
+                <p class="section-subtitle fade-up delay-1" style="max-width: 800px; margin: 0 auto 50px;"><?php echo esc_html($t['int_desc']); ?></p>
 
-                <div class="feature-track-wrapper mt-50">
-                    <div class="feature-track" id="interiorTrack">
-
-                        <div class="feature-slide">
-                            <div class="feature-media-row fade-up">
-                                <div class="feature-media-item interior-media-item video-trigger" id="triggerInteriorVideo">
-                                    <video autoplay muted loop playsinline class="interior-video">
-                                        <source src="https://jacen.jac.com.cn/_nuxt/videos/in-E30X_PLEASANT_1008_output.88cb4ef.mp4" type="video/mp4">
-                                    </video>
-                                    <div class="play-icon-small"><i class="fa-solid fa-play"></i></div>
-                                </div>
-                            </div>
-                            <div class="feature-content-row fade-up delay-1">
-                                <div class="feature-text-left">
-                                    <h3><?php echo ($lang == 'en') ? 'Ever so pleasant.' : 'მუდამ სასიამოვნო.'; ?></h3>
-                                </div>
-                                <div class="feature-text-right">
-                                    <p><?php echo ($lang == 'en') ? 'The E30X stands out for its elegance and luxury. Its leather seats and refined interior combine style and comfort, while the 100% glass roof with a panoramic opening elevates the driving experience to the next level.' : 'E30X გამოირჩევა თავისი ელეგანტურობითა და ფუფუნებით. მისი ტყავის სავარძლები და დახვეწილი ინტერიერი აერთიანებს სტილსა და კომფორტს, ხოლო 100%-იანი მინის პანორამული ჭერი მართვის გამოცდილებას ახალ საფეხურზე აიყვანს.'; ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
-                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="feature-slide">
-                            <div class="feature-media-row fade-up">
-                                <div class="feature-media-item interior-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/int-13.b1775b2.png" alt="Comfortable Interior">
-                                </div>
-                            </div>
-                            <div class="feature-content-row fade-up delay-1">
-                                <div class="feature-text-left">
-                                    <h3><?php echo ($lang == 'en') ? 'Ever so comfortable.' : 'მუდამ კომფორტული.'; ?></h3>
-                                </div>
-                                <div class="feature-text-right">
-                                    <p><?php echo ($lang == 'en') ? 'The E30X is equipped with a huge 12.8-inch touchscreen that is compatible with Apple CarPlay and Android Auto. It also comes with a wireless charger for your phone. This JAC vehicle will amaze you with its extraordinary details.' : 'E30X აღჭურვილია უზარმაზარი 12.8-დუიმიანი სენსორული ეკრანით, რომელიც თავსებადია Apple CarPlay და Android Auto-სთან. მას ასევე მოყვება უსადენო დამტენი თქვენი ტელეფონისთვის. JAC-ის ეს ავტომობილი გაგაოცებთ თავისი არაჩვეულებრივი დეტალებით.'; ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
-                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="feature-slide">
-                            <div class="feature-media-row fade-up">
-                                <div class="feature-media-item interior-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/info1-2.ed13100.png" alt="Panoramic Roof">
-                                </div>
-                            </div>
-                            <div class="feature-content-row fade-up delay-1">
-                                <div class="feature-text-left">
-                                    <h3><?php echo ($lang == 'en') ? 'Panoramic roof.' : 'პანორამული ჭერი.'; ?></h3>
-                                </div>
-                                <div class="feature-text-right">
-                                    <p><?php echo ($lang == 'en') ? 'Double-layer laminated glass + “Low E” glass for thermal insulation, blocks UV rays and improves vision and lighting, providing a pleasant driving experience.' : 'ორშრიანი ლამინირებული მინა + „Low E“ მინა თბოიზოლაციისთვის, ბლოკავს ულტრაიისფერ სხივებს და აუმჯობესებს ხილვადობასა და განათებას, რაც უზრუნველყოფს სასიამოვნო მგზავრობას.'; ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="spec-link">
-                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
+                <div class="interior-grid-layout fade-up delay-2">
+                    <div class="ig-item ig-item-1">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/inner2.40d8950.jpg" alt="JAC T9 Interior Main">
+                    </div>
+                    <div class="ig-item ig-item-2">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/inner4.c2218aa.jpg" alt="JAC T9 Interior Detail 1">
+                    </div>
+                    <div class="ig-item ig-item-3">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/inner3.e4bed79.jpg" alt="JAC T9 Interior Detail 2">
                     </div>
                 </div>
 
-                <div class="feature-slider-controls fade-up delay-2">
-                    <button class="feat-arrow prev" data-slider="interiorTrack"><i class="fa-solid fa-chevron-left"></i></button>
-                    <div class="feat-dots">
-                        <span class="f-dot active"></span>
-                        <span class="f-dot"></span>
-                        <span class="f-dot"></span>
-                    </div>
-                    <button class="feat-arrow next" data-slider="interiorTrack"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
             </div>
         </section>
     </div>
