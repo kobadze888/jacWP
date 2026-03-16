@@ -86,12 +86,8 @@ $t = [
     'int_title' => ($lang == 'en') ? 'Easy get what you want.' : 'მარტივად მიიღე ის, რაც გსურს.',
     'int_desc'  => ($lang == 'en') ? 'Beauty is inside the beast. A bold and futuristic look with tomorrow\'s tech all at your fingertips.' : 'სილამაზე მხეცის შიგნით. თამამი და ფუტურისტული იერსახე ხვალინდელი ტექნოლოგიებით შენს ხელთაა.',
 
-    /* SMART TECHNOLOGY SECTION */
     'tech_lbl'   => ($lang == 'en') ? 'TECHNOLOGY' : 'ტექნოლოგია',
-    'tech_title' => ($lang == 'en') ? 'Ever so smart.' : 'მუდამ გონიერი.',
-    'tech_c1_t'  => ($lang == 'en') ? '12.8-inch Touchscreen & 6.2-inch Digital Instrument Cluster' : '12.8-დუიმიანი სენსორული ეკრანი და 6.2-დუიმიანი ციფრული მაჩვენებელთა დაფა',
-    'tech_c2_t'  => ($lang == 'en') ? 'Mobile Smart Power Station' : 'მობილური ჭკვიანი ენერგო სადგური',
-    'tech_c3_t'  => ($lang == 'en') ? 'Wireless Charging' : 'უსადენო დატენვა',
+    'tech_desc'  => ($lang == 'en') ? 'Smart looking, even smarter driving. The JAC T9 Pickup is tooled up with intelligent technology giving you next-generation connectivity for a better driving experience.' : 'ჭკვიანი იერსახე, კიდევ უფრო ჭკვიანი მართვა. JAC T9 პიკაპი აღჭურვილია ინტელექტუალური ტექნოლოგიებით, რაც გთავაზობთ ახალი თაობის კავშირს მართვის უკეთესი გამოცდილებისთვის.',
 
     'perf_lbl'   => ($lang == 'en') ? 'PERFORMANCE' : 'წარმადობა',
     'perf_title' => ($lang == 'en') ? 'Some pretty. Smart shift.' : 'საკმაოდ ლამაზი. ჭკვიანი გადართვა.',
@@ -546,26 +542,17 @@ $colors = [
         <div class="e30x-container">
             <span class="section-label fade-up"><?php echo esc_html($t['tech_lbl']); ?></span>
             <div class="label-line fade-up"></div>
-            <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['tech_title']); ?></h2>
+            <p class="section-subtitle fade-up delay-1" style="max-width: 900px; margin: 30px auto 50px; font-size: 20px; line-height: 1.6; color: #111;"><?php echo esc_html($t['tech_desc']); ?></p>
 
             <div class="tech-grid mt-50">
                 <div class="tech-card fade-up">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/sm1.840af6d.png" alt="Touchscreen">
-                    <div class="tech-card-overlay">
-                        <h3><?php echo esc_html($t['tech_c1_t']); ?></h3>
-                    </div>
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/Jac_FrisonT9_0268copy.cc4e6c2.jpg" alt="T9 Technology 1">
                 </div>
                 <div class="tech-card fade-up delay-1">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/sm2.8052874.png" alt="Power Station">
-                    <div class="tech-card-overlay">
-                        <h3><?php echo esc_html($t['tech_c2_t']); ?></h3>
-                    </div>
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/DSC07656.8f1d598.jpg" alt="T9 Technology 2">
                 </div>
                 <div class="tech-card fade-up delay-2">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/sm3.2c507a8.png" alt="Wireless Charging">
-                    <div class="tech-card-overlay">
-                        <h3><?php echo esc_html($t['tech_c3_t']); ?></h3>
-                    </div>
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/7691307046604a8c322a9f366591916_0_0.406c52f.jpg" alt="T9 Technology 3">
                 </div>
             </div>
         </div>
