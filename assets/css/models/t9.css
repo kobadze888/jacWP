@@ -1846,4 +1846,67 @@ section[id] {
     .perf-slide-img {
         aspect-ratio: 16 / 10;
     }
+
+    .e30x-battery#comfort {
+        padding-bottom: 0;
+        background: #fff;
+    }
+
+    .e30x-battery#comfort .battery-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        min-height: auto;
+    }
+
+    .e30x-battery#comfort .battery-main-bg {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        overflow: hidden;
+    }
+
+    .e30x-battery#comfort .battery-main-bg img {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .e30x-battery#comfort .battery-info-card {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: none;
+        width: 100%;
+        border-radius: 0;
+        padding: 50px 20px 60px;
+        box-shadow: none;
+        margin: 0;
+        background-color: #000;
+        color: #fff;
+    }
+
+    .e30x-battery#comfort .battery-info-title {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .e30x-battery#comfort .battery-info-desc {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 35px;
+    }
+
+    .e30x-battery#comfort .battery-specs-grid li {
+        color: #fff;
+        background: rgba(255,255,255,0.05);
+        border-radius: 8px;
+        padding: 15px;
+        border: none;
+    }
 }
