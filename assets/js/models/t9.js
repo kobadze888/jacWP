@@ -267,4 +267,29 @@ const subNavLinksContainer = document.querySelector('.subnav-links');
             observer.observe(link, { attributes: true });
         });
     }
+
+    const perfTabs = document.querySelectorAll('.perf-tab');
+    const perfSlides = document.querySelectorAll('.perf-slide');
+
+    if (perfTabs.length > 0 && perfSlides.length > 0) {
+        perfTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                perfTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                const targetId = this.getAttribute('data-target');
+                
+                perfSlides.forEach(slide => {
+                    slide.style.opacity = '0';
+                    slide.classList.remove('active');
+                });
+
+                const activeSlide = document.getElementById(targetId);
+                if (activeSlide) {
+                    activeSlide.classList.add('active');
+                    setTimeout(() => { activeSlide.style.opacity = '1'; }, 50);
+                }
+            });
+        });
+    }
 });

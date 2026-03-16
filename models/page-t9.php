@@ -106,13 +106,12 @@ $t = [
     'tech_c2_t'  => ($lang == 'en') ? 'Mobile Smart Power Station' : 'მობილური ჭკვიანი ენერგო სადგური',
     'tech_c3_t'  => ($lang == 'en') ? 'Wireless Charging' : 'უსადენო დატენვა',
 
-    /* 8. SAFETY SECTION TRANSLATIONS */
-    'saf_lbl'       => ($lang == 'en') ? 'SAFETY' : 'უსაფრთხოება',
-    'saf_title'     => ($lang == 'en') ? 'Ever so relaxed.' : 'მუდამ მშვიდი.',
-    'saf_sub'       => ($lang == 'en') ? 'For JAC, safety is a top priority.' : 'JAC-ისთვის უსაფრთხოება მთავარი პრიორიტეტია.',
-    'saf_vid_txt'   => ($lang == 'en') ? 'Five-Star Crash Safety' : 'ხუთვარსკვლავიანი უსაფრთხოება',
-    'saf_bot_title' => ($lang == 'en') ? 'JAC E30X offers total safety for every passenger thanks to its advanced active and passive safety systems.' : 'JAC E30X გთავაზობთ სრულ უსაფრთხოებას თითოეული მგზავრისთვის, მისი მოწინავე აქტიური და პასიური სისტემების წყალობით.',
-    'saf_bot_desc'  => ($lang == 'en') ? 'Prioritizing occupant protection, the E30X far exceeds safety standards with its 6 airbags and a series of top-quality braking systems. In addition, it has a 360° panoramic camera, parking sensors, Autohold, etc.' : 'მგზავრთა დაცვის პრიორიტეტიზაციით, E30X ბევრად აღემატება უსაფრთხოების სტანდარტებს 6 უსაფრთხოების ბალიშით და უმაღლესი ხარისხის სამუხრუჭე სისტემების სერიით. დამატებით, მას აქვს 360° პანორამული კამერა, პარკინგის სენსორები, Autohold და ა.შ.'
+    'perf_lbl'   => ($lang == 'en') ? 'PERFORMANCE' : 'წარმადობა',
+    'perf_title' => ($lang == 'en') ? 'Some pretty. Smart shift.' : 'საკმაოდ ლამაზი. ჭკვიანი გადართვა.',
+    'p_c1_t'     => ($lang == 'en') ? 'Performance' : 'წარმადობა',
+    'p_c1_d'     => ($lang == 'en') ? 'Turbo technology increases power, resulting in better highway performance and acceleration, similar to larger engines but with smaller displacement' : 'ტურბო ტექნოლოგია ზრდის სიმძლავრეს, რაც უზრუნველყოფს უკეთეს შესრულებას და აჩქარებას მაგისტრალზე, მსგავსად დიდი ძრავებისა, მაგრამ მცირე მოცულობით',
+    'p_c2_t'     => ($lang == 'en') ? 'Capability' : 'შესაძლებლობა',
+    'p_c2_d'     => ($lang == 'en') ? 'Your T9 Pickup lets you adjust to the many driving conditions across our great land.intelligent electronic shift system gives you four dist-' : 'შენი T9 პიკაპი გაძლევს საშუალებას მოერგო მართვის მრავალ პირობას ჩვენს დიდ მიწაზე. ინტელექტუალური ელექტრონული გადართვის სისტემა გაძლევს ოთხ გან-'
 ];
 
 // 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
@@ -456,23 +455,32 @@ $colors = [
         </div>
     </div>
 
-    <section id="safety" class="e30x-section text-center safety-section" style="background: #fff; padding-bottom: 120px;">
+    <section id="performance" class="e30x-section text-center perf-main-wrapper" style="background: #fff; padding-top: 100px; padding-bottom: 100px;">
         <div class="e30x-container">
-            <span class="section-label fade-up"><?php echo esc_html($t['saf_lbl']); ?></span>
-            <div class="label-line fade-up"></div>
-            <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['saf_title']); ?></h2>
-            <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['saf_sub']); ?></p>
+            <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['perf_title']); ?></h2>
 
-            <div class="safety-video-wrapper fade-up delay-2 video-trigger" id="triggerSafetyVideo">
-                <video autoplay muted loop playsinline class="safety-video">
-                    <source src="https://jacen.jac.com.cn/_nuxt/videos/safety-E30X_RELAXED_1008_output.9013afa.mp4" type="video/mp4">
-                </video>
-                <div class="safety-play-btn"><i class="fa-solid fa-play"></i></div>
+            <div class="perf-tabs fade-up delay-1 mt-30">
+                <button class="perf-tab active" data-target="perf-slide-1"><?php echo esc_html($t['p_c1_t']); ?></button>
+                <button class="perf-tab" data-target="perf-slide-2"><?php echo esc_html($t['p_c2_t']); ?></button>
             </div>
 
-            <div class="safety-bottom-content fade-up delay-2">
-                <h3><?php echo esc_html($t['saf_bot_title']); ?></h3>
-                <p><?php echo esc_html($t['saf_bot_desc']); ?></p>
+            <div class="perf-content-wrapper fade-up delay-2 mt-40">
+                <div class="perf-slide active" id="perf-slide-1">
+                    <div class="perf-slide-img">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/pretty.b78b4a6.jpg" alt="Performance">
+                    </div>
+                    <div class="perf-slide-text mt-30">
+                        <p><?php echo esc_html($t['p_c1_d']); ?></p>
+                    </div>
+                </div>
+                <div class="perf-slide" id="perf-slide-2">
+                    <div class="perf-slide-img">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/shift.6a2585c.jpg" alt="Capability">
+                    </div>
+                    <div class="perf-slide-text mt-30">
+                        <p><?php echo esc_html($t['p_c2_d']); ?></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
