@@ -102,12 +102,16 @@ function jac_enqueue_scripts()
     /* 3. N-series MODEL SECTION */
     // N-series Model გვერდის სტილები
     if (is_page_template('models/page-N-series.php')) {
-        // CSS გზის განახლება
         wp_enqueue_style('jac-N-series.css', get_template_directory_uri() . '/assets/css/models/N-series.css', array(), '1.0');
-        
-        // JS გზის განახლება
         wp_enqueue_script('jac-N-series-js', get_template_directory_uri() . '/assets/js/models/N-series.js', array(), '1.0', true);
     }
+
+    if (is_404()) {
+        wp_enqueue_style('jac-404', get_template_directory_uri() . '/assets/css/404.css', array(), '1.0');
+    }
+
+    wp_enqueue_style('jac-cookie-css', get_template_directory_uri() . '/assets/css/cookie-banner.css', array(), '1.0');
+    wp_enqueue_script('jac-cookie-js', get_template_directory_uri() . '/assets/js/cookie-banner.js', array(), '1.0', true);
     
     wp_add_inline_script('lucide', 'lucide.createIcons();');
 }

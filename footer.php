@@ -77,7 +77,10 @@ $soc_tk = get_field('social_tiktok', $opt_id);
 
     <div class="footer-bottom">
         <div class="footer-copy">
-            <?php echo esc_html($t_copy); ?>
+            <?php echo esc_html($t_copy); ?> | 
+            <a href="javascript:void(0)" id="open-cookie-banner" class="cookie-settings-link">
+                <?php echo ($current_lang == 'ka') ? 'Cookie პარამეტრები' : 'Cookie Settings'; ?>
+            </a>
         </div>
         <div class="footer-counter">
             <!-- TOP.GE ASYNC COUNTER CODE -->
@@ -89,7 +92,25 @@ $soc_tk = get_field('social_tiktok', $opt_id);
     </div>
 </footer>
 
-<?php wp_footer(); ?>
+ <?php 
+    $curr_lang = (function_exists('pll_current_language')) ? pll_current_language() : 'ka';
+    $cookie_text = ($curr_lang == 'ka') 
+        ? 'ჩვენ ვიყენებთ ქუქი-ფაილებს საიტის გასაუმჯობესებლად. "დათანხმებაზე" დაჭერით თქვენ ეთანხმებით მათ გამოყენებას.' 
+        : 'We use cookies to improve your experience. By clicking "Accept", you agree to their use.';
+    $accept_text = ($curr_lang == 'ka') ? 'დათანხმება' : 'Accept';
+    $decline_text = ($curr_lang == 'ka') ? 'უარყოფა' : 'Decline';
+    ?>
+<div id="cookie-banner" class="cookie-card" style="display: none;">
+        <div class="cookie-body">
+            <div class="cookie-info">
+                <p><?php echo $cookie_text; ?></p>
+            </div>
+            <div class="cookie-btns">
+                <button id="cookie-accept" class="btn-acc"><?php echo $accept_text; ?></button>
+                <button id="cookie-decline" class="btn-dec"><?php echo $decline_text; ?></button>
+            </div>
+        </div>
+    </div>
+    <?php wp_footer(); ?>
 </body>
-
 </html>
