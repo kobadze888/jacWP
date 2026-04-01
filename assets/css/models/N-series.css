@@ -40,22 +40,46 @@ section[id] {
 }
     
 /* 1. HERO */
-#t9-main-hero {
-    background-image: url('https://jacen.jac.com.cn/_nuxt/img/banner-web.36f6ba7.jpg');
-}
-
-.e30x-hero {
+#n-series-main-hero {
+    background-image: url('https://jacen.jac.com.cn/_nuxt/img/BANNER.389a6b3.png');
     height: 75vh;
-    /* 100vh-ის ნაცვლად შემცირდა */
     min-height: 450px;
-    /* მინიმალური სიმაღლეც შემცირდა */
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     align-items: center;
-    padding-left: 10%;
-    color: #fff;
+    padding-left: 5%;
+    color: #000;
+}
+
+#n-series-main-hero .e30x-hero-overlay {
+    display: none;
+}
+
+#n-series-main-hero .e30x-hero-content {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    transform: none;
+    text-align: left;
+    z-index: 2;
+}
+
+#n-series-main-hero .e30x-hero-content h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+#n-series-main-hero .hero-extra-text {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.mobile-break {
+    display: none;
 }
 
 .e30x-hero-overlay {
@@ -1081,8 +1105,20 @@ section[id] {
 }
 
 @media (max-width: 768px) {
-    #t9-main-hero {
-        background-image: url('https://jacen.jac.com.cn/_nuxt/img/T9_phone_01_02.4a89859.jpg');
+    #n-series-main-hero {
+        background-image: url('https://jacen.jac.com.cn/_nuxt/img/sj-banner.bb4e7f3.jpg');
+        height: 60vh;
+    }
+    #n-series-main-hero .e30x-hero-content {
+        bottom: 5%;
+        left: 5%;
+        right: 5%;
+    }
+    #n-series-main-hero .e30x-hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .mobile-break {
+        display: block;
     }
 
     .section-title {

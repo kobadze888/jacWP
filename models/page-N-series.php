@@ -11,8 +11,9 @@ $lang = function_exists('pll_current_language') ? pll_current_language() : 'ka';
 // ენების სტატიკური ლექსიკონი
 // ==========================================
 $t = [
-    'hero_title' => 'JAC T9 Pickup',
-    'hero_sub'   => ($lang == 'en') ? 'Born to Explore' : 'დაბადებული აღმოსაჩენად',
+    'hero_title' => 'JAC New N-Series Trucks',
+    'hero_sub'   => ($lang == 'en') ? 'Born for efficiency.' : 'დაბადებული ეფექტურობისთვის.',
+    'hero_extra' => ($lang == 'en') ? 'Light-Duty Trucks GVW 3.5-16.0 Tons' : 'მსუბუქი სატვირთო ავტომობილები, სრული მასა 3.5-16.0 ტონა',
 
     'nav_overview' => ($lang == 'en') ? 'Overview' : 'მიმოხილვა',
     'nav_specs'    => ($lang == 'en') ? 'Specs' : 'მახასიათებლები',
@@ -112,11 +113,12 @@ $colors = [
 
 <main class="e30x-page">
 
-    <section class="e30x-hero" id="t9-main-hero">
+ <section class="e30x-hero" id="n-series-main-hero">
         <div class="e30x-hero-overlay"></div>
         <div class="e30x-hero-content fade-up">
-            <h1><?php echo esc_html($t['hero_title']); ?></h1>
+            <h1>JAC <br class="mobile-break">New N-Series Trucks</h1>
             <p><?php echo esc_html($t['hero_sub']); ?></p>
+            <p class="hero-extra-text"><?php echo esc_html($t['hero_extra']); ?></p>
         </div>
     </section>
 
