@@ -249,136 +249,12 @@ section[id] {
     margin: 0 auto 25px;
 }
 
-.t9-colors {
-    /* ზუსტი გრადიენტი: თეთრიდან სუფთა ღია ნაცრისფერში (#f7f7f7) */
-    background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
-    padding-bottom: 100px;
-}
+
 
 .t9-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 5%;
-}
-
-.color-display-wrap {
-    max-width: 800px;
-    margin: 0 auto;
-    height: 380px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.color-display-wrap img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    transition: opacity 0.4s ease;
-}
-
-/* გამყოფი ხაზები და ტექსტი */
-.color-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px auto 40px;
-    max-width: 500px;
-}
-
-.color-divider::before,
-.color-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: #dcdcdc;
-}
-
-.color-hint {
-    padding: 0 20px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #444;
-}
-
-/* ფერების წერტილები */
-.color-dots {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.color-dot {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    /* მსუბუქი კანტი ღია ფერებისთვის */
-    transition: all 0.3s ease;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* გარე შავი რგოლი (აქტიურზე ჩანს) */
-.color-dot::after {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: -6px;
-    right: -6px;
-    bottom: -6px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    transition: border-color 0.3s ease;
-}
-
-.color-dot.active {
-    border-color: transparent;
-}
-
-.color-dot.active::after {
-    border-color: #111;
-}
-
-/* შიდა 'პწიჩკა' */
-.check-icon {
-    color: #fff;
-    font-size: 14px;
-    opacity: 0;
-    transform: scale(0.5);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.color-dot.active .check-icon {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* თეთრ ფერზე პწიჩკა რომ გამოჩნდეს, ვაშავებთ */
-.color-dot[data-name="Pearl White"] .check-icon {
-    color: #000;
-    text-shadow: none;
-}
-
-/* დასახელება და დისქლეიმერი */
-.color-name-display {
-    font-size: 18px;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 15px;
-}
-
-.color-disclaimer {
-    font-size: 11px;
-    color: #666;
-    font-weight: 500;
 }
 
 /* 5. HIGHLIGHTS */
@@ -2066,4 +1942,47 @@ section[id] {
         padding-top: 30px;
         text-align: center;
     }
+}
+
+
+.n-gen-section {
+    background: linear-gradient(180deg, #e8e0d9 0%, #ffffff 35%);
+    padding: 80px 0 120px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gen-content-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gen-text-side {
+    max-width: 850px;
+    margin-bottom: 50px;
+}
+
+.gen-main-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.gen-description {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.gen-image-side {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.gen-image-side img {
+    width: 100%;
+    height: auto;
+    display: block;
 }

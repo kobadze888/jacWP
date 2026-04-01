@@ -38,8 +38,8 @@ $t = [
     'f_c4_t' => ($lang == 'en') ? 'Versatility driving modes.' : 'მართვის მრავალფეროვანი რეჟიმები.',
     'f_c4_d' => ($lang == 'en') ? 'You have the versatility across all driving modes; 2H, 4H, or 2L, operational up to speeds of 40km/h.' : 'თქვენ გაქვთ მრავალფეროვნება მართვის ყველა რეჟიმში; 2H, 4H, ან 2L, რომლებიც მუშაობს 40 კმ/სთ-მდე სიჩქარეზე.',
 
-    'col_title' => ($lang == 'en') ? 'Born to Explore!' : 'დაბადებული აღმოსაჩენად!',
-    'col_desc'  => ($lang == 'en') ? 'JAC T9 pickup, combines remarkable rugged capability with premium comfort and advanced technology to fuel your wildest adventures.' : 'JAC T9 პიკაპი აერთიანებს გამორჩეულ გამავლობას, პრემიუმ კომფორტს და მოწინავე ტექნოლოგიებს თქვენი ყველაზე თამამი თავგადასავლებისთვის.',
+    'gen_title' => ($lang == 'en') ? 'JAC sixth generation new light-duty trucks.' : 'JAC მეექვსე თაობის ახალი მსუბუქი სატვირთო ავტომობილები.',
+    'gen_desc'  => ($lang == 'en') ? 'As flagship product of JAC, the N-Series Trucks have been proved efficient and reliable by over 3,200,000 global users in past 60 years. With updated design and configuration, JAC New N-Series trucks deliver even better performance in power and economy, intelligence, safety, and comfort, bringing even better TCO for global users. Begin your journey with JAC New N-Series Trucks today.' : 'როგორც JAC-ის ფლაგმანმა პროდუქტმა, N-სერიის სატვირთოებმა ბოლო 60 წლის განმავლობაში 3,200,000-ზე მეტ მომხმარებელს მთელ მსოფლიოში დაუმტკიცეს თავისი ეფექტურობა და საიმედოობა. განახლებული დიზაინითა და კონფიგურაციით, JAC-ის ახალი N-სერიის სატვირთოები გვთავაზობენ კიდევ უფრო უკეთეს წარმადობას სიმძლავრის, ეკონომიურობის, ინტელექტის, უსაფრთხოებისა და კომფორტის თვალსაზრისით. დაიწყეთ თქვენი მოგზაურობა JAC-ის ახალი N-სერიის სატვირთოებით დღესვე.',
     'col_hint'  => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
 
     'hl_title'  => 'JAC T9 Pickup',
@@ -125,7 +125,7 @@ $colors = [
     <nav class="e30x-subnav" id="carSubNav">
         <div class="e30x-container subnav-flex">
             <div class="subnav-brand">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAUBAMAAADbzbjtAAAAMFBMVEVHcEz///////////////////////////////////////////////////////////9EPuwCAAAAD3RSTlMAIBBjlsczfvRLrAbo2LfaqNM6AAABA0lEQVQoz2PY9R8J/GLgvA9j/1jIwFCPLPmZwR7B+SPA8B5Z8htTPxJvAcN5ZMkCTmReA4MgCABZP4GUEAM7kHUMJJILZHxgAAE2sDIQ4ANpBzGYgYwLDDBWAJjFA2RNADHYwXaCAAuQ5QBm6QNZTkpAoAczgoEVyDIAs/YjO2gCXCgBrgwOFMBC+cDwYIA4DcmffyBCwGD5CmExpCKHJRj4////BSrJsEkJDIAB9x0iEA8KVRBgNDY2hjgDGP4/IZJAi74xoPiOCcj4BA+g33APB4JCTwTIOIAWQCzIPnkAF4KEBkqkGMBC+y/EwwzrEXJfN4BFOP7/cIJ6ZDs8ev8AhQBd6zNv/lZ5DgAAAABJRU5ErkJggg==" alt="JAC T9">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N-seriesTrucksimg.7ec28f6.png" alt="JAC N-Series">
             </div>
             <ul class="subnav-links">
                 <li><a href="#overview" class="active"><?php echo esc_html($t['nav_overview']); ?></a></li>
@@ -143,36 +143,19 @@ $colors = [
         </div>
     </nav>
 
-    <section id="overview" class="t9-section t9-colors text-center">
-        <div class="t9-container">
-            <h2 class="section-title fade-up"><?php echo esc_html($t['col_title']); ?></h2>
-            <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['col_desc']); ?></p>
-
-            <div class="color-display-wrap fade-up delay-2">
-                <img src="<?php echo $colors[0]['img']; ?>" id="mainCarColorImg" alt="JAC T9 Color">
-            </div>
-
-            <div class="color-picker-wrap fade-up delay-2">
-                <div class="color-divider">
-                    <span class="color-hint"><?php echo esc_html($t['col_hint']); ?></span>
+<section id="overview" class="n-gen-section">
+        <div class="e30x-container">
+            <div class="gen-content-flex">
+                <div class="gen-text-side fade-up">
+    <h2 class="gen-main-title"><?php echo esc_html($t['gen_title']); ?></h2>
+    <p class="gen-description"><?php echo esc_html($t['gen_desc']); ?></p>
+</div>
+                <div class="gen-image-side fade-up delay-1">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/116.f58ac68.png" alt="JAC New N-Series">
                 </div>
-                <div class="color-dots">
-                    <?php foreach ($colors as $index => $c): ?>
-                        <?php $color_display_name = ($lang == 'en') ? $c['name'] : $c['name_ka']; ?>
-                        <button class="color-dot <?php echo ($index == 0) ? 'active' : ''; ?>"
-                            data-name="<?php echo esc_attr($color_display_name); ?>"
-                            data-img="<?php echo esc_url($c['img']); ?>"
-                            style="background-color: <?php echo esc_attr($c['hex']); ?>;">
-                            <i class="fa-solid fa-check check-icon"></i>
-                        </button>
-                    <?php endforeach; ?>
-                </div>
-                <h3 class="color-name-display" id="colorNameDisplay"><?php echo esc_html(($lang == 'en') ? $colors[0]['name'] : $colors[0]['name_ka']); ?></h3>
-                <p class="color-disclaimer"><?php echo ($lang == 'en') ? 'Models and colors may vary by regions' : 'მოდელები და ფერები შესაძლოა განსხვავდებოდეს რეგიონების მიხედვით'; ?></p>
             </div>
         </div>
     </section>
-
  <section id="specs" class="t9-section t9-highlights">
         <div class="t9-container h-flex">
             <div class="h-left fade-up">
