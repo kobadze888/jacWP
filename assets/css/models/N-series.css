@@ -51,6 +51,7 @@ section[id] {
     align-items: center;
     padding-left: 5%;
     color: #000;
+    background-position-y: 45px;
 }
 
 #n-series-main-hero .e30x-hero-overlay {
@@ -73,13 +74,9 @@ section[id] {
 }
 
 #n-series-main-hero .hero-extra-text {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     margin-top: 15px;
     font-weight: 500;
-}
-
-.mobile-break {
-    display: none;
 }
 
 .e30x-hero-overlay {
@@ -1108,6 +1105,7 @@ section[id] {
     #n-series-main-hero {
         background-image: url('https://jacen.jac.com.cn/_nuxt/img/sj-banner.bb4e7f3.jpg');
         height: 60vh;
+        background-position-y: 0px;
     }
     #n-series-main-hero .e30x-hero-content {
         bottom: 5%;
@@ -1115,10 +1113,7 @@ section[id] {
         right: 5%;
     }
     #n-series-main-hero .e30x-hero-content h1 {
-        font-size: 2.2rem;
-    }
-    .mobile-break {
-        display: block;
+        font-size: 2.1rem;
     }
 
     .section-title {
