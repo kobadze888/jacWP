@@ -258,9 +258,23 @@ section[id] {
 }
 
 /* 5. HIGHLIGHTS */
-.e30x-highlights {
-    background: #e3cabc;
-    padding: 80px 0;
+.t9-highlights {
+    background: #7f5f51;
+    padding: 100px 0;
+}
+
+.t9-highlights h2, 
+.t9-highlights .h-left p, 
+.t9-highlights .spec-val {
+    color: #fff !important;
+}
+
+.t9-highlights .spec-box {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.t9-highlights .spec-box {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .h-flex {
@@ -1026,7 +1040,8 @@ section[id] {
     }
 
     .h-right {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
     .t9-gallery {
@@ -1985,4 +2000,5 @@ section[id] {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 10px;
 }

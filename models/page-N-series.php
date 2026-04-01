@@ -42,28 +42,16 @@ $t = [
     'gen_desc'  => ($lang == 'en') ? 'As flagship product of JAC, the N-Series Trucks have been proved efficient and reliable by over 3,200,000 global users in past 60 years. With updated design and configuration, JAC New N-Series trucks deliver even better performance in power and economy, intelligence, safety, and comfort, bringing even better TCO for global users. Begin your journey with JAC New N-Series Trucks today.' : 'როგორც JAC-ის ფლაგმანმა პროდუქტმა, N-სერიის სატვირთოებმა ბოლო 60 წლის განმავლობაში 3,200,000-ზე მეტ მომხმარებელს მთელ მსოფლიოში დაუმტკიცეს თავისი ეფექტურობა და საიმედოობა. განახლებული დიზაინითა და კონფიგურაციით, JAC-ის ახალი N-სერიის სატვირთოები გვთავაზობენ კიდევ უფრო უკეთეს წარმადობას სიმძლავრის, ეკონომიურობის, ინტელექტის, უსაფრთხოებისა და კომფორტის თვალსაზრისით. დაიწყეთ თქვენი მოგზაურობა JAC-ის ახალი N-სერიის სატვირთოებით დღესვე.',
     'col_hint'  => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
 
-    'hl_title'  => 'JAC T9 Pickup',
+    'hl_title'  => 'JAC New N-Series Trucks',
     'hl_sub'    => ($lang == 'en') ? 'Highlights' : 'მთავარი მახასიათებლები',
-    'hl_btn'    => ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები',
-    /* T9 SPEC LABELS */
-    's_safe'    => ($lang == 'en') ? 'Super Safe' : 'სუპერ უსაფრთხო',
-    's_chassis' => ($lang == 'en') ? 'Super Chassis' : 'სუპერ შასი',
-    's_power'   => ($lang == 'en') ? 'Super Power' : 'სუპერ სიმძლავრე',
-    's_intel'   => ($lang == 'en') ? 'Super Intelligent' : 'სუპერ ინტელექტუალური',
-    's_comf'    => ($lang == 'en') ? 'Super Comfortable' : 'სუპერ კომფორტული',
-    's_lux'     => ($lang == 'en') ? 'Super Luxury' : 'სუპერ ლუქსი',
+    'hl_item1'  => ($lang == 'en') ? 'More Stylish' : 'უფრო სტილური',
+    'hl_item2'  => ($lang == 'en') ? 'More Robust' : 'უფრო მტკიცე',
+    'hl_item3'  => ($lang == 'en') ? 'More Efficient' : 'უფრო ეფექტური',
+    'hl_item4'  => ($lang == 'en') ? 'More Secure' : 'უფრო უსაფრთხო',
+    'hl_item5'  => ($lang == 'en') ? 'More Comfortable' : 'უფრო კომფორტული',
+    'hl_item6'  => ($lang == 'en') ? 'More Flexible' : 'უფრო მოქნილი',
 
-    /* T9 SPEC VALUES */
-    's_safe_v'    => ($lang == 'en') ? 'ANCAP 5-star safety rating' : 'ANCAP 5-ვარსკვლავიანი უსაფრთხოების რეიტინგი',
-    's_chassis_v' => ($lang == 'en') ? 'Electronic part-time 4WD' : 'ელექტრონული Part-Time 4WD',
-    's_power_v'   => ($lang == 'en') ? 'JAC 2.0CTI Diesel / 2.0TGDI Gasoline' : 'JAC 2.0CTI დიზელი / 2.0TGDI ბენზინი',
-    's_intel_v'   => ($lang == 'en') ? 'Level 2 ADAS System' : 'მე-2 დონის ADAS სისტემა',
-    's_comf_v'    => ($lang == 'en') ? 'Silent cabin & Excellent NVH' : 'ჩუმი სალონი და შესანიშნავი ხმაურის იზოლაცია (NVH)',
-    's_lux_v'     => ($lang == 'en') ? 'Diamond-stitched premium leather' : 'ალმასისებრი ნაკერების მქონე პრემიუმ ტყავი',
-
-    'fun_title'  => ($lang == 'en') ? 'Go Wild, if You Want.' : 'იყავი თავისუფალი, თუ გსურს.',
-    'free_title' => ($lang == 'en') ? 'Work hard. Play harder.' : 'იმუშავე ბევრი. დაისვენე უკეთ.',
-    'free_desc'  => ($lang == 'en') ? 'Worksite one day, campsite the next. Built for the heavy lifting up back with all the creature comforts inside, you’re buckled up and ready to rumble no matter what you throw at the JAC T9 Pickup.' : 'სამუშაო ადგილი დღეს, დასასვენებელი ბანაკი ხვალ. შექმნილია მძიმე ტვირთისთვის და მაქსიმალური კომფორტისთვის — JAC T9 პიკაპი მზად არის ნებისმიერი გამოწვევისთვის.',
+    'fun_title'  => ($lang == 'en') ? 'Born for efficiency.' : 'დაბადებული ეფექტურობისთვის.',
 
     'ext_lbl'   => ($lang == 'en') ? 'EXTERIOR' : 'ექსტერიერი',
     'ext_title' => ($lang == 'en') ? 'Born to be different.' : 'დაბადებული გამორჩეულად.',
@@ -161,35 +149,25 @@ $colors = [
             <div class="h-left fade-up">
                 <h2><?php echo esc_html($t['hl_title']); ?></h2>
                 <p><?php echo esc_html($t['hl_sub']); ?></p>
-                <?php $pdf_link = "https://jacen.jac.com.cn/pdf/T9Brochure.pdf"; ?>
-                <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" class="btn-black-pill mt-20" style="text-decoration: none;">
-                    <?php echo esc_html($t['hl_btn']); ?>
-                </a>
             </div>
             <div class="h-right">
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label"><?php echo esc_html($t['s_safe']); ?></span>
-                    <span class="spec-val"><?php echo esc_html($t['s_safe_v']); ?></span>
+                    <span class="spec-val"><?php echo esc_html($t['hl_item1']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label"><?php echo esc_html($t['s_chassis']); ?></span>
-                    <span class="spec-val"><?php echo esc_html($t['s_chassis_v']); ?></span>
+                    <span class="spec-val"><?php echo esc_html($t['hl_item2']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-1">
-                    <span class="spec-label"><?php echo esc_html($t['s_power']); ?></span>
-                    <span class="spec-val"><?php echo esc_html($t['s_power_v']); ?></span>
+                    <span class="spec-val"><?php echo esc_html($t['hl_item3']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label"><?php echo esc_html($t['s_intel']); ?></span>
-                    <span class="spec-val"><?php echo esc_html($t['s_intel_v']); ?></span>
+                    <span class="spec-val"><?php echo esc_html($t['hl_item4']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label"><?php echo esc_html($t['s_comf']); ?></span>
-                    <span class="spec-val"><?php echo esc_html($t['s_comf_v']); ?></span>
+                    <span class="spec-val"><?php echo esc_html($t['hl_item5']); ?></span>
                 </div>
                 <div class="spec-box fade-up delay-2">
-                    <span class="spec-label"><?php echo esc_html($t['s_lux']); ?></span>
-                    <span class="spec-val"><?php echo esc_html($t['s_lux_v']); ?></span>
+                    <span class="spec-val"><?php echo esc_html($t['hl_item6']); ?></span>
                 </div>
             </div>
         </div>
@@ -205,16 +183,20 @@ $colors = [
             </div>
 
             <div class="t9-gallery fade-up delay-1">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/1.1f06f0b.png" class="gal-img active" data-cat="exterior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/3.9c5a384.png" class="gal-img" data-cat="exterior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/8.fc879fe.png" class="gal-img" data-cat="exterior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/11.32692c6.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N90-EX-001.172175b.png" class="gal-img active" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N90-EX-002.9c54ea1.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N90-EX-003.cc17424.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N90-EX-004.9015363.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N90-EX-005.8a458a3.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N90-EX-006.4205ca5.png" class="gal-img" data-cat="exterior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N90-EX-007.4f0dc4c.png" class="gal-img" data-cat="exterior">
 
-                <img src="https://jacen.jac.com.cn/_nuxt/img/n1.ffd735b.jpg" class="gal-img" data-cat="interior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/n1.ffd735b.jpg" class="gal-img" data-cat="interior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/n3.a397167.jpg" class="gal-img" data-cat="interior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/n4.7987884.jpg" class="gal-img" data-cat="interior">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/n5.b9f9318.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N-series_01_01_03.e52332d.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N-series_01_02_03.3a4547e.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N-series_01_03.557f628.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N-series_01_04.1844318.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N-series_01_05.917b46a.jpg" class="gal-img" data-cat="interior">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N-series_01_07_03.8482fce.jpg" class="gal-img" data-cat="interior">
             </div>
 
             <div class="gal-nav-wrapper fade-up delay-2">
@@ -227,31 +209,6 @@ $colors = [
         </div>
     </section>
 
-   <section class="t9-section t9-free-section text-center">
-        <div class="t9-container">
-            <h2 class="section-title fade-up"><?php echo esc_html($t['free_title']); ?></h2>
-            <p class="section-subtitle fade-up delay-1"><?php echo esc_html($t['free_desc']); ?></p>
-
-            <div class="t9-video-wrapper fade-up delay-2 mt-30">
-                <video class="free-bg-video" autoplay muted loop playsinline>
-                    <source src="https://jacen.jac.com.cn/_nuxt/videos/v-s.98aaa73.mp4" type="video/mp4">
-                </video>
-
-                <div class="video-modal-trigger" id="openFreeVideo">
-                    <i class="fa-solid fa-play"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="history-video-modal" id="t9VideoModal">
-        <div class="modal-content">
-            <div class="modal-close-trigger" id="closeT9Modal"><i class="fa-solid fa-xmark"></i></div>
-            <video controls id="t9ModalVideo">
-                <source src="https://jacen.jac.com.cn/_nuxt/videos/v-s.98aaa73.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
  <div class="e30x-features-wrapper">
      <section id="exterior" class="e30x-section text-center feature-slider-section">
             <div class="e30x-container">
