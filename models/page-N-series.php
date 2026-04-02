@@ -21,12 +21,14 @@ $t = [
     'nav_exterior' => ($lang == 'en') ? 'Exterior' : 'ექსტერიერი',
     'nav_interior' => ($lang == 'en') ? 'Interior' : 'ინტერიერი',
     'nav_comfort'  => ($lang == 'en') ? 'Comfort' : 'კომფორტი',
-    'cc_lbl'       => ($lang == 'en') ? 'COMFORT & CONVENIENCE' : 'კომფორტი და მოხერხებულობა',
-    'cc_title'     => ($lang == 'en') ? 'Switch it up.' : 'შეცვალე რეჟიმი.',
-    'cc_desc'      => ($lang == 'en') ? 'On the open road or heading off-road, the JAC T9 Pickup has the mode for whatever the conditions.' : 'ღია ტრასაზე თუ უგზოობაში, JAC T9 პიკაპს აქვს შესაბამისი რეჟიმი ნებისმიერი პირობებისთვის.',
-    'cc_sp1'       => ($lang == 'en') ? 'The innovative 2WD/4WD drive mode system' : 'ინოვაციური 2WD/4WD მართვის რეჟიმის სისტემა',
-    'cc_sp2'       => ($lang == 'en') ? 'The 4L mode delivers low-range four-wheel drive' : '4L რეჟიმი უზრუნველყოფს დაბალი დიაპაზონის ოთხივე წამყვან თვალს',
+    'cc_title'     => ($lang == 'en') ? 'Engineered for efficiency.' : 'შექმნილია ეფექტურობისთვის.',
+    'cc_desc'      => ($lang == 'en') ? 'JAC New N-Series Trucks provide a variety and wide range of product, ready to work in different using scenarios over the world.' : 'JAC-ის ახალი N-სერიის სატვირთო ავტომობილები გვთავაზობენ მრავალფეროვან არჩევანს, რომელიც მზადაა მსოფლიოს ნებისმიერ წერტილში სხვადასხვა სამუშაო სცენარისთვის.',
+    'cc_sp1'       => ($lang == 'en') ? 'Wide GVW range: 3.5-16.0 Tons.' : 'GVW ფართო დიაპაზონი: 3.5-16.0 ტონა.',
+    'cc_sp2'       => ($lang == 'en') ? 'Various cab range: Single, double, narrow & wide cab.' : 'კაბინების მრავალფეროვნება: ერთმაგი, ორმაგი, ვიწრო და განიერი კაბინა.',
+    'cc_sp3'       => ($lang == 'en') ? 'Flexible powertrain: 2.0L~4.5L + MT/AMT.' : 'მოქნილი ძალოვანი აგრეგატი: 2.0L~4.5L + MT/AMT.',
+    'cc_sp4'       => ($lang == 'en') ? 'Different body types: van, tipper, crane, garbage collector, etc.' : 'სხვადასხვა ტიპის ძარა: ფურგონი, თვითმცლელი, ამწე, ნაგავმზიდი და ა.შ.',
     'nav_brochure' => ($lang == 'en') ? 'Brochure' : 'ბროშურა',
+    'full_specs'   => ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები',
 
     'feat_lbl' => ($lang == 'en') ? 'POWER' : 'სიმძლავრე',
     'f_c1_t' => ($lang == 'en') ? 'Above and beyond.' : 'უფრო მეტი, ვიდრე მოელი.',
@@ -410,14 +412,10 @@ $colors = [
         </div>
     </section>
 
-    <section id="comfort" class="e30x-section e30x-battery">
-        <div class="e30x-container">
-            <span class="section-label fade-up text-center"><?php echo esc_html($t['cc_lbl']); ?></span>
-            <div class="label-line fade-up"></div>
-        </div>
+   <section id="comfort" class="e30x-section e30x-battery">
         <div class="battery-content-wrapper fade-up delay-1">
             <picture class="battery-main-bg">
-                <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_110.aadb42b.png" alt="T9 Comfort and Convenience">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/bg_02.c764cf0.jpg" alt="Engineered for efficiency">
             </picture>
 
             <div class="battery-info-card">
@@ -427,10 +425,12 @@ $colors = [
                 <ul class="battery-specs-grid" style="margin-bottom: 40px;">
                     <li style="font-size: 15px; margin-bottom: 12px; font-weight: 500; line-height: 1.5;"><?php echo esc_html($t['cc_sp1']); ?></li>
                     <li style="font-size: 15px; margin-bottom: 12px; font-weight: 500; line-height: 1.5;"><?php echo esc_html($t['cc_sp2']); ?></li>
+                    <li style="font-size: 15px; margin-bottom: 12px; font-weight: 500; line-height: 1.5;"><?php echo esc_html($t['cc_sp3']); ?></li>
+                    <li style="font-size: 15px; margin-bottom: 12px; font-weight: 500; line-height: 1.5;"><?php echo esc_html($t['cc_sp4']); ?></li>
                 </ul>
 
-                <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="btn-white-pill">
-                    <?php echo esc_html($t['hl_btn']); ?>
+                <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="btn-white-pill">
+                    <?php echo esc_html($t['full_specs']); ?>
                 </a>
             </div>
         </div>

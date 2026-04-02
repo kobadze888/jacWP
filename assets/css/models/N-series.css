@@ -1086,15 +1086,19 @@ section[id] {
 
 .e30x-battery {
     background-color: #fff;
-    padding: 0px;
+    padding: 0 !important;
+}
+
+#comfort.e30x-section {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .battery-content-wrapper {
     position: relative;
     width: 100%;
     max-width: 100% !important;
-    /* სრული სიგანე */
-    margin: 40px 0 0;
+    margin: 0;
     border-radius: 0;
     overflow: hidden;
     aspect-ratio: 16 / 9;
@@ -1195,13 +1199,11 @@ section[id] {
 @media (max-width: 768px) {
     .battery-content-wrapper {
         aspect-ratio: 9 / 16;
-        /* ვერტიკალური პროპორცია მობილურისთვის */
         min-height: 650px;
         flex-direction: column;
         justify-content: flex-end;
-        /* ტექსტი ჩამოვიდეს ქვემოთ სურათზე */
         padding: 40px 15px;
-        margin: 30px 0 0;
+        margin: 0;
     }
 
     .battery-main-bg,
