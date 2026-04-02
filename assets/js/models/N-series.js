@@ -12,29 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.1 });
     fadeElements.forEach(el => fadeObserver.observe(el));
 
-    // 2. Color Switcher
-    const colorDots = document.querySelectorAll('.color-dot');
-    const mainImg = document.getElementById('mainCarColorImg');
-    const nameDisplay = document.getElementById('colorNameDisplay');
 
-    if (colorDots.length > 0 && mainImg) {
-        colorDots.forEach(dot => {
-            dot.addEventListener('click', function() {
-                colorDots.forEach(d => d.classList.remove('active'));
-                this.classList.add('active');
-
-                const newImgUrl = this.getAttribute('data-img');
-                const newName = this.getAttribute('data-name');
-                
-                mainImg.style.opacity = '0';
-                setTimeout(() => {
-                    mainImg.src = newImgUrl;
-                    nameDisplay.textContent = newName;
-                    mainImg.style.opacity = '1';
-                }, 300);
-            });
-        });
-    }
 
     // 3. Sub Nav Scroll Spy (გასწორებული ლოგიკით)
     const sections = document.querySelectorAll('section[id]');
@@ -117,33 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateGallery();
 
-/* 6. T9 VIDEO MODAL LOGIC */
-    const triggerFreeVideo = document.getElementById('openFreeVideo');
-    const freeModal = document.getElementById('t9VideoModal');
-    const freeClose = document.getElementById('closeT9Modal');
-    const freeVideo = document.getElementById('t9ModalVideo');
-
-    if(triggerFreeVideo && freeModal && freeVideo) {
-        triggerFreeVideo.addEventListener('click', () => {
-            freeModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; 
-            setTimeout(() => freeModal.classList.add('active'), 10);
-            freeVideo.currentTime = 0;
-            freeVideo.play();
-        });
-
-        const closeFreeModal = () => {
-            freeModal.classList.remove('active');
-            setTimeout(() => {
-                freeModal.style.display = 'none';
-                document.body.style.overflow = ''; 
-            }, 400);
-            freeVideo.pause();
-        };
-
-        if(freeClose) freeClose.addEventListener('click', closeFreeModal);
-        freeModal.addEventListener('click', (e) => { if(e.target === freeModal) closeFreeModal(); });
-    }
 
     /* INTERIOR VIDEO MODAL LOGIC */
         const triggerInteriorVideo = document.getElementById('triggerInteriorVideo');
