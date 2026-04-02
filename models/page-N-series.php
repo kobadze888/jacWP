@@ -212,141 +212,59 @@ $colors = [
     </section>
 
  <div class="e30x-features-wrapper">
-     <section id="exterior" class="e30x-section text-center feature-slider-section">
-            <div class="e30x-container">
+     <section id="exterior" class="e30x-section n-exterior-section">
+        <div class="e30x-container">
+            <div class="text-center fade-up">
+                <span class="section-label"><?php echo ($lang == 'en') ? 'EXTERIOR' : 'ექსტერიერი'; ?></span>
+                <div class="label-line"></div>
+                <p class="n-ext-main-desc mt-20">
+                    <?php echo ($lang == 'en') ? "The new generation of engines builds upon the established performance of JAC's power units, elevating power and reliability to new heights." : "ძრავების ახალი თაობა ეფუძნება JAC-ის ძალოვანი აგრეგატების უკვე აღიარებულ წარმადობას, რაც სიმძლავრესა და საიმედოობას ახალ საფეხურზე აიყვანს."; ?>
+                </p>
+            </div>
 
-                <span class="section-label fade-up"><?php echo esc_html($t['ext_lbl']); ?></span>
-                <div class="label-line fade-up"></div>
-                <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['ext_title']); ?></h2>
+            <div class="n-ext-image-wrapper fade-up delay-1 mt-40">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/N90-EX-002.9c54ea1.png" alt="N-Series Exterior">
+            </div>
 
-                <div class="feature-track-wrapper mt-20">
-                    <div class="feature-track" id="exteriorTrack">
-
-                        <div class="feature-slide">
-                            <div class="feature-media-grid-3 fade-up">
-                                <div class="media-main">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex1slide1.585d08e.png" alt="T9 Exterior Main">
-                                </div>
-                                <div class="media-side">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex1slide2.c8685c1.png" alt="T9 Exterior Detail">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex1slide3.3340839.png" alt="T9 Exterior Detail">
-                                </div>
-                            </div>
-                            <div class="feature-content-row fade-up delay-1">
-                                <div class="feature-text-left">
-                                    <h3><?php echo esc_html($t['ext_s1_t']); ?></h3>
-                                </div>
-                                <div class="feature-text-right">
-                                    <p><?php echo esc_html($t['ext_s1_d']); ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
-                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="feature-slide">
-                            <div class="feature-media-row fade-up">
-                                <div class="feature-media-item interior-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex2slide1.cf7530e.png" alt="T9 Light your way">
-                                </div>
-                            </div>
-                            <div class="feature-content-row fade-up delay-1">
-                                <div class="feature-text-left">
-                                    <h3><?php echo esc_html($t['ext_s2_t']); ?></h3>
-                                </div>
-                                <div class="feature-text-right">
-                                    <p><?php echo esc_html($t['ext_s2_d']); ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
-                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="feature-slide">
-                            <div class="feature-media-row half-grid fade-up">
-                                <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex2slide2.b8f2606.png" alt="T9 Sports Bar">
-                                </div>
-                                <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex2slide3.b442ef1.png" alt="T9 Rock Sliders">
-                                </div>
-                            </div>
-                            <div class="feature-content-row fade-up delay-1">
-                                <div class="feature-text-left">
-                                    <h3><?php echo esc_html($t['ext_s3_t']); ?></h3>
-                                </div>
-                                <div class="feature-text-right">
-                                    <p><?php echo esc_html($t['ext_s3_d']); ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
-                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="feature-slide">
-                            <div class="feature-media-row half-grid fade-up">
-                                <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex3slide2.4d9d0e8.png" alt="T9 Alloy Wheels">
-                                </div>
-                                <div class="feature-media-item">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_070.7de1545.png" alt="T9 Tyres">
-                                </div>
-                            </div>
-                            <div class="feature-content-row fade-up delay-1">
-                                <div class="feature-text-left">
-                                    <h3><?php echo esc_html($t['ext_s4_t']); ?></h3>
-                                </div>
-                                <div class="feature-text-right">
-                                    <p><?php echo esc_html($t['ext_s4_d']); ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
-                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="feature-slide">
-                            <div class="feature-media-grid-3 fade-up">
-                                <div class="media-main">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex3slide1.81f6d27.png" alt="T9 Load Capacity">
-                                </div>
-                                <div class="media-side">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/ex3slide3.4f5f547.png" alt="T9 Bed Detail">
-                                    <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_103.8474843.jpg" alt="T9 Bed Detail">
-                                </div>
-                            </div>
-                            <div class="feature-content-row fade-up delay-1">
-                                <div class="feature-text-left">
-                                    <h3><?php echo esc_html($t['ext_s5_t']); ?></h3>
-                                </div>
-                                <div class="feature-text-right">
-                                    <p><?php echo esc_html($t['ext_s5_d']); ?></p>
-                                    <a href="https://jacen.jac.com.cn/pdf/T9Brochure.pdf" target="_blank" class="spec-link">
-                                        <?php echo ($lang == 'en') ? 'Full Specifications' : 'სრული მონაცემები'; ?> <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="n-ext-features-grid mt-50">
+                <div class="n-ext-card fade-up">
+                    <h3 class="n-ext-title"><?php echo ($lang == 'en') ? 'New front face new cabin design.' : 'ახალი წინა ნაწილი, კაბინის ახალი დიზაინი.'; ?></h3>
+                    <ul class="n-ext-list">
+                        <li><?php echo ($lang == 'en') ? 'Compact and organized front face design.' : 'კომპაქტური და ორგანიზებული წინა დიზაინი.'; ?></li>
+                        <li><?php echo ($lang == 'en') ? 'New chrome front grille design.' : 'ახალი ქრომირებული წინა ცხაურა.'; ?></li>
+                        <li><?php echo ($lang == 'en') ? '"Shark jaw" style front bumper for a striking visual impact.' : '"ზვიგენის ყბის" სტილის წინა ბამპერი შთამბეჭდავი ვიზუალური ეფექტისთვის.'; ?></li>
+                        <li><?php echo ($lang == 'en') ? 'Elegant and refined aesthetics.' : 'ელეგანტური და დახვეწილი ესთეტიკა.'; ?></li>
+                    </ul>
                 </div>
-                
-                <div class="feature-slider-controls fade-up delay-2">
-                    <button class="feat-arrow prev" data-slider="exteriorTrack"><i class="fa-solid fa-chevron-left"></i></button>
-                    <div class="feat-dots">
-                        <span class="f-dot active"></span>
-                        <span class="f-dot"></span>
-                        <span class="f-dot"></span>
-                        <span class="f-dot"></span>
-                        <span class="f-dot"></span>
-                    </div>
-                    <button class="feat-arrow next" data-slider="exteriorTrack"><i class="fa-solid fa-chevron-right"></i></button>
+
+                <div class="n-ext-card fade-up delay-1">
+                    <h3 class="n-ext-title"><?php echo ($lang == 'en') ? 'Robust cabin.' : 'მტკიცე კაბინა.'; ?></h3>
+                    <ul class="n-ext-list">
+                        <li><?php echo ($lang == 'en') ? 'Galvanized stamping for better corrosion resistance.' : 'გალვანიზებული შტამპოვკა კოროზიის მიმართ უკეთესი მედეგობისთვის.'; ?></li>
+                        <li><?php echo ($lang == 'en') ? 'Reinforced high-strength steel applied in 13 critical areas of cabin shell with energy absorption technology.' : 'გაძლიერებული მაღალი სიმტკიცის ფოლადი კაბინის 13 კრიტიკულ ზონაში ენერგიის შთანთქმის ტექნოლოგიით.'; ?></li>
+                    </ul>
+                </div>
+
+                <div class="n-ext-card fade-up delay-2">
+                    <h3 class="n-ext-title"><?php echo ($lang == 'en') ? 'Good aerodynamics performance.' : 'კარგი აეროდინამიკური მახასიათებლები.'; ?></h3>
+                    <ul class="n-ext-list">
+                        <li><?php echo ($lang == 'en') ? 'Fine-tuned aerodynamics of whole cabin.' : 'მთლიანი კაბინის დახვეწილი აეროდინამიკა.'; ?></li>
+                        <li><?php echo ($lang == 'en') ? 'Enhanced dynamic air deflector (optional).' : 'გაუმჯობესებული დინამიკური ჰაერის დეფლექტორი (არჩევითი).'; ?></li>
+                        <li><?php echo ($lang == 'en') ? 'Integrated exterior rear-view mirror.' : 'ინტეგრირებული გარე უკანა ხედვის სარკეები.'; ?></li>
+                    </ul>
+                </div>
+
+                <div class="n-ext-card fade-up delay-3">
+                    <h3 class="n-ext-title"><?php echo ($lang == 'en') ? 'Better lighting performance.' : 'უკეთესი განათების მახასიათებლები.'; ?></h3>
+                    <ul class="n-ext-list">
+                        <li><?php echo ($lang == 'en') ? '40% Brighter illumination.' : '40%-ით უფრო ნათელი განათება.'; ?></li>
+                        <li><?php echo ($lang == 'en') ? '30% Extended irradiation distance.' : '30%-ით გაზრდილი განათების მანძილი.'; ?></li>
+                        <li><?php echo ($lang == 'en') ? '50% Reduced energy consumption.' : '50%-ით შემცირებული ენერგიის მოხმარება.'; ?></li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- INTERIOR SECTION (BILINGUAL & SLIDER)  -->
         <section id="interior" class="e30x-section text-center" style="padding-top: 40px; padding-bottom: 80px;">

@@ -1093,8 +1093,7 @@ section[id] {
     position: relative;
     width: 100%;
     max-width: 100% !important;
-    /* სრული სიგანე */
-    margin: 40px 0 0;
+    margin: 0;
     border-radius: 0;
     overflow: hidden;
     aspect-ratio: 16 / 9;
@@ -1104,7 +1103,6 @@ section[id] {
     box-shadow: none;
 }
 
-/* ფონის სურათი */
 .battery-main-bg {
     position: absolute;
     inset: 0;
@@ -1114,16 +1112,14 @@ section[id] {
     z-index: 1;
 }
 
-/* ტექსტის ბარათი */
 .battery-info-card {
     position: relative;
     z-index: 2;
     background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    width: 40%;
+    width: 32%;
     margin-right: 8%;
-    /* დაშორება მარჯვენა კიდიდან */
     padding: 60px 45px;
     border-radius: 24px;
     color: #fff;
@@ -1191,40 +1187,36 @@ section[id] {
     }
 }
 
-/* --- 7. BATTERY MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
     .battery-content-wrapper {
-        aspect-ratio: 9 / 16;
-        /* ვერტიკალური პროპორცია მობილურისთვის */
-        min-height: 650px;
+        aspect-ratio: auto;
+        min-height: auto;
         flex-direction: column;
-        justify-content: flex-end;
-        /* ტექსტი ჩამოვიდეს ქვემოთ სურათზე */
-        padding: 40px 15px;
-        margin: 30px 0 0;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
     }
 
     .battery-main-bg,
     .battery-main-bg img {
-        position: absolute;
-        inset: 0;
+        position: relative;
+        inset: auto;
         width: 100%;
-        height: 100%;
+        height: auto;
         object-fit: cover;
         z-index: 1;
+        display: block;
     }
 
     .battery-info-card {
         width: 100%;
         margin-right: 0;
-        background: rgba(0, 0, 0, 0.75);
-        /* გამჭვირვალე მუქი ფონი */
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding: 35px 25px;
-        border-radius: 20px;
-        /* მომრგვალებული კუთხეები მობილურზეც */
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #000;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        padding: 40px 20px;
+        border-radius: 0;
+        border: none;
     }
 
     .battery-info-title {
