@@ -238,7 +238,92 @@ $colors = [
     </section>
     
 
-    აქ ჩასვი 
+ <section id="n-ext-section">
+        <div class="n-ext-container fade-up">
+            <div class="section-header">
+                <h2 class="section-title">EXTERIOR</h2>
+                <div class="title-underline"></div>
+                <p class="intro-description">
+                    The new generation of engines builds upon the established performance of JAC's power units, elevating power and reliability to new heights.
+                </p>
+            </div>
+
+            <div class="hero-wrapper fade-up delay-1">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/001.95b0503.jpg" alt="JAC N-Series Trucks" class="hero-image">
+                <div class="info-box">
+                    <h2>New front face new cabin design.</h2>
+                    <p>Compact and organized front face design.</p>
+                    <p>New chrome front grille design.</p>
+                    <p>"Shark jaw" style front bumper for a striking visual impact.</p>
+                    <p>Elegant and refined aesthetics.</p>
+                </div>
+            </div>
+
+            <div class="features-grid desktop-only-grid fade-up delay-2">
+                <div class="feature-column">
+                    <div class="left-column-wrapper">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/002.f658c7e.jpg" alt="JAC Truck Side View">
+                        <div>
+                            <h3>Robust cabin.</h3>
+                            <p>Galvanized stamping for better corrosion resistance.</p>
+                            <p>Reinforced high-strength steel applied in 13 critical areas of cabin shell with energy absorption technology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-column right-column">
+                    <div class="detail-images">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/003.5b44faf.jpg" alt="Aerodynamics Detail">
+                        <div class="feature-section">
+                            <h3>Good aerodynamics performance.</h3>
+                            <p>Fine-tuned aerodynamics of whole cabin.</p>
+                            <p>Enhanced dynamic air deflector(optional).</p>
+                            <p>Integrated exterior rear-view mirror.</p>
+                        </div>
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/004.5cacee7.jpg" alt="Front Grille Detail">
+                    </div>
+                    
+                    <div class="feature-section">
+                        <h3>Better lighting performance.</h3>
+                        <p>40% Brighter illumination.</p>
+                        <p>30% Extended irradiation distance.</p>
+                        <p>50% Reduced energy consumption.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-ext-slider fade-up delay-2">
+                <div class="mobile-ext-card">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/002.f658c7e.jpg" alt="Robust cabin">
+                    <div class="mobile-ext-info">
+                        <h3>Robust cabin.</h3>
+                        <p>Galvanized stamping for better corrosion resistance.</p>
+                        <p>Reinforced high-strength steel applied in 13 critical areas of cabin shell with energy absorption technology.</p>
+                    </div>
+                </div>
+                <div class="mobile-ext-card">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/003.5b44faf.jpg" alt="Aerodynamics Detail">
+                    <div class="mobile-ext-info">
+                        <h3>Good aerodynamics performance.</h3>
+                        <p>Fine-tuned aerodynamics of whole cabin.</p>
+                        <p>Enhanced dynamic air deflector(optional).</p>
+                        <p>Integrated exterior rear-view mirror.</p>
+                    </div>
+                </div>
+                <div class="mobile-ext-card">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/004.5cacee7.jpg" alt="Front Grille Detail">
+                    <div class="mobile-ext-info">
+                        <h3>Better lighting performance.</h3>
+                        <p>40% Brighter illumination.</p>
+                        <p>30% Extended irradiation distance.</p>
+                        <p>50% Reduced energy consumption.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
     <section id="power" class="e30x-section more-features-section">
         <div class="e30x-container">
             <div class="text-center">
