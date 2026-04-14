@@ -292,32 +292,44 @@ $colors = [
                 </div>
             </div>
 
-            <div class="mobile-ext-slider fade-up delay-2">
-                <div class="mobile-ext-card">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/002.f658c7e.jpg" alt="Robust cabin">
-                    <div class="mobile-ext-info">
-                        <h3>Robust cabin.</h3>
-                        <p>Galvanized stamping for better corrosion resistance.</p>
-                        <p>Reinforced high-strength steel applied in 13 critical areas of cabin shell with energy absorption technology.</p>
+            <div class="mobile-ext-slider-wrapper fade-up delay-2">
+                <div class="mobile-ext-slider">
+                    <div class="mobile-ext-card active">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/002.f658c7e.jpg" alt="Robust cabin">
+                        <div class="mobile-ext-info">
+                            <h3>Robust cabin.</h3>
+                            <p>Galvanized stamping for better corrosion resistance.</p>
+                            <p>Reinforced high-strength steel applied in 13 critical areas of cabin shell with energy absorption technology.</p>
+                        </div>
+                    </div>
+                    <div class="mobile-ext-card">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/003.5b44faf.jpg" alt="Aerodynamics Detail">
+                        <div class="mobile-ext-info">
+                            <h3>Good aerodynamics performance.</h3>
+                            <p>Fine-tuned aerodynamics of whole cabin.</p>
+                            <p>Enhanced dynamic air deflector(optional).</p>
+                            <p>Integrated exterior rear-view mirror.</p>
+                        </div>
+                    </div>
+                    <div class="mobile-ext-card">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/004.5cacee7.jpg" alt="Front Grille Detail">
+                        <div class="mobile-ext-info">
+                            <h3>Better lighting performance.</h3>
+                            <p>40% Brighter illumination.</p>
+                            <p>30% Extended irradiation distance.</p>
+                            <p>50% Reduced energy consumption.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="mobile-ext-card">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/003.5b44faf.jpg" alt="Aerodynamics Detail">
-                    <div class="mobile-ext-info">
-                        <h3>Good aerodynamics performance.</h3>
-                        <p>Fine-tuned aerodynamics of whole cabin.</p>
-                        <p>Enhanced dynamic air deflector(optional).</p>
-                        <p>Integrated exterior rear-view mirror.</p>
+                
+                <div class="gal-nav-wrapper ext-nav-wrapper">
+                    <button class="gal-arrow ext-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="gal-indicators">
+                        <span class="gal-ind ext-ind active"></span>
+                        <span class="gal-ind ext-ind"></span>
+                        <span class="gal-ind ext-ind"></span>
                     </div>
-                </div>
-                <div class="mobile-ext-card">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/004.5cacee7.jpg" alt="Front Grille Detail">
-                    <div class="mobile-ext-info">
-                        <h3>Better lighting performance.</h3>
-                        <p>40% Brighter illumination.</p>
-                        <p>30% Extended irradiation distance.</p>
-                        <p>50% Reduced energy consumption.</p>
-                    </div>
+                    <button class="gal-arrow ext-arrow next active"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 

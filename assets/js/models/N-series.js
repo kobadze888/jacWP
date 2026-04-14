@@ -274,4 +274,42 @@ const subNavLinksContainer = document.querySelector('.subnav-links');
             });
         });
     }
+
+    const extCards = document.querySelectorAll('.mobile-ext-card');
+    const extArrows = document.querySelectorAll('.ext-arrow');
+    const extInds = document.querySelectorAll('.ext-ind');
+    let extIndex = 0;
+
+    function updateExtSlider() {
+        if (!extCards.length) return;
+        extCards.forEach(card => card.classList.remove('active'));
+        extInds.forEach(ind => ind.classList.remove('active'));
+        
+        if (extCards[extIndex]) extCards[extIndex].classList.add('active');
+        if (extInds[extIndex]) extInds[extIndex].classList.add('active');
+        
+        extArrows.forEach(arr => {
+            if(arr.classList.contains('next')) arr.classList.toggle('active', extIndex < extCards.length - 1);
+            else arr.classList.toggle('active', extIndex > 0);
+        });
+    }
+
+    if (extArrows.length > 0) {
+        extArrows.forEach(arrow => {
+            arrow.addEventListener('click', function() {
+                if(this.classList.contains('next') && extIndex < extCards.length - 1) extIndex++;
+                else if(this.classList.contains('prev') && extIndex > 0) extIndex--;
+                updateExtSlider();
+            });
+        });
+        
+        extInds.forEach((ind, idx) => {
+            ind.addEventListener('click', () => {
+                extIndex = idx;
+                updateExtSlider();
+            });
+        });
+        updateExtSlider();
+    }
+
 });

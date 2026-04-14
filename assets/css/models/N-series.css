@@ -1975,24 +1975,35 @@ section[id] {
         display: none !important;
     }
 
-    .mobile-ext-slider {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 20px;
-        padding-bottom: 30px;
-        scrollbar-width: none;
+    .mobile-ext-slider-wrapper {
+        display: block;
+        width: 100%;
+        padding-bottom: 20px;
     }
 
-    .mobile-ext-slider::-webkit-scrollbar {
-        display: none;
+    .mobile-ext-slider {
+        position: relative;
+        width: 100%;
     }
 
     .mobile-ext-card {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-        display: flex;
+        display: none;
         flex-direction: column;
+        animation: extFadeIn 0.5s ease forwards;
+    }
+
+    .mobile-ext-card.active {
+        display: flex;
+    }
+
+    @keyframes extFadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ext-nav-wrapper {
+        margin-top: 15px;
+        justify-content: center;
     }
 
     .mobile-ext-card img {
