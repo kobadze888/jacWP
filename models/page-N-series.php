@@ -113,7 +113,12 @@ $t = [
     'n_ext_c3_3' => ($lang == 'en') ? '50% Reduced energy consumption.' : '50%-ით შემცირებული ენერგიის მოხმარება.',
     'pow_rel_title' => ($lang == 'en') ? 'POWERFUL & RELIABLE' : 'მძლავრი და საიმედო',
     'pow_rel_sub'   => ($lang == 'en') ? 'Advanced JAC engine series.' : 'JAC ძრავების მოწინავე სერია.',
-    'pow_rel_desc'  => ($lang == 'en') ? 'Combining independent research and strategic collaboration, we offer a wide range of power products tailored to various complex working conditions. From Euro III to Euro VI emission standards, we provide the most suitable power options for your needs.' : 'დამოუკიდებელი კვლევებისა და სტრატეგიული თანამშრომლობის კომბინაციით, ჩვენ გთავაზობთ ძრავების ფართო არჩევანს, რომელიც მორგებულია სხვადასხვა რთულ სამუშაო პირობებზე. ევრო III-დან ევრო VI ემისიის სტანდარტებამდე, ჩვენ გთავაზობთ თქვენს საჭიროებებზე მორგებულ საუკეთესო ვარიანტებს.'
+    'pow_rel_desc'  => ($lang == 'en') ? 'Combining independent research and strategic collaboration, we offer a wide range of power products tailored to various complex working conditions. From Euro III to Euro VI emission standards, we provide the most suitable power options for your needs.' : 'დამოუკიდებელი კვლევებისა და სტრატეგიული თანამშრომლობის კომბინაციით, ჩვენ გთავაზობთ ძრავების ფართო არჩევანს, რომელიც მორგებულია სხვადასხვა რთულ სამუშაო პირობებზე. ევრო III-დან ევრო VI ემისიის სტანდარტებამდე, ჩვენ გთავაზობთ თქვენს საჭიროებებზე მორგებულ საუკეთესო ვარიანტებს.',
+    'intel_title'   => ($lang == 'en') ? 'INTELLIGENT' : 'ინტელექტუალური',
+    'safe_title'    => ($lang == 'en') ? 'SAFETY' : 'უსაფრთხოება',
+    'safe_top_desc' => ($lang == 'en') ? 'The New N-Series Trucks demonstrate advanced intelligent safety design. They feature various intelligent safety systems such as driver assistance, lane departure warning, and emergency braking assistance, significantly enhancing vehicle safety.' : 'ახალი N-სერიის სატვირთო ავტომობილები გამოირჩევა უსაფრთხოების მოწინავე ინტელექტუალური დიზაინით. ისინი აღჭურვილია უსაფრთხოების სხვადასხვა სისტემებით, როგორიცაა მძღოლის დამხმარე, ზოლიდან გადასვლის გაფრთხილება და ექსტრემალური დამუხრუჭების დახმარება, რაც მნიშვნელოვნად აუმჯობესებს ავტომობილის უსაფრთხოებას.',
+    'safe_sub'      => ($lang == 'en') ? 'Dual airbags.' : 'ორმაგი უსაფრთხოების ბალიშები.',
+    'safe_desc'     => ($lang == 'en') ? 'In the event of a collision, the Supplemental Restraint System identifies severe impacts and deploys the airbags within one second, cushioning the occupants and reducing harm.' : 'შეჯახების შემთხვევაში, დამატებითი დამცავი სისტემა ამოიცნობს ძლიერ დარტყმას და ერთ წამში ხსნის უსაფრთხოების ბალიშებს, რაც არბილებს დარტყმას და ამცირებს მგზავრთა დაზიანებას.'
 ];
 
 // 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
@@ -426,6 +431,42 @@ $colors = [
                 </div>
                 <div class="n-power-text-right">
                     <p><?php echo esc_html($t['pow_rel_desc']); ?></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="n-intelligent-section" class="n-intelligent-section">
+        <div class="n-intelligent-container">
+            <h2 class="n-power-title fade-up"><?php echo esc_html($t['intel_title']); ?></h2>
+            <div class="title-underline-dark fade-up"></div>
+            
+            <img src="https://jacen.jac.com.cn/_nuxt/img/IMAGE2.4147f53.png" alt="Intelligent" class="n-intelligent-img fade-up delay-1">
+            
+            <div class="n-intelligent-btn-wrapper fade-up delay-2">
+                <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="btn-dark-pill">
+                    <?php echo esc_html($t['full_specs']); ?>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="n-safety-section" class="n-safety-section">
+        <div class="n-power-container">
+            <h2 class="n-power-title fade-up"><?php echo esc_html($t['safe_title']); ?></h2>
+            <div class="title-underline-dark fade-up"></div>
+            <p class="n-power-subtitle fade-up delay-1">
+                <?php echo esc_html($t['safe_top_desc']); ?>
+            </p>
+
+            <img src="https://jacen.jac.com.cn/_nuxt/img/safety.57a8cf5.png" alt="Safety" class="n-power-img fade-up delay-1">
+            
+            <div class="n-power-text-row fade-up delay-2">
+                <div class="n-power-text-left">
+                    <h3><?php echo esc_html($t['safe_sub']); ?></h3>
+                </div>
+                <div class="n-power-text-right">
+                    <p><?php echo esc_html($t['safe_desc']); ?></p>
                 </div>
             </div>
         </div>
