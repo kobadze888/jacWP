@@ -118,7 +118,16 @@ $t = [
     'safe_title'    => ($lang == 'en') ? 'SAFETY' : 'უსაფრთხოება',
     'safe_top_desc' => ($lang == 'en') ? 'The New N-Series Trucks demonstrate advanced intelligent safety design. They feature various intelligent safety systems such as driver assistance, lane departure warning, and emergency braking assistance, significantly enhancing vehicle safety.' : 'ახალი N-სერიის სატვირთო ავტომობილები გამოირჩევა უსაფრთხოების მოწინავე ინტელექტუალური დიზაინით. ისინი აღჭურვილია უსაფრთხოების სხვადასხვა სისტემებით, როგორიცაა მძღოლის დამხმარე, ზოლიდან გადასვლის გაფრთხილება და ექსტრემალური დამუხრუჭების დახმარება, რაც მნიშვნელოვნად აუმჯობესებს ავტომობილის უსაფრთხოებას.',
     'safe_sub'      => ($lang == 'en') ? 'Dual airbags.' : 'ორმაგი უსაფრთხოების ბალიშები.',
-    'safe_desc'     => ($lang == 'en') ? 'In the event of a collision, the Supplemental Restraint System identifies severe impacts and deploys the airbags within one second, cushioning the occupants and reducing harm.' : 'შეჯახების შემთხვევაში, დამატებითი დამცავი სისტემა ამოიცნობს ძლიერ დარტყმას და ერთ წამში ხსნის უსაფრთხოების ბალიშებს, რაც არბილებს დარტყმას და ამცირებს მგზავრთა დაზიანებას.'
+    'safe_desc'     => ($lang == 'en') ? 'In the event of a collision, the Supplemental Restraint System identifies severe impacts and deploys the airbags within one second, cushioning the occupants and reducing harm.' : 'შეჯახების შემთხვევაში, დამატებითი დამცავი სისტემა ამოიცნობს ძლიერ დარტყმას და ერთ წამში ხსნის უსაფრთხოების ბალიშებს, რაც არბილებს დარტყმას და ამცირებს მგზავრთა დაზიანებას.',
+    'chas_title'    => ($lang == 'en') ? 'CHASSIS' : 'შასი',
+    'chas_sub'      => ($lang == 'en') ? 'Innovative light but robust chassis.' : 'ინოვაციური მსუბუქი, მაგრამ მტკიცე შასი.',
+    'app_title'     => ($lang == 'en') ? 'POWERFUL & RELIABLE' : 'მძლავრი და საიმედო',
+    'app_sub'       => ($lang == 'en') ? 'A truck for every application' : 'სატვირთო ავტომობილი ნებისმიერი დანიშნულებისთვის',
+    'app_desc'      => ($lang == 'en') ? 'JAC N-Series trucks offer variety of wheel base options and specialized designs, making it suitable for different rear body re-fitment, to meet the unique specialized needs of your business.' : 'JAC N-სერიის სატვირთო ავტომობილები გთავაზობთ ბორბლების ბაზის მრავალფეროვან ვარიანტებსა და სპეციალიზებულ დიზაინს, რაც მათ შესაფერისს ხდის ძარის სხვადასხვა ტიპის გადაკეთებისთვის, რათა დააკმაყოფილოს თქვენი ბიზნესის სპეციფიკური საჭიროებები.',
+    'disc_title'    => ($lang == 'en') ? 'Discover Your JAC N-Series' : 'აღმოაჩინე შენი JAC N-სერია',
+    'btn_5t_frz'    => 'JAC 5 Ton Freezer',
+    'btn_3t'        => 'JAC 3 Ton',
+    'btn_5t'        => 'JAC 5 Ton'
 ];
 
 // 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
@@ -451,6 +460,26 @@ $colors = [
         </div>
     </section>
 
+    <section id="n-application-section" class="n-application-section">
+        <div class="n-power-container">
+            <h2 class="n-power-title fade-up"><?php echo esc_html($t['app_title']); ?></h2>
+            <div class="title-underline-dark fade-up"></div>
+            
+            <h3 class="n-app-subtitle fade-up delay-1">
+                <?php echo esc_html($t['app_sub']); ?>
+            </h3>
+            <p class="n-app-desc fade-up delay-1">
+                <?php echo esc_html($t['app_desc']); ?>
+            </p>
+
+            <div class="n-app-images fade-up delay-2">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/app1.96ef939.png" alt="Application 1">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/app2.dd3c348.png" alt="Application 2">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/app3.a157df0.png" alt="Application 3">
+            </div>
+        </div>
+    </section>
+
     <section id="n-safety-section" class="n-safety-section">
         <div class="n-power-container">
             <h2 class="n-power-title fade-up"><?php echo esc_html($t['safe_title']); ?></h2>
@@ -471,48 +500,63 @@ $colors = [
             </div>
         </div>
     </section>
+
+    <section id="n-chassis-section" class="n-chassis-section">
+        <div class="n-power-container">
+            <h2 class="n-power-title fade-up"><?php echo esc_html($t['chas_title']); ?></h2>
+            <div class="title-underline-dark fade-up"></div>
+            <p class="n-power-subtitle fade-up delay-1">
+                <?php echo esc_html($t['chas_sub']); ?>
+            </p>
+
+            <img src="https://jacen.jac.com.cn/_nuxt/img/classis.8ce427b.png" alt="Chassis" class="n-intelligent-img fade-up delay-1">
+            
+            <div class="n-intelligent-btn-wrapper fade-up delay-2">
+                <a href="https://jacen.jac.com.cn/pdf/E30X.pdf" target="_blank" class="btn-dark-pill">
+                    <?php echo esc_html($t['full_specs']); ?>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="n-application-section" class="n-application-section">
+        <div class="n-power-container">
+            <h2 class="n-power-title fade-up"><?php echo esc_html($t['app_title']); ?></h2>
+            <div class="title-underline-dark fade-up"></div>
+            
+            <h3 class="n-app-subtitle fade-up delay-1">
+                <?php echo esc_html($t['app_sub']); ?>
+            </h3>
+            <p class="n-app-desc fade-up delay-1">
+                <?php echo esc_html($t['app_desc']); ?>
+            </p>
+
+            <div class="n-app-images fade-up delay-2">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/app1.96ef939.png" alt="Application 1">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/app2.dd3c348.png" alt="Application 2">
+                <img src="https://jacen.jac.com.cn/_nuxt/img/app3.a157df0.png" alt="Application 3">
+            </div>
+        </div>
+    </section>
   
  </div>
     </div>
 
-     <section id="versions" class="e30x-section t9-versions-section">
-        <div class="e30x-container">
-            <h2 class="versions-title text-center fade-up"><?php echo ($lang == 'en') ? 'Discover Your JAC T9 Pickup' : 'აღმოაჩინე შენი JAC T9 Pickup'; ?></h2>
+     <section id="n-specs-download" class="n-specs-download">
+        <div class="n-power-container">
+            <h2 class="n-power-title fade-up"><?php echo esc_html($t['disc_title']); ?></h2>
+            <div class="title-underline-dark fade-up"></div>
 
-            <div class="v-main-flex fade-up delay-1">
-                <div class="v-left-img">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/fourtwo.10b2859.png" class="v-car-img active" id="img-v-4x2" alt="T9 Pickup 4x2">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/fourfour.24711b5.png" class="v-car-img" id="img-v-4x4" alt="T9 Pickup 4x4">
-                </div>
-
-                <div class="v-right-info">
-                    <div class="versions-tabs">
-                        <button class="v-tab active" data-target="v-4x2">T9 Pickup 4x2</button>
-                        <button class="v-tab" data-target="v-4x4">T9 Pickup 4x4</button>
-                    </div>
-
-                    <div class="v-details-container">
-                        <div class="v-content active" id="desc-v-4x2">
-                            <ul>
-                                <li><?php echo ($lang == 'en') ? 'Driving modes Standard/Eco/Sport/Snow' : 'მართვის რეჟიმები Standard/Eco/Sport/Snow'; ?></li>
-                                <li><?php echo ($lang == 'en') ? '18" aluminum wheels' : '18" ალუმინის დისკები'; ?></li>
-                                <li><?php echo ($lang == 'en') ? 'Interior and exterior hooks in the cargo area' : 'შიდა და გარე კავები საბარგულში'; ?></li>
-                                <li><?php echo ($lang == 'en') ? 'Steering wheel and seats covered in synthetic leather' : 'სინთეტიკური ტყავით გადაკრული საჭე და სავარძლები'; ?></li>
-                                <li><?php echo ($lang == 'en') ? 'Roll-bar in cargo box' : 'Roll-bar საბარგულში'; ?></li>
-                            </ul>
-                        </div>
-
-                        <div class="v-content" id="desc-v-4x4">
-                            <ul>
-                                <li><?php echo ($lang == 'en') ? 'Electric sunroof' : 'ელექტრო ლუქი'; ?></li>
-                                <li><?php echo ($lang == 'en') ? '360° camera' : '360° კამერა'; ?></li>
-                                <li><?php echo ($lang == 'en') ? 'Traction modes 2H, 4H, 4L' : 'წევის რეჟიმები 2H, 4H, 4L'; ?></li>
-                                <li><?php echo ($lang == 'en') ? 'Roof rails' : 'სახურავის რელსები'; ?></li>
-                                <li><?php echo ($lang == 'en') ? 'Front parking sensors' : 'წინა პარკინგის სენსორები'; ?></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="n-pdf-buttons-wrapper fade-up delay-1">
+                <a href="#" target="_blank" class="n-pdf-btn">
+                    <i class="fa-regular fa-file-pdf"></i> <?php echo esc_html($t['btn_5t_frz']); ?>
+                </a>
+                <a href="#" target="_blank" class="n-pdf-btn">
+                    <i class="fa-regular fa-file-pdf"></i> <?php echo esc_html($t['btn_3t']); ?>
+                </a>
+                <a href="#" target="_blank" class="n-pdf-btn">
+                    <i class="fa-regular fa-file-pdf"></i> <?php echo esc_html($t['btn_5t']); ?>
+                </a>
             </div>
         </div>
     </section>
