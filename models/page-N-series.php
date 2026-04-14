@@ -211,35 +211,7 @@ $colors = [
         </div>
     </section> 
    
-    <section id="performance" class="e30x-section text-center perf-main-wrapper" style="background: #fff; padding-top: 100px; padding-bottom: 100px;">
-        <div class="e30x-container">
-            <h2 class="section-title fade-up delay-1"><?php echo esc_html($t['perf_title']); ?></h2>
-
-            <div class="perf-tabs fade-up delay-1 mt-30">
-                <button class="perf-tab active" data-target="perf-slide-1"><?php echo esc_html($t['p_c1_t']); ?></button>
-                <button class="perf-tab" data-target="perf-slide-2"><?php echo esc_html($t['p_c2_t']); ?></button>
-            </div>
-
-            <div class="perf-content-wrapper fade-up delay-2 mt-40">
-                <div class="perf-slide active" id="perf-slide-1">
-                    <div class="perf-slide-img">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/pretty.b78b4a6.jpg" alt="Performance">
-                    </div>
-                    <div class="perf-slide-text mt-30">
-                        <p><?php echo esc_html($t['p_c1_d']); ?></p>
-                    </div>
-                </div>
-                <div class="perf-slide" id="perf-slide-2">
-                    <div class="perf-slide-img">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/shift.6a2585c.jpg" alt="Capability">
-                    </div>
-                    <div class="perf-slide-text mt-30">
-                        <p><?php echo esc_html($t['p_c2_d']); ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+ 
 
    <section id="comfort" class="e30x-section e30x-battery">
         <div class="battery-content-wrapper fade-up delay-1">
@@ -264,6 +236,9 @@ $colors = [
             </div>
         </div>
     </section>
+    
+
+    აქ ჩასვი 
     <section id="power" class="e30x-section more-features-section">
         <div class="e30x-container">
             <div class="text-center">
