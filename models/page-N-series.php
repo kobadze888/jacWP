@@ -110,7 +110,10 @@ $t = [
     'n_ext_c3_t' => ($lang == 'en') ? 'Better lighting performance.' : 'უკეთესი განათება.',
     'n_ext_c3_1' => ($lang == 'en') ? '40% Brighter illumination.' : '40%-ით მეტი სიკაშკაშე.',
     'n_ext_c3_2' => ($lang == 'en') ? '30% Extended irradiation distance.' : '30%-ით გაზრდილი ნათების მანძილი.',
-    'n_ext_c3_3' => ($lang == 'en') ? '50% Reduced energy consumption.' : '50%-ით შემცირებული ენერგიის მოხმარება.'
+    'n_ext_c3_3' => ($lang == 'en') ? '50% Reduced energy consumption.' : '50%-ით შემცირებული ენერგიის მოხმარება.',
+    'pow_rel_title' => ($lang == 'en') ? 'POWERFUL & RELIABLE' : 'მძლავრი და საიმედო',
+    'pow_rel_sub'   => ($lang == 'en') ? 'Advanced JAC engine series.' : 'JAC ძრავების მოწინავე სერია.',
+    'pow_rel_desc'  => ($lang == 'en') ? 'Combining independent research and strategic collaboration, we offer a wide range of power products tailored to various complex working conditions. From Euro III to Euro VI emission standards, we provide the most suitable power options for your needs.' : 'დამოუკიდებელი კვლევებისა და სტრატეგიული თანამშრომლობის კომბინაციით, ჩვენ გთავაზობთ ძრავების ფართო არჩევანს, რომელიც მორგებულია სხვადასხვა რთულ სამუშაო პირობებზე. ევრო III-დან ევრო VI ემისიის სტანდარტებამდე, ჩვენ გთავაზობთ თქვენს საჭიროებებზე მორგებულ საუკეთესო ვარიანტებს.'
 ];
 
 // 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
@@ -409,72 +412,25 @@ $colors = [
             </div>
         </div>
     </section>
-    
-    <section id="power" class="e30x-section more-features-section">
-        <div class="e30x-container">
-            <div class="text-center">
-                <span class="section-label fade-up"><?php echo esc_html($t['feat_lbl']); ?></span>
-                <div class="label-line fade-up"></div>
-            </div>
 
-            <div class="mf-bento-grid mt-40">
-                <div class="bento-card bento-vertical fade-up">
-                    <div class="bento-text">
-                        <h3 class="bento-title"><?php echo esc_html($t['f_c1_t']); ?></h3>
-                        <p class="bento-desc"><?php echo esc_html($t['f_c1_d']); ?></p>
-                    </div>
-                    <div class="bento-img">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_066.d50b556.png" alt="Above and beyond">
-                    </div>
+    <section id="n-power-section" class="n-power-section">
+        <div class="n-power-container">
+            <h2 class="n-power-title fade-up"><?php echo esc_html($t['pow_rel_title']); ?></h2>
+            <div class="title-underline-dark fade-up"></div>
+
+            <img src="https://jacen.jac.com.cn/_nuxt/img/fdj.5edb371.png" alt="JAC Engine" class="n-power-img fade-up delay-1">
+            
+            <div class="n-power-text-row fade-up delay-2">
+                <div class="n-power-text-left">
+                    <h3><?php echo esc_html($t['pow_rel_sub']); ?></h3>
                 </div>
-
-                <div class="bento-card bento-horizontal fade-up delay-1">
-                    <div class="bento-text">
-                        <h3 class="bento-title"><?php echo esc_html($t['f_c2_t']); ?></h3>
-                        <p class="bento-desc"><?php echo esc_html($t['f_c2_d']); ?></p>
-                    </div>
-                    <div class="bento-img">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/JAC_054.31b6a38.png" alt="Get a grip">
-                    </div>
-                </div>
-
-                <div class="bento-card bento-text-only fade-up delay-2">
-                    <div class="bento-text">
-                        <h3 class="bento-title"><?php echo esc_html($t['f_c3_t']); ?></h3>
-                        <p class="bento-desc"><?php echo esc_html($t['f_c3_d']); ?></p>
-                    </div>
-                </div>
-
-                <div class="bento-card bento-text-only fade-up delay-2">
-                    <div class="bento-text">
-                        <h3 class="bento-title"><?php echo esc_html($t['f_c4_t']); ?></h3>
-                        <p class="bento-desc"><?php echo esc_html($t['f_c4_d']); ?></p>
-                    </div>
+                <div class="n-power-text-right">
+                    <p><?php echo esc_html($t['pow_rel_desc']); ?></p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="technology" class="e30x-section smart-tech-section text-center">
-        <div class="e30x-container">
-            <span class="section-label fade-up"><?php echo esc_html($t['tech_lbl']); ?></span>
-            <div class="label-line fade-up"></div>
-            <p class="section-subtitle fade-up delay-1" style="max-width: 900px; margin: 30px auto 50px; font-size: 20px; line-height: 1.6; color: #111;"><?php echo esc_html($t['tech_desc']); ?></p>
-
-            <div class="tech-grid mt-50">
-                <div class="tech-card fade-up">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/Jac_FrisonT9_0268copy.cc4e6c2.jpg" alt="T9 Technology 1">
-                </div>
-                <div class="tech-card fade-up delay-1">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/DSC07656.8f1d598.jpg" alt="T9 Technology 2">
-                </div>
-                <div class="tech-card fade-up delay-2">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/7691307046604a8c322a9f366591916_0_0.406c52f.jpg" alt="T9 Technology 3">
-                </div>
-            </div>
-        </div>
-    </section>
- 
+  
  </div>
     </div>
 
