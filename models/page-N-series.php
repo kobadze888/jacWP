@@ -85,7 +85,32 @@ $t = [
     'p_c1_t'     => ($lang == 'en') ? 'Performance' : 'წარმადობა',
     'p_c1_d'     => ($lang == 'en') ? 'Turbo technology increases power, resulting in better highway performance and acceleration, similar to larger engines but with smaller displacement' : 'ტურბო ტექნოლოგია ზრდის სიმძლავრეს, რაც უზრუნველყოფს უკეთეს შესრულებას და აჩქარებას მაგისტრალზე, მსგავსად დიდი ძრავებისა, მაგრამ მცირე მოცულობით',
     'p_c2_t'     => ($lang == 'en') ? 'Capability' : 'შესაძლებლობა',
-    'p_c2_d'     => ($lang == 'en') ? 'Your T9 Pickup lets you adjust to the many driving conditions across our great land.intelligent electronic shift system gives you four dist-' : 'შენი T9 პიკაპი გაძლევს საშუალებას მოერგო მართვის მრავალ პირობას ჩვენს დიდ მიწაზე. ინტელექტუალური ელექტრონული გადართვის სისტემა გაძლევს ოთხ გან-'
+    'p_c2_d'     => ($lang == 'en') ? 'Your T9 Pickup lets you adjust to the many driving conditions across our great land.intelligent electronic shift system gives you four dist-' : 'შენი T9 პიკაპი გაძლევს საშუალებას მოერგო მართვის მრავალ პირობას ჩვენს დიდ მიწაზე. ინტელექტუალური ელექტრონული გადართვის სისტემა გაძლევს ოთხ გან-',
+    'int_sub'    => ($lang == 'en') ? 'Sedan-style interior.' : 'სედანის სტილის ინტერიერი.',
+    'int_s1_t'   => ($lang == 'en') ? 'Perfect ergonomics and easy operation.' : 'იდეალური ერგონომიკა და მარტივი მართვა.',
+    'int_s1_l1'  => ($lang == 'en') ? 'Driver-centered instrument panel.' : 'მძღოლზე მორგებული მართვის პანელი.',
+    'int_s1_l2'  => ($lang == 'en') ? 'Ergonomic air suspension seat.' : 'ერგონომიული სავარძელი პნევმატური დაკიდებით.',
+    'int_s1_l3'  => ($lang == 'en') ? 'Full adjustment.' : 'სრული რეგულირება.',
+    'int_s2_t'   => ($lang == 'en') ? 'Big space & comfortable driving environment.' : 'დიდი სივრცე და კომფორტული მართვის გარემო.',
+    'int_s2_l1'  => ($lang == 'en') ? 'Upright A-pillar and square cab design to increase internal space.' : 'სწორი A-საყრდენი და კვადრატული კაბინის დიზაინი შიდა სივრცის გასაზრდელად.',
+    'int_s2_l2'  => ($lang == 'en') ? 'Ample storage space.' : 'ტევადი სათავსოები.',
+    'n_ext_sub'  => ($lang == 'en') ? 'The new generation of engines builds upon the established performance of JAC\'s power units, elevating power and reliability to new heights.' : 'ახალი თაობის ძრავები ეფუძნება JAC-ის ძალოვანი აგრეგატების დადასტურებულ წარმადობას და სიმძლავრე და საიმედოობა აჰყავს ახალ სიმაღლეებზე.',
+    'n_ext_h_t'  => ($lang == 'en') ? 'New front face new cabin design.' : 'ახალი წინა ნაწილი და კაბინის ახალი დიზაინი.',
+    'n_ext_h_1'  => ($lang == 'en') ? 'Compact and organized front face design.' : 'კომპაქტური და მოწესრიგებული წინა ნაწილის დიზაინი.',
+    'n_ext_h_2'  => ($lang == 'en') ? 'New chrome front grille design.' : 'ქრომირებული წინა ცხაურის ახალი დიზაინი.',
+    'n_ext_h_3'  => ($lang == 'en') ? '"Shark jaw" style front bumper for a striking visual impact.' : '"ზვიგენის ყბის" სტილის წინა ბამპერი შთამბეჭდავი ვიზუალური ეფექტისთვის.',
+    'n_ext_h_4'  => ($lang == 'en') ? 'Elegant and refined aesthetics.' : 'ელეგანტური და დახვეწილი ესთეტიკა.',
+    'n_ext_c1_t' => ($lang == 'en') ? 'Robust cabin.' : 'მტკიცე კაბინა.',
+    'n_ext_c1_1' => ($lang == 'en') ? 'Galvanized stamping for better corrosion resistance.' : 'გალვანიზებული შტამპვა კოროზიის მიმართ უკეთესი მედეგობისთვის.',
+    'n_ext_c1_2' => ($lang == 'en') ? 'Reinforced high-strength steel applied in 13 critical areas of cabin shell with energy absorption technology.' : 'გაძლიერებული მაღალი სიმტკიცის ფოლადი კაბინის 13 კრიტიკულ ზონაში ენერგიის შთანთქმის ტექნოლოგიით.',
+    'n_ext_c2_t' => ($lang == 'en') ? 'Good aerodynamics performance.' : 'კარგი აეროდინამიკური მახასიათებლები.',
+    'n_ext_c2_1' => ($lang == 'en') ? 'Fine-tuned aerodynamics of whole cabin.' : 'მთლიანი კაბინის დახვეწილი აეროდინამიკა.',
+    'n_ext_c2_2' => ($lang == 'en') ? 'Enhanced dynamic air deflector(optional).' : 'გაუმჯობესებული დინამიკური ჰაერის დეფლექტორი (ოფცია).',
+    'n_ext_c2_3' => ($lang == 'en') ? 'Integrated exterior rear-view mirror.' : 'ინტეგრირებული ექსტერიერის უკანა ხედვის სარკე.',
+    'n_ext_c3_t' => ($lang == 'en') ? 'Better lighting performance.' : 'უკეთესი განათება.',
+    'n_ext_c3_1' => ($lang == 'en') ? '40% Brighter illumination.' : '40%-ით მეტი სიკაშკაშე.',
+    'n_ext_c3_2' => ($lang == 'en') ? '30% Extended irradiation distance.' : '30%-ით გაზრდილი ნათების მანძილი.',
+    'n_ext_c3_3' => ($lang == 'en') ? '50% Reduced energy consumption.' : '50%-ით შემცირებული ენერგიის მოხმარება.'
 ];
 
 // 7 ფერის მასივი (თანმიმდევრობა და HEX კოდები გასწორებულია სურათის მიხედვით)
@@ -241,21 +266,21 @@ $colors = [
  <section id="n-ext-section">
         <div class="n-ext-container fade-up">
             <div class="section-header">
-                <h2 class="section-title">EXTERIOR</h2>
+                <h2 class="section-title"><?php echo esc_html($t['ext_lbl']); ?></h2>
                 <div class="title-underline"></div>
                 <p class="intro-description">
-                    The new generation of engines builds upon the established performance of JAC's power units, elevating power and reliability to new heights.
+                    <?php echo esc_html($t['n_ext_sub']); ?>
                 </p>
             </div>
 
             <div class="hero-wrapper fade-up delay-1">
                 <img src="https://jacen.jac.com.cn/_nuxt/img/001.95b0503.jpg" alt="JAC N-Series Trucks" class="hero-image">
                 <div class="info-box">
-                    <h2>New front face new cabin design.</h2>
-                    <p>Compact and organized front face design.</p>
-                    <p>New chrome front grille design.</p>
-                    <p>"Shark jaw" style front bumper for a striking visual impact.</p>
-                    <p>Elegant and refined aesthetics.</p>
+                    <h2><?php echo esc_html($t['n_ext_h_t']); ?></h2>
+                    <p><?php echo esc_html($t['n_ext_h_1']); ?></p>
+                    <p><?php echo esc_html($t['n_ext_h_2']); ?></p>
+                    <p><?php echo esc_html($t['n_ext_h_3']); ?></p>
+                    <p><?php echo esc_html($t['n_ext_h_4']); ?></p>
                 </div>
             </div>
 
@@ -264,9 +289,9 @@ $colors = [
                     <div class="left-column-wrapper">
                         <img src="https://jacen.jac.com.cn/_nuxt/img/002.f658c7e.jpg" alt="JAC Truck Side View">
                         <div>
-                            <h3>Robust cabin.</h3>
-                            <p>Galvanized stamping for better corrosion resistance.</p>
-                            <p>Reinforced high-strength steel applied in 13 critical areas of cabin shell with energy absorption technology.</p>
+                            <h3><?php echo esc_html($t['n_ext_c1_t']); ?></h3>
+                            <p><?php echo esc_html($t['n_ext_c1_1']); ?></p>
+                            <p><?php echo esc_html($t['n_ext_c1_2']); ?></p>
                         </div>
                     </div>
                 </div>
@@ -275,19 +300,19 @@ $colors = [
                     <div class="detail-images">
                         <img src="https://jacen.jac.com.cn/_nuxt/img/003.5b44faf.jpg" alt="Aerodynamics Detail">
                         <div class="feature-section">
-                            <h3>Good aerodynamics performance.</h3>
-                            <p>Fine-tuned aerodynamics of whole cabin.</p>
-                            <p>Enhanced dynamic air deflector(optional).</p>
-                            <p>Integrated exterior rear-view mirror.</p>
+                            <h3><?php echo esc_html($t['n_ext_c2_t']); ?></h3>
+                            <p><?php echo esc_html($t['n_ext_c2_1']); ?></p>
+                            <p><?php echo esc_html($t['n_ext_c2_2']); ?></p>
+                            <p><?php echo esc_html($t['n_ext_c2_3']); ?></p>
                         </div>
                         <img src="https://jacen.jac.com.cn/_nuxt/img/004.5cacee7.jpg" alt="Front Grille Detail">
                     </div>
                     
                     <div class="feature-section">
-                        <h3>Better lighting performance.</h3>
-                        <p>40% Brighter illumination.</p>
-                        <p>30% Extended irradiation distance.</p>
-                        <p>50% Reduced energy consumption.</p>
+                        <h3><?php echo esc_html($t['n_ext_c3_t']); ?></h3>
+                        <p><?php echo esc_html($t['n_ext_c3_1']); ?></p>
+                        <p><?php echo esc_html($t['n_ext_c3_2']); ?></p>
+                        <p><?php echo esc_html($t['n_ext_c3_3']); ?></p>
                     </div>
                 </div>
             </div>
@@ -297,42 +322,91 @@ $colors = [
                     <div class="mobile-ext-card active">
                         <img src="https://jacen.jac.com.cn/_nuxt/img/002.f658c7e.jpg" alt="Robust cabin">
                         <div class="mobile-ext-info">
-                            <h3>Robust cabin.</h3>
-                            <p>Galvanized stamping for better corrosion resistance.</p>
-                            <p>Reinforced high-strength steel applied in 13 critical areas of cabin shell with energy absorption technology.</p>
+                            <h3><?php echo esc_html($t['n_ext_c1_t']); ?></h3>
+                            <p><?php echo esc_html($t['n_ext_c1_1']); ?></p>
+                            <p><?php echo esc_html($t['n_ext_c1_2']); ?></p>
                         </div>
                     </div>
                     <div class="mobile-ext-card">
                         <img src="https://jacen.jac.com.cn/_nuxt/img/003.5b44faf.jpg" alt="Aerodynamics Detail">
                         <div class="mobile-ext-info">
-                            <h3>Good aerodynamics performance.</h3>
-                            <p>Fine-tuned aerodynamics of whole cabin.</p>
-                            <p>Enhanced dynamic air deflector(optional).</p>
-                            <p>Integrated exterior rear-view mirror.</p>
+                            <h3><?php echo esc_html($t['n_ext_c2_t']); ?></h3>
+                            <p><?php echo esc_html($t['n_ext_c2_1']); ?></p>
+                            <p><?php echo esc_html($t['n_ext_c2_2']); ?></p>
+                            <p><?php echo esc_html($t['n_ext_c2_3']); ?></p>
                         </div>
                     </div>
                     <div class="mobile-ext-card">
                         <img src="https://jacen.jac.com.cn/_nuxt/img/004.5cacee7.jpg" alt="Front Grille Detail">
                         <div class="mobile-ext-info">
-                            <h3>Better lighting performance.</h3>
-                            <p>40% Brighter illumination.</p>
-                            <p>30% Extended irradiation distance.</p>
-                            <p>50% Reduced energy consumption.</p>
+                            <h3><?php echo esc_html($t['n_ext_c3_t']); ?></h3>
+                            <p><?php echo esc_html($t['n_ext_c3_1']); ?></p>
+                            <p><?php echo esc_html($t['n_ext_c3_2']); ?></p>
+                            <p><?php echo esc_html($t['n_ext_c3_3']); ?></p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="gal-nav-wrapper ext-nav-wrapper">
-                    <button class="gal-arrow ext-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
-                    <div class="gal-indicators">
-                        <span class="gal-ind ext-ind active"></span>
-                        <span class="gal-ind ext-ind"></span>
-                        <span class="gal-ind ext-ind"></span>
+                <div class="ext-nav-wrapper">
+                    <button class="ext-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="ext-indicators">
+                        <span class="ext-ind active"></span>
+                        <span class="ext-ind"></span>
+                        <span class="ext-ind"></span>
                     </div>
-                    <button class="gal-arrow ext-arrow next active"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button class="ext-arrow next active"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <section id="n-int-section">
+        <div class="n-int-container fade-up">
+            <div class="section-header">
+                <h2 class="section-title"><?php echo esc_html($t['int_lbl']); ?></h2>
+                <div class="title-underline"></div>
+                <p class="intro-description"><?php echo esc_html($t['int_sub']); ?></p>
+            </div>
+
+            <div class="int-slider-wrapper fade-up delay-1">
+                <div class="int-slider">
+                    <div class="int-slide active">
+                        <div class="int-slide-img">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/N90-IN-001.7ae07d9.png" alt="Interior Ergonomics">
+                        </div>
+                        <div class="int-slide-info">
+                            <h3 class="int-info-title"><?php echo esc_html($t['int_s1_t']); ?></h3>
+                            <ul class="int-info-list">
+                                <li><?php echo esc_html($t['int_s1_l1']); ?></li>
+                                <li><?php echo esc_html($t['int_s1_l2']); ?></li>
+                                <li><?php echo esc_html($t['int_s1_l3']); ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="int-slide">
+                        <div class="int-slide-img">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/N90-IN-003.8a6530f.png" alt="Interior Space">
+                        </div>
+                        <div class="int-slide-info">
+                            <h3 class="int-info-title"><?php echo esc_html($t['int_s2_t']); ?></h3>
+                            <ul class="int-info-list">
+                                <li><?php echo esc_html($t['int_s2_l1']); ?></li>
+                                <li><?php echo esc_html($t['int_s2_l2']); ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="int-nav-wrapper">
+                    <button class="int-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="int-indicators">
+                        <span class="int-ind active"></span>
+                        <span class="int-ind"></span>
+                    </div>
+                    <button class="int-btn next active"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -400,16 +474,7 @@ $colors = [
             </div>
         </div>
     </section>
-
-    <div class="history-video-modal" id="safetyVideoModal">
-        <div class="modal-content">
-            <div class="modal-close-trigger" id="closeSafetyModal"><i class="fa-solid fa-xmark"></i></div>
-            <video controls id="safetyModalVideo">
-                <source src="https://jacen.jac.com.cn/_nuxt/videos/safety-E30X_RELAXED_1008_output.9013afa.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-
+ 
  </div>
     </div>
 

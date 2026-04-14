@@ -1938,7 +1938,7 @@ section[id] {
     object-fit: cover;
 }
 
-.mobile-ext-slider {
+.mobile-ext-slider-wrapper {
     display: none;
 }
 
@@ -2002,8 +2002,49 @@ section[id] {
     }
 
     .ext-nav-wrapper {
-        margin-top: 15px;
+        display: flex;
+        align-items: center;
         justify-content: center;
+        gap: 25px;
+        margin-top: 25px;
+    }
+
+    .ext-arrow {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #ccc;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        cursor: pointer;
+        border: none;
+        padding: 0;
+    }
+
+    .ext-arrow.active {
+        background: #000;
+    }
+
+    .ext-indicators {
+        display: flex;
+        gap: 10px;
+    }
+
+    .ext-ind {
+        width: 30px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 2px;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .ext-ind.active {
+        background: #fff;
+        width: 45px;
     }
 
     .mobile-ext-card img {
@@ -2042,5 +2083,198 @@ section[id] {
 
     .mobile-ext-info h3 {
         font-size: 22px;
+    }
+}
+
+#n-int-section {
+    background: #8b7165;
+    color: white;
+    padding-bottom: 80px;
+}
+
+.n-int-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+#n-int-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#n-int-section .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#n-int-section .title-underline {
+    width: 60px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 0 auto 40px;
+}
+
+#n-int-section .intro-description {
+    font-size: 26px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.int-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.int-slide {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    animation: extFadeIn 0.5s ease forwards;
+}
+
+.int-slide.active {
+    display: flex;
+}
+
+.int-slide-img {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.int-slide-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.int-slide-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 40px;
+}
+
+.int-info-title {
+    flex: 0 0 45%;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: white;
+    margin: 0;
+}
+
+.int-info-list {
+    flex: 0 0 50%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.int-info-list li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+    color: white;
+}
+
+.int-info-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+}
+
+.int-nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.int-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.int-btn.active, .int-btn:hover {
+    background: #000;
+}
+
+.int-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+.int-ind {
+    width: 30px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.int-ind.active {
+    background: #fff;
+    width: 45px;
+}
+
+@media (max-width: 992px) {
+    .int-slide-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .int-info-title {
+        flex: 1;
+        font-size: 26px;
+    }
+
+    .int-info-list {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .n-int-container {
+        padding: 40px 20px;
+    }
+    
+    #n-int-section .intro-description {
+        font-size: 18px;
+    }
+
+    .int-slide-info h3 {
+        font-size: 22px;
+    }
+
+    .int-slide-info ul li {
+        font-size: 14px;
     }
 }

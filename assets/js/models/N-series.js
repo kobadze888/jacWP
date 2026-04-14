@@ -312,4 +312,41 @@ const subNavLinksContainer = document.querySelector('.subnav-links');
         updateExtSlider();
     }
 
+    const intSlides = document.querySelectorAll('.int-slide');
+    const intBtns = document.querySelectorAll('.int-btn');
+    const intInds = document.querySelectorAll('.int-ind');
+    let intIndex = 0;
+
+    function updateIntSlider() {
+        if (!intSlides.length) return;
+        intSlides.forEach(slide => slide.classList.remove('active'));
+        intInds.forEach(ind => ind.classList.remove('active'));
+        
+        if (intSlides[intIndex]) intSlides[intIndex].classList.add('active');
+        if (intInds[intIndex]) intInds[intIndex].classList.add('active');
+        
+        intBtns.forEach(btn => {
+            if(btn.classList.contains('next')) btn.classList.toggle('active', intIndex < intSlides.length - 1);
+            else btn.classList.toggle('active', intIndex > 0);
+        });
+    }
+
+    if (intBtns.length > 0) {
+        intBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.classList.contains('next') && intIndex < intSlides.length - 1) intIndex++;
+                else if(this.classList.contains('prev') && intIndex > 0) intIndex--;
+                updateIntSlider();
+            });
+        });
+        
+        intInds.forEach((ind, idx) => {
+            ind.addEventListener('click', () => {
+                intIndex = idx;
+                updateIntSlider();
+            });
+        });
+        updateIntSlider();
+    }
+
 });
