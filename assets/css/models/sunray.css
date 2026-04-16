@@ -1,0 +1,188 @@
+/* =========================================
+   SUNRAY MODEL PAGE — ISOLATED STYLES
+   ყველა სტილი scoped-ია .sunray-page კლასით
+   არ შეეხება სხვა მოდელების გვერდებს
+========================================= */
+
+.sunray-page {
+    font-family: 'Noto Sans Georgian', 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.sunray-page section[id] {
+    scroll-margin-top: 140px;
+}
+
+/* =========================================
+   SUB-NAVIGATION LINKS
+========================================= */
+.sunray-page .subnav-link {
+    display: block;
+    color: #888;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    padding: 20px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.sunray-page .subnav-link:hover,
+.sunray-page .subnav-link.active {
+    color: #fff;
+}
+
+.sunray-page .subnav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #d11f26;
+    transition: width 0.3s ease;
+}
+
+.sunray-page .subnav-link:hover::after,
+.sunray-page .subnav-link.active::after {
+    width: 100%;
+}
+
+/* Hide scrollbar for mobile nav */
+.sunray-page .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.sunray-page .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* =========================================
+   FADE-UP ANIMATIONS
+========================================= */
+.sunray-page .sunray-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.sunray-page .sunray-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sunray-page .sunray-fade-up.delay-100 {
+    transition-delay: 100ms;
+}
+
+.sunray-page .sunray-fade-up.delay-200 {
+    transition-delay: 200ms;
+}
+
+.sunray-page .sunray-fade-up.delay-300 {
+    transition-delay: 300ms;
+}
+
+/* =========================================
+   SAFETY CARDS
+========================================= */
+.sunray-page .safety-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.sunray-page .safety-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   POWER CARDS
+========================================= */
+.sunray-page .power-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.sunray-page .power-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   VERSION CARDS
+========================================= */
+.sunray-page .version-card {
+    transition: transform 0.3s ease;
+}
+
+.sunray-page .version-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   SPEC TABS
+========================================= */
+.sunray-page .spec-tab {
+    padding: 12px 24px;
+    background: #f4f6f9;
+    color: #666;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.sunray-page .spec-tab:hover {
+    background: #e8ebef;
+    color: #000;
+}
+
+.sunray-page .spec-tab.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* =========================================
+   STICKY NAV OFFSET
+========================================= */
+@media (max-width: 1024px) {
+    .sunray-page #sunray-subnav {
+        top: 60px;
+    }
+}
+
+/* =========================================
+   HERO BREAKPOINTS
+========================================= */
+@media (max-width: 768px) {
+    .sunray-page #sunray-hero {
+        height: 60vh;
+        min-height: 450px;
+    }
+    
+    .sunray-page #sunray-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+}
+
+/* =========================================
+   SMOOTH PICTURE TRANSITIONS
+========================================= */
+.sunray-page picture img {
+    transition: opacity 0.4s ease;
+}

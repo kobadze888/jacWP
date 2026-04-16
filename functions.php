@@ -106,6 +106,13 @@ function jac_enqueue_scripts()
         wp_enqueue_script('jac-N-series-js', get_template_directory_uri() . '/assets/js/models/N-series.js', array(), '1.0', true);
     }
 
+    /* 4. sunray MODEL SECTION */
+    // sunray Model გვერდის სტილები
+    if (is_page_template('models/page-sunray.php')) {
+        wp_enqueue_style('jac-sunray.css', get_template_directory_uri() . '/assets/css/models/sunray.css', array(), '1.0');
+        wp_enqueue_script('jac-sunray-js', get_template_directory_uri() . '/assets/js/models/sunray.js', array(), '1.0', true);
+    }
+
     if (is_404()) {
         wp_enqueue_style('jac-404', get_template_directory_uri() . '/assets/css/404.css', array(), '1.0');
     }
