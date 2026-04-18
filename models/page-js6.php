@@ -229,27 +229,20 @@ $int_gallery = [
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 z-10"></div>
 
         <div class="relative z-20 w-full px-5 md:px-12 lg:px-20 pb-10 md:pb-24">
-            <div class="max-w-7xl mx-auto js6-fade-up">
-                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full mb-4 md:mb-6">
-                    <span class="w-1.5 h-1.5 bg-jac-gold rounded-full"></span>
-                    <span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest">2026 · <?php echo esc_html($t['hero_badge']); ?></span>
-                </div>
+            <div class="max-w-7xl mx-auto js6-fade-up flex justify-start">
+                <div class="max-w-md">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-2.5 py-1 rounded-full mb-3 md:mb-4">
+                        <span class="w-1.5 h-1.5 bg-jac-gold rounded-full"></span>
+                        <span class="text-[9px] md:text-[10px] font-bold text-white uppercase tracking-widest">2026 · <?php echo esc_html($t['hero_badge']); ?></span>
+                    </div>
 
-                <h1 class="text-4xl md:text-7xl lg:text-9xl font-black text-white tracking-tight leading-[0.95] mb-3 md:mb-5">
-                    <?php echo esc_html($t['hero_title']); ?>
-                </h1>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1] mb-2 md:mb-3">
+                        <?php echo esc_html($t['hero_title']); ?>
+                    </h1>
 
-                <p class="text-lg md:text-2xl lg:text-4xl font-light text-white/95 max-w-3xl mb-6 md:mb-10">
-                    <?php echo esc_html($t['hero_sub']); ?>
-                </p>
-
-                <!-- CTA Buttons -->
-                <div class="flex flex-wrap gap-3 md:gap-4">
-                    <a href="<?php echo esc_url($pdf_link); ?>" target="_blank"
-                       class="inline-flex items-center gap-2 bg-white text-black px-5 md:px-7 py-3 md:py-3.5 rounded-full font-bold text-xs md:text-sm hover:bg-jac-red hover:text-white transition-all duration-500">
-                        <i class="fa-regular fa-file-pdf"></i>
-                        <?php echo esc_html($t['nav_brochure']); ?>
-                    </a>
+                    <p class="text-base md:text-lg font-light text-white/95 mb-0">
+                        <?php echo esc_html($t['hero_sub']); ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -776,26 +769,26 @@ $int_gallery = [
             </div>
 
             <!-- Safety Feature 1: Family Safety + List -->
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mb-12 md:mb-20 js6-fade-up">
-                <div class="rounded-2xl md:rounded-3xl overflow-hidden js6-image-hover">
+            <div class="mb-12 md:mb-20 js6-fade-up">
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden js6-image-hover mb-8 md:mb-10">
                     <img src="https://jacen.jac.com.cn/_nuxt/img/saf1.4e96d6a.png" 
                          alt="Family Safety" 
                          class="w-full h-auto object-cover">
                 </div>
-                <div>
-                    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-4 md:mb-6 leading-tight">
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 md:mb-8 text-center leading-tight">
                         <?php echo esc_html($t['sf_c1_t']); ?>
                     </h3>
-                    <ul class="space-y-2.5 md:space-y-3">
+                    <ul class="grid sm:grid-cols-2 gap-4 md:gap-6">
                         <?php 
                         $safety_list = [$t['sf_c1_l1'], $t['sf_c1_l2'], $t['sf_c1_l3'], $t['sf_c1_l4']];
                         foreach ($safety_list as $item):
                         ?>
-                        <li class="flex items-start gap-3">
-                            <div class="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full bg-jac-red/10 flex items-center justify-center mt-0.5">
-                                <i class="fa-solid fa-check text-jac-red text-[10px] md:text-xs"></i>
+                        <li class="flex items-center gap-4 bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100">
+                            <div class="shrink-0 w-8 h-8 rounded-full bg-jac-red/10 flex items-center justify-center">
+                                <i class="fa-solid fa-check text-jac-red text-sm"></i>
                             </div>
-                            <span class="text-sm md:text-base text-gray-700 leading-relaxed">
+                            <span class="text-sm md:text-base text-gray-800 font-medium leading-tight">
                                 <?php echo esc_html($item); ?>
                             </span>
                         </li>
