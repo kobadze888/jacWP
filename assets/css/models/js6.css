@@ -3,8 +3,12 @@
    ყველა სტილი scoped-ია .js6-page კლასით
 ========================================= */
 
+.js6-page, 
+.js6-page * {
+    font-family: 'Noto Sans Georgian', sans-serif !important;
+}
+
 .js6-page {
-    font-family: 'Noto Sans Georgian', 'Inter', sans-serif;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -147,8 +151,15 @@
     border-color: #111;
 }
 
+.js6-page .color-dot .check-icon {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 .js6-page .color-dot.active .check-icon {
     opacity: 1 !important;
+    transform: scale(1);
 }
 
 /* =========================================
@@ -315,26 +326,30 @@
 }
 
 /* =========================================
-   TYPOGRAPHY MOBILE COMPACT (H2, H3, H4)
+   TYPOGRAPHY ADJUSTMENTS (Desktop & Mobile)
 ========================================= */
+.js6-page h2, .js6-page h3 {
+    line-height: 1.35;
+}
+
 @media (max-width: 767px) {
     .js6-page h2 {
         letter-spacing: -0.02em;
-        line-height: 1.15;
+        line-height: 1.45;
     }
     
     .js6-page h3 {
         letter-spacing: -0.015em;
-        line-height: 1.2;
+        line-height: 1.45;
     }
     
     .js6-page h4 {
         letter-spacing: -0.01em;
-        line-height: 1.25;
+        line-height: 1.5;
     }
     
     .js6-page p {
-        line-height: 1.55;
+        line-height: 1.65;
     }
 }
 

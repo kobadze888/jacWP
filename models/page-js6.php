@@ -315,31 +315,31 @@ $int_gallery = [
                                 data-name="<?php echo esc_attr($t['col_white']); ?>"
                                 data-img="https://jacen.jac.com.cn/_nuxt/img/color1.2e56f88.png"
                                 style="background: linear-gradient(145deg, #f5f5f5, #e0e0e0);">
-                            <i class="fa-solid fa-check text-black text-xs opacity-0 check-icon"></i>
+                            <i class="fa-solid fa-check text-black text-sm check-icon"></i>
                         </button>
                         <button class="color-dot"
                                 data-name="<?php echo esc_attr($t['col_blue']); ?>"
                                 data-img="https://jacen.jac.com.cn/_nuxt/img/color2.bd4eabd.png"
                                 style="background: linear-gradient(145deg, #1e3a8a, #0c1e4a);">
-                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                            <i class="fa-solid fa-check text-white text-sm check-icon"></i>
                         </button>
                         <button class="color-dot"
                                 data-name="<?php echo esc_attr($t['col_black']); ?>"
                                 data-img="https://jacen.jac.com.cn/_nuxt/img/color3.56b7062.png"
                                 style="background: linear-gradient(145deg, #2a2a2a, #000000);">
-                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                            <i class="fa-solid fa-check text-white text-sm check-icon"></i>
                         </button>
                         <button class="color-dot"
                                 data-name="<?php echo esc_attr($t['col_gray']); ?>"
                                 data-img="https://jacen.jac.com.cn/_nuxt/img/color4.ed13c0f.png"
                                 style="background: linear-gradient(145deg, #8a8a8a, #5a5a5a);">
-                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                            <i class="fa-solid fa-check text-white text-sm check-icon"></i>
                         </button>
                         <button class="color-dot"
                                 data-name="<?php echo esc_attr($t['col_red']); ?>"
                                 data-img="https://jacen.jac.com.cn/_nuxt/img/color5.fc34557.png"
                                 style="background: linear-gradient(145deg, #b91c1c, #7f1d1d);">
-                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                            <i class="fa-solid fa-check text-white text-sm check-icon"></i>
                         </button>
                     </div>
                     <p class="text-sm md:text-base font-bold text-black mb-2" id="color-name"><?php echo esc_html($t['col_white']); ?></p>
@@ -752,15 +752,14 @@ $int_gallery = [
     <!-- ============================================= -->
     <!-- 9. SAFETY SECTION                             -->
     <!-- ============================================= -->
-    <section id="safety" class="py-14 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-5 md:px-8">
-            <!-- Header -->
+ <section id="safety" class="py-14 md:py-24 bg-[#eef4f8] flex flex-col items-center">
+        <div class="max-w-[1400px] mx-auto px-5 md:px-8 w-full">
             <div class="text-center mb-10 md:mb-14 js6-fade-up">
                 <span class="inline-block text-[10px] md:text-xs font-bold tracking-[0.2em] text-jac-red uppercase mb-3">
                     <?php echo esc_html($t['sf_lbl']); ?>
                 </span>
                 <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-tight">
+                <h2 class="text-2xl md:text-4xl lg:text-[40px] font-black text-gray-900 mb-4 md:mb-6 leading-snug tracking-tight">
                     <?php echo esc_html($t['sf_title']); ?>
                 </h2>
                 <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -768,79 +767,65 @@ $int_gallery = [
                 </p>
             </div>
 
-            <!-- Safety Feature 1: Family Safety + List -->
-            <div class="mb-12 md:mb-20 js6-fade-up">
-                <div class="rounded-2xl md:rounded-3xl overflow-hidden js6-image-hover mb-8 md:mb-10">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/saf1.4e96d6a.png" 
-                         alt="Family Safety" 
-                         class="w-full h-auto object-cover">
-                </div>
-                <div class="max-w-4xl mx-auto">
-                    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 md:mb-8 text-center leading-tight">
-                        <?php echo esc_html($t['sf_c1_t']); ?>
-                    </h3>
-                    <ul class="grid sm:grid-cols-2 gap-4 md:gap-6">
-                        <?php 
-                        $safety_list = [$t['sf_c1_l1'], $t['sf_c1_l2'], $t['sf_c1_l3'], $t['sf_c1_l4']];
-                        foreach ($safety_list as $item):
-                        ?>
-                        <li class="flex items-center gap-4 bg-gray-50 p-4 md:p-5 rounded-2xl border border-gray-100">
-                            <div class="shrink-0 w-8 h-8 rounded-full bg-jac-red/10 flex items-center justify-center">
-                                <i class="fa-solid fa-check text-jac-red text-sm"></i>
-                            </div>
-                            <span class="text-sm md:text-base text-gray-800 font-medium leading-tight">
-                                <?php echo esc_html($item); ?>
-                            </span>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Safety 2 + 3 (Airbags + 5-Star) -->
-            <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-                <!-- 6 Airbags -->
-                <div class="safety-card js6-fade-up">
-                    <div class="rounded-t-2xl md:rounded-t-3xl overflow-hidden js6-image-hover">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/saf2.fc52258.png" 
-                             alt="6 Airbags" 
-                             class="w-full h-auto object-cover aspect-[16/10]">
+            <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 auto-rows-[320px] lg:auto-rows-[380px] js6-fade-up">
+                
+                <div class="lg:col-span-1 lg:row-span-2 rounded-3xl bg-[#121212] text-white relative overflow-hidden flex flex-col p-8 md:p-10 js6-image-hover group">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/saf1.4e96d6a.png" alt="Family Safety" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/60 to-transparent"></div>
                     </div>
-                    <div class="p-6 md:p-8">
-                        <div class="flex items-baseline gap-2 mb-3">
-                            <span class="text-4xl md:text-5xl font-black text-jac-red">6</span>
-                            <span class="text-xs md:text-sm text-gray-500 uppercase tracking-widest font-semibold">Airbags</span>
-                        </div>
-                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                    <div class="relative z-10 flex flex-col h-full justify-end mt-auto">
+                        <h3 class="text-2xl md:text-3xl font-bold leading-tight mb-6">
+                            <?php echo esc_html($t['sf_c1_t']); ?>
+                        </h3>
+                        <ul class="flex flex-col gap-4 text-[13px] md:text-sm font-medium text-gray-100">
+                            <?php 
+                            $safety_list = [$t['sf_c1_l1'], $t['sf_c1_l2'], $t['sf_c1_l3'], $t['sf_c1_l4']];
+                            foreach ($safety_list as $item):
+                            ?>
+                            <li class="flex items-start gap-4">
+                                <span class="w-2 h-2 rounded-full bg-jac-red mt-1.5 flex-shrink-0 shadow-[0_0_8px_rgba(209,31,38,0.6)]"></span>
+                                <span class="leading-relaxed"><?php echo esc_html($item); ?></span>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 lg:row-span-1 rounded-3xl bg-[#121212] relative overflow-hidden js6-image-hover group">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/saf2.fc52258.png" alt="Airbags Diagram" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                </div>
+
+                <div class="lg:col-span-1 lg:row-span-1 rounded-3xl bg-[#121212] text-white p-8 md:p-10 relative overflow-hidden flex flex-col justify-end shadow-sm js6-image-hover group">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/saf3.b1669ee.png" alt="Interior Safety" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#121212]/95 via-[#121212]/30 to-transparent"></div>
+                    </div>
+                    <div class="relative z-10 mt-auto">
+                        <h3 class="text-xl md:text-[24px] font-bold leading-tight mb-3">
                             <?php echo esc_html($t['sf_c2_t']); ?>
                         </h3>
-                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                        <p class="text-[13px] md:text-sm text-gray-200 leading-relaxed font-medium">
                             <?php echo esc_html($t['sf_c2_d']); ?>
                         </p>
                     </div>
                 </div>
 
-                <!-- 5-Star -->
-                <div class="safety-card js6-fade-up delay-100">
-                    <div class="rounded-t-2xl md:rounded-t-3xl overflow-hidden js6-image-hover">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/saf4.da8bdc6.png" 
-                             alt="5 Star Safety" 
-                             class="w-full h-auto object-cover aspect-[16/10]">
+                <div class="lg:col-span-1 lg:row-span-1 rounded-3xl bg-[#121212] text-white p-8 md:p-10 relative overflow-hidden flex flex-col justify-start shadow-sm js6-image-hover group">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/saf4.da8bdc6.png" alt="Crash Test" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-[#121212]/95 via-[#121212]/40 to-transparent"></div>
                     </div>
-                    <div class="p-6 md:p-8">
-                        <div class="flex items-center gap-1 mb-3">
-                            <?php for ($s = 0; $s < 5; $s++): ?>
-                                <i class="fa-solid fa-star text-jac-gold text-base md:text-xl"></i>
-                            <?php endfor; ?>
-                        </div>
-                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                    <div class="relative z-10 mb-auto">
+                        <h3 class="text-xl md:text-[24px] font-bold leading-tight mb-3">
                             <?php echo esc_html($t['sf_c3_t']); ?>
                         </h3>
-                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+                        <p class="text-[13px] md:text-sm text-gray-200 leading-relaxed font-medium">
                             <?php echo esc_html($t['sf_c3_d']); ?>
                         </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
