@@ -189,7 +189,8 @@ $int_gallery = [
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/models/js6.css">
 
@@ -268,8 +269,8 @@ $int_gallery = [
                     <li><a href="#intelligent" class="subnav-link"><?php echo esc_html($t['nav_smart']); ?></a></li>
                     <li class="shrink-0">
                         <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" 
-                           class="inline-flex items-center gap-1.5 md:gap-2 bg-white text-black px-3 md:px-4 py-1.5 md:py-2 rounded-full font-bold text-[10px] md:text-xs uppercase hover:bg-jac-red hover:text-white transition-all duration-500">
-                            <i class="fa-regular fa-file-pdf text-jac-red"></i>
+                           class="group inline-flex items-center gap-1.5 md:gap-2 bg-white text-black px-3 md:px-4 py-1.5 md:py-2 rounded-full font-bold text-[10px] md:text-xs uppercase hover:bg-jac-red hover:text-white transition-all duration-500">
+                            <i class="fa-regular fa-file-pdf text-jac-red group-hover:text-white transition-colors duration-500"></i>
                             <span class="hidden md:inline"><?php echo esc_html($t['nav_brochure']); ?></span>
                             <span class="md:hidden">PDF</span>
                         </a>

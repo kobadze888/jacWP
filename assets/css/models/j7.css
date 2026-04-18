@@ -1,0 +1,282 @@
+.j7-page {
+    font-family: 'Noto Sans Georgian', 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.j7-page section[id] {
+    scroll-margin-top: 140px;
+}
+
+.j7-page .j7-image-hover {
+    overflow: hidden;
+    position: relative;
+}
+
+.j7-page .j7-image-hover img {
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .j7-page .j7-image-hover:hover img {
+        transform: scale(1.04);
+    }
+}
+
+.j7-page .subnav-link {
+    display: block;
+    color: #888;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    padding: 18px 0;
+    position: relative;
+    transition: color 0.4s ease;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .j7-page .subnav-link {
+        font-size: 13px;
+        padding: 22px 0;
+    }
+}
+
+.j7-page .subnav-link:hover,
+.j7-page .subnav-link.active {
+    color: #fff;
+}
+
+.j7-page .subnav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #d11f26;
+    transition: width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.j7-page .subnav-link:hover::after,
+.j7-page .subnav-link.active::after {
+    width: 100%;
+}
+
+.j7-page .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.j7-page .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.j7-page .j7-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: opacity, transform;
+}
+
+.j7-page .j7-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.j7-page .j7-fade-up.delay-100 { transition-delay: 100ms; }
+.j7-page .j7-fade-up.delay-200 { transition-delay: 200ms; }
+.j7-page .j7-fade-up.delay-300 { transition-delay: 300ms; }
+
+.j7-page .color-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .j7-page .color-dot {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+.j7-page .color-dot::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border-color 0.4s ease;
+}
+
+.j7-page .color-dot.active::after {
+    border-color: #111;
+}
+
+.j7-page .color-dot.active .check-icon {
+    opacity: 1 !important;
+}
+
+.j7-page .spec-box {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+    .j7-page .spec-box {
+        padding: 28px 0;
+    }
+}
+
+.j7-page .feature-card-light {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (min-width: 768px) {
+    .j7-page .feature-card-light {
+        border-radius: 24px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .j7-page .feature-card-light:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.j7-page .power-stat-card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 22px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                border-color 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .j7-page .power-stat-card {
+        border-radius: 24px;
+        padding: 32px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .j7-page .power-stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border-color: transparent;
+    }
+}
+
+.j7-page .spec-tab {
+    padding: 10px 24px;
+    background: transparent;
+    color: #888;
+    border: 2px solid #e8e8e8;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+    .j7-page .spec-tab {
+        padding: 12px 32px;
+        font-size: 13px;
+    }
+}
+
+.j7-page .spec-tab:hover {
+    color: #000;
+    border-color: #000;
+}
+
+.j7-page .spec-tab.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+@media (max-width: 1024px) {
+    .j7-page #j7-subnav {
+        top: 60px;
+    }
+}
+
+@media (max-width: 640px) {
+    .j7-page #j7-hero {
+        height: 65vh;
+        min-height: 450px;
+    }
+
+    .j7-page #j7-hero h1 {
+        line-height: 0.95;
+    }
+}
+
+@media (max-width: 767px) {
+    .j7-page h2 {
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+    }
+
+    .j7-page h3 {
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+    }
+
+    .j7-page h4 {
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+    }
+
+    .j7-page p {
+        line-height: 1.55;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .j7-page *,
+    .j7-page *::before,
+    .j7-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .j7-page .j7-image-hover:hover img {
+        transform: none;
+    }
+}
+
+.j7-page picture img,
+.j7-page img {
+    display: block;
+}
