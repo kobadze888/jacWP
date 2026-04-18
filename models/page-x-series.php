@@ -136,8 +136,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/X-series.pdf";
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!-- X-Series სპეციფიკური CSS -->
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/models/xseries.css">
+ 
 
 <!-- Tailwind Config -->
 <script>
@@ -646,8 +645,6 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/X-series.pdf";
     </section>
 
 </main>
-
-<!-- X-Series JavaScript -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/models/xseries.js"></script>
+ 
 
 <?php get_footer(); ?>

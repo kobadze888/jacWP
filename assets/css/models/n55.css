@@ -285,6 +285,11 @@
     border-color: #000;
 }
 
+.n55-page .spec-tab.active .spec-img-icon {
+    filter: brightness(0) invert(1);
+    mix-blend-mode: normal;
+}
+
 .n55-page .video-modal {
     position: fixed;
     top: 0;

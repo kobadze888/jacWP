@@ -192,7 +192,7 @@ $int_gallery = [
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/models/js6.css">
+ 
 
 <!-- Tailwind Config -->
 <script>
@@ -974,7 +974,6 @@ $int_gallery = [
     </section>
 
 </main>
-
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/models/js6.js"></script>
+ 
 
 <?php get_footer(); ?>

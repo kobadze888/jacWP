@@ -129,7 +129,7 @@ $video_url = "https://jacen.jac.com.cn/video/models/N55.mp4";
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+ 
 
  
 
@@ -152,7 +152,7 @@ $video_url = "https://jacen.jac.com.cn/video/models/N55.mp4";
 
 <main class="n55-page font-sans bg-white text-gray-900">
 
-    <section id="n55-hero" class="relative h-[85vh] min-h-[500px] flex items-end overflow-hidden">
+    <section id="n55-hero" class="relative h-[85vh] min-h-[500px] flex items-start md:items-end overflow-hidden">
         <picture class="absolute inset-0 z-0">
             <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/BANNER.2402951.jpg">
             <img src="https://jacen.jac.com.cn/_nuxt/img/BANNER@2x.c94998c.jpg" 
@@ -160,10 +160,10 @@ $video_url = "https://jacen.jac.com.cn/video/models/N55.mp4";
                  class="w-full h-full object-cover">
         </picture>
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 md:bg-none md:bg-gradient-to-t md:from-black/80 md:via-black/20 md:to-black/30 z-10"></div>
 
-        <div class="relative z-20 w-full px-5 md:px-12 lg:px-20 pb-10 md:pb-24">
-            <div class="max-w-7xl mx-auto n55-fade-up">
+        <div class="relative z-20 w-full px-5 md:px-12 lg:px-20 pt-28 md:pt-0 pb-10 md:pb-24">
+            <div class="max-w-7xl mx-auto n55-fade-up flex flex-col items-start md:items-end text-left md:text-right">
                 <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full mb-4 md:mb-6">
                     <span class="w-1.5 h-1.5 bg-jac-green rounded-full animate-pulse"></span>
                     <span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest"><?php echo esc_html($t['hero_badge']); ?></span>
@@ -612,27 +612,22 @@ $video_url = "https://jacen.jac.com.cn/video/models/N55.mp4";
                 </p>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-2 mb-8 md:mb-10 n55-fade-up">
+            <div class="flex flex-wrap justify-center gap-3 mb-10 md:mb-14 n55-fade-up">
                 <?php 
                 $spec_tabs = [$t['spec_v1'], $t['spec_v2']];
                 foreach ($spec_tabs as $i => $tab):
                 ?>
-                <button class="spec-tab <?php echo $i === 0 ? 'active' : ''; ?>" data-target="spec-<?php echo $i; ?>">
-                    <?php echo esc_html($tab); ?>
+                <button class="spec-tab inline-flex items-center justify-center gap-2 <?php echo $i === 0 ? 'active' : ''; ?>" data-target="spec-<?php echo $i; ?>">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/params.37fb8cc.png" 
+                         alt="Spec Icon" 
+                         class="w-4 md:w-5 h-auto object-contain mix-blend-multiply transition-all duration-300 spec-img-icon">
+                    <span><?php echo esc_html($tab); ?></span>
                 </button>
                 <?php endforeach; ?>
             </div>
 
             <div class="n55-fade-up delay-200">
-                <div class="rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-10">
-                    <div class="text-center">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/params.37fb8cc.png" 
-                             alt="N55 EV Specifications" 
-                             class="w-full max-w-2xl mx-auto h-auto">
-                    </div>
-                </div>
-
-                <div class="text-center mt-6 md:mt-8">
+                <div class="text-center mt-2 md:mt-4">
                     <a href="<?php echo esc_url($pdf_link); ?>" target="_blank"
                        class="group inline-flex items-center gap-2 md:gap-3 bg-black text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-jac-red transition-all duration-500 hover:scale-[1.02] shadow-lg">
                         <i class="fa-regular fa-file-pdf text-lg md:text-xl"></i>
