@@ -154,7 +154,11 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
 ?>
 
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/models/j7.css">
 
@@ -194,11 +198,11 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest"><?php echo esc_html($t['hero_badge']); ?></span>
                 </div>
 
-                <h1 class="text-4xl md:text-7xl lg:text-9xl font-black text-white tracking-tight leading-[0.95] mb-3 md:mb-5">
+                <h1 class="text-4xl md:text-7xl lg:text-9xl font-black text-white tracking-tight leading-tight md:leading-[1] mb-3 md:mb-5 pb-1">
                     <?php echo esc_html($t['hero_title']); ?>
                 </h1>
 
-                <p class="text-lg md:text-2xl lg:text-4xl font-light text-white/95 max-w-3xl mb-6 md:mb-10">
+                <p class="text-lg md:text-2xl lg:text-4xl font-light text-white/95 max-w-3xl mb-6 md:mb-10 leading-snug">
                     <?php echo esc_html($t['hero_sub']); ?>
                 </p>
 
@@ -230,8 +234,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <li><a href="#safety" class="subnav-link"><?php echo esc_html($t['nav_safety']); ?></a></li>
                     <li class="shrink-0">
                         <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" 
-                           class="inline-flex items-center gap-1.5 md:gap-2 bg-white text-black px-3 md:px-4 py-1.5 md:py-2 rounded-full font-bold text-[10px] md:text-xs uppercase hover:bg-jac-red hover:text-white transition-all duration-500">
-                            <i class="fa-regular fa-file-pdf text-jac-red"></i>
+                           class="group inline-flex items-center gap-1.5 md:gap-2 bg-white text-black px-3 md:px-4 py-1.5 md:py-2 rounded-full font-bold text-[10px] md:text-xs uppercase hover:bg-jac-red hover:text-white transition-all duration-500">
+                            <i class="fa-regular fa-file-pdf text-jac-red group-hover:text-white transition-colors duration-500"></i>
                             <span class="hidden md:inline"><?php echo esc_html($t['nav_brochure']); ?></span>
                             <span class="md:hidden">PDF</span>
                         </a>
@@ -248,7 +252,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <?php echo esc_html($t['nav_overview']); ?>
                 </span>
                 <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-6xl font-black text-black mb-4 md:mb-6 leading-tight">
+                <h2 class="text-2xl md:text-4xl lg:text-6xl font-black text-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
                     <?php echo esc_html($t['ov_title']); ?>
                 </h2>
                 <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -301,7 +305,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                         <?php echo esc_html($t['hl_lbl']); ?>
                     </span>
                     <div class="w-10 h-0.5 bg-jac-red mb-4 md:mb-6"></div>
-                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-black leading-tight mb-4 md:mb-0">
+                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-black leading-snug md:leading-tight mb-4 md:mb-0 pb-1">
                         <?php echo esc_html($t['hl_title']); ?>
                     </h2>
                 </div>
@@ -346,7 +350,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <?php echo esc_html($t['ex_lbl']); ?>
                 </span>
                 <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-tight">
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
                     <?php echo esc_html($t['ex_title']); ?>
                 </h2>
                 <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -362,7 +366,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover">
                     </div>
                     <div>
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-tight">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-snug">
                             <?php echo esc_html($t['ex_c1_t']); ?>
                         </h3>
                         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
@@ -379,7 +383,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     </div>
                     <div class="lg:order-1 space-y-6">
                         <div>
-                            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-tight">
+                            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-snug">
                                 <?php echo esc_html($t['ex_c2_t']); ?>
                             </h3>
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
@@ -390,7 +394,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                             <div class="inline-flex items-center gap-2 bg-jac-red/10 px-3 py-1 rounded-full mb-3">
                                 <span class="text-[10px] md:text-xs font-bold text-jac-red uppercase tracking-widest">LED</span>
                             </div>
-                            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-snug">
                                 <?php echo esc_html($t['ex_c3_t']); ?>
                             </h3>
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
@@ -407,7 +411,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover">
                     </div>
                     <div>
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-tight">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-snug">
                             <?php echo esc_html($t['ex_c4_t']); ?>
                         </h3>
                         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
@@ -424,7 +428,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                                  class="w-full h-auto object-cover aspect-[16/10]">
                         </div>
                         <div class="p-6 md:p-8">
-                            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-snug">
                                 <?php echo esc_html($t['ex_c5_t']); ?>
                             </h3>
                             <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -439,7 +443,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                                  class="w-full h-auto object-cover aspect-[16/10]">
                         </div>
                         <div class="p-6 md:p-8">
-                            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                            <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-snug">
                                 <?php echo esc_html($t['ex_c6_t']); ?>
                             </h3>
                             <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -459,7 +463,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <?php echo esc_html($t['in_lbl']); ?>
                 </span>
                 <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 leading-tight">
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
                     <?php echo esc_html($t['in_title']); ?>
                 </h2>
                 <p class="text-sm md:text-base lg:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed">
@@ -484,7 +488,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                         <div class="inline-flex items-center gap-2 bg-jac-gold/10 border border-jac-gold/30 px-3 py-1 rounded-full mb-3">
                             <span class="text-[10px] md:text-xs font-bold text-jac-gold uppercase tracking-widest">10.4"</span>
                         </div>
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-tight">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-snug">
                             <?php echo esc_html($t['in_c1_t']); ?>
                         </h3>
                         <p class="text-sm md:text-base text-white/70 leading-relaxed">
@@ -500,7 +504,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover">
                     </div>
                     <div class="lg:order-1">
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-tight">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-snug">
                             <?php echo esc_html($t['in_c2_t']); ?>
                         </h3>
                         <p class="text-sm md:text-base text-white/70 leading-relaxed">
@@ -510,7 +514,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                 </div>
 
                 <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-10 j7-fade-up">
-                    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 text-center">
+                    <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-6 md:mb-8 text-center leading-snug">
                         <?php echo esc_html($t['in_tr_t']); ?>
                     </h3>
                     <p class="text-sm md:text-base text-white/70 leading-relaxed text-center max-w-2xl mx-auto mb-8">
@@ -547,7 +551,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover">
                     </div>
                     <div>
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-tight">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-snug">
                             <?php echo esc_html($t['in_c3_t']); ?>
                         </h3>
                         <p class="text-sm md:text-base text-white/70 leading-relaxed">
@@ -567,7 +571,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                             <span class="text-3xl md:text-4xl font-black text-jac-gold">520-1510</span>
                             <span class="text-xs md:text-sm text-white/60 uppercase tracking-widest font-semibold">Liters</span>
                         </div>
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-tight">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-snug">
                             <?php echo esc_html($t['in_c4_t']); ?>
                         </h3>
                         <p class="text-sm md:text-base text-white/70 leading-relaxed">
@@ -586,7 +590,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <?php echo esc_html($t['pw_lbl']); ?>
                 </span>
                 <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-tight">
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
                     <?php echo esc_html($t['pw_title']); ?>
                 </h2>
                 <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -638,7 +642,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover aspect-[16/10]">
                     </div>
                     <div class="p-6 md:p-8">
-                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-snug">
                             <?php echo esc_html($t['pw_f1_t']); ?>
                         </h3>
                         <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -653,7 +657,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover aspect-[16/10]">
                     </div>
                     <div class="p-6 md:p-8">
-                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-snug">
                             <?php echo esc_html($t['pw_f2_t']); ?>
                         </h3>
                         <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -671,7 +675,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover aspect-[4/3]">
                     </div>
                     <div class="p-5 md:p-6">
-                        <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-tight">
+                        <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-snug">
                             <?php echo esc_html($t['pw_f3_t']); ?>
                         </h4>
                         <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -686,7 +690,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover aspect-[4/3]">
                     </div>
                     <div class="p-5 md:p-6">
-                        <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-tight">
+                        <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-snug">
                             <?php echo esc_html($t['pw_f4_t']); ?>
                         </h4>
                         <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -701,7 +705,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover aspect-[4/3]">
                     </div>
                     <div class="p-5 md:p-6">
-                        <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-tight">
+                        <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-snug">
                             <?php echo esc_html($t['pw_f5_t']); ?>
                         </h4>
                         <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -720,7 +724,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <?php echo esc_html($t['ch_lbl']); ?>
                 </span>
                 <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-tight">
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
                     <?php echo esc_html($t['ch_title']); ?>
                 </h2>
             </div>
@@ -736,7 +740,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                         <div class="inline-flex items-center gap-2 bg-jac-red/10 px-3 py-1 rounded-full mb-3">
                             <span class="text-[10px] md:text-xs font-bold text-jac-red uppercase tracking-widest">EPS</span>
                         </div>
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-tight">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-snug">
                             <?php echo esc_html($t['ch_c1_t']); ?>
                         </h3>
                         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
@@ -752,7 +756,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover">
                     </div>
                     <div class="lg:order-1">
-                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-tight">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-3 md:mb-4 leading-snug">
                             <?php echo esc_html($t['ch_c2_t']); ?>
                         </h3>
                         <p class="text-sm md:text-base text-gray-600 leading-relaxed">
@@ -771,7 +775,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <?php echo esc_html($t['sf_lbl']); ?>
                 </span>
                 <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-tight">
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
                     <?php echo esc_html($t['sf_title']); ?>
                 </h2>
                 <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -787,7 +791,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                              class="w-full h-auto object-cover aspect-[16/10]">
                     </div>
                     <div class="p-6 md:p-8">
-                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-snug">
                             <?php echo esc_html($t['sf_c1_t']); ?>
                         </h3>
                         <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -806,7 +810,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                             <span class="text-4xl md:text-5xl font-black text-jac-red">6</span>
                             <span class="text-xs md:text-sm text-gray-500 uppercase tracking-widest font-semibold">Airbags</span>
                         </div>
-                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-tight">
+                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold text-black mb-2 md:mb-3 leading-snug">
                             <?php echo esc_html($t['sf_c2_t']); ?>
                         </h3>
                         <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
@@ -825,7 +829,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <?php echo esc_html($t['spec_lbl']); ?>
                 </span>
                 <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-tight">
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
                     <?php echo esc_html($t['spec_title']); ?>
                 </h2>
                 <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto">
@@ -871,7 +875,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
         </div>
 
         <div class="relative max-w-5xl mx-auto px-5 md:px-8 text-center j7-fade-up">
-            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
                 <?php echo esc_html($t['cta_title']); ?>
             </h2>
             <p class="text-base md:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl mx-auto">
