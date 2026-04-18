@@ -178,6 +178,8 @@
         // 7. COLOR DOTS (Overview)
         // =========================================
         const colorDots = js6Page.querySelectorAll('.color-dot');
+        const mainColorImg = js6Page.querySelector('#js6-main-color-img');
+        const colorNameDisplay = js6Page.querySelector('#color-name');
         
         colorDots.forEach(dot => {
             dot.addEventListener('click', function() {
@@ -189,6 +191,22 @@
                 this.classList.add('active');
                 const icon = this.querySelector('.check-icon');
                 if (icon) icon.style.opacity = '1';
+
+                const newImg = this.getAttribute('data-img');
+                const newName = this.getAttribute('data-name');
+
+                if (mainColorImg && newImg) {
+                    mainColorImg.style.opacity = '0';
+                    setTimeout(() => {
+                        mainColorImg.src = newImg;
+                        mainColorImg.alt = 'JS6 2026 ' + newName;
+                        mainColorImg.style.opacity = '1';
+                    }, 300);
+                }
+
+                if (colorNameDisplay && newName) {
+                    colorNameDisplay.textContent = newName;
+                }
             });
         });
 

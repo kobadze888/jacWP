@@ -35,6 +35,10 @@ $t = [
     'ov_desc'       => ($lang == 'en') ? 'The JS6 2026 is your family\'s trusted companion on every journey. Featuring an all-new cutting-edge design, a redesigned interior, and state-of-the-art smart technology, it brings enhanced safety, superior comfort, and intelligent convenience to every drive.' : 'JS6 2026 არის თქვენი ოჯახის სანდო თანამგზავრი ყოველ მოგზაურობაზე. სრულიად ახალი დიზაინი, განახლებული ინტერიერი და უახლესი ტექნოლოგიები გთავაზობთ გაძლიერებულ უსაფრთხოებას, ულტრა კომფორტს და ინტელექტუალურ მოხერხებულობას.',
     'col_hint'      => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
     'col_white'     => ($lang == 'en') ? 'White' : 'თეთრი',
+    'col_blue'      => ($lang == 'en') ? 'Blue' : 'ლურჯი',
+    'col_black'     => ($lang == 'en') ? 'Black' : 'შავი',
+    'col_gray'      => ($lang == 'en') ? 'Gray' : 'ნაცრისფერი',
+    'col_red'       => ($lang == 'en') ? 'Red' : 'წითელი',
     'col_note'      => ($lang == 'en') ? 'Models and colors may vary by regions.' : 'მოდელები და ფერები შესაძლოა განსხვავდებოდეს რეგიონების მიხედვით.',
 
     // HIGHLIGHTS
@@ -247,11 +251,6 @@ $int_gallery = [
                         <i class="fa-regular fa-file-pdf"></i>
                         <?php echo esc_html($t['nav_brochure']); ?>
                     </a>
-                    <a href="<?php echo esc_url($dealer_link); ?>" target="_blank"
-                       class="inline-flex items-center gap-2 bg-transparent text-white border-2 border-white/60 px-5 md:px-7 py-3 md:py-3.5 rounded-full font-bold text-xs md:text-sm hover:bg-white hover:text-black transition-all duration-500">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <?php echo esc_html($t['cta_dealer']); ?>
-                    </a>
                 </div>
             </div>
         </div>
@@ -309,19 +308,46 @@ $int_gallery = [
             </div>
 
             <!-- Car Display with Color -->
-            <div class="relative js6-fade-up delay-200">
-                <div class="rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-white p-8 md:p-16">
-                    <img src="https://jacen.jac.com.cn/_nuxt/img/color1.2e56f88.png" 
+        <div class="relative js6-fade-up delay-200">
+                <div class="py-4 md:py-8">
+                    <img id="js6-main-color-img"
+                         src="https://jacen.jac.com.cn/_nuxt/img/color1.2e56f88.png" 
                          alt="JS6 2026 White"
-                         class="w-full max-w-4xl mx-auto h-auto object-contain">
+                         class="w-full max-w-4xl mx-auto h-auto object-contain transition-opacity duration-500">
                 </div>
 
-                <!-- Color Picker -->
-                <div class="mt-6 md:mt-8 text-center">
-                    <p class="text-[10px] md:text-xs font-bold tracking-widest text-gray-500 uppercase mb-3"><?php echo esc_html($t['col_hint']); ?></p>
-                    <div class="flex justify-center gap-3 mb-3">
-                        <button class="color-dot active" data-color="white" style="background: linear-gradient(145deg, #f5f5f5, #e0e0e0); border: 2px solid rgba(0,0,0,0.1);">
+                <div class="mt-4 md:mt-6 text-center">
+                    <p class="text-[10px] md:text-xs font-bold tracking-widest text-gray-500 uppercase mb-4"><?php echo esc_html($t['col_hint']); ?></p>
+                    <div class="flex justify-center flex-wrap gap-3 md:gap-4 mb-4">
+                        <button class="color-dot active"
+                                data-name="<?php echo esc_attr($t['col_white']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/color1.2e56f88.png"
+                                style="background: linear-gradient(145deg, #f5f5f5, #e0e0e0);">
                             <i class="fa-solid fa-check text-black text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_blue']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/color2.bd4eabd.png"
+                                style="background: linear-gradient(145deg, #1e3a8a, #0c1e4a);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_black']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/color3.56b7062.png"
+                                style="background: linear-gradient(145deg, #2a2a2a, #000000);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_gray']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/color4.ed13c0f.png"
+                                style="background: linear-gradient(145deg, #8a8a8a, #5a5a5a);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_red']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/color5.fc34557.png"
+                                style="background: linear-gradient(145deg, #b91c1c, #7f1d1d);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
                         </button>
                     </div>
                     <p class="text-sm md:text-base font-bold text-black mb-2" id="color-name"><?php echo esc_html($t['col_white']); ?></p>
@@ -965,11 +991,6 @@ $int_gallery = [
                    class="inline-flex items-center gap-2 md:gap-3 bg-white text-jac-red px-6 md:px-10 py-3.5 md:py-5 rounded-full font-bold text-sm md:text-lg hover:bg-black hover:text-white transition-all duration-500 hover:scale-[1.03] shadow-2xl">
                     <i class="fa-regular fa-file-pdf text-lg md:text-xl"></i>
                     <?php echo esc_html($t['cta_btn']); ?>
-                </a>
-                <a href="<?php echo esc_url($dealer_link); ?>" target="_blank"
-                   class="inline-flex items-center gap-2 md:gap-3 bg-transparent text-white border-2 border-white/60 px-6 md:px-10 py-3.5 md:py-5 rounded-full font-bold text-sm md:text-lg hover:bg-white hover:text-jac-red transition-all duration-500">
-                    <i class="fa-solid fa-location-dot text-lg md:text-xl"></i>
-                    <?php echo esc_html($t['cta_dealer']); ?>
                 </a>
             </div>
         </div>
