@@ -219,9 +219,9 @@ $int_gallery = [
     <!-- 1. HERO SECTION                               -->
     <!-- ============================================= -->
     <section id="js6-hero" class="relative h-[85vh] min-h-[500px] flex items-end overflow-hidden">
-        <picture class="absolute inset-0 z-0">
+<picture class="absolute inset-0 z-0">
             <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/js62026-sjbanner.523f7d0.png">
-            <img src="https://jacen.jac.com.cn/_nuxt/img/js62026img.9b74e1f.png" 
+            <img src="https://jacen.jac.com.cn/_nuxt/img/js6-new.328bdb6.png" 
                  alt="JAC JS6 2026" 
                  class="w-full h-full object-cover">
         </picture>
@@ -230,7 +230,6 @@ $int_gallery = [
 
         <div class="relative z-20 w-full px-5 md:px-12 lg:px-20 pb-10 md:pb-24">
             <div class="max-w-7xl mx-auto js6-fade-up">
-                <!-- Premium Badge -->
                 <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full mb-4 md:mb-6">
                     <span class="w-1.5 h-1.5 bg-jac-gold rounded-full"></span>
                     <span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest">2026 · <?php echo esc_html($t['hero_badge']); ?></span>
