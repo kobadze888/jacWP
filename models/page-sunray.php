@@ -131,7 +131,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
         theme: {
             extend: {
                 fontFamily: {
-                    sans: ['Noto Sans Georgian', 'Inter', 'sans-serif'],
+                    sans: ['"Noto Sans Georgian"', 'sans-serif'],
                 },
                 colors: {
                     'jac-red': '#d11f26',
@@ -162,22 +162,20 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
     <!-- ============================================= -->
     <!-- 1. HERO SECTION                               -->
     <!-- ============================================= -->
-    <section id="sunray-hero" class="relative h-[75vh] min-h-[500px] flex items-end overflow-hidden">
-        <!-- Desktop Background -->
+    <section id="sunray-hero" class="relative h-[75vh] min-h-[500px] flex items-start md:items-end overflow-hidden">
         <picture class="absolute inset-0 z-0">
-            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/BANNER.fb81ec3.jpg">
-            <img src="http://jacen.jac.com.cn/_nuxt/img/BANNER@2x.eff171e.jpg" 
+            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/BANNER.fb81ec3.jpg">
+            <img src="https://jacen.jac.com.cn/_nuxt/img/BANNER@2x.eff171e.jpg" 
                  alt="JAC Sunray" 
                  class="w-full h-full object-cover">
         </picture>
 
-        <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10"></div>
 
-        <!-- Content -->
-        <div class="relative z-20 w-full px-6 md:px-12 lg:px-20 pb-16 md:pb-20">
+        <div class="relative z-20 w-full px-6 md:px-12 lg:px-20 pt-28 pb-16 md:pt-0 md:pb-20">
+          
             <div class="max-w-7xl mx-auto sunray-fade-up">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight mb-4 leading-none">
+                <h1 class="text-3xl md:text-7xl lg:text-8xl font-black text-white tracking-tight mb-4 leading-none">
                     <?php echo esc_html($t['hero_title']); ?>
                 </h1>
                 <p class="text-xl md:text-3xl text-white/90 font-light mb-3">
@@ -241,7 +239,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                         <?php echo esc_html($t['nav_overview']); ?>
                     </span>
                     <div class="w-12 h-1 bg-jac-red mb-6"></div>
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-black leading-tight mb-6">
+                    <h2 class="text-2xl md:text-5xl lg:text-6xl font-black text-black leading-tight mb-4">
                         <?php echo esc_html($t['ov_title']); ?>
                     </h2>
                     <p class="text-lg text-gray-600 leading-relaxed">
@@ -253,8 +251,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <div class="sunray-fade-up delay-200">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/1.1f1b2f1.jpg">
-                            <img src="http://jacen.jac.com.cn/_nuxt/img/1@2x.96d4637.jpg" 
+                            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/1.1f1b2f1.jpg">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/1@2x.96d4637.jpg" 
                                  alt="JAC Sunray Overview"
                                  class="w-full h-auto object-cover">
                         </picture>
@@ -293,8 +291,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <!-- Large Image -->
                 <div class="relative rounded-2xl overflow-hidden group sunray-fade-up">
                     <picture>
-                        <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/2.9b91d65.jpg">
-                        <img src="http://jacen.jac.com.cn/_nuxt/img/2@2x.4112671.jpg" 
+                        <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/2.9b91d65.jpg">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/2@2x.4112671.jpg" 
                              alt="Sunray Design Italy" 
                              class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700">
                     </picture>
@@ -308,8 +306,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <!-- Large Image -->
                 <div class="relative rounded-2xl overflow-hidden group sunray-fade-up delay-200">
                     <picture>
-                        <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/3.d9d7f45.jpg">
-                        <img src="http://jacen.jac.com.cn/_nuxt/img/3@2x.488bdab.jpg" 
+                        <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/3.d9d7f45.jpg">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/3@2x.488bdab.jpg" 
                              alt="Sunray Design Japan" 
                              class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700">
                     </picture>
@@ -337,8 +335,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 </div>
                 <div class="rounded-2xl overflow-hidden">
                     <picture>
-                        <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/4.b292268.jpg">
-                        <img src="http://jacen.jac.com.cn/_nuxt/img/4@2x.ed2cfe4.jpg" 
+                        <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/4.b292268.jpg">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/4@2x.ed2cfe4.jpg" 
                              alt="Eagle Eye Headlight" 
                              class="w-full h-auto object-cover">
                     </picture>
@@ -358,7 +356,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                     <?php echo esc_html($t['cg_lbl']); ?>
                 </span>
                 <div class="w-12 h-1 bg-jac-red mx-auto mb-6"></div>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6">
+                <h2 class="text-xl md:text-5xl lg:text-6xl font-black text-black leading-tight mb-4">
                     <?php echo esc_html($t['cg_title']); ?>
                 </h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -371,14 +369,14 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <!-- Main Large Card -->
                 <div class="lg:col-span-2 relative rounded-3xl overflow-hidden group sunray-fade-up">
                     <picture>
-                        <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/5.07042b3.jpg">
-                        <img src="http://jacen.jac.com.cn/_nuxt/img/5@2x.c4c53de.jpg" 
+                        <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/5.07042b3.jpg">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/5@2x.c4c53de.jpg" 
                              alt="Sunray Cargo" 
                              class="w-full h-full object-cover aspect-[16/10] group-hover:scale-105 transition-transform duration-700">
                     </picture>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                     <div class="absolute bottom-8 left-8 right-8 text-white">
-                        <h3 class="text-3xl md:text-4xl font-black mb-2"><?php echo esc_html($t['cg_title']); ?></h3>
+                        <h3 class="text-2xl md:text-4xl font-black mb-2"><?php echo esc_html($t['cg_title']); ?></h3>
                         <p class="text-white/80"><?php echo esc_html($t['cg_desc']); ?></p>
                     </div>
                 </div>
@@ -386,8 +384,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <!-- 180° Door Feature -->
                 <div class="relative rounded-3xl overflow-hidden group sunray-fade-up delay-200 bg-gray-100">
                     <picture>
-                        <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/6.8453cac.jpg">
-                        <img src="http://jacen.jac.com.cn/_nuxt/img/6@2x.2614fcd.jpg" 
+                        <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/6.8453cac.jpg">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/6@2x.2614fcd.jpg" 
                              alt="180 Degree Door" 
                              class="w-full aspect-[16/10] lg:aspect-auto lg:h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </picture>
@@ -429,8 +427,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <div class="safety-card group sunray-fade-up">
                     <div class="relative h-64 md:h-80 overflow-hidden">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/7.f35d7e2.jpg">
-                            <img src="http://jacen.jac.com.cn/_nuxt/img/7@2x.87beaba.jpg" 
+                            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/7.f35d7e2.jpg">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/7@2x.87beaba.jpg" 
                                  alt="ESC" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </picture>
@@ -447,8 +445,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <div class="safety-card group sunray-fade-up delay-100">
                     <div class="relative h-64 md:h-80 overflow-hidden">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/8.b3b0f1b.jpg">
-                            <img src="http://jacen.jac.com.cn/_nuxt/img/8@2x.0d9671b.jpg" 
+                            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/8.b3b0f1b.jpg">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/8@2x.0d9671b.jpg" 
                                  alt="LDWS" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </picture>
@@ -465,8 +463,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <div class="safety-card group sunray-fade-up delay-200">
                     <div class="relative h-64 md:h-80 overflow-hidden">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/10.f3b1e1f.jpg">
-                            <img src="http://jacen.jac.com.cn/_nuxt/img/10@2x.628e060.jpg" 
+                            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/10.f3b1e1f.jpg">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/10@2x.628e060.jpg" 
                                  alt="Airbag" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </picture>
@@ -481,8 +479,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <div class="safety-card group sunray-fade-up delay-300">
                     <div class="relative h-64 md:h-80 overflow-hidden">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/11.cc23e07.jpg">
-                            <img src="http://jacen.jac.com.cn/_nuxt/img/12@2x.af434c8.jpg" 
+                            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/11.cc23e07.jpg">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/12@2x.af434c8.jpg" 
                                  alt="Laser Welding" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </picture>
@@ -518,8 +516,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
             <!-- Interior Showcase -->
             <div class="relative rounded-3xl overflow-hidden mb-12 sunray-fade-up">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/9.a94eaf6.jpg">
-                    <img src="http://jacen.jac.com.cn/_nuxt/img/9@2x.1db0422.jpg" 
+                    <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/9.a94eaf6.jpg">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/9@2x.1db0422.jpg" 
                          alt="Sunray Interior" 
                          class="w-full h-auto object-cover">
                 </picture>
@@ -529,8 +527,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
             <div class="grid lg:grid-cols-2 gap-12 items-center bg-gradient-to-br from-gray-900 to-black text-white rounded-3xl p-8 md:p-12 sunray-fade-up">
                 <div class="rounded-2xl overflow-hidden">
                     <picture>
-                        <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/12.0f4f44b.jpg">
-                        <img src="http://jacen.jac.com.cn/_nuxt/img/11@2x.69d5245.jpg" 
+                        <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/12.0f4f44b.jpg">
+                        <img src="https://jacen.jac.com.cn/_nuxt/img/11@2x.69d5245.jpg" 
                              alt="Luxury Aero Seats" 
                              class="w-full h-auto object-cover">
                     </picture>
@@ -573,8 +571,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
             <!-- Hero Power Image -->
             <div class="rounded-3xl overflow-hidden mb-12 shadow-xl sunray-fade-up">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/16.c81013d.jpg">
-                    <img src="http://jacen.jac.com.cn/_nuxt/img/16@2x.3390c19.jpg" 
+                    <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/16.c81013d.jpg">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/16@2x.3390c19.jpg" 
                          alt="Golden Power" 
                          class="w-full h-auto object-cover">
                 </picture>
@@ -586,8 +584,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <div class="power-card group sunray-fade-up">
                     <div class="relative h-56 overflow-hidden">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/15.041e06d.jpg">
-                            <img src="http://jacen.jac.com.cn/_nuxt/img/15@2x.1998547.jpg" 
+                            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/15.041e06d.jpg">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/15@2x.1998547.jpg" 
                                  alt="2.7 CTI" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </picture>
@@ -602,8 +600,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <div class="power-card group sunray-fade-up delay-100">
                     <div class="relative h-56 overflow-hidden">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/14.a65ae8c.jpg">
-                            <img src="http://jacen.jac.com.cn/_nuxt/img/14@2x.7e0abe6.jpg" 
+                            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/14.a65ae8c.jpg">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/14@2x.7e0abe6.jpg" 
                                  alt="High Rigidity Frame" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </picture>
@@ -618,8 +616,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
                 <div class="power-card group sunray-fade-up delay-200">
                     <div class="relative h-56 overflow-hidden">
                         <picture>
-                            <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/13.b33e898.jpg">
-                            <img src="http://jacen.jac.com.cn/_nuxt/img/13@2x.f4cfcfb.jpg" 
+                            <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/13.b33e898.jpg">
+                            <img src="https://jacen.jac.com.cn/_nuxt/img/13@2x.f4cfcfb.jpg" 
                                  alt="Automated Production" 
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </picture>
@@ -655,8 +653,8 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
             <!-- Hero Versions Image -->
             <div class="rounded-3xl overflow-hidden mb-12 sunray-fade-up">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="http://jacen.jac.com.cn/_nuxt/img/17.eb2833c.jpg">
-                    <img src="http://jacen.jac.com.cn/_nuxt/img/17@2x.5a0815a.jpg" 
+                    <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/17.eb2833c.jpg">
+                    <img src="https://jacen.jac.com.cn/_nuxt/img/17@2x.5a0815a.jpg" 
                          alt="Sunray Versions" 
                          class="w-full h-auto object-cover">
                 </picture>
@@ -666,11 +664,11 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 <?php 
                 $versions = [
-                    ['num' => '01', 'key' => 'ver_1', 'img' => 'http://jacen.jac.com.cn/_nuxt/img/18-1@2x.b309987.jpg'],
-                    ['num' => '02', 'key' => 'ver_2', 'img' => 'http://jacen.jac.com.cn/_nuxt/img/18-2@2x.65c3deb.jpg'],
-                    ['num' => '03', 'key' => 'ver_3', 'img' => 'http://jacen.jac.com.cn/_nuxt/img/18-3@2x.976d3a0.jpg'],
-                    ['num' => '04', 'key' => 'ver_4', 'img' => 'http://jacen.jac.com.cn/_nuxt/img/18-4@2x.6f07092.jpg'],
-                    ['num' => '05', 'key' => 'ver_5', 'img' => 'http://jacen.jac.com.cn/_nuxt/img/18-5@2x.ee4833b.jpg'],
+                    ['num' => '01', 'key' => 'ver_1', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/18-1@2x.b309987.jpg'],
+                    ['num' => '02', 'key' => 'ver_2', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/18-2@2x.65c3deb.jpg'],
+                    ['num' => '03', 'key' => 'ver_3', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/18-3@2x.976d3a0.jpg'],
+                    ['num' => '04', 'key' => 'ver_4', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/18-4@2x.6f07092.jpg'],
+                    ['num' => '05', 'key' => 'ver_5', 'img' => 'https://jacen.jac.com.cn/_nuxt/img/18-5@2x.ee4833b.jpg'],
                 ];
                 foreach ($versions as $i => $v):
                 ?>
@@ -713,44 +711,16 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/Sunray.pdf";
             </div>
 
             <!-- Specs Tabs -->
-            <div class="flex flex-wrap justify-center gap-2 mb-12 sunray-fade-up">
-                <?php 
-                $spec_tabs = [
-                    ['id' => 'spec_v1', 'label' => $t['spec_v1']],
-                    ['id' => 'spec_v2', 'label' => $t['spec_v2']],
-                    ['id' => 'spec_v3', 'label' => $t['spec_v3']],
-                    ['id' => 'spec_v4', 'label' => $t['spec_v4']],
-                    ['id' => 'spec_v5', 'label' => $t['spec_v5']],
-                    ['id' => 'spec_v6', 'label' => $t['spec_v6']],
-                    ['id' => 'spec_v7', 'label' => $t['spec_v7']],
-                    ['id' => 'spec_v8', 'label' => $t['spec_v8']],
-                ];
-                foreach ($spec_tabs as $i => $tab):
-                ?>
-                <button class="spec-tab <?php echo $i === 0 ? 'active' : ''; ?>" data-target="spec-<?php echo $i; ?>">
-                    <?php echo esc_html($tab['label']); ?>
-                </button>
-                <?php endforeach; ?>
-            </div>
-
-            <!-- Specs Content -->
-            <div class="spec-content-wrapper sunray-fade-up delay-200">
-                <div class="rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-8 md:p-12">
-                    <div class="text-center">
-                        <img src="http://jacen.jac.com.cn/_nuxt/img/params.37fb8cc.png" 
-                             alt="Sunray Specifications" 
-                             class="w-full max-w-2xl mx-auto h-auto">
-                    </div>
-                </div>
-
-                <!-- Download PDF Button -->
-                <div class="text-center mt-8">
-                    <a href="<?php echo esc_url($pdf_link); ?>" target="_blank"
-                       class="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-jac-red transition-all duration-300 hover:scale-105 shadow-lg">
-                        <i class="fa-regular fa-file-pdf text-xl"></i>
-                        <?php echo esc_html($t['cta_btn']); ?>
-                    </a>
-                </div>
+                <div class="flex flex-wrap justify-center gap-4 sunray-fade-up">
+                <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" class="spec-tab active flex items-center gap-3">
+                    <i class="fa-regular fa-file-pdf text-lg"></i> JAC Sunray Long
+                </a>
+                <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" class="spec-tab active flex items-center gap-3">
+                    <i class="fa-regular fa-file-pdf text-lg"></i> JAC Sunray Passenger
+                </a>
+                <a href="<?php echo esc_url($pdf_link); ?>" target="_blank" class="spec-tab active flex items-center gap-3">
+                    <i class="fa-regular fa-file-pdf text-lg"></i> JAC Sunray Short
+                </a>
             </div>
         </div>
     </section>

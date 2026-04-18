@@ -1,0 +1,327 @@
+/* =========================================
+   X-SERIES MODEL PAGE — ISOLATED STYLES
+   ყველა სტილი scoped-ია .xseries-page კლასით
+   არ შეეხება სხვა მოდელების გვერდებს
+========================================= */
+
+.xseries-page {
+    font-family: 'Noto Sans Georgian', 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.xseries-page section[id] {
+    scroll-margin-top: 140px;
+}
+
+/* =========================================
+   SMOOTH IMAGE HOVER (რბილი ზრდა)
+   ყველა .xseries-image-hover კონტეინერი ამას იყენებს
+========================================= */
+.xseries-page .xseries-image-hover {
+    overflow: hidden;
+    position: relative;
+}
+
+.xseries-page .xseries-image-hover img {
+    /* რბილი cubic-bezier - ბუნებრივი ფიზიკის მსგავსი */
+    transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+}
+
+/* დესკტოპზე — რბილი ზრდა 1.04-მდე (არა ხისტი 1.1) */
+@media (hover: hover) and (pointer: fine) {
+    .xseries-page .xseries-image-hover:hover img {
+        transform: scale(1.04);
+    }
+}
+
+/* =========================================
+   SUB-NAVIGATION LINKS
+========================================= */
+.xseries-page .subnav-link {
+    display: block;
+    color: #888;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    padding: 18px 0;
+    position: relative;
+    transition: color 0.4s ease;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .xseries-page .subnav-link {
+        font-size: 13px;
+        padding: 22px 0;
+    }
+}
+
+.xseries-page .subnav-link:hover,
+.xseries-page .subnav-link.active {
+    color: #fff;
+}
+
+.xseries-page .subnav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #d11f26;
+    transition: width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.xseries-page .subnav-link:hover::after,
+.xseries-page .subnav-link.active::after {
+    width: 100%;
+}
+
+/* Hide scrollbar for mobile nav */
+.xseries-page .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.xseries-page .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* =========================================
+   FADE-UP ANIMATIONS (რბილი)
+========================================= */
+.xseries-page .xseries-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: opacity, transform;
+}
+
+.xseries-page .xseries-fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.xseries-page .xseries-fade-up.delay-100 { transition-delay: 100ms; }
+.xseries-page .xseries-fade-up.delay-200 { transition-delay: 200ms; }
+.xseries-page .xseries-fade-up.delay-300 { transition-delay: 300ms; }
+
+/* =========================================
+   FEATURE STAT CARDS (Overview)
+========================================= */
+.xseries-page .feature-stat-card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                border-color 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .xseries-page .feature-stat-card {
+        border-radius: 24px;
+        padding: 32px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .xseries-page .feature-stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border-color: transparent;
+    }
+}
+
+/* =========================================
+   STAT CARDS (Easy Loading — შავი ფონი)
+========================================= */
+.xseries-page .stat-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 18px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                background 0.5s ease,
+                border-color 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .xseries-page .stat-card {
+        border-radius: 20px;
+        padding: 28px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .xseries-page .stat-card:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(209, 31, 38, 0.4);
+    }
+}
+
+/* =========================================
+   DRIVING CARDS
+========================================= */
+.xseries-page .driving-card {
+    padding: 0;
+}
+
+/* =========================================
+   SAFETY STAT CARDS
+========================================= */
+.xseries-page .safety-stat-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    padding: 16px 18px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.5s ease,
+                border-color 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .xseries-page .safety-stat-card {
+        border-radius: 20px;
+        padding: 24px 28px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .xseries-page .safety-stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+        border-color: #d11f26;
+    }
+}
+
+/* =========================================
+   DESIGN CARDS (Bento)
+========================================= */
+.xseries-page .design-card {
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .xseries-page .design-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* =========================================
+   SPEC TABS
+========================================= */
+.xseries-page .spec-tab {
+    padding: 9px 18px;
+    background: #ffffff;
+    color: #666;
+    border: 2px solid #e8e8e8;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+@media (min-width: 768px) {
+    .xseries-page .spec-tab {
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+}
+
+.xseries-page .spec-tab:hover {
+    background: #f4f6f9;
+    color: #000;
+    border-color: #d0d0d0;
+}
+
+.xseries-page .spec-tab.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* =========================================
+   STICKY NAV OFFSET (მობაილი)
+========================================= */
+@media (max-width: 1024px) {
+    .xseries-page #xseries-subnav {
+        top: 60px;
+    }
+}
+
+/* =========================================
+   HERO MOBILE OPTIMIZATIONS
+========================================= */
+@media (max-width: 640px) {
+    .xseries-page #xseries-hero {
+        height: 60vh;
+        min-height: 420px;
+    }
+    
+    .xseries-page #xseries-hero h1 {
+        line-height: 1.05;
+    }
+}
+
+/* =========================================
+   TYPOGRAPHY MOBILE COMPACT (H2, H3, H4)
+   მობაილზე უფრო კომპაქტური სათაურები
+========================================= */
+@media (max-width: 767px) {
+    .xseries-page h2 {
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+    }
+    
+    .xseries-page h3 {
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+    }
+    
+    .xseries-page h4 {
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+    }
+    
+    /* პარაგრაფები მობაილზე */
+    .xseries-page p {
+        line-height: 1.55;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION (ხელმისაწვდომობა)
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+    .xseries-page *,
+    .xseries-page *::before,
+    .xseries-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .xseries-page .xseries-image-hover:hover img {
+        transform: none;
+    }
+}
+
+/* =========================================
+   PICTURE FADE
+========================================= */
+.xseries-page picture img {
+    display: block;
+}

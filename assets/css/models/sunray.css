@@ -5,7 +5,7 @@
 ========================================= */
 
 .sunray-page {
-    font-family: 'Noto Sans Georgian', 'Inter', sans-serif;
+    font-family: 'Noto Sans Georgian', sans-serif !important;
     scroll-behavior: smooth;
 }
 
@@ -165,8 +165,8 @@
     }
 }
 
-/* =========================================
-   HERO BREAKPOINTS
+ /* =========================================
+   MOBILE TYPOGRAPHY & HERO BREAKPOINTS
 ========================================= */
 @media (max-width: 768px) {
     .sunray-page #sunray-hero {
@@ -175,8 +175,14 @@
     }
     
     .sunray-page #sunray-hero h1 {
-        font-size: 2.5rem;
-        line-height: 1.1;
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .sunray-page h2 {
+        font-size: 1.25rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 1rem !important;
     }
 }
 
@@ -184,5 +190,5 @@
    SMOOTH PICTURE TRANSITIONS
 ========================================= */
 .sunray-page picture img {
-    transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease, transform 0.8s ease-in-out !important;
 }
