@@ -127,6 +127,20 @@ function jac_enqueue_scripts()
         wp_enqueue_script('jac-js6-js', get_template_directory_uri() . '/assets/js/models/js6.js', array(), '1.0', true);
     }
 
+    /* 7. j7 MODEL SECTION */
+    // j7 Model გვერდის სტილები
+    if (is_page_template('models/page-j7.php')) {
+        wp_enqueue_style('jac-j7.css', get_template_directory_uri() . '/assets/css/models/j7.css', array(), '1.0');
+        wp_enqueue_script('jac-j7-js', get_template_directory_uri() . '/assets/js/models/j7.js', array(), '1.0', true);
+    }
+
+    /* 8. n55 MODEL SECTION */
+    // n55 Model გვერდის სტილები
+    if (is_page_template('models/page-n55.php')) {
+        wp_enqueue_style('jac-n55.css', get_template_directory_uri() . '/assets/css/models/n55.css', array(), '1.0');
+        wp_enqueue_script('jac-n55-js', get_template_directory_uri() . '/assets/js/models/n55.js', array(), '1.0', true);
+    }
+
     if (is_404()) {
         wp_enqueue_style('jac-404', get_template_directory_uri() . '/assets/css/404.css', array(), '1.0');
     }

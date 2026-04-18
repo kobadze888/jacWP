@@ -9,7 +9,7 @@ $lang = function_exists('pll_current_language') ? pll_current_language() : 'ka';
 
 $t = [
     'hero_title'    => 'JAC J7',
-    'hero_sub'      => ($lang == 'en') ? 'Sporty Sedan. Smart Choice.' : 'სპორტული სედანი. ჭკვიანი არჩევანი.',
+    'hero_sub'      => ($lang == 'en') ? 'Elegant Sedan. Smart Choice.' : 'ელეგანტური სედანი. ჭკვიანი არჩევანი.',
     'hero_badge'    => ($lang == 'en') ? 'Premium Sedan' : 'პრემიუმ სედანი',
 
     'nav_overview'  => ($lang == 'en') ? 'Overview' : 'მიმოხილვა',
@@ -22,7 +22,7 @@ $t = [
     'nav_brochure'  => ($lang == 'en') ? 'Brochure' : 'ბროშურა',
 
     'ov_title'      => ($lang == 'en') ? 'Bold design. Dynamic drive.' : 'თამამი დიზაინი. დინამიური მგზავრობა.',
-    'ov_desc'       => ($lang == 'en') ? 'The JAC J7 combines a sporty silhouette with refined engineering, delivering an elegant sedan experience packed with modern technology and thoughtful comfort.' : 'JAC J7 აერთიანებს სპორტულ სილუეტს და დახვეწილ ინჟინერიას — გთავაზობთ ელეგანტურ სედანს, რომელიც აღჭურვილია თანამედროვე ტექნოლოგიებით და გააზრებული კომფორტით.',
+    'ov_desc'       => ($lang == 'en') ? 'The JAC J7 combines a dynamic silhouette with refined engineering, delivering an elegant sedan experience packed with modern technology and thoughtful comfort.' : 'JAC J7 აერთიანებს დინამიურ სილუეტს და დახვეწილ ინჟინერიას — გთავაზობთ ელეგანტურ სედანს, რომელიც აღჭურვილია თანამედროვე ტექნოლოგიებით და გააზრებული კომფორტით.',
     'col_hint'      => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
     'col_red'       => ($lang == 'en') ? 'Red' : 'წითელი',
     'col_gold'      => ($lang == 'en') ? 'Gold' : 'ოქროსფერი',
@@ -160,8 +160,6 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/models/j7.css">
-
 <script>
     tailwind.config = {
         theme: {
@@ -181,7 +179,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
 
 <main class="j7-page font-sans bg-white text-gray-900">
 
-    <section id="j7-hero" class="relative h-[85vh] min-h-[500px] flex items-end overflow-hidden">
+    <section id="j7-hero" class="relative h-[85vh] min-h-[500px] flex items-start md:items-center overflow-hidden pt-28 md:pt-0">
         <picture class="absolute inset-0 z-0">
             <source media="(max-width: 768px)" srcset="https://jacen.jac.com.cn/_nuxt/img/BANNER.fde6913.jpg">
             <img src="https://jacen.jac.com.cn/_nuxt/img/BANNER@2x.ff58c6c.jpg" 
@@ -189,10 +187,10 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                  class="w-full h-full object-cover">
         </picture>
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-l from-black/80 via-black/20 to-transparent z-10"></div>
 
-        <div class="relative z-20 w-full px-5 md:px-12 lg:px-20 pb-10 md:pb-24">
-            <div class="max-w-7xl mx-auto j7-fade-up">
+        <div class="relative z-20 w-full px-5 md:px-12 lg:px-20 pb-10 md:pb-0">
+            <div class="max-w-7xl mx-auto j7-fade-up flex flex-col items-start md:items-end text-left md:text-right">
                 <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full mb-4 md:mb-6">
                     <span class="w-1.5 h-1.5 bg-jac-red rounded-full"></span>
                     <span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest"><?php echo esc_html($t['hero_badge']); ?></span>
@@ -202,17 +200,9 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <?php echo esc_html($t['hero_title']); ?>
                 </h1>
 
-                <p class="text-lg md:text-2xl lg:text-4xl font-light text-white/95 max-w-3xl mb-6 md:mb-10 leading-snug">
+                <p class="text-lg md:text-2xl lg:text-4xl font-light text-white/95 max-w-2xl leading-snug">
                     <?php echo esc_html($t['hero_sub']); ?>
                 </p>
-
-                <div class="flex flex-wrap gap-3 md:gap-4">
-                    <a href="<?php echo esc_url($pdf_link); ?>" target="_blank"
-                       class="inline-flex items-center gap-2 bg-white text-black px-5 md:px-7 py-3 md:py-3.5 rounded-full font-bold text-xs md:text-sm hover:bg-jac-red hover:text-white transition-all duration-500">
-                        <i class="fa-regular fa-file-pdf"></i>
-                        <?php echo esc_html($t['nav_brochure']); ?>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -672,7 +662,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <div class="rounded-t-2xl md:rounded-t-3xl overflow-hidden j7-image-hover">
                         <img src="https://jacen.jac.com.cn/_nuxt/img/16-1@2x.9a07c8b.jpg" 
                              alt="One Button Start" 
-                             class="w-full h-auto object-cover aspect-[4/3]">
+                             class="w-full h-auto object-contain aspect-[4/3]">
                     </div>
                     <div class="p-5 md:p-6">
                         <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-snug">
@@ -687,7 +677,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <div class="rounded-t-2xl md:rounded-t-3xl overflow-hidden j7-image-hover">
                         <img src="https://jacen.jac.com.cn/_nuxt/img/16@2x.3777fb6.jpg" 
                              alt="Hill Start" 
-                             class="w-full h-auto object-cover aspect-[4/3]">
+                             class="w-full h-auto object-contain aspect-[4/3]">
                     </div>
                     <div class="p-5 md:p-6">
                         <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-snug">
@@ -702,7 +692,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
                     <div class="rounded-t-2xl md:rounded-t-3xl overflow-hidden j7-image-hover">
                         <img src="https://jacen.jac.com.cn/_nuxt/img/16-2@2x.c0aac5e.jpg" 
                              alt="Cruise Control" 
-                             class="w-full h-auto object-cover aspect-[4/3]">
+                             class="w-full h-auto object-contain aspect-[4/3]">
                     </div>
                     <div class="p-5 md:p-6">
                         <h4 class="text-base md:text-lg font-bold text-black mb-2 leading-snug">
@@ -822,52 +812,7 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
         </div>
     </section>
 
-    <section id="versions" class="py-14 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-5 md:px-8">
-            <div class="text-center mb-10 md:mb-14 j7-fade-up">
-                <span class="inline-block text-[10px] md:text-xs font-bold tracking-[0.2em] text-jac-red uppercase mb-3">
-                    <?php echo esc_html($t['spec_lbl']); ?>
-                </span>
-                <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-snug md:leading-tight pb-1">
-                    <?php echo esc_html($t['spec_title']); ?>
-                </h2>
-                <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto">
-                    <?php echo esc_html($t['spec_desc']); ?>
-                </p>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-2 mb-8 md:mb-10 j7-fade-up">
-                <?php 
-                $spec_tabs = [$t['spec_v1'], $t['spec_v2'], $t['spec_v3']];
-                foreach ($spec_tabs as $i => $tab):
-                ?>
-                <button class="spec-tab <?php echo $i === 0 ? 'active' : ''; ?>" data-target="spec-<?php echo $i; ?>">
-                    <?php echo esc_html($tab); ?>
-                </button>
-                <?php endforeach; ?>
-            </div>
-
-            <div class="j7-fade-up delay-200">
-                <div class="rounded-2xl md:rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-10">
-                    <div class="text-center">
-                        <img src="https://jacen.jac.com.cn/_nuxt/img/params.37fb8cc.png" 
-                             alt="J7 Specifications" 
-                             class="w-full max-w-2xl mx-auto h-auto">
-                    </div>
-                </div>
-
-                <div class="text-center mt-6 md:mt-8">
-                    <a href="<?php echo esc_url($pdf_link); ?>" target="_blank"
-                       class="inline-flex items-center gap-2 md:gap-3 bg-black text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-jac-red transition-all duration-500 hover:scale-[1.02] shadow-lg">
-                        <i class="fa-regular fa-file-pdf text-lg md:text-xl"></i>
-                        <?php echo esc_html($t['cta_btn']); ?>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+   
     <section class="py-14 md:py-24 bg-gradient-to-br from-jac-red via-red-700 to-red-900 text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute -top-24 -right-24 w-80 h-80 md:w-96 md:h-96 rounded-full bg-white/20 blur-3xl"></div>
@@ -892,7 +837,5 @@ $pdf_link = "https://jacen.jac.com.cn/pdf/j7.pdf";
     </section>
 
 </main>
-
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/models/j7.js"></script>
 
 <?php get_footer(); ?>
