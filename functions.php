@@ -25,8 +25,8 @@ function jac_enqueue_scripts()
     // Fonts & Icons
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap', array(), null);
     
-    // FontAwesome JS 6.5.1 გლობალურად
-    wp_enqueue_script('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js', array(), '6.5.1', false);
+    // FontAwesome CSS 6.5.1 გლობალურად
+    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.1');
 
     // Main Styles
     wp_enqueue_style('main-style', get_stylesheet_uri());
