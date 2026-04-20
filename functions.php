@@ -143,6 +143,20 @@ function jac_enqueue_scripts()
         wp_enqueue_script('jac-n55-js', get_template_directory_uri() . '/assets/js/models/n55.js', array(), '1.0', true);
     }
 
+    /* 9. t9ev MODEL SECTION */
+    // t9ev Model გვერდის სტილები
+    if (is_page_template('models/page-t9ev.php')) {
+        wp_enqueue_style('jac-t9ev.css', get_template_directory_uri() . '/assets/css/models/t9ev.css', array(), '1.0');
+        wp_enqueue_script('jac-t9ev-js', get_template_directory_uri() . '/assets/js/models/t9ev.js', array(), '1.0', true);
+    }
+
+    /* 10. sunrayev MODEL SECTION */
+    // sunrayev Model გვერდის სტილები
+    if (is_page_template('models/page-sunrayev.php')) {
+        wp_enqueue_style('jac-sunrayev.css', get_template_directory_uri() . '/assets/css/models/sunrayev.css', array(), '1.0');
+        wp_enqueue_script('jac-sunrayev-js', get_template_directory_uri() . '/assets/js/models/sunrayev.js', array(), '1.0', true);
+    }
+
     if (is_404()) {
         wp_enqueue_style('jac-404', get_template_directory_uri() . '/assets/css/404.css', array(), '1.0');
     }

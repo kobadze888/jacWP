@@ -27,6 +27,13 @@ $t = [
     'watch_video'   => ($lang == 'en') ? 'Watch video' : 'ვიდეოს ნახვა',
     'col_hint'      => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
     'col_red'       => ($lang == 'en') ? 'Red' : 'წითელი',
+    'col_black'     => ($lang == 'en') ? 'Black' : 'შავი',
+    'col_white'     => ($lang == 'en') ? 'White' : 'თეთრი',
+    'col_gray'      => ($lang == 'en') ? 'Gray' : 'ნაცრისფერი',
+    'col_yellow'    => ($lang == 'en') ? 'Yellow' : 'ყვითელი',
+    'col_silver'    => ($lang == 'en') ? 'Silver' : 'ვერცხლისფერი',
+    'col_blue'      => ($lang == 'en') ? 'Blue' : 'ლურჯი',
+    'col_silvergray'=> ($lang == 'en') ? 'Silvery Gray' : 'ვერცხლისფერ-ნაცრისფერი',
     'col_note'      => ($lang == 'en') ? 'Models and colors may vary by regions.' : 'მოდელები და ფერები შესაძლოა განსხვავდებოდეს რეგიონების მიხედვით.',
 
     'hl_lbl'        => ($lang == 'en') ? 'HIGHLIGHTS' : 'მთავარი მახასიათებლები',
@@ -154,17 +161,18 @@ $t = [
 ];
 
 $pdf_link = "https://jacen.jac.com.cn/pdf/t9ev.pdf";
-$video_url = "https://jacen.jac.com.cn/video/models/T9EV.mp4";
+$video_url = "https://jacen.jac.com.cn/_nuxt/videos/v-st9ev.8c7f0e3.mp4";
 ?>
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+<style>
+    .fa-solid, .fas { font-family: "Font Awesome 6 Free" !important; font-weight: 900 !important; }
+    .fa-regular, .far { font-family: "Font Awesome 6 Free" !important; font-weight: 400 !important; }
+    .fa-brands, .fab { font-family: "Font Awesome 6 Brands" !important; font-weight: 400 !important; }
+</style>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/models/t9ev.css">
 
 <script>
     tailwind.config = {
@@ -274,6 +282,48 @@ $video_url = "https://jacen.jac.com.cn/video/models/T9EV.mp4";
                                 style="background: linear-gradient(145deg, #b91c1c, #7f1d1d);">
                             <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
                         </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_black']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/Black.3554c23.png"
+                                style="background: linear-gradient(145deg, #2a2a2a, #000000);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_white']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/White.1e7eb1e.png"
+                                style="background: linear-gradient(145deg, #f8f8f8, #e0e0e0);">
+                            <i class="fa-solid fa-check text-black text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_gray']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/Gray.3a3d9f2.png"
+                                style="background: linear-gradient(145deg, #6b7280, #374151);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_yellow']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/Yellow.9ecd5b7.png"
+                                style="background: linear-gradient(145deg, #eab308, #a16207);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_silver']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/Silver.4db6e86.png"
+                                style="background: linear-gradient(145deg, #d4d4d8, #a1a1aa);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_blue']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/Blue.7211eb2.png"
+                                style="background: linear-gradient(145deg, #1e3a8a, #0c1e4a);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_silvergray']); ?>"
+                                data-img="https://jacen.jac.com.cn/_nuxt/img/Silvery-Gray.6f6ac08.png"
+                                style="background: linear-gradient(145deg, #9ca3af, #4b5563);">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 check-icon"></i>
+                        </button>
                     </div>
                     <p class="text-sm md:text-base font-bold text-black mb-2" id="color-name"><?php echo esc_html($t['col_red']); ?></p>
                     <p class="text-[10px] md:text-xs text-gray-500"><?php echo esc_html($t['col_note']); ?></p>
@@ -284,46 +334,62 @@ $video_url = "https://jacen.jac.com.cn/video/models/T9EV.mp4";
 
     <section id="specs" class="py-14 md:py-24 bg-black text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-5 md:px-8 relative">
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-end mb-10 md:mb-14">
-                <div class="t9ev-fade-up">
-                    <span class="inline-block text-[10px] md:text-xs font-bold tracking-[0.2em] text-jac-red uppercase mb-3">
-                        <?php echo esc_html($t['hl_lbl']); ?>
-                    </span>
-                    <div class="w-10 h-0.5 bg-jac-red mb-4 md:mb-6"></div>
-                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-black leading-snug md:leading-tight mb-4 md:mb-0 pb-1">
-                        <?php echo esc_html($t['hl_title']); ?>
-                    </h2>
-                </div>
-                <div class="t9ev-fade-up delay-200 lg:text-right">
-                    <button id="t9ev-video-trigger" 
-                            class="inline-flex items-center gap-2 text-jac-red border-b-2 border-jac-red pb-1 font-bold text-xs md:text-sm hover:text-white hover:border-white transition-all duration-500 cursor-pointer">
-                        <i class="fa-solid fa-circle-play"></i>
-                        <?php echo esc_html($t['watch_video']); ?>
-                    </button>
-                </div>
+
+            <div class="text-center max-w-4xl mx-auto mb-10 md:mb-16 t9ev-fade-up">
+                <span class="inline-block text-[10px] md:text-xs font-bold tracking-[0.2em] text-jac-red uppercase mb-3">
+                    <?php echo esc_html($t['hl_lbl']); ?>
+                </span>
+                <div class="w-10 h-0.5 bg-jac-red mx-auto mb-4 md:mb-6"></div>
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black leading-snug md:leading-tight pb-1">
+                    <?php echo esc_html($t['hl_title']); ?>
+                </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                <?php 
-                $specs = [
-                    ['l' => $t['hl_s1_l'], 'v' => $t['hl_s1_v']],
-                    ['l' => $t['hl_s2_l'], 'v' => $t['hl_s2_v']],
-                    ['l' => $t['hl_s3_l'], 'v' => $t['hl_s3_v']],
-                    ['l' => $t['hl_s4_l'], 'v' => $t['hl_s4_v']],
-                    ['l' => $t['hl_s5_l'], 'v' => $t['hl_s5_v']],
-                    ['l' => $t['hl_s6_l'], 'v' => $t['hl_s6_v']],
-                ];
-                foreach ($specs as $i => $spec):
-                ?>
-                <div class="spec-box t9ev-fade-up" style="animation-delay: <?php echo $i * 80; ?>ms;">
-                    <p class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/50 mb-2">
-                        <?php echo esc_html($spec['l']); ?>
-                    </p>
-                    <p class="text-xl md:text-2xl lg:text-3xl font-black text-white leading-snug">
-                        <?php echo esc_html($spec['v']); ?>
-                    </p>
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+
+                <div class="order-2 lg:order-1 t9ev-fade-up">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+                        <?php 
+                        $specs = [
+                            ['l' => $t['hl_s1_l'], 'v' => $t['hl_s1_v']],
+                            ['l' => $t['hl_s2_l'], 'v' => $t['hl_s2_v']],
+                            ['l' => $t['hl_s3_l'], 'v' => $t['hl_s3_v']],
+                            ['l' => $t['hl_s4_l'], 'v' => $t['hl_s4_v']],
+                            ['l' => $t['hl_s5_l'], 'v' => $t['hl_s5_v']],
+                            ['l' => $t['hl_s6_l'], 'v' => $t['hl_s6_v']],
+                        ];
+                        foreach ($specs as $i => $spec):
+                        ?>
+                        <div class="spec-box t9ev-fade-up" style="animation-delay: <?php echo $i * 60; ?>ms;">
+                            <p class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/50 mb-1.5">
+                                <?php echo esc_html($spec['l']); ?>
+                            </p>
+                            <p class="text-lg md:text-xl lg:text-2xl font-black text-white leading-snug">
+                                <?php echo esc_html($spec['v']); ?>
+                            </p>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-                <?php endforeach; ?>
+
+                <div class="order-1 lg:order-2 t9ev-fade-up delay-200">
+                    <div class="t9ev-video-inline group cursor-pointer" id="t9ev-video-trigger">
+                        <video id="t9ev-inline-video" autoplay muted loop playsinline preload="auto">
+                            <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+                        </video>
+
+                        <div class="t9ev-video-overlay">
+                            <div class="t9ev-video-play-btn">
+                                <i class="fa-solid fa-expand"></i>
+                            </div>
+                            <span class="t9ev-video-label">
+                                <i class="fa-solid fa-circle-play"></i>
+                                <?php echo esc_html($t['watch_video']); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -877,6 +943,5 @@ $video_url = "https://jacen.jac.com.cn/video/models/T9EV.mp4";
 
 </main>
 
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/models/t9ev.js"></script>
-
+ 
 <?php get_footer(); ?>
