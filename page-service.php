@@ -23,7 +23,7 @@ $t_subtitle = ($current_lang == 'en') ? 'Authorized technical service and parts 
 $t_intro_title = ($current_lang == 'en') ? 'Official Distributor in Georgia' : 'ოფიციალური დისტრიბუტორი საქართველოში';
 $t_intro_text = ($current_lang == 'en') ? 'Sena Motors is the official distributor of JAC in Georgia, providing high-quality technical service and original spare parts for all JAC models.' : 'JAC-ის ოფიციალური დისტრიბუტორი საქართველოში "სენა მოტორსია" და ახორციელებს JAC-ის ავტომობილების ავტორიზებულ ტექნიკურ მომსახურებასა და შეკეთებას.';
 $t_warranty = ($current_lang == 'en') ? 'Vehicles purchased at our center are covered by warranty conditions - <strong>4 years or 150,000 km</strong> (whichever comes first).' : 'ცენტრში შეძენილ ავტომობილებზე ვრცელდება საგარანტიო პირობები - <strong>4 წელი ან 150 000 კმ</strong>, რომელიც ადრე შესრულდება.';
-$t_contact_title = ($current_lang == 'en') ? 'Service Contact Info' : 'სერვისის საკონტაქტო ინფო';
+$t_contact_title = ($current_lang == 'en') ? 'Service Contact' : 'სერვისის საკონტაქტო';
 
 // სერვისების სია 
 $services = [

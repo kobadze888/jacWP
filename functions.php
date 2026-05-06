@@ -156,6 +156,12 @@ function jac_enqueue_scripts()
         wp_enqueue_style('jac-sunrayev.css', get_template_directory_uri() . '/assets/css/models/sunrayev.css', array(), '1.0');
         wp_enqueue_script('jac-sunrayev-js', get_template_directory_uri() . '/assets/js/models/sunrayev.js', array(), '1.0', true);
     }
+    /* 11. rf8 MODEL SECTION */
+    // rf8 Model გვერდის სტილები
+    if (is_page_template('models/page-rf8.php')) {
+        wp_enqueue_style('jac-rf8.css', get_template_directory_uri() . '/assets/css/models/rf8.css', array(), '1.0');
+        wp_enqueue_script('jac-rf8-js', get_template_directory_uri() . '/assets/js/models/rf8.js', array(), '1.0', true);
+    }
 
     if (is_404()) {
         wp_enqueue_style('jac-404', get_template_directory_uri() . '/assets/css/404.css', array(), '1.0');
