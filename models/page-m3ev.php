@@ -606,17 +606,19 @@ tailwind.config = {
                 <div class="w-10 h-0.5 bg-jac-green mx-auto mb-4 md:mb-6"></div>
                 <h2 class="text-2xl md:text-4xl lg:text-5xl font-black leading-tight"><?php echo esc_html($lang=='en'?'See the M3EV come alive.':'იხილეთ M3EV მოქმედებაში.'); ?></h2>
             </div>
-            <div class="rounded-2xl md:rounded-3xl overflow-hidden mb-6 md:mb-8 m3ev-fade-up bg-black">
-                <video src="https://jacen.jac.com.cn/_nuxt/videos/M3EVquan.07f1100.mp4"
-                       poster="<?php echo esc_url($base . 'M3EV_01_02.cb4525f.jpg'); ?>"
-                       muted loop autoplay playsinline preload="metadata"
-                       class="w-full h-auto object-cover"></video>
-            </div>
-            <div class="rounded-2xl md:rounded-3xl overflow-hidden m3ev-fade-up bg-black">
-                <video src="https://jacen.jac.com.cn/_nuxt/videos/ca2video.5f8f40a.mp4"
-                       poster="<?php echo esc_url($base . 'feat1.e788762.png'); ?>"
-                       muted loop autoplay playsinline preload="metadata"
-                       class="w-full h-auto object-cover"></video>
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6 m3ev-fade-up">
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden bg-black">
+                    <video src="https://jacen.jac.com.cn/_nuxt/videos/M3EVquan.07f1100.mp4"
+                           poster="<?php echo esc_url($base . 'M3EV_01_02.cb4525f.jpg'); ?>"
+                           muted loop autoplay playsinline preload="metadata"
+                           class="w-full h-full object-cover aspect-video"></video>
+                </div>
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden bg-black">
+                    <video src="https://jacen.jac.com.cn/_nuxt/videos/ca2video.5f8f40a.mp4"
+                           poster="<?php echo esc_url($base . 'feat1.e788762.png'); ?>"
+                           muted loop autoplay playsinline preload="metadata"
+                           class="w-full h-full object-cover aspect-video"></video>
+                </div>
             </div>
         </div>
     </section>
