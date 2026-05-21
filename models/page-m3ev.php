@@ -6,11 +6,11 @@ get_header();
 
 $lang = function_exists('pll_current_language') ? pll_current_language() : 'ka';
 
-$t = [
+ $t = [
     // HERO
     'hero_title'    => 'JAC M3EV',
     'hero_sub'      => ($lang == 'en') ? 'Delivering more. Creating more.' : 'მეტი მიტანა. მეტი შექმნა.',
-    'hero_badge'    => ($lang == 'en') ? 'Electric Cargo Van' : 'ელექტრო სატვირთო ვანი',
+    'hero_badge'    => ($lang == 'en') ? 'Electric Cargo Van' : 'ელექტრო სატვირთო ფურგონი',
 
     // NAV
     'nav_overview'  => ($lang == 'en') ? 'Overview'  : 'მიმოხილვა',
@@ -27,7 +27,7 @@ $t = [
     'ov_title'  => ($lang == 'en') ? 'Your partner in the city.' : 'თქვენი პარტნიორი ქალაქში.',
     'ov_desc'   => ($lang == 'en')
         ? 'The JAC M3EV is your ideal partner for last-mile delivery. With zero emissions, lower running costs, and a smart electric drivetrain, it transforms urban logistics — efficient, clean, and always ready.'
-        : 'JAC M3EV არის თქვენი იდეალური პარტნიორი ბოლო-კილომეტრის მიტანებისთვის. ნულოვანი ემისიებით, დაბალი ოპერაციული ხარჯებით და ჭკვიანი ელექტრო სისტემით, ის ახლებურად განსაზღვრავს ურბანულ ლოჯისტიკას — ეფექტური, სუფთა და ყოველთვის მზად.',
+        : 'JAC M3EV არის თქვენი იდეალური პარტნიორი „ბოლო კილომეტრის“ მიტანის სერვისისთვის. ნულოვანი ემისიებით, დაბალი საოპერაციო ხარჯებითა და ჭკვიანი ელექტროძრავით, ის ცვლის ურბანულ ლოჯისტიკას — ეფექტური, სუფთა და ყოველთვის მზად სამუშაოდ.',
     'col_hint'  => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
     'col_white' => ($lang == 'en') ? 'White'  : 'თეთრი',
     'col_silver'=> ($lang == 'en') ? 'Silver' : 'ვერცხლისფერი',
@@ -37,43 +37,43 @@ $t = [
     'hl_lbl'    => ($lang == 'en') ? 'HIGHLIGHTS' : 'მთავარი მახასიათებლები',
     'hl_title'  => 'JAC M3EV',
     'hl_full'   => ($lang == 'en') ? 'Full Specifications' : 'სრული მახასიათებლები',
-    'hl_s1_l'   => ($lang == 'en') ? 'Urban Range'           : 'ქალაქური სვლა',
+    'hl_s1_l'   => ($lang == 'en') ? 'Urban Range'           : 'სვლის მარაგი',
     'hl_s1_v'   => '≥290 km',
     'hl_s2_l'   => ($lang == 'en') ? 'Battery Capacity'      : 'ელემენტის ტევადობა',
     'hl_s2_v'   => '53.58 kWh',
-    'hl_s3_l'   => ($lang == 'en') ? 'Cargo Weight'          : 'ტვირთის წონა',
+    'hl_s3_l'   => ($lang == 'en') ? 'Cargo Weight'           : 'ტვირთამწეობა',
     'hl_s3_v'   => '≤965 kg',
     'hl_s4_l'   => ($lang == 'en') ? 'DC Charging (15–80%)'  : 'DC დატენვა (15–80%)',
     'hl_s4_v'   => '≤55 min',
-    'hl_s5_l'   => ($lang == 'en') ? 'Maximum Torque'        : 'მაქს. ბრუნვის მომენტი',
+    'hl_s5_l'   => ($lang == 'en') ? 'Maximum Torque'         : 'მაქს. ბრუნვის მომენტი',
     'hl_s5_v'   => '295 N·m',
-    'hl_s6_l'   => ($lang == 'en') ? 'Cargo Volume'          : 'სატვირთო მოცულობა',
+    'hl_s6_l'   => ($lang == 'en') ? 'Cargo Volume'           : 'სატვირთო მოცულობა',
     'hl_s6_v'   => '5.2 m³',
 
     // GALLERY
-    'gal_title'    => ($lang == 'en') ? 'Built for every street.' : 'შექმნილია ყოველი ქუჩისთვის.',
+    'gal_title'    => ($lang == 'en') ? 'Built for every street.' : 'შექმნილია ნებისმიერი ქუჩისთვის.',
     'gal_exterior' => ($lang == 'en') ? 'Exterior' : 'ექსტერიერი',
     'gal_interior' => ($lang == 'en') ? 'Interior' : 'ინტერიერი',
 
     // EXTERIOR
     'ex_lbl'   => ($lang == 'en') ? 'EXTERIOR' : 'ექსტერიერი',
     'ex_title' => ($lang == 'en') ? 'Designed for load and performance.' : 'შექმნილია დატვირთვისა და წარმადობისთვის.',
-    'ex_sub'   => ($lang == 'en') ? 'Sleek lines. Smart access.' : 'სუფთა ხაზები. ჭკვიანი წვდომა.',
+    'ex_sub'   => ($lang == 'en') ? 'Sleek lines. Smart access.' : 'დანახვეწილი ხაზები. ჭკვიანი წვდომა.',
     'ex_desc'  => ($lang == 'en')
         ? 'The M3EV combines aerodynamic efficiency with practical design. Its bubble aesthetic, crystal LED headlights, and dual-color rims deliver a modern urban presence — while the optimized body ensures maximum payload with minimum effort.'
-        : 'M3EV აერთიანებს აეროდინამიკურ ეფექტურობას პრაქტიკულ დიზაინთან. მისი ბუშტისებური ესთეტიკა, კრისტალური LED ფარები და ორფერიანი დისკები ქმნის თანამედროვე ურბანულ ყოფნას.',
+        : 'M3EV აერთიანებს აეროდინამიკურ ეფექტურობას პრაქტიკულ დიზაინთან. მისი ესთეტიკური ფორმები, კრისტალური LED ფარები და ორფერიანი დისკები ქმნის თანამედროვე ურბანულ იერსახეს, ხოლო ოპტიმიზებული კორპუსი უზრუნველყოფს ტვირთის მაქსიმალურ გადაზიდვას მინიმალური ძალისხმევით.',
     'ex_e1_t'  => ($lang == 'en') ? 'Crystal LED Headlights' : 'კრისტალური LED ფარები',
     'ex_e1_d'  => ($lang == 'en')
         ? 'Crystal LED daytime running lights combined with high-performance headlights deliver excellent visibility in any condition — a striking, modern face for the M3EV.'
-        : 'კრისტალური LED დღის სინათლის ნათება და მაღალი ეფექტურობის ფარები უზრუნველყოფს შესანიშნავ ხილვადობას ნებისმიერ პირობებში.',
+        : 'კრისტალური LED დღის სინათლის ნათება და მაღალი წარმადობის ფარები უზრუნველყოფს შესანიშნავ ხილვადობას ნებისმიერ პირობებში.',
     'ex_e2_t'  => ($lang == 'en') ? 'Side Sliding Door & Step Access' : 'გვერდითი მოცურებადი კარი და საფეხური',
     'ex_e2_d'  => ($lang == 'en')
         ? 'The large side sliding door provides effortless access to the cargo area, while the integrated step-up makes boarding safe and comfortable — designed for real-world delivery workflows.'
-        : 'დიდი გვერდითი მოცურებადი კარი უზრუნველყოფს სატვირთო განყოფილებაში მარტივ შესვლას, ინტეგრირებული საფეხური კი ჩასხდომას უსაფრთხო და კომფორტულს ხდის.',
+        : 'დიდი გვერდითი მოცურებადი კარი უზრუნველყოფს სატვირთო განყოფილებაში მარტივ წვდომას, ინტეგრირებული საფეხური კი ჩასხდომას უფრო უსაფრთხოსა და კომფორტულს ხდის.',
     'ex_e3_t'  => ($lang == 'en') ? 'Rear Parking Camera & Sensors' : 'უკანა პარკირების კამერა და სენსორები',
     'ex_e3_d'  => ($lang == 'en')
         ? 'Obstacle-detecting rear sensors with audible alerts, paired with a high-resolution backup camera — making tight urban parking safe and stress-free.'
-        : 'დაბრკოლების ამოცნობის უკანა სენსორები ხმოვანი შეტყობინებებით, მაღალი გარჩევადობის სარეზერვო კამერასთან ერთად — ქალაქის ვიწრო პარკირება უსაფრთხო და სტრესის გარეშე.',
+        : 'დაბრკოლების ამომცნობი უკანა სენსორები ხმოვანი გაფრთხილებით და მაღალი გარჩევადობის კამერა ქალაქის ვიწრო ადგილებში პარკირებას უსაფრთხოსა და მარტივს ხდის.',
 
     // INTERIOR
     'in_lbl'   => ($lang == 'en') ? 'INTERIOR' : 'ინტერიერი',
@@ -81,81 +81,81 @@ $t = [
     'in_sub'   => ($lang == 'en') ? 'A driver-first cabin.' : 'მძღოლზე ორიენტირებული სალონი.',
     'in_desc'  => ($lang == 'en')
         ? 'The M3EV cabin is designed with the working driver in mind — intuitive controls, a 10.25-inch multimedia screen, ergonomic seating, and integrated smart features keep every shift comfortable and efficient.'
-        : 'M3EV-ის სალონი შექმნილია სამუშაო მძღოლის გათვალისწინებით — ინტუიციური მართვა, 10.25-დუიმიანი მულტიმედიის ეკრანი, ერგონომიული სავარძლები.',
+        : 'M3EV-ის სალონი შექმნილია მძღოლის კომფორტის გათვალისწინებით: ინტუიციური მართვის პანელი, 10.25-დუიმიანი მულტიმედიის ეკრანი და ერგონომიული სავარძლები ყოველ სამუშაო დღეს უფრო პროდუქტიულს ხდის.',
     'in_e1_t'  => ($lang == 'en') ? '10.25" Multimedia Screen' : '10.25" მულტიმედიის ეკრანი',
     'in_e1_d'  => ($lang == 'en')
         ? 'Integrated 10.25-inch multimedia system with Google package, Bluetooth phone mirroring, CarPlay, and Android Auto — navigation and communication at your fingertips.'
-        : 'ინტეგრირებული 10.25-დუიმიანი მულტიმედიის სისტემა Google-ის პაკეტით, Bluetooth-ის სარკისებრობით, CarPlay-ით და Android Auto-ით.',
-    'in_e2_t'  => ($lang == 'en') ? 'Knob Shift Panel' : 'Knob გადამრთველის პანელი',
+        : 'ინტეგრირებული 10.25-დუიმიანი მულტიმედიის სისტემა Google-ის პაკეტით, Bluetooth-ით, CarPlay-სა და Android Auto-ს მხარდაჭერით — ნავიგაცია და კომუნიკაცია თქვენს ხელთაა.',
+    'in_e2_t'  => ($lang == 'en') ? 'Knob Shift Panel' : 'გადამრთველი პანელი (Knob)',
     'in_e2_d'  => ($lang == 'en')
         ? 'In line with the mainstream electrification trend — the knob panel features R, N, D modes with backlit indicators for intuitive, safe gear selection at any time of day.'
-        : 'ელექტრიფიკაციის მთავარი ტრენდის შესაბამისად — knob პანელს აქვს R, N, D რეჟიმები განათებული ინდიკატორებით.',
-    'in_e3_t'  => ($lang == 'en') ? 'Digital Instrument Cluster' : 'ციფრული ინსტრუმენტების პანელი',
+        : 'თანამედროვე ელექტრომობილების ტენდენციის შესაბამისად, გადამრთველ პანელს აქვს R, N, D რეჟიმები განათებული ინდიკატორებით, რაც უზრუნველყოფს გადაცემათა კოლოფის ინტუიციურ და უსაფრთხო მართვას.',
+    'in_e3_t'  => ($lang == 'en') ? 'Digital Instrument Cluster' : 'ციფრული სამუშაო პანელი',
     'in_e3_d'  => ($lang == 'en')
         ? 'Displays SOC, SOH, fault codes, and TPMS information at a glance. Multi-language support ensures clear vehicle status information for drivers across all markets.'
-        : 'SOC, SOH, გაუმართაობის კოდებისა და TPMS ინფორმაციის ერთი შეხედვით ჩვენება. მრავალენოვანი მხარდაჭერა.',
+        : 'სისტემა ერთ ეკრანზე აჩვენებს ელემენტის მუხტს (SOC), მდგომარეობას (SOH), გაუმართაობის კოდებსა და საბურავების წნევის მონიტორინგის (TPMS) ინფორმაციას. მრავალენოვანი მხარდაჭერა ნებისმიერი მძღოლისთვის.',
     'in_e4_t'  => ($lang == 'en') ? 'EPB + Auto Hold' : 'EPB + Auto Hold',
     'in_e4_d'  => ($lang == 'en')
         ? 'Electronic Parking Brake with up to 25.8 kN clamping force holds the M3EV on a 30% incline under full load. Auto Hold prevents rolling during short stops on slopes.'
-        : 'ელექტრონული სადგომი მუხრუჭი 25.8 kN-მდე სამაგრი ძალით ინარჩუნებს M3EV-ს 30%-იანი ფერდობი სრული დატვირთვით.',
+        : 'ელექტრონული ხელის მუხრუჭი 25.8 kN-მდე მომჭერი ძალით მყარად აჩერებს M3EV-ს 30%-იან აღმართზე სრული დატვირთვით, ხოლო Auto Hold ფუნქცია ხელს უშლის ავტომობილის უკუსვლას ხანმოკლე გაჩერებებისას.',
 
     // CARGO
     'cg_lbl'   => ($lang == 'en') ? 'CARGO SPACE' : 'სატვირთო სივრცე',
     'cg_title' => ($lang == 'en') ? 'Ample space. Maximum efficiency.' : 'უხვი სივრცე. მაქსიმალური ეფექტურობა.',
     'cg_desc'  => ($lang == 'en')
         ? 'With 5.2 m³ of cargo volume and a 965 kg payload, the M3EV is engineered to handle demanding urban delivery routes.'
-        : '5.2 მ³ სატვირთო მოცულობით და 965 კგ დატვირთვის შესაძლებლობით, M3EV შექმნილია რთული ურბანული მიტანის მარშრუტებისთვის.',
+        : '5.2 მ³ სატვირთო მოცულობითა და 965 კგ ტვირთამწეობით, M3EV შექმნილია ყველაზე დატვირთული ურბანული მარშრუტებისთვის.',
     'cg_c1_t'  => ($lang == 'en') ? 'Large Tailgate (1,255 × 1,175 mm)' : 'დიდი უკანა კარი (1,255 × 1,175 მმ)',
-    'cg_c1_d'  => ($lang == 'en') ? 'Generously sized rear tailgate opens wide for effortless loading and unloading from multiple angles.' : 'გულუხვი ზომის უკანა კარი ფართოდ იხსნება სხვადასხვა კუთხიდან ადვილი დატვირთვა-გადმოტვირთვისთვის.',
+    'cg_c1_d'  => ($lang == 'en') ? 'Generously sized rear tailgate opens wide for effortless loading and unloading from multiple angles.' : 'ფართო უკანა კარი იხსნება ფართოდ, რაც აადვილებს ტვირთის სხვადასხვა მხრიდან ჩატვირთვა-გადმოტვირთვას.',
     'cg_c2_t'  => ($lang == 'en') ? 'Side Sliding Door (760 × 1,190 mm)' : 'გვერდითი მოცურებადი კარი (760 × 1,190 მმ)',
-    'cg_c2_d'  => ($lang == 'en') ? 'Wide sliding door on the right side provides easy access in tight urban spaces — ideal for frequent stops.' : 'ფართო მოცურებადი კარი მარჯვენა მხარეს — იდეალური ხშირი გაჩერებებისთვის ქალაქის ვიწრო სივრცეებში.',
+    'cg_c2_d'  => ($lang == 'en') ? 'Wide sliding door on the right side provides easy access in tight urban spaces — ideal for frequent stops.' : 'ფართო გვერდითი მოცურებადი კარი იდეალურია ქალაქის ვიწრო პირობებში და ხშირი გაჩერებებისთვის.',
     'cg_c3_t'  => ($lang == 'en') ? 'Full Interior Lighting' : 'სრული შიდა განათება',
-    'cg_c3_d'  => ($lang == 'en') ? 'Complete LED lighting throughout the cargo body ensures efficient operations even in low-light conditions.' : 'სრული LED განათება სატვირთო კორპუსში — ეფექტური ოპერაციები დაბალი განათების პირობებშიც.',
-    'cg_c4_t'  => ($lang == 'en') ? 'Cargo Fixing Hooks (6 sets)' : 'ტვირთის დამაგრების კაუჭები (6 კომპლექტი)',
-    'cg_c4_d'  => ($lang == 'en') ? '3 pairs (6 sets) of cargo hooks evenly distributed inside the cargo box — securing goods at multiple positions.' : '3 წყვილი (6 კომპლექტი) ტვირთის კაუჭი, თანაბრად განაწილებული — ტვირთი მრავალ პოზიციაზე.',
-    'cg_c5_t'  => ($lang == 'en') ? 'Underfloor Full-Size Spare Tire' : 'ძირზე სრული ზომის სათადარიგო საბურავი',
-    'cg_c5_d'  => ($lang == 'en') ? 'Full-size spare tire mounted beneath the chassis reduces downtime during unexpected blowouts.' : 'სრული ზომის სათადარიგო საბურავი შასის ქვეშ — ამცირებს მოცდის დროს.',
+    'cg_c3_d'  => ($lang == 'en') ? 'Complete LED lighting throughout the cargo body ensures efficient operations even in low-light conditions.' : 'სატვირთო განყოფილებაში დამონტაჟებული სრული LED განათება უზრუნველყოფს ეფექტურ მუშაობას დაბალი განათების პირობებშიც.',
+    'cg_c4_t'  => ($lang == 'en') ? 'Cargo Fixing Hooks (6 sets)' : 'ტვირთის დასამაგრებელი კაუჭები (6 კომპლექტი)',
+    'cg_c4_d'  => ($lang == 'en') ? '3 pairs (6 sets) of cargo hooks evenly distributed inside the cargo box — securing goods at multiple positions.' : 'სატვირთო სივრცეში თანაბრად განაწილებული 6 კაუჭი უზრუნველყოფს ტვირთის უსაფრთხო ფიქსაციას სხვადასხვა პოზიციაზე.',
+    'cg_c5_t'  => ($lang == 'en') ? 'Underfloor Full-Size Spare Tire' : 'სრულფასოვანი სათადარიგო საბურავი',
+    'cg_c5_d'  => ($lang == 'en') ? 'Full-size spare tire mounted beneath the chassis reduces downtime during unexpected blowouts.' : 'შასის ქვეშ მოთავსებული სრულფასოვანი სათადარიგო საბურავი ამცირებს ავტომობილის გაჩერების დროს გაუთვალისწინებელი შემთხვევებისას.',
 
     // BATTERY
     'bt_lbl'   => ($lang == 'en') ? 'BATTERY & TECHNOLOGY' : 'ელემენტი და ტექნოლოგია',
     'bt_title' => ($lang == 'en') ? 'Built for endurance.'  : 'შექმნილია გამძლეობისთვის.',
     'bt_desc'  => ($lang == 'en')
         ? 'Powered by a CATL 53.58 kWh LFP battery, the M3EV delivers ≥290 km of urban range with IP67 protection and ASIL C safety certification. The four-in-one electric drive eliminates oil changes for 100,000 km.'
-        : 'CATL-ის 53.58 kWh LFP ელემენტით, M3EV-ი გთავაზობთ ≥290 კმ ქალაქური სვლის მარაგს IP67 დაცვით. ოთხ-ერთიანი სისტემა 100,000 კმ ზეთის გამოცვლის გარეშე.',
+        : 'CATL-ის 53.58 kWh მოცულობის LFP ელემენტი M3EV-ს აძლევს ≥290 კმ სვლის მარაგს ქალაქში, IP67 დაცვის სტანდარტითა და ASIL C უსაფრთხოების სერტიფიკატით. ოთხ-ერთში ელექტროძრავის სისტემა 100,000 კმ-მდე არ საჭიროებს ზეთის შეცვლას.',
     'bt_c1_t'  => ($lang == 'en') ? 'CATL LFP Battery (53.58 kWh)' : 'CATL LFP ელემენტი (53.58 kWh)',
-    'bt_c1_d'  => ($lang == 'en') ? 'Lithium Iron Phosphate by CATL — safer, more stable, longer-lasting. Optimized for high-cycle commercial use.' : 'CATL-ის LFP ელემენტი — უფრო უსაფრთხო, სტაბილური, გამძლე. ოპტიმიზებული კომერციული გამოყენებისთვის.',
-    'bt_c2_t'  => ($lang == 'en') ? 'IP67 Waterproof Protection' : 'IP67 წყალგამძლე დაცვა',
-    'bt_c2_d'  => ($lang == 'en') ? 'IP67 waterproof with ASIL C safety certification. Withstands stone impacts below 15 mm — reliable in rain and harsh conditions.' : 'IP67 წყალგამძლე ASIL C სერტიფიკაციით. 15მმ-ზე ნაკლები ქვის დარტყმებს უძლებს — საიმედო ნებისმიერ პირობებში.',
-    'bt_c3_t'  => ($lang == 'en') ? 'Four-in-One Electric Drive' : 'ოთხ-ერთიანი ელექტრო ძრავი',
-    'bt_c3_d'  => ($lang == 'en') ? 'Integrates motor, e-control, reducer and high-voltage cables into one compact aluminium unit — maintenance-free for 100,000 km.' : 'ძრავი, ელ-კონტროლი, რედუქტორი და კაბელები — ერთ კომპაქტურ ალუმინის ერთეულში. 100,000 კმ მოვლის გარეშე.',
-    'ip_lbl'   => ($lang == 'en') ? 'INTELLIGENT' : 'ინტელექტი',
-    'ip_title' => ($lang == 'en') ? 'i-Pedal: Regenerative Braking' : 'i-Pedal: რეგენერაციული მუხრუჭი',
+    'bt_c1_d'  => ($lang == 'en') ? 'Lithium Iron Phosphate by CATL — safer, more stable, longer-lasting. Optimized for high-cycle commercial use.' : 'CATL-ის ლითიუმ-რკინის ფოსფატის (LFP) ტექნოლოგია — უფრო უსაფრთხო, სტაბილური და გამძლე, სპეციალურად ოპტიმიზებული კომერციული დატვირთვებისთვის.',
+    'bt_c2_t'  => ($lang == 'en') ? 'IP67 Waterproof Protection' : 'IP67 წყალგამძლეობის სტანდარტი',
+    'bt_c2_d'  => ($lang == 'en') ? 'IP67 waterproof with ASIL C safety certification. Withstands stone impacts below 15 mm — reliable in rain and harsh conditions.' : 'IP67 წყალგამძლეობისა და ASIL C უსაფრთხოების სტანდარტი. უძლებს მექანიკურ ზემოქმედებას და უზრუნველყოფს საიმედო მუშაობას ნებისმიერ მეტეოროლოგიურ პირობებში.',
+    'bt_c3_t'  => ($lang == 'en') ? 'Four-in-One Electric Drive' : 'ოთხ-ერთში ელექტროძრავის სისტემა',
+    'bt_c3_d'  => ($lang == 'en') ? 'Integrates motor, e-control, reducer and high-voltage cables into one compact aluminium unit — maintenance-free for 100,000 km.' : 'ელექტროძრავა, მართვის ბლოკი, რედუქტორი და მაღალი ძაბვის კაბელები გაერთიანებულია ერთ კომპაქტურ ალუმინის კორპუსში, რომელიც 100,000 კმ-მდე არ საჭიროებს ტექნიკურ მომსახურებას.',
+    'ip_lbl'   => ($lang == 'en') ? 'INTELLIGENT' : 'ინტელექტუალური სისტემები',
+    'ip_title' => ($lang == 'en') ? 'i-Pedal: Regenerative Braking' : 'i-Pedal: რეგენერაციული დამუხრუჭება',
     'ip_desc'  => ($lang == 'en')
         ? 'When you release the accelerator, the electric motor becomes a generator — recharging the battery and increasing range by up to 20%. Every deceleration becomes recoverable energy.'
-        : 'როდესაც გაზს უშვებთ, ძრავი გენერატორად იქცევა — ახდენს ელემენტის დამუხტვას და სვლის მარაგს 20%-მდე ზრდის. ყოველი შენელება სასარგებლო ენერგიად გარდაიქმნება.',
-    'ip_badge' => ($lang == 'en') ? 'Up to +20% Range' : 'სვლა +20%-მდე',
+        : 'აქსელერატორის პედლიდან ფეხის აღებისას ელექტროძრავა მუშაობს გენერატორის რეჟიმში, რაც ტენავს ელემენტს და სვლის მარაგს 20%-მდე ზრდის. დამუხრუჭებისას დახარჯული ენერგია კვლავ გროვდება.',
+    'ip_badge' => ($lang == 'en') ? 'Up to +20% Range' : 'სვლის მარაგის ზრდა 20%-მდე',
 
     // SAFETY
     'sf_lbl'   => ($lang == 'en') ? 'SAFETY' : 'უსაფრთხოება',
     'sf_title' => ($lang == 'en') ? 'Active protection on every route.' : 'აქტიური დაცვა ყოველ მარშრუტზე.',
     'sf_desc'  => ($lang == 'en')
         ? 'The M3EV integrates comprehensive active and passive safety systems — so every delivery is as safe as it is efficient.'
-        : 'M3EV ინტეგრირებს ყოვლისმომცველ აქტიური და პასიური უსაფრთხოების სისტემებს.',
+        : 'M3EV აღჭურვილია აქტიური და პასიური უსაფრთხოების თანამედროვე სისტემებით, რაც უზრუნველყოფს, რომ თითოეული მიტანის პროცესი იყოს როგორც ეფექტური, ისე სრულიად უსაფრთხო.',
     'sf_c1_t'  => ($lang == 'en') ? 'ESC — Electronic Stability Control' : 'ESC — ელექტრონული სტაბილურობის კონტროლი',
-    'sf_c1_l1' => ($lang == 'en') ? 'ABS — Anti-lock Braking System' : 'ABS — ანტიბლოკირების სამუხრუჭო სისტემა',
-    'sf_c1_l2' => ($lang == 'en') ? 'EBD — Electronic Brake-force Distribution' : 'EBD — ელექტრონული სამუხრუჭო ძალის განაწილება',
-    'sf_c1_l3' => ($lang == 'en') ? 'TCS — Traction Control System' : 'TCS — ტრაქციის კონტროლის სისტემა',
-    'sf_c1_l4' => ($lang == 'en') ? 'AYC — Active Yaw Control' : 'AYC — აქტიური Yaw კონტროლი',
-    'sf_c2_t'  => ($lang == 'en') ? 'High-Strength Body Structure' : 'მაღალი სიმტკიცის კორპუსის სტრუქტურა',
-    'sf_c2_d'  => ($lang == 'en') ? 'Body bending stiffness 12,091 N/mm and torsional stiffness 12,833 Nm/deg — a rigid protective structure that absorbs impact.' : 'კორპუსის სიმტკიცე 12,091 N/მმ — მყარი, დამცავი სტრუქტურა, რომელიც შთანთქავს დარტყმას.',
-    'sf_c3_t'  => ($lang == 'en') ? '4-Wheel Disc Brakes' : '4-ბორბლის დისკური მუხრუჭები',
-    'sf_c3_d'  => ($lang == 'en') ? 'Four-wheel disc brake system with excellent heat dissipation ensures consistent, powerful braking — even under heavy load.' : '4-ბორბლის დისკური სამუხრუჭო სისტემა — სტაბილური, ძლიერი მუხრუჭები მძიმე დატვირთვისასაც.',
-    'ze_title' => ($lang == 'en') ? 'Zero Emissions. Maximum Savings.' : 'ნულოვანი ემისიები. მაქსიმალური დაზოგვა.',
-    'ze_desc'  => ($lang == 'en') ? 'The M3EV produces zero pollutants and costs up to 8× less per kilometer than equivalent diesel vans.' : 'M3EV არ გამოყოფს ნებისმიერ დამბინძურებელ ნივთიერებას და 8-ჯერ ნაკლები ეღირება კმ-ზე.',
+    'sf_c1_l1' => ($lang == 'en') ? 'ABS — Anti-lock Braking System' : 'ABS — ანტიბლოკირების სისტემა',
+    'sf_c1_l2' => ($lang == 'en') ? 'EBD — Electronic Brake-force Distribution' : 'EBD — სამუხრუჭო ძალის ელექტრონული განაწილება',
+    'sf_c1_l3' => ($lang == 'en') ? 'TCS — Traction Control System' : 'TCS — მოცურების საწინააღმდეგო სისტემა',
+    'sf_c1_l4' => ($lang == 'en') ? 'AYC — Active Yaw Control' : 'AYC — აქტიური კურსის კონტროლი',
+    'sf_c2_t'  => ($lang == 'en') ? 'High-Strength Body Structure' : 'მაღალი სიმტკიცის კორპუსი',
+    'sf_c2_d'  => ($lang == 'en') ? 'Body bending stiffness 12,091 N/mm and torsional stiffness 12,833 Nm/deg — a rigid protective structure that absorbs impact.' : 'კორპუსის სიმტკიცე (12,091 N/მმ) და გრეხვითი სიმტკიცე (12,833 Nm/deg) ქმნის მყარ დამცავ სტრუქტურას, რომელიც ეფექტურად შთანთქავს დარტყმის ენერგიას.',
+    'sf_c3_t'  => ($lang == 'en') ? '4-Wheel Disc Brakes' : '4-ბორბლიანი დისკური მუხრუჭები',
+    'sf_c3_d'  => ($lang == 'en') ? 'Four-wheel disc brake system with excellent heat dissipation ensures consistent, powerful braking — even under heavy load.' : 'დისკური სამუხრუჭო სისტემა ყველა ბორბალზე უზრუნველყოფს ეფექტურ გაგრილებას და მძლავრ დამუხრუჭებას მაქსიმალური დატვირთვის პირობებშიც კი.',
+    'ze_title' => ($lang == 'en') ? 'Zero Emissions. Maximum Savings.' : 'ნულოვანი ემისიები. მაქსიმალური ეკონომია.',
+    'ze_desc'  => ($lang == 'en') ? 'The M3EV produces zero pollutants and costs up to 8× less per kilometer than equivalent diesel vans.' : 'M3EV არ გამოყოფს მავნე გამონაბოლქვს და მისი ერთი კილომეტრის ღირებულება 8-ჯერ უფრო დაბალია, ვიდრე დიზელის ძრავიანი ანალოგების.',
 
     // CTA
-    'cta_title' => ($lang == 'en') ? 'Start delivering smarter with M3EV' : 'დაიწყეთ ჭკვიანი მიტანა M3EV-თან ერთად',
-    'cta_desc'  => ($lang == 'en') ? 'Download the full brochure for complete specifications and configurations.' : 'ჩამოტვირთეთ სრული ბროშურა დეტალური მახასიათებლებისა და კონფიგურაციებისთვის.',
+    'cta_title' => ($lang == 'en') ? 'Start delivering smarter with M3EV' : 'გაამარტივეთ მიტანის სერვისი M3EV-თან ერთად',
+    'cta_desc'  => ($lang == 'en') ? 'Download the full brochure for complete specifications and configurations.' : 'ჩამოტვირთეთ სრული ბროშურა დეტალური ტექნიკური მახასიათებლებისა და კონფიგურაციების გასაცნობად.',
     'cta_btn'   => ($lang == 'en') ? 'Download Brochure' : 'ბროშურის ჩამოტვირთვა',
 ];
 
@@ -180,7 +180,7 @@ $int_gallery = [
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+ 
 
 <script>
 tailwind.config = {
