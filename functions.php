@@ -169,6 +169,12 @@ function jac_enqueue_scripts()
         wp_enqueue_style('jac-m3ev.css', get_template_directory_uri() . '/assets/css/models/m3ev.css', array(), '1.1');
         wp_enqueue_script('jac-m3ev-js', get_template_directory_uri() . '/assets/js/models/m3ev.js', array(), '1.1', true);
     }
+
+    /* 13. js6phev MODEL SECTION */
+    if (is_page_template('models/page-js6phev.php')) {
+        wp_enqueue_style('jac-js6phev.css', get_template_directory_uri() . '/assets/css/models/js6phev.css', array(), '1.0');
+        wp_enqueue_script('jac-js6phev-js', get_template_directory_uri() . '/assets/js/models/js6phev.js', array(), '1.0', true);
+    }
     if (is_404()) {
         wp_enqueue_style('jac-404', get_template_directory_uri() . '/assets/css/404.css', array(), '1.0');
     }
