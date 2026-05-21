@@ -163,6 +163,12 @@ function jac_enqueue_scripts()
         wp_enqueue_script('jac-rf8-js', get_template_directory_uri() . '/assets/js/models/rf8.js', array(), '1.0', true);
     }
 
+
+    /* 12. m3ev MODEL SECTION */
+    if (is_page_template('models/page-m3ev.php')) {
+        wp_enqueue_style('jac-m3ev.css', get_template_directory_uri() . '/assets/css/models/m3ev.css', array(), '1.1');
+        wp_enqueue_script('jac-m3ev-js', get_template_directory_uri() . '/assets/js/models/m3ev.js', array(), '1.1', true);
+    }
     if (is_404()) {
         wp_enqueue_style('jac-404', get_template_directory_uri() . '/assets/css/404.css', array(), '1.0');
     }
