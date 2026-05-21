@@ -203,8 +203,8 @@ tailwind.config = {
     <!-- 1. HERO -->
     <section id="m3ev-hero" class="relative h-[85vh] min-h-[500px] flex items-end overflow-hidden">
         <picture class="absolute inset-0 z-0">
-            <source media="(max-width: 768px)" srcset="<?php echo esc_url($base . 'M3EV-EX-024.cf555ae.png'); ?>">
-            <img src="<?php echo esc_url($base . 'M3EV-EX-017.6e56d5c.jpg'); ?>"
+            <source media="(max-width: 768px)" srcset="<?php echo esc_url($base . 'M3EV-EX-017.6e56d5c.jpg'); ?>">
+            <img src="<?php echo esc_url($base . 'M3EV_01_02.cb4525f.jpg'); ?>"
                  alt="JAC M3EV"
                  class="w-full h-full object-cover object-center">
         </picture>
@@ -416,9 +416,6 @@ tailwind.config = {
                 <div class="w-10 h-0.5 bg-jac-green mx-auto mb-4 md:mb-6"></div>
                 <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 leading-tight"><?php echo esc_html($t['in_title']); ?></h2>
             </div>
-            <div class="rounded-2xl md:rounded-3xl overflow-hidden mb-10 md:mb-14 m3ev-fade-up m3ev-image-hover">
-                <img src="<?php echo esc_url($base . 'M3EV_03_03.f8bbaff.jpg'); ?>" alt="JAC M3EV Interior" class="w-full h-auto object-cover">
-            </div>
             <div class="max-w-3xl mx-auto text-center mb-14 md:mb-20 m3ev-fade-up">
                 <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4"><?php echo esc_html($t['in_sub']); ?></h3>
                 <p class="text-sm md:text-base text-white/70 leading-relaxed"><?php echo esc_html($t['in_desc']); ?></p>
@@ -483,8 +480,11 @@ tailwind.config = {
                 <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-tight"><?php echo esc_html($t['cg_title']); ?></h2>
                 <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"><?php echo esc_html($t['cg_desc']); ?></p>
             </div>
-            <div class="rounded-2xl md:rounded-3xl overflow-hidden mb-10 md:mb-14 m3ev-fade-up m3ev-image-hover">
-                <img src="<?php echo esc_url($base . 'space1.1a93417.png'); ?>" alt="M3EV Cargo Space" class="w-full h-auto object-cover">
+            <div class="rounded-2xl md:rounded-3xl overflow-hidden mb-10 md:mb-14 m3ev-fade-up bg-black">
+                <video src="https://jacen.jac.com.cn/_nuxt/videos/ca1video_x264.5a7ccb6.mp4"
+                       poster="<?php echo esc_url($base . 'spac.9e619d7.png'); ?>"
+                       muted loop autoplay playsinline preload="metadata"
+                       class="w-full h-auto object-cover"></video>
             </div>
             <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
                 <?php
@@ -579,8 +579,11 @@ tailwind.config = {
 
             <!-- i-Pedal -->
             <div class="mt-10 md:mt-14 grid lg:grid-cols-2 gap-8 lg:gap-14 items-center m3ev-fade-up">
-                <div class="rounded-2xl md:rounded-3xl overflow-hidden m3ev-image-hover">
-                    <img src="<?php echo esc_url($base . 'efficiency.6a24c58.png'); ?>" alt="i-Pedal" class="w-full h-auto object-cover">
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden bg-black">
+                    <video src="https://jacen.jac.com.cn/_nuxt/videos/ca3video.e43ae5d.mp4"
+                           poster="<?php echo esc_url($base . 'feat2.71877d9.png'); ?>"
+                           muted loop autoplay playsinline preload="metadata"
+                           class="w-full h-auto object-cover"></video>
                 </div>
                 <div>
                     <span class="inline-block text-[10px] md:text-xs font-bold tracking-[0.2em] text-jac-green uppercase mb-3"><?php echo esc_html($t['ip_lbl']); ?></span>
@@ -591,6 +594,29 @@ tailwind.config = {
                     <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 leading-tight"><?php echo esc_html($t['ip_title']); ?></h3>
                     <p class="text-sm md:text-base text-white/70 leading-relaxed"><?php echo esc_html($t['ip_desc']); ?></p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9.5 VIDEO SHOWCASE -->
+    <section class="py-14 md:py-24 bg-black text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 md:px-8">
+            <div class="text-center mb-10 md:mb-14 m3ev-fade-up">
+                <span class="inline-block text-[10px] md:text-xs font-bold tracking-[0.2em] text-jac-green uppercase mb-3"><?php echo esc_html($lang=='en'?'IN MOTION':'მოძრაობაში'); ?></span>
+                <div class="w-10 h-0.5 bg-jac-green mx-auto mb-4 md:mb-6"></div>
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black leading-tight"><?php echo esc_html($lang=='en'?'See the M3EV come alive.':'იხილეთ M3EV მოქმედებაში.'); ?></h2>
+            </div>
+            <div class="rounded-2xl md:rounded-3xl overflow-hidden mb-6 md:mb-8 m3ev-fade-up bg-black">
+                <video src="https://jacen.jac.com.cn/_nuxt/videos/M3EVquan.07f1100.mp4"
+                       poster="<?php echo esc_url($base . 'M3EV_01_02.cb4525f.jpg'); ?>"
+                       muted loop autoplay playsinline preload="metadata"
+                       class="w-full h-auto object-cover"></video>
+            </div>
+            <div class="rounded-2xl md:rounded-3xl overflow-hidden m3ev-fade-up bg-black">
+                <video src="https://jacen.jac.com.cn/_nuxt/videos/ca2video.5f8f40a.mp4"
+                       poster="<?php echo esc_url($base . 'feat1.e788762.png'); ?>"
+                       muted loop autoplay playsinline preload="metadata"
+                       class="w-full h-auto object-cover"></video>
             </div>
         </div>
     </section>
