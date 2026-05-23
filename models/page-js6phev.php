@@ -28,9 +28,12 @@ $t = [
     'ov_desc'   => ($lang == 'en')
         ? 'The JAC JS6 PHEV begins a new era of driving — combining bold style, intelligent performance and environmental responsibility. Designed for short city journeys and long road trips alike, it delivers up to 1,150 km of combined range with just 0.9 L/100 km consumption.'
         : 'JAC JS6 PHEV ხსნის ახალ მართვის ეპოქას — აერთიანებს თამამ სტილს, ინტელექტუალურ წარმადობას და გარემოსდაცვით პასუხისმგებლობას. შექმნილია როგორც მოკლე ქალაქური მგზავრობებისთვის, ისე გრძელი მოგზაურობებისთვის — 1,150 კმ-მდე ჯამური სვლის მარაგით და მხოლოდ 0.9 ლ/100 კმ მოხმარებით.',
-    'col_hint'  => ($lang == 'en') ? 'Select a color' : 'აირჩიეთ ფერი',
-    'col_white' => ($lang == 'en') ? 'Pearl White'    : 'მარგალიტისფერი თეთრი',
-    'col_note'  => ($lang == 'en') ? 'Models and colors may vary by regions.' : 'მოდელები და ფერები შესაძლოა განსხვავდებოდეს რეგიონების მიხედვით.',
+    'col_hint'   => ($lang == 'en') ? 'Select a color'                          : 'აირჩიეთ ფერი',
+    'col_white'  => ($lang == 'en') ? 'Pearl White'                             : 'მარგალიტისფერი თეთრი',
+    'col_blue'   => ($lang == 'en') ? 'Nebula Blue'                             : 'ნებულა ლურჯი',
+    'col_black'  => ($lang == 'en') ? 'Starry Night Black'                      : 'ვარსკვლავური შავი',
+    'col_gray'   => ($lang == 'en') ? 'Titanium Gray'                           : 'ტიტანის ნაცრისფერი',
+    'col_note'   => ($lang == 'en') ? 'Models and colors may vary by regions.'  : 'მოდელები და ფერები შესაძლოა განსხვავდებოდეს რეგიონების მიხედვით.',
 
     // HIGHLIGHTS
     'hl_lbl'    => ($lang == 'en') ? 'HIGHLIGHTS' : 'მთავარი მახასიათებლები',
@@ -259,7 +262,7 @@ tailwind.config = {
             <div class="relative js6phev-fade-up delay-200">
                 <div class="py-4 md:py-8">
                     <img id="js6phev-main-color-img"
-                         src="<?php echo esc_url($base . 'js6phevimg.481b7e4.png'); ?>"
+                         src="<?php echo esc_url($base . 'color1.df0a126.png'); ?>"
                          alt="JAC JS6 PHEV Pearl White"
                          class="w-full max-w-4xl mx-auto h-auto object-contain transition-opacity duration-500">
                 </div>
@@ -268,9 +271,27 @@ tailwind.config = {
                     <div class="flex justify-center flex-wrap gap-3 md:gap-4 mb-4">
                         <button class="color-dot active"
                                 data-name="<?php echo esc_attr($t['col_white']); ?>"
-                                data-img="<?php echo esc_url($base . 'js6phevimg.481b7e4.png'); ?>"
-                                style="background:linear-gradient(145deg,#fafafa,#e0e0e0);">
-                            <i class="fa-solid fa-check text-black text-sm check-icon"></i>
+                                data-img="<?php echo esc_url($base . 'color1.df0a126.png'); ?>"
+                                style="background:linear-gradient(145deg,#fafafa,#d8d8d8);">
+                            <i class="fa-solid fa-check text-gray-700 text-sm check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_blue']); ?>"
+                                data-img="<?php echo esc_url($base . 'color2.2e080cf.png'); ?>"
+                                style="background:linear-gradient(145deg,#aec4de,#7a9dbf);">
+                            <i class="fa-solid fa-check text-white text-sm check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_black']); ?>"
+                                data-img="<?php echo esc_url($base . 'color3.f1c90b5.png'); ?>"
+                                style="background:linear-gradient(145deg,#2a2a2a,#000000);">
+                            <i class="fa-solid fa-check text-white text-sm check-icon"></i>
+                        </button>
+                        <button class="color-dot"
+                                data-name="<?php echo esc_attr($t['col_gray']); ?>"
+                                data-img="<?php echo esc_url($base . 'color4.a0b8ba9.png'); ?>"
+                                style="background:linear-gradient(145deg,#9a9a9b,#696969);">
+                            <i class="fa-solid fa-check text-white text-sm check-icon"></i>
                         </button>
                     </div>
                     <p class="text-sm md:text-base font-bold text-black mb-2" id="color-name"><?php echo esc_html($t['col_white']); ?></p>
@@ -402,9 +423,6 @@ tailwind.config = {
                 <div class="w-10 h-0.5 bg-jac-gold mx-auto mb-4 md:mb-6"></div>
                 <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 leading-tight"><?php echo esc_html($t['in_title']); ?></h2>
             </div>
-            <div class="rounded-2xl md:rounded-3xl overflow-hidden mb-10 md:mb-14 js6phev-fade-up js6phev-image-hover">
-                <img src="<?php echo esc_url($base . 'in.f2cd03f.png'); ?>" alt="JAC JS6 PHEV Interior" class="w-full h-auto object-cover">
-            </div>
             <div class="max-w-3xl mx-auto text-center mb-14 md:mb-20 js6phev-fade-up">
                 <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4"><?php echo esc_html($t['in_sub']); ?></h3>
                 <p class="text-sm md:text-base text-white/70 leading-relaxed"><?php echo esc_html($t['in_desc']); ?></p>
@@ -469,8 +487,13 @@ tailwind.config = {
                 <h2 class="text-2xl md:text-4xl lg:text-5xl font-black text-black mb-4 md:mb-6 leading-tight"><?php echo esc_html($t['pt_title']); ?></h2>
                 <p class="text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"><?php echo esc_html($t['pt_desc']); ?></p>
             </div>
-            <div class="rounded-2xl md:rounded-3xl overflow-hidden mb-10 md:mb-14 js6phev-fade-up js6phev-image-hover">
-                <img src="<?php echo esc_url($base . 'bec1.8bd4c72.png'); ?>" alt="JS6 PHEV Powertrain" class="w-full h-auto object-cover">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-14 js6phev-fade-up">
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden js6phev-image-hover">
+                    <img src="<?php echo esc_url($base . 'bec1.8bd4c72.png'); ?>" alt="JS6 PHEV Powertrain" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl md:rounded-3xl overflow-hidden js6phev-image-hover">
+                    <img src="<?php echo esc_url($base . 'bec2.19b634c.png'); ?>" alt="JS6 PHEV Battery" class="w-full h-full object-cover">
+                </div>
             </div>
             <div class="grid md:grid-cols-3 gap-6 md:gap-8">
                 <?php
@@ -593,26 +616,21 @@ tailwind.config = {
                 <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 leading-tight"><?php echo esc_html($t['adas_title']); ?></h2>
                 <p class="text-sm md:text-base lg:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed"><?php echo esc_html($t['adas_desc']); ?></p>
             </div>
-            <div class="rounded-2xl md:rounded-3xl overflow-hidden mb-10 md:mb-14 js6phev-fade-up js6phev-image-hover">
-                <img src="<?php echo esc_url($base . 'adas1.08568ea.png'); ?>" alt="ADAS Overview" class="w-full h-auto object-cover">
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 js6phev-fade-up">
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-5 js6phev-fade-up">
                 <?php
                 $adas = [
-                    ['t' => $t['adas_1'], 'i' => 'fa-route'],
-                    ['t' => $t['adas_2'], 'i' => 'fa-gauge-high'],
-                    ['t' => $t['adas_3'], 'i' => 'fa-car-burst'],
-                    ['t' => $t['adas_4'], 'i' => 'fa-triangle-exclamation'],
-                    ['t' => $t['adas_5'], 'i' => 'fa-arrows-left-right'],
-                    ['t' => $t['adas_6'], 'i' => 'fa-traffic-light'],
-                    ['t' => $t['adas_7'], 'i' => 'fa-eye'],
+                    ['t' => $t['adas_1'], 'img' => $base.'adas1.08568ea.png'],
+                    ['t' => $t['adas_2'], 'img' => $base.'adas2.f275b0e.png'],
+                    ['t' => $t['adas_3'], 'img' => $base.'adas3.31bf341.png'],
+                    ['t' => $t['adas_4'], 'img' => $base.'adas4.3854317.png'],
+                    ['t' => $t['adas_5'], 'img' => $base.'adas5.4d7b2da.png'],
+                    ['t' => $t['adas_6'], 'img' => $base.'adas6.fb8c782.png'],
+                    ['t' => $t['adas_7'], 'img' => $base.'adas7.cd9dd6a.png'],
                 ];
                 foreach ($adas as $a): ?>
-                <div class="starry-card flex items-center gap-4 p-5 md:p-6">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-jac-green/15 flex items-center justify-center flex-shrink-0">
-                        <i class="fa-solid <?php echo esc_attr($a['i']); ?> text-jac-green text-lg md:text-xl"></i>
-                    </div>
-                    <p class="text-sm md:text-base font-semibold leading-tight"><?php echo esc_html($a['t']); ?></p>
+                <div class="flex flex-col items-center text-center gap-3 p-4 md:p-5 starry-card">
+                    <img src="<?php echo esc_url($a['img']); ?>" alt="<?php echo esc_attr($a['t']); ?>" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                    <p class="text-[11px] md:text-xs font-semibold text-white/80 leading-snug"><?php echo esc_html($a['t']); ?></p>
                 </div>
                 <?php endforeach; ?>
             </div>
